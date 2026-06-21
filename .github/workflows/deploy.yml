@@ -1,0 +1,108 @@
+name: Deploy
+
+# Triggers on any push to a release/** branch (e.g. release/1.0, release/2026-06).
+# Workflow: run the full release-tier test suite → build and push a Docker image
+# to the DigitalOcean Container Registry → deploy to the Droplet via SSH.
+#
+# Required GitHub Environment (name: production) secrets:
+#   DO_REGISTRY_TOKEN   — DigitalOcean API token (read+write registry scope)
+#   DO_REGISTRY_NAME    — Container registry name slug (e.g. "woc")
+#   DROPLET_IP          — Reserved IP of the DigitalOcean Droplet
+#   DROPLET_SSH_KEY     — Private ED25519 key whose public half is in /root/.ssh/authorized_keys
+#   VITE_TURNSTILE_SITEKEY — Cloudflare Turnstile site key (public; baked into client bundle)
+#                            Set to empty string if not using Turnstile.
+
+on:
+  push:
+    branches:
+      - 'release/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Test → Build → Push → Deploy
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Full 14-locale release gate — same checks that ci.yml runs on release/**
+      # but here they gate the deploy, not just the branch.
+      - name: Run tests (release tier)
+        run: npm test
+        env:
+          I18N_RELEASE_TIER: '1'
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      # Log in once; the docker build and push steps both use these credentials.
+      - name: Log in to DigitalOcean Container Registry
+        run: |
+          echo "${{ secrets.DO_REGISTRY_TOKEN }}" \
+            | docker login registry.digitalocean.com \
+                -u "${{ secrets.DO_REGISTRY_TOKEN }}" \
+                --password-stdin
+
+      # Multi-stage build defined in Dockerfile.
+      # VITE_TURNSTILE_SITEKEY is a BUILD ARG — Vite inlines it into the client
+      # bundle. It is a public key and safe to use as a build argument.
+      # Runtime secrets (DATABASE_URL, TURNSTILE_SECRET, etc.) are never passed
+      # here — they live only in /opt/eastbrook/.env on the Droplet.
+      - name: Build and push Docker image
+        env:
+          IMAGE: registry.digitalocean.com/${{ secrets.DO_REGISTRY_NAME }}/woc
+        run: |
+          docker build \
+            --build-arg VITE_TURNSTILE_SITEKEY="${{ secrets.VITE_TURNSTILE_SITEKEY }}" \
+            -t "$IMAGE:${{ github.sha }}" \
+            -t "$IMAGE:latest" \
+            .
+          docker push "$IMAGE:${{ github.sha }}"
+          docker push "$IMAGE:latest"
+
+      # Sync the production compose file from the repo to the Droplet, then pull
+      # the new image and hot-swap only the game container (--no-deps so MediaWiki
+      # is left untouched if it is also running on the same host).
+      # Players are disconnected for ~5 s; the server saves all characters on SIGTERM.
+      - name: Deploy to Droplet
+        env:
+          DROPLET_SSH_KEY: ${{ secrets.DROPLET_SSH_KEY }}
+          DROPLET_IP: ${{ secrets.DROPLET_IP }}
+          GAME_IMAGE: registry.digitalocean.com/${{ secrets.DO_REGISTRY_NAME }}/woc:${{ github.sha }}
+        run: |
+          printf '%s' "$DROPLET_SSH_KEY" > /tmp/deploy_key
+          chmod 600 /tmp/deploy_key
+
+          # Keep the compose file on the Droplet in sync with the repo.
+          scp -i /tmp/deploy_key \
+            -o StrictHostKeyChecking=no \
+            -o BatchMode=yes \
+            docker-compose.prod.yml \
+            "root@$DROPLET_IP:/opt/eastbrook/docker-compose.prod.yml"
+
+          # Pull the pinned SHA image and recreate only the game container.
+          ssh -i /tmp/deploy_key \
+            -o StrictHostKeyChecking=no \
+            -o BatchMode=yes \
+            "root@$DROPLET_IP" \
+            "cd /opt/eastbrook && \
+             docker pull '$GAME_IMAGE' && \
+             GAME_IMAGE='$GAME_IMAGE' \
+               docker compose -f docker-compose.prod.yml \
+                 up -d --no-deps --force-recreate game && \
+             docker image prune -f"

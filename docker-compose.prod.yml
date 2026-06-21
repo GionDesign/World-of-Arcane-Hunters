@@ -1,0 +1,32 @@
+# Production deployment — game server only.
+# Postgres is hosted externally (Supabase or any DATABASE_URL); there is no
+# local postgres service here. Use docker-compose.yml for local development.
+#
+# Usage (GitHub Actions sets GAME_IMAGE automatically):
+#   GAME_IMAGE=registry.digitalocean.com/<registry>/woc:<sha> \
+#     docker compose -f docker-compose.prod.yml up -d --no-deps --force-recreate game
+
+services:
+  game:
+    image: ${GAME_IMAGE:?Set GAME_IMAGE to the registry image to deploy}
+    container_name: eastbrook-game
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: ${DATABASE_URL:?Set DATABASE_URL in /opt/eastbrook/.env}
+      PORT: "8787"
+      WIKI_URL: ${WIKI_URL:-}
+      USERNAME_BANLIST: ${USERNAME_BANLIST:-}
+      USERNAME_BANLIST_FILE: ${USERNAME_BANLIST_FILE:-}
+      CHAT_CENSOR_LIST: ${CHAT_CENSOR_LIST:-}
+      CHAT_CENSOR_FILE: ${CHAT_CENSOR_FILE:-}
+      TURNSTILE_SECRET: ${TURNSTILE_SECRET:-}
+      RESTART_COUNTDOWN_SECRET: ${RESTART_COUNTDOWN_SECRET:-}
+      REALM_NAME: ${REALM_NAME:-Claudemoon}
+      REALM_TYPE: ${REALM_TYPE:-Normal}
+      TRUSTED_PROXY_IPS: ${TRUSTED_PROXY_IPS:-}
+      CHAT_LOG_RETENTION_DAYS: ${CHAT_LOG_RETENTION_DAYS:-90}
+    ports:
+      # Loopback only — Caddy is the public entrance.
+      - "127.0.0.1:8787:8787"
+    volumes:
+      - ${EASTBROOK_MEDIA_DIR:-/opt/eastbrook/media-cache}:/app/dist/media
