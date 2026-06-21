@@ -156,21 +156,44 @@ For off-box safety, sync the directory to S3 occasionally:
 ## Admin dashboard
 
 The admin dashboard (account/character/session metrics, live players,
-server health) is served by the same game server process:
+server health) is served by the same game server process on the same port.
+There are three ways to reach it — pick whichever fits your domain setup:
 
-- **Production**: point `admin.worldofclaudecraft.com` at the instance
-  (A record) and add a server block for it in the nginx config in the
-  internal `ansible-scripts` repo, proxying to the same game port as the
-  main site. The Node server serves the dashboard for any hostname
-  starting with `admin.`.
-- **Standalone/Caddy**: set `ADMIN_DOMAIN` in `deploy/user-data.sh`
-  (or add the extra site block to `/etc/caddy/Caddyfile` by hand).
-- **Local dev**: open `http://localhost:8787/admin` (or `/admin` under
-  `npm run dev`).
+| Option | URL | Config needed |
+|---|---|---|
+| Path-based | `https://your-game-domain.com/admin` | None — always works |
+| `admin.*` subdomain | `https://admin.your-game-domain.com` | DNS A record + nginx/Caddy block |
+| Custom hostname | `https://admin-your-game.com` | DNS + proxy block + `ADMIN_HOSTNAME` env var |
+
+**Path-based** is the simplest and requires no extra DNS record or env var. Use it
+when the game is already on a subdomain (`world.example.com/admin`).
+
+**`admin.*` subdomain** is auto-detected — the server serves `admin.html` for any
+`Host` header starting with `admin.`. Add an A record for `admin.your-game-domain.com`
+pointing at the same IP, and add a second nginx/Caddy site block that proxies to the
+same game port.
+
+**Custom hostname** (e.g. `admin-world.example.com`) requires setting `ADMIN_HOSTNAME`:
+
+```env
+# In the server's .env file:
+ADMIN_HOSTNAME=admin-world.example.com
+```
+
+Then add the DNS record and a proxy block for that hostname. See
+[docs/SETUP-DIGITALOCEAN.md Step 9](docs/SETUP-DIGITALOCEAN.md#9-configure-and-access-the-admin-dashboard)
+for complete Caddy configuration examples for all three options.
+
+**Nginx (Ansible production):** point an additional server block at the game port
+(`proxy_pass http://localhost:8787`). The Node server selects which HTML shell to serve
+based on the `Host` header — no separate upstream needed.
+
+**Local dev**: open `http://localhost:8787/admin` (or `http://localhost:5173/admin`
+under `npm run dev`).
 
 Access requires signing in with a game account that has the `is_admin`
 flag. The hostname only selects which HTML shell is served — every
-`/admin/api/*` call is checked against the account flag.
+`/admin/api/*` call is always checked against the account flag.
 
 Grant the first admin:
 
@@ -404,6 +427,24 @@ TRUSTED_PROXY_IPS=203.0.113.10,203.0.113.11
 
 Comma-separated IPs or CIDR blocks. Setting this incorrectly can cause all
 players to be rate-limited under a single IP.
+
+---
+
+### Custom admin hostname (`ADMIN_HOSTNAME`)
+
+By default the server serves the admin dashboard for any hostname starting with
+`admin.` (e.g. `admin.your-game.com`) or for the `/admin` URL path on any domain.
+
+If you want to use a hostname that does not follow the `admin.*` prefix
+(e.g. `admin-world.example.com` or `dashboard.example.com`), set:
+
+```env
+ADMIN_HOSTNAME=admin-world.example.com
+```
+
+With this set, only requests where the `Host` header exactly equals this value trigger
+the admin shell. The `/admin` path still works on all domains regardless of this
+setting. Restart the container after changing this variable.
 
 ---
 

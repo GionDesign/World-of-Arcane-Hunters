@@ -511,34 +511,47 @@ You should see all game tables: `accounts`, `auth_tokens`, `characters`, `world_
 
 After creating an in-game account in online mode (Step 8.2):
 
-**Option A:**
+**Option A (Docker Compose):**
 
 ```bash
 psql postgres://eastbrook:<POSTGRES_PASSWORD>@127.0.0.1:5433/eastbrook \
   -c "UPDATE accounts SET is_admin = TRUE WHERE username = 'your-username';"
 ```
 
-**Option B:**
+**Option B (Supabase CLI):**
 
 ```bash
 psql postgresql://postgres:postgres@127.0.0.1:54322/postgres \
   -c "UPDATE accounts SET is_admin = TRUE WHERE username = 'your-username';"
 ```
 
-Then open `http://localhost:5173/admin` (or `http://localhost:8787/admin`) and log in
-with your account.
-
-Alternatively, the project includes a convenience script:
+Or use the convenience script (works for both database options):
 
 ```bash
 npm run admin:grant -- your-username
-```
-
-To revoke:
-
-```bash
+# To revoke:
 npm run admin:grant -- your-username --revoke
 ```
+
+### Accessing the admin dashboard locally
+
+The admin dashboard is always available at the `/admin` path — no extra configuration
+needed for local dev:
+
+```
+http://localhost:5173/admin    ← via Vite dev server (recommended, has HMR)
+http://localhost:8787/admin    ← directly on the game server port
+```
+
+Log in with your admin account. The server detects `/admin` as the admin shell
+regardless of what hostname or port you use.
+
+> **How the admin detection works:** The server serves `admin.html` (the admin SPA)
+> when either the URL path is `/admin`, or the `Host` header starts with `admin.`, or
+> the `Host` header exactly matches the `ADMIN_HOSTNAME` env var. In production you can
+> reach the admin panel on a separate subdomain or a fully custom hostname — see
+> [SETUP-DIGITALOCEAN.md Step 9](SETUP-DIGITALOCEAN.md#9-configure-and-access-the-admin-dashboard)
+> for all three options with Caddy configuration examples.
 
 ---
 
@@ -656,6 +669,7 @@ All variables for local development live in `.env` in the project root.
 | `REALM_TYPE` | No | `Normal` | Realm type: `Normal`, `PvP`, `RP`, `RP-PvP`. |
 | `PUBLIC_ORIGIN` | No | — | Canonical origin for absolute URLs. Leave unset locally. |
 | `WIKI_URL` | No | `http://localhost:8080/wiki/...` | Where `/wiki` redirects go. |
+| `ADMIN_HOSTNAME` | No | — | Leave unset locally. The `/admin` path always works for local dev. In production, set to a custom admin hostname if it does not follow the `admin.*` prefix pattern. |
 | `TURNSTILE_SECRET` | No | — | Leave empty locally (gate disabled). |
 | `RESTART_COUNTDOWN_SECRET` | No | — | Leave empty locally. |
 | `CHAT_LOG_RETENTION_DAYS` | No | `90` | Days to keep chat logs. |

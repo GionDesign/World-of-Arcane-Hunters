@@ -51,6 +51,10 @@ const PERF_REPORT_RETENTION_DAYS = Number(process.env.PERF_REPORT_RETENTION_DAYS
 const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET ?? '';
 // Hard WS connection limit per IP. Soft threshold (adds bot evidence) is in game.ts.
 const MAX_WS_PER_IP_HARD = Number(process.env.MAX_WS_PER_IP_HARD ?? '20');
+// Custom hostname that triggers the admin dashboard shell. When unset the default
+// pattern (any subdomain starting with "admin.") is used. Strip port so comparisons
+// work whether Caddy forwards a bare host or host:port header.
+const ADMIN_HOSTNAME = (process.env.ADMIN_HOSTNAME ?? '').toLowerCase().replace(/:\d+$/, '');
 
 const game = new GameServer();
 
@@ -233,13 +237,18 @@ const MIME: Record<string, string> = {
   '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp',
 };
 
-// The admin dashboard is reached via the admin.* subdomain (Caddy proxies it
-// to this same port) or /admin for local dev. The hostname only picks which
-// HTML shell is served — the admin API itself is gated by admin tokens.
+// The admin dashboard is reached via:
+//   1. A hostname match: ADMIN_HOSTNAME env var (exact match) when set, otherwise
+//      any subdomain starting with "admin." (e.g. admin.world.example.com).
+//   2. The /admin or /admin/ path on any domain — always works; useful for
+//      single-domain setups (world.example.com/admin) and local dev.
+// The hostname only picks which HTML shell is served (admin.html vs index.html);
+// the admin API itself is gated by the is_admin account flag, not the hostname.
 function isAdminRequest(req: http.IncomingMessage): boolean {
-  const host = String(req.headers.host ?? '').toLowerCase();
+  const host = String(req.headers.host ?? '').toLowerCase().replace(/:\d+$/, '');
   const urlPath = (req.url ?? '/').split('?')[0];
-  return host.startsWith('admin.') || urlPath === '/admin' || urlPath === '/admin/';
+  const adminByHost = ADMIN_HOSTNAME ? host === ADMIN_HOSTNAME : host.startsWith('admin.');
+  return adminByHost || urlPath === '/admin' || urlPath === '/admin/';
 }
 
 function serveStatic(req: http.IncomingMessage, res: http.ServerResponse): void {

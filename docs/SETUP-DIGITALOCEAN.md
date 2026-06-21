@@ -14,6 +14,24 @@ to Supabase Pro ($25/month) once you have regular players to disable free-tier a
 
 ---
 
+## Domain naming convention used in this guide
+
+Every example that says `world.example.com` or `admin.world.example.com` is a
+**placeholder for your own domain**. Replace them consistently throughout. Common patterns:
+
+| Use case | Example |
+|---|---|
+| Subdomain of your personal site | `world.yourdomain.com` |
+| Root domain | `yourgame.com` |
+| Admin via path (no extra DNS) | `world.yourdomain.com/admin` |
+| Admin as a second subdomain | `admin.world.yourdomain.com` |
+| Admin as a fully separate hostname | `admin-world.yourdomain.com` (needs `ADMIN_HOSTNAME`) |
+
+See [Step 9](#9-configure-and-access-the-admin-dashboard) for a full explanation of
+all three admin access options and when to use each.
+
+---
+
 ## Table of Contents
 
 1. [Prerequisites](#1-prerequisites)
@@ -24,11 +42,12 @@ to Supabase Pro ($25/month) once you have regular players to disable free-tier a
 6. [Configure GitHub Secrets](#6-configure-github-secrets)
 7. [Configure Cloudflare Turnstile (Optional Bot Gate)](#7-configure-cloudflare-turnstile-optional-bot-gate)
 8. [Trigger the First Deploy](#8-trigger-the-first-deploy)
-9. [Grant Admin Access](#9-grant-admin-access)
+9. [Configure and Access the Admin Dashboard](#9-configure-and-access-the-admin-dashboard)
 10. [Environment Variable Reference](#10-environment-variable-reference)
 11. [Ongoing Operations](#11-ongoing-operations)
 12. [Multiple Realms](#12-multiple-realms)
-13. [Troubleshooting](#13-troubleshooting)
+13. [Surviving Upstream Updates with a Custom Domain](#13-surviving-upstream-updates-with-a-custom-domain)
+14. [Troubleshooting](#14-troubleshooting)
 
 ---
 
@@ -150,16 +169,45 @@ Note this reserved IP — it goes into GitHub secrets as `DROPLET_IP` in Step 6.
 
 ### 4.3 Point your domain at the Droplet
 
-In your domain registrar's DNS settings (or Cloudflare, or DigitalOcean Domains), create:
+In your domain registrar's DNS settings (or Cloudflare, or DigitalOcean Domains), create
+an A record for each hostname you want. The game only needs **one** A record. The admin
+panel can share the same record or use a separate one — see the options below.
+
+**Game on a subdomain (most common):**
 
 ```
 Type:  A
-Name:  play  (or @ for root domain)
-Value: <your reserved IP>
+Name:  world        ← makes world.yourdomain.com
+Value: <reserved IP>
 TTL:   3600
 ```
 
-Example: `play.yourgame.com → 143.198.xxx.xxx`
+**Game on the root domain:**
+
+```
+Type:  A
+Name:  @
+Value: <reserved IP>
+TTL:   3600
+```
+
+**Admin on a second subdomain** (only needed for Option B or C in Step 9):
+
+```
+Type:  A
+Name:  admin.world  ← makes admin.world.yourdomain.com
+Value: <reserved IP>   ← same IP as the game record
+TTL:   3600
+```
+
+Or for a fully custom admin hostname:
+
+```
+Type:  A
+Name:  admin-world  ← makes admin-world.yourdomain.com
+Value: <reserved IP>
+TTL:   3600
+```
 
 DNS propagation can take up to 48 hours but is usually under 5 minutes with a low TTL.
 Caddy cannot issue a TLS certificate until DNS resolves correctly.
@@ -309,21 +357,98 @@ Copy the entire block including the `-----BEGIN OPENSSH PRIVATE KEY-----` and
 
 ### 5.6 Configure Caddy (TLS reverse proxy)
 
-Replace `play.yourgame.com` with your actual domain:
+Choose the Caddy configuration that matches your admin dashboard preference. All three
+options work — pick whichever suits your domain setup. Replace every `world.example.com`
+with your actual domain.
+
+---
+
+**Option A — Admin at `/admin` path (same domain, no extra DNS record)**
+
+This is the simplest option. The game and admin dashboard share the same hostname.
+Navigate to `https://world.example.com/admin` to reach the dashboard.
 
 ```bash
 cat > /etc/caddy/Caddyfile << 'EOF'
-play.yourgame.com {
+world.example.com {
     reverse_proxy localhost:8787
     encode gzip
 }
 EOF
+```
 
+No `ADMIN_HOSTNAME` env var is needed. The `/admin` path is always detected by the
+server regardless of hostname.
+
+---
+
+**Option B — Admin on `admin.world.example.com` (subdomain of your game domain)**
+
+The game runs on `world.example.com` and the admin dashboard on `admin.world.example.com`.
+Both point to the same Droplet IP and the same port 8787. Caddy issues separate TLS
+certificates for each.
+
+DNS: you need an A record for both `world.example.com` and `admin.world.example.com`
+pointing at the same reserved IP (see Step 4.3).
+
+```bash
+cat > /etc/caddy/Caddyfile << 'EOF'
+world.example.com {
+    reverse_proxy localhost:8787
+    encode gzip
+}
+
+admin.world.example.com {
+    reverse_proxy localhost:8787
+    encode gzip
+}
+EOF
+```
+
+No `ADMIN_HOSTNAME` env var is needed. The server detects any hostname starting with
+`admin.` automatically.
+
+---
+
+**Option C — Admin on a fully custom hostname (e.g. `admin-world.example.com`)**
+
+Use this when you want a hostname that does not follow the `admin.*` prefix pattern —
+for example `admin-world.example.com`, `dashboard.example.com`, or any other name.
+This requires setting `ADMIN_HOSTNAME` in `/opt/eastbrook/.env`.
+
+DNS: A record for both `world.example.com` and your chosen admin hostname (Step 4.3).
+
+```bash
+cat > /etc/caddy/Caddyfile << 'EOF'
+world.example.com {
+    reverse_proxy localhost:8787
+    encode gzip
+}
+
+admin-world.example.com {
+    reverse_proxy localhost:8787
+    encode gzip
+}
+EOF
+```
+
+Then add `ADMIN_HOSTNAME` to `/opt/eastbrook/.env`:
+
+```bash
+# In /opt/eastbrook/.env — add this line:
+ADMIN_HOSTNAME=admin-world.example.com
+```
+
+---
+
+After writing the Caddyfile, enable and start Caddy:
+
+```bash
 systemctl enable caddy
 systemctl restart caddy
 ```
 
-Caddy automatically obtains and renews a Let's Encrypt TLS certificate. The game's
+Caddy automatically obtains and renews Let's Encrypt TLS certificates. The game's
 WebSocket connections are proxied transparently — no extra configuration needed. The
 client automatically switches to `wss://` when loaded over `https://`.
 
@@ -334,7 +459,7 @@ systemctl status caddy
 journalctl -u caddy --no-pager -n 20
 ```
 
-> **DNS must resolve before Caddy can get a certificate.** If your DNS is not
+> **DNS must resolve before Caddy can issue a certificate.** If your DNS is not
 > propagated yet, Caddy will log an ACME challenge failure and retry automatically.
 > This is fine — just wait and it will succeed once DNS is live.
 
@@ -498,29 +623,89 @@ You should see lines like:
 
 ---
 
-## 9. Grant Admin Access
+## 9. Configure and Access the Admin Dashboard
 
-### 9.1 Create an in-game account
+The admin dashboard is a separate single-page app (`admin.html`) served by the same
+game server process on the same port as the game. The server decides which HTML shell
+to serve based on the incoming hostname or URL path. The actual security is the
+`is_admin` flag on the account — the hostname is routing only.
 
-Open `https://play.yourgame.com` in a browser → **Play Online** → **Create Account**.
-Use the username you want to be the admin (e.g. your own name).
+### 9.1 How the server decides: game vs admin shell
 
-### 9.2 Grant admin flag in Supabase
+The server serves `admin.html` when either of these is true:
 
-From the Droplet, using the `psql` client that was installed in Step 5.1:
+| Trigger | Example | Requires config? |
+|---|---|---|
+| URL path is `/admin` or `/admin/` | `world.example.com/admin` | No |
+| Host header starts with `admin.` | `admin.world.example.com` | No (just DNS + Caddy) |
+| Host header exactly equals `ADMIN_HOSTNAME` | `admin-world.example.com` | Yes — set `ADMIN_HOSTNAME` |
+
+Any other request gets the game shell (`index.html`).
+
+### 9.2 Choose your admin access option
+
+**Option A — Path-based (recommended for single-domain or subdomain setups)**
+
+No extra DNS record, no env var. Just visit the `/admin` path on your game domain:
+
+```
+https://world.example.com/admin
+```
+
+Use this when your game is already on a subdomain (`world.example.com`) and you do
+not want another subdomain to manage. It works immediately after deploy.
+
+---
+
+**Option B — `admin.world.example.com` subdomain**
+
+Add an A record for `admin.world.example.com` pointing at the same reserved IP, and
+add the Caddy block for it (both done in Steps 4.3 and 5.6). No env var needed.
+
+The server auto-detects any hostname starting with `admin.` — so `admin.world.example.com`,
+`admin.yourgame.com`, and `admin.anything.com` all trigger the admin shell if they
+resolve to your Droplet.
+
+---
+
+**Option C — Fully custom admin hostname**
+
+For a hostname that does not start with `admin.` (e.g. `admin-world.example.com` or
+`dashboard.yourdomain.com`), set `ADMIN_HOSTNAME` in `/opt/eastbrook/.env`:
+
+```env
+ADMIN_HOSTNAME=admin-world.example.com
+```
+
+Then add that hostname to your DNS (Step 4.3) and Caddy (Step 5.6). Restart the
+container after changing `.env`:
 
 ```bash
-psql "postgresql://postgres.[ref]:[password]@aws-0-us-east-1.pooler.supabase.com:5432/postgres" \
+cd /opt/eastbrook
+GAME_IMAGE=$(docker inspect eastbrook-game --format '{{.Config.Image}}') \
+  docker compose -f docker-compose.prod.yml up -d --no-deps --force-recreate game
+```
+
+### 9.3 Create an in-game account and grant admin
+
+1. Open your game URL in a browser (e.g. `https://world.example.com`) → **Play Online**
+   → **Create Account**. Use the username you want as admin.
+
+2. From the Droplet, grant the admin flag:
+
+```bash
+psql "$(grep ^DATABASE_URL /opt/eastbrook/.env | cut -d= -f2-)" \
   -c "UPDATE accounts SET is_admin = TRUE WHERE username = 'your-username';"
 ```
 
 You should see: `UPDATE 1`
 
-### 9.3 Access the admin dashboard
+3. Navigate to the admin dashboard using whichever option you configured:
+   - **Option A:** `https://world.example.com/admin`
+   - **Option B:** `https://admin.world.example.com`
+   - **Option C:** `https://admin-world.example.com` (or whatever hostname you set)
 
-Open `https://play.yourgame.com/admin` in a browser and log in with your admin account.
-
-The dashboard shows:
+Log in with your admin account. The dashboard shows:
 - Live player count and online sessions
 - Account and character management
 - Chat filter word lists (soft/hard tiers)
@@ -543,6 +728,7 @@ These are read by the game server process at startup. They never leave the Dropl
 | `REALM_TYPE` | No | `Normal` | Realm type: `Normal`, `PvP`, `RP`, or `RP-PvP`. |
 | `PUBLIC_ORIGIN` | No | — | Canonical origin for server-generated absolute URLs (e.g. player card Open Graph). Set to `https://play.yourgame.com`. |
 | `PORT` | No | `8787` | HTTP + WebSocket port the server binds to. Change only if running multiple realms on one host. |
+| `ADMIN_HOSTNAME` | No | — | Custom hostname that serves the admin dashboard. Unset = any `admin.*` subdomain triggers admin. Set to `admin-world.example.com` for a non-`admin.` prefix hostname. The `/admin` path always works regardless. |
 | `TURNSTILE_SECRET` | No | — | Cloudflare Turnstile server-side secret. Empty = gate disabled. |
 | `RESTART_COUNTDOWN_SECRET` | No | — | Guards `POST /internal/restart-countdown`. Set a random 32-byte hex value if you use graceful restart announcements. |
 | `WIKI_URL` | No | `http://localhost:8080/wiki/...` | Where `/wiki` requests are 302-redirected. Set to your public wiki URL in production. |
@@ -705,7 +891,73 @@ systemctl reload caddy
 
 ---
 
-## 13. Troubleshooting
+## 13. Surviving Upstream Updates with a Custom Domain
+
+When you pull new game code from the upstream repository, your custom domain
+configuration is **not affected** — because all of it lives outside the repo.
+
+### What lives outside the repo (safe from upstream changes)
+
+| Location | What it contains | Affected by `git pull`? |
+|---|---|---|
+| `/opt/eastbrook/.env` on the Droplet | `DATABASE_URL`, `REALM_NAME`, `PUBLIC_ORIGIN`, `ADMIN_HOSTNAME`, all secrets | No — not tracked by git |
+| `/etc/caddy/Caddyfile` on the Droplet | Your domain names, TLS config, all Caddy site blocks | No — not tracked by git |
+| DNS records at your registrar | A records pointing your domains at the Droplet | No — external |
+| GitHub `production` environment secrets | `DROPLET_IP`, `DROPLET_SSH_KEY`, `DO_REGISTRY_TOKEN`, `DO_REGISTRY_NAME`, `VITE_TURNSTILE_SITEKEY` | No — stored in GitHub, not in repo |
+
+### What an upstream update CAN change
+
+| File | What it is | What to watch for |
+|---|---|---|
+| `docker-compose.prod.yml` | Production compose file synced to Droplet on deploy | Rarely changes. If it does, the old Caddy config and `.env` still work — these compose files don't touch your Caddyfile |
+| `.env.example` | Documentation of available variables | Review diff when updating — new variables might be relevant to enable |
+| `server/main.ts` | Server code, including `isAdminRequest` | If the upstream admin detection logic changes, check the diff — your `ADMIN_HOSTNAME` env var is always respected |
+| `Dockerfile` | Build image | Transparent — you just get a newer image |
+
+### Recommended workflow for pulling upstream updates
+
+```bash
+# 1. On your local machine, fetch from upstream
+git remote add upstream https://github.com/giondesign/world-of-arcane-hunters.git
+git fetch upstream
+
+# 2. Merge or rebase onto your working branch
+git checkout main
+git merge upstream/main
+
+# 3. Review the diff, especially:
+git diff upstream/main HEAD -- .env.example           # new env vars?
+git diff upstream/main HEAD -- server/main.ts         # admin detection changed?
+git diff upstream/main HEAD -- docker-compose.prod.yml # compose changes?
+
+# 4. Push to your release branch to trigger deploy
+git push origin release/your-version
+```
+
+### If you want to track .env changes safely
+
+Keep a private `.env.production` file outside the repo (e.g. in a password manager or
+private gist) that records your full production `.env`. When `.env.example` gains a new
+variable in an upstream update, compare and add the new var to your Droplet's
+`/opt/eastbrook/.env` if you want to enable it.
+
+```bash
+# On the Droplet — add a new variable from upstream
+nano /opt/eastbrook/.env
+
+# Then restart the game container to pick it up
+cd /opt/eastbrook
+GAME_IMAGE=$(docker inspect eastbrook-game --format '{{.Config.Image}}') \
+  docker compose -f docker-compose.prod.yml up -d --no-deps --force-recreate game
+```
+
+New environment variables are always **opt-in** — the server falls back to a sensible
+default when a variable is absent, so upstream updates do not break a running deployment
+when you have not set the new variable yet.
+
+---
+
+## 14. Troubleshooting
 
 ### Container fails to start
 
@@ -725,7 +977,7 @@ journalctl -u caddy --no-pager -n 50
 ```
 
 Common causes:
-- DNS not propagated yet — `dig play.yourgame.com` should return your reserved IP.
+- DNS not propagated yet — `dig world.example.com` (replace with your actual domain) should return your reserved IP.
 - Port 80 or 443 blocked by firewall — check DigitalOcean's Droplet Firewall or
   `ufw status` if you have ufw enabled.
 
