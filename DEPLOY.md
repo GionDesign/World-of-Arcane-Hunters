@@ -7,6 +7,10 @@
 > `ansible-playbook playbooks/setup_server.yml -e target_host=idyllic-games-prod`
 > pulls and redeploys. The guide below is the generic, standalone path.
 
+> **Looking for a different deployment target?**
+> - [docs/SETUP-DIGITALOCEAN.md](docs/SETUP-DIGITALOCEAN.md) — DigitalOcean Droplet + Supabase + GitHub Actions CI/CD
+> - [docs/SETUP-LOCAL-MAC.md](docs/SETUP-LOCAL-MAC.md) — Local Mac development with local Supabase or Docker Compose
+
 One EC2 instance runs everything: the game server, Postgres, MediaWiki, and Caddy
 (TLS reverse proxy). Sized for a small population — a `t4g.small`
 (~$14/month all-in) is comfortable for a handful of concurrent players.
@@ -181,3 +185,279 @@ sudo docker exec eastbrook-db psql -U eastbrook eastbrook \
 
 Revoke with `npm run admin:grant -- <username> --revoke` (or set the
 flag to `FALSE` in SQL).
+
+---
+
+## Optional features
+
+The sections below cover optional features that apply to any deployment target
+(AWS, DigitalOcean, or local). All of these are configured via environment
+variables in the server's `.env` file (or the host's environment).
+
+### Bot gate — Cloudflare Turnstile
+
+Turnstile gates `POST /api/register` and `POST /api/login` with a browser
+challenge, blocking headless bot clients that cannot solve it. The gate is
+**off by default** — both halves must be set, or it is silently disabled.
+
+**Step 1 — Create a Turnstile widget**
+
+1. Sign in to [dash.cloudflare.com](https://dash.cloudflare.com) → **Turnstile**.
+2. Click **Add widget**.
+3. Set the hostname to your game domain (e.g. `play.example.com`). For local
+   testing, add `localhost` as a second hostname.
+4. Widget type: **Managed** (recommended).
+5. Copy the **Site Key** (public) and **Secret Key** (private).
+
+**Step 2 — Configure the server**
+
+Add the secret key to the server's `.env`:
+
+```env
+TURNSTILE_SECRET=0x4AAAAAAAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+**Step 3 — Configure the client build**
+
+The site key must be present at `npm run build` time (Vite inlines it). Pass
+it as a Docker build argument in the compose file or export it before building:
+
+```env
+VITE_TURNSTILE_SITEKEY=0x4AAAAAAA_public_key_here
+```
+
+In the GitHub Actions workflow it is passed via the `VITE_TURNSTILE_SITEKEY`
+build secret. For the docker-compose local build, set it in `.env` (it is
+declared as a build `arg` in `docker-compose.yml`).
+
+**Content-Security-Policy note:** if your nginx or Caddy sets a `Content-Security-Policy`
+header, add `https://challenges.cloudflare.com` to both `script-src` and
+`frame-src`, or the widget will not load.
+
+---
+
+### Solana wallet-link and $WOC balance
+
+Players can link a Solana wallet to display their $WOC token balance in-game.
+No third-party wallet-connect project ID is required — the server uses injected
+browser wallets and a direct RPC call.
+
+Set these in the server's `.env` (not prefixed `VITE_` — they never reach the
+client bundle):
+
+```env
+# Production Solana RPC endpoint (the public mainnet default is rate-limited).
+# Use a dedicated endpoint from Helius, QuickNode, Triton, or similar.
+SOLANA_RPC_URL=https://mainnet.helius-rpc.com/?api-key=<your-key>
+
+# $WOC SPL token mint. Override only if the canonical mint changes.
+WOC_MINT=3WjLscH2JsXLEFJZRA9z8ti8yRGxWGKbqymPd7UicRth
+```
+
+To disable the wallet UI entirely in a given deploy (for example, a private or
+dev build), set at build time:
+
+```env
+VITE_WALLET_DISABLED=1
+```
+
+---
+
+### Public origin for player cards and Open Graph
+
+Server-generated URLs (player card pages, Open Graph `og:image` meta tags) use
+`PUBLIC_ORIGIN` to build absolute URLs. Without it, the server falls back to
+the `Host` header of each incoming request, which is fine in single-origin
+setups but breaks shared player card links in multi-origin ones.
+
+```env
+PUBLIC_ORIGIN=https://play.example.com
+```
+
+In multi-realm deployments, `PUBLIC_ORIGIN` is superseded by the per-realm
+origin in `REALMS` (see below).
+
+---
+
+### Multiple realms (horizontal scaling)
+
+Each game process serves one realm. To add a second realm, run another process
+against the same `DATABASE_URL` with a different `REALM_NAME` and `PORT`.
+
+**Environment variables per realm process:**
+
+| Variable | Realm 1 | Realm 2 |
+|---|---|---|
+| `REALM_NAME` | `Claudemoon` | `Ironforge` |
+| `REALM_TYPE` | `Normal` | `PvP` |
+| `PORT` | `8787` | `8788` |
+| `DATABASE_URL` | (same for both) | (same for both) |
+
+**Advertising the realm list to clients (`REALMS`):**
+
+When `REALMS` is set, clients see a WoW-style realm list. Set the same value
+on every realm process so they all advertise the full directory:
+
+```env
+REALMS=Claudemoon=https://play.example.com=Normal,Ironforge=https://ironforge.example.com=PvP
+```
+
+Format: `Name=https://origin=Type` entries separated by commas. `Type` is
+optional and defaults to `Normal`. The CORS allowlist is derived from these
+origins automatically — you do not need a separate `CORS_ORIGINS` setting.
+
+**Caddy configuration for two realms on one host:**
+
+```
+play.example.com {
+    reverse_proxy localhost:8787
+    encode gzip
+}
+
+ironforge.example.com {
+    reverse_proxy localhost:8788
+    encode gzip
+}
+```
+
+**Character and guild names** remain globally unique across all realms even
+though character and social data is realm-scoped. Concurrent boots of multiple
+realm processes serialize schema setup safely behind a Postgres advisory lock.
+
+---
+
+### Username ban list
+
+Block usernames containing specific terms (case-insensitive, substring match).
+
+**Inline list in `.env`:**
+
+```env
+USERNAME_BANLIST=admin,moderator,gm,gamemaster,support
+```
+
+**File-based list** (preferred for large lists):
+
+```env
+USERNAME_BANLIST_FILE=/opt/eastbrook/username-banlist.txt
+```
+
+The file uses one term per line or comma separation. The file is read once at
+server startup; restart the server to pick up changes.
+
+---
+
+### Chat filter configuration
+
+The chat filter has two tiers:
+
+- **Soft** (cosmetic): words are masked client-side with `****`. Players can
+  toggle the filter off in Options.
+- **Hard** (server-enforced): words (typically slurs) are blocked server-side.
+  Repeated violations escalate from a warning to timed account-wide mutes.
+
+**The filter is managed live from the admin dashboard** (Chat Filter tab) after
+the first boot. These environment variables only **seed** the soft list on the
+very first boot of a fresh database and are ignored thereafter:
+
+```env
+# Seed the soft censor list on first boot (comma-separated terms).
+CHAT_CENSOR_LIST=badword1,badword2
+
+# Or point to a file:
+CHAT_CENSOR_FILE=/opt/eastbrook/chat-censor.txt
+```
+
+After the first boot, add and remove words from the admin dashboard — do not
+modify these env vars expecting live changes.
+
+---
+
+### Chat log retention
+
+Chat logs are stored in Postgres and pruned at boot and daily:
+
+```env
+# Keep 90 days of chat logs. Set to 0 to keep forever (table grows unbounded).
+CHAT_LOG_RETENTION_DAYS=90
+```
+
+---
+
+### Rate limiting and trusted proxy IPs
+
+The server rate-limits login and registration attempts per IP. When running
+behind a reverse proxy (Caddy, nginx), the real client IP comes from
+`X-Forwarded-For`. The server trusts `X-Forwarded-For` only from proxy IPs it
+considers safe:
+
+- By default, loopback (`127.0.0.0/8`) and private RFC-1918 ranges
+  (`10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) are trusted.
+- This is correct when Caddy runs on the same host (connects from loopback).
+
+If your proxy connects from a non-private IP (e.g. a load balancer on a
+separate host), pin it explicitly:
+
+```env
+TRUSTED_PROXY_IPS=203.0.113.10,203.0.113.11
+```
+
+Comma-separated IPs or CIDR blocks. Setting this incorrectly can cause all
+players to be rate-limited under a single IP.
+
+---
+
+### Graceful restart countdown
+
+Before a production restart, you can broadcast in-game countdown announcements
+so players have time to finish what they are doing. The `/internal/restart-countdown`
+endpoint triggers this:
+
+```env
+# Long random value; set the same value in your deploy tooling.
+RESTART_COUNTDOWN_SECRET=your-64-char-random-hex-here
+```
+
+Generate a value:
+
+```bash
+openssl rand -hex 32
+```
+
+Trigger a countdown (loopback-only — from the server itself):
+
+```bash
+curl -s -X POST http://localhost:8787/internal/restart-countdown \
+  -H "Content-Type: application/json" \
+  -d '{"secret":"your-64-char-random-hex-here","seconds":300}'
+```
+
+This broadcasts a "Server restarting in 5 minutes" message (and subsequent
+countdowns) to all connected players. After the countdown, you can safely
+restart the container — characters are saved on shutdown (`SIGTERM`).
+
+---
+
+### NPC voice generation (offline tooling)
+
+The voice generation scripts use ElevenLabs to synthesize NPC dialogue MP3s.
+These scripts are developer tooling, not used by the running server:
+
+```env
+# Only needed when running scripts/gen_npc_voices.mjs or scripts/gen_npc_lines.mjs.
+ELEVENLABS_API_KEY=your-api-key-from-elevenlabs-io
+```
+
+```bash
+npm run voices:gen    # designs NPC voices
+npm run voices:lines  # synthesizes line MP3s into public/audio/voice/
+```
+
+---
+
+### Complete environment variable reference
+
+For the full annotated list of every supported environment variable and whether
+it belongs on the server, in the build environment, or in GitHub secrets, see
+[docs/SETUP-DIGITALOCEAN.md — Environment Variable Reference](docs/SETUP-DIGITALOCEAN.md#10-environment-variable-reference)
+and the inline comments in [`.env.example`](.env.example).
