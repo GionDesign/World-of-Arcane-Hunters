@@ -762,6 +762,18 @@ These are read by the game server process at startup. They never leave the Dropl
 | `CHAT_CENSOR_FILE` | No | — | Path to a file that seeds the chat censor list on first boot. |
 | `SOLANA_RPC_URL` | No | Solana mainnet public | RPC endpoint for reading $WOC token balances. Use a dedicated endpoint in production. |
 | `WOC_MINT` | No | canonical mint | Override only if the $WOC token mint address changes. |
+| `NATIVE_ATTESTATION_REQUIRED` | No | — | Set to `1` to require mobile app attestation (Google Play Integrity / Apple DeviceCheck) for native client builds. Web players are unaffected. |
+| `GOOGLE_PLAY_INTEGRITY_SERVICE_ACCOUNT_JSON` | No | — | Google service account JSON for Android Play Integrity verification. Only needed for native Android builds. |
+| `GOOGLE_PLAY_INTEGRITY_SIGNING_PEM` | No | — | PEM private key for signing Play Integrity tokens. |
+| `GOOGLE_PLAY_INTEGRITY_PACKAGE_NAME` | No | — | Android package name (e.g. `com.worldofclaudecraft`). |
+| `GOOGLE_PLAY_INTEGRITY_CERT_DIGESTS` | No | — | Expected certificate SHA-256 digests (comma-separated). |
+| `GOOGLE_PLAY_INTEGRITY_DEVICE_VERDICT` | No | `MEETS_DEVICE_INTEGRITY` | Minimum device integrity verdict required. |
+| `PLAY_INTEGRITY_CLOUD_PROJECT_NUMBER` | No | — | Google Cloud project number for Play Integrity API. |
+| `APPLE_TEAM_ID` | No | — | Apple Developer Team ID for iOS DeviceCheck. |
+| `APPLE_BUNDLE_ID` | No | — | iOS app bundle ID (e.g. `com.worldofclaudecraft`). |
+| `APPLE_DEVICECHECK_KEY_ID` | No | — | Key ID for the Apple DeviceCheck signing key. |
+| `APPLE_DEVICECHECK_SIGNING_PEM` | No | — | PEM private key for Apple DeviceCheck token signing. |
+| `APPLE_DEVICECHECK_ENV` | No | `production` | Apple DeviceCheck environment: `production` or `sandbox`. |
 | `REALMS` | No | — | Comma-separated `Name=https://origin=Type` entries for the realm list screen. Required for multi-realm deployments. |
 | `ALLOW_DEV_COMMANDS` | **NEVER** | — | **Never set this on a public server.** Enables cheat commands. Dev and test bots only. |
 

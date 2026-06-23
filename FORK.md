@@ -89,7 +89,11 @@ grep -n "ADMIN_HOSTNAME" server/main.ts
 grep -n "CUSTOM_CAMPS" src/sim/data.ts
 
 # Verify our docs files still exist
-ls docs/SETUP-DIGITALOCEAN.md docs/SETUP-LOCAL-MAC.md docs/SETUP-CLOUDFLARE.md docs/MAINTAINING-FORK.md FORK.md
+ls docs/SETUP-DIGITALOCEAN.md docs/SETUP-LOCAL-MAC.md docs/SETUP-CLOUDFLARE.md \
+   docs/MAINTAINING-FORK.md docs/CUSTOM-CONTENT.md FORK.md
+
+# Verify README pointer survived (not the full upstream section)
+grep -c "docs/SETUP-DIGITALOCEAN.md" README.md
 ```
 
 If `grep` returns nothing, re-apply the code from `docs/MAINTAINING-FORK.md`.
@@ -119,4 +123,5 @@ A full list of all upstream file modifications with exact code snippets is in
 - `server/main.ts` -- added `ADMIN_HOSTNAME` constant + updated `isAdminRequest()`
 - `.env.example` -- added `ADMIN_HOSTNAME` documentation block
 - `DEPLOY.md` -- added Cloudflare guide link and rate-limiting note
+- `README.md` -- replaced DigitalOcean deployment section with pointer to `docs/SETUP-DIGITALOCEAN.md`
 - `src/sim/data.ts` -- added import + merges for `src/sim/content/custom/`

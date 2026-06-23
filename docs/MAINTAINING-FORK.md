@@ -39,6 +39,10 @@ conflict (not silently overwrite).
 | `docs/SETUP-LOCAL-MAC.md` | Local Mac development setup guide |
 | `docs/SETUP-CLOUDFLARE.md` | Cloudflare DNS, proxy, WAF, and Turnstile guide |
 | `docs/MAINTAINING-FORK.md` | This file |
+| `docs/CUSTOM-CONTENT.md` | Guide for adding custom game content via `src/sim/content/custom/` |
+| `FORK.md` | Fork rules — loaded by reference from `CLAUDE.md` |
+| `src/sim/content/custom/index.ts` | Custom game content scaffold (mobs, items, zones, quests, etc.) |
+| `src/sim/content/custom/CLAUDE.md` | Local authoring guide for the custom content directory |
 
 ---
 
@@ -93,6 +97,30 @@ A commented block was added in the "Admin dashboard" section:
 # Leave unset if you use the /admin path or an "admin.*" subdomain.
 #ADMIN_HOSTNAME=
 ```
+
+#### `README.md` — DigitalOcean section replaced with a pointer
+
+The upstream "Deploying to DigitalOcean + Supabase" section (Steps 1–7, ~255 lines)
+was replaced with a short pointer block so contributors cannot accidentally edit or
+override the fork's detailed deployment guide. The replacement text is:
+
+```markdown
+## Deploying to DigitalOcean + Supabase
+
+See **[docs/SETUP-DIGITALOCEAN.md](docs/SETUP-DIGITALOCEAN.md)** for the complete
+step-by-step guide: Supabase project, DigitalOcean Container Registry, Droplet
+provisioning, Caddy TLS, GitHub Actions CI/CD, admin dashboard, and all environment
+variable reference.
+
+If you are routing traffic through **Cloudflare**, read
+**[docs/SETUP-CLOUDFLARE.md](docs/SETUP-CLOUDFLARE.md)** as well — it covers DNS,
+SSL/TLS mode, Caddy `trusted_proxies` configuration, WAF, and Turnstile integration.
+```
+
+If upstream ever adds new content to the DigitalOcean section, check whether anything
+new in `README.md` belongs in `docs/SETUP-DIGITALOCEAN.md` instead, then keep the pointer.
+
+---
 
 #### `DEPLOY.md` — two additions
 
