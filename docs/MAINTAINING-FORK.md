@@ -102,6 +102,77 @@ A commented block was added in the "Admin dashboard" section:
    section, explaining that `TRUSTED_PROXY_IPS` should not be used when Cloudflare
    proxy + Caddy `trusted_proxies` is in use.
 
+#### `src/sim/data.ts` — custom content hook
+
+An import block and merge additions were added to connect `src/sim/content/custom/`
+to the engine. This is the only upstream sim file modified by this fork.
+
+**Import block added** (after the `temple` import, before `mergeItems`):
+```typescript
+// Fork-exclusive custom content (src/sim/content/custom/index.ts). This import
+// and the merges below are the only fork additions to this upstream file.
+import {
+  CUSTOM_CAMPS, CUSTOM_DUNGEON_DEFS, CUSTOM_DUNGEON_MOBS, CUSTOM_ITEMS, CUSTOM_MOBS,
+  CUSTOM_NPCS, CUSTOM_OBJECTS, CUSTOM_PROPS, CUSTOM_QUEST_ORDER, CUSTOM_QUESTS,
+  CUSTOM_ROADS, CUSTOM_ZONES,
+} from './content/custom';
+```
+
+**Merge additions** (each line shows the upstream original and the fork addition):
+```typescript
+// ITEMS (append CUSTOM_ITEMS):
+export const ITEMS = mergeItems(BASE_ITEMS, ZONE2_ITEMS, ZONE3_ITEMS, TEMPLE_ITEMS, CUSTOM_ITEMS);
+
+// MOBS (append CUSTOM_MOBS + CUSTOM_DUNGEON_MOBS):
+export const MOBS = { ...ZONE1_MOBS, .../* upstream */, ...CUSTOM_MOBS, ...CUSTOM_DUNGEON_MOBS };
+
+// NPCS (append CUSTOM_NPCS):
+export const NPCS = { ...ZONE1_NPCS, .../* upstream */, ...CUSTOM_NPCS };
+
+// QUESTS (append CUSTOM_QUESTS):
+export const QUESTS = { ...ZONE1_QUESTS, .../* upstream */, ...CUSTOM_QUESTS };
+
+// QUEST_ORDER (append CUSTOM_QUEST_ORDER):
+export const QUEST_ORDER = [...ZONE1_QUEST_ORDER, .../* upstream */, ...CUSTOM_QUEST_ORDER];
+
+// CAMPS (append CUSTOM_CAMPS LAST -- determinism):
+export const CAMPS = [...ZONE1_CAMPS, .../* upstream */, ...CUSTOM_CAMPS];
+
+// GROUND_OBJECTS (append CUSTOM_OBJECTS):
+export const GROUND_OBJECTS = [...ZONE1_OBJECTS, .../* upstream */, ...CUSTOM_OBJECTS];
+
+// ROADS (append CUSTOM_ROADS):
+export const ROADS = [...ZONE1_ROADS, .../* upstream */, ...CUSTOM_ROADS];
+
+// PROPS (add CUSTOM_PROPS to mergeProps call):
+export const PROPS = mergeProps([ZONE1_PROPS, .../* upstream */, CUSTOM_PROPS]);
+
+// ZONES (spread CUSTOM_ZONES):
+export const ZONES = [ZONE1_ZONE, ZONE2_ZONE, ZONE3_ZONE, ...CUSTOM_ZONES];
+
+// DUNGEONS (spread CUSTOM_DUNGEON_DEFS):
+export const DUNGEONS = { ...DUNGEON_DEFS, ...TEMPLE_DUNGEON_DEFS, ...CUSTOM_DUNGEON_DEFS };
+```
+
+If lost in a merge: search `data.ts` for each export and append the `CUSTOM_*`
+spread. Always append LAST (especially `CUSTOM_CAMPS`) to preserve determinism.
+
+#### `CLAUDE.md` — fork pointer
+
+The "Fork rules" section in CLAUDE.md was changed from a verbose rule block to a
+short pointer directing Claude to read `FORK.md` first. If upstream ever edits
+`CLAUDE.md` and removes that pointer section, re-add this single paragraph:
+
+```markdown
+## Fork rules (read FORK.md first)
+This is a personal deployment fork. **Before making any changes, read `FORK.md`
+in the repository root.** It defines the fork maintenance rules, the custom content
+pattern (`src/sim/content/custom/`), the upstream sync workflow, and the list of
+upstream files this fork has modified. Those rules take precedence over the generic
+guidance below. `docs/MAINTAINING-FORK.md` has the full record of every change made
+to upstream files, with exact code snippets for re-applying after a bad merge.
+```
+
 ---
 
 ## How to safely pull upstream updates
@@ -127,14 +198,22 @@ history and appear in `git log`. If there is a conflict:
 
 ### What to check after a merge
 
-Run `grep -n "ADMIN_HOSTNAME" server/main.ts` — you should see both the constant
-and the `isAdminRequest()` function. If the grep returns nothing, re-apply the
-two code blocks documented in the section above.
-
-Check that your new docs files still exist:
 ```bash
-ls docs/SETUP-DIGITALOCEAN.md docs/SETUP-LOCAL-MAC.md docs/SETUP-CLOUDFLARE.md docs/MAINTAINING-FORK.md
+# 1. Verify ADMIN_HOSTNAME code survived
+grep -n "ADMIN_HOSTNAME" server/main.ts
+# Expect: two hits -- the constant and the adminByHost line in isAdminRequest()
+
+# 2. Verify custom content hook survived
+grep -n "CUSTOM_CAMPS" src/sim/data.ts
+# Expect: the import line and the CAMPS spread
+
+# 3. Verify fork-owned files still exist
+ls docs/SETUP-DIGITALOCEAN.md docs/SETUP-LOCAL-MAC.md \
+   docs/SETUP-CLOUDFLARE.md docs/MAINTAINING-FORK.md \
+   src/sim/content/custom/index.ts FORK.md
 ```
+
+If any check fails, re-apply from the code blocks documented in this file.
 
 ### What NOT to do
 
