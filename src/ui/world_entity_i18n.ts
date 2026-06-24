@@ -35,6 +35,9 @@ const MOB_IDS = [
   'brightwood_hare', 'glade_fox', 'spotted_fawn', 'meadow_crane', 'thornpelt_badger',
   'dawnmane_doe', 'bramble_lynx', 'brightwood_stag', 'grovetusk_boar', 'sunhide_bear',
   'brightwood_monarch',
+  // Cinderhold custom mobs
+  'custom_lava_elemental', 'custom_ember_imp', 'custom_magma_hound',
+  'custom_cinder_troll', 'custom_flamecaller', 'custom_molten_colossus',
 ] as const;
 
 const NPC_IDS = [
@@ -44,6 +47,7 @@ const NPC_IDS = [
   'brother_aldric_highwatch', 'scout_maren_highwatch', 'quartermaster_bree', 'armorer_hode',
   'loremaster_caddis', 'ranger_elwyn',
   'brother_aldric_raid', // dynamically-spawned raid turn-in NPC (Crypt of Nythraxis)
+  'custom_warden_cael',
 ] as const;
 
 const QUEST_IDS = [
@@ -65,6 +69,8 @@ const QUEST_IDS = [
   'q_ledger_first_duty', 'q_ledger_teeth', 'q_ledger_reedwater', 'q_ledger_silk',
   'q_ledger_brood', 'q_ledger_deepvermin', 'q_ledger_toll', 'q_ledger_vigil',
   'q_ledger_great_boar', 'q_ledger_outlaw_captain',
+  // Cinderhold custom quests
+  'custom_q_quench_the_elementals', 'custom_q_hound_culling', 'custom_q_troll_tide',
 ] as const;
 
 const ZONE_IDS = ['eastbrook_vale', 'mirefen_marsh', 'thornpeak_heights'] as const;

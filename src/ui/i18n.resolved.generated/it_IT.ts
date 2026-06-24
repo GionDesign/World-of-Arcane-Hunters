@@ -4463,6 +4463,36 @@ export const it_IT: EnTranslations = {
       },
       "vanguard_chrome_armor_plate": {
         "name": "Avanguardia cromo"
+      },
+      "custom_ember_core": {
+        "name": "Nucleo di braci ardenti"
+      },
+      "custom_magma_pelt": {
+        "name": "Pelle di segugio di magma bruciacchiata"
+      },
+      "custom_cinder_tusk": {
+        "name": "Zanna del troll delle ceneri"
+      },
+      "custom_slag_fragment": {
+        "name": "Frammento di scoria"
+      },
+      "custom_ash_bone": {
+        "name": "Osso di cenere"
+      },
+      "custom_blaze_reaver": {
+        "name": "Falciatore fiammante"
+      },
+      "custom_inferno_staff": {
+        "name": "Bastone infernale"
+      },
+      "custom_cinderfang_dagger": {
+        "name": "Pugnale Zannacenere"
+      },
+      "custom_fire_resistance_potion": {
+        "name": "Pozione di resistenza al fuoco"
+      },
+      "custom_charred_ration": {
+        "name": "Razione da campo carbonizzata"
       }
     },
     "mobs": {
@@ -4666,6 +4696,24 @@ export const it_IT: EnTranslations = {
       },
       "brightwood_monarch": {
         "name": "Il Monarca di Brightwood"
+      },
+      "custom_lava_elemental": {
+        "name": "Lava Elemental"
+      },
+      "custom_ember_imp": {
+        "name": "Ember Imp"
+      },
+      "custom_magma_hound": {
+        "name": "Magma Hound"
+      },
+      "custom_cinder_troll": {
+        "name": "Cinder Troll"
+      },
+      "custom_flamecaller": {
+        "name": "Flamecaller"
+      },
+      "custom_molten_colossus": {
+        "name": "Molten Colossus"
       },
       "elder_bristleback": {
         "name": "Bristleback anziano"
@@ -4890,6 +4938,11 @@ export const it_IT: EnTranslations = {
         "name": "Fratello Aldric",
         "title": "Sacerdote della Valle",
         "greeting": "Dal camposanto della cappella al tetto del mondo... la pista finisce qui. Sento la montagna ascoltare."
+      },
+      "custom_warden_cael": {
+        "name": "Warden Cael",
+        "title": "Ember Watch Commander",
+        "greeting": "The Cinderhold grows more dangerous by the hour. We need every able hand."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -5769,6 +5822,45 @@ export const it_IT: EnTranslations = {
           }
         }
       },
+      "custom_q_quench_the_elementals": {
+        "title": "Quench the Elementals",
+        "text": "The lava elementals are surging up from the fissures and cutting off our supply lines. Destroy 10 of them and bring back 5 ember cores as proof. Be careful -- they pulse heat as they die.",
+        "completion": "Good work. The fissures seem calmer for now. These cores could be useful to our artificers.",
+        "objectives": {
+          "0": {
+            "label": "Lava Elementals destroyed"
+          },
+          "1": {
+            "label": "Ember Cores collected"
+          }
+        }
+      },
+      "custom_q_hound_culling": {
+        "title": "The Hound Pack",
+        "text": "Magma hounds have been prowling the western ridgeline and attacking our scouts. Put down 8 of them and collect their pelts. The hide is fire-resistant -- we can use it for armor patches.",
+        "completion": "These pelts will do nicely. Our leatherworker will get them treated before the next patrol.",
+        "objectives": {
+          "0": {
+            "label": "Magma Hounds slain"
+          },
+          "1": {
+            "label": "Magma Hound Pelts"
+          }
+        }
+      },
+      "custom_q_troll_tide": {
+        "title": "Troll Tide",
+        "text": "The cinder trolls are massing to the north. They have claimed the old fire shrine and we cannot let them hold it. Kill 6 cinder trolls and bring me 4 of their tusks as trophies.",
+        "completion": "The shrine is ours again. Well fought.",
+        "objectives": {
+          "0": {
+            "label": "Cinder Trolls killed"
+          },
+          "1": {
+            "label": "Cinder Troll Tusks"
+          }
+        }
+      },
       "q_mogger_tracks": {
         "title": "La traccia di Mogger",
         "text": "Prima di prendere la strada a nord, Eastbrook ha un'ultima spina nel fianco: Mogger. Il bruto calpesta il prato basso e fa impazzire i cinghiali. Ripulisci il prato attorno alla sua traccia per scoprire dove si tana.",
@@ -5950,6 +6042,24 @@ export const it_IT: EnTranslations = {
           },
           "9": {
             "label": "Santuario del Gravewyrm"
+          }
+        }
+      },
+      "custom_cinderhold": {
+        "name": "The Cinderhold",
+        "welcome": "The heat hits you before the smoke clears. Welcome to the Cinderhold.",
+        "pois": {
+          "0": {
+            "label": "Ember Watch"
+          },
+          "1": {
+            "label": "Western Ridge"
+          },
+          "2": {
+            "label": "The Ash Shrine"
+          },
+          "3": {
+            "label": "Colossus Lair"
           }
         }
       }

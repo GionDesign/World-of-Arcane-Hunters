@@ -4463,6 +4463,36 @@ export const zh_CN: EnTranslations = {
       },
       "vanguard_chrome_armor_plate": {
         "name": "先锋铬银"
+      },
+      "custom_ember_core": {
+        "name": "炽热灰烬核心"
+      },
+      "custom_magma_pelt": {
+        "name": "焦烤熔岩猎犬毛皮"
+      },
+      "custom_cinder_tusk": {
+        "name": "煤渣巨魔獠牙"
+      },
+      "custom_slag_fragment": {
+        "name": "炉渣碎片"
+      },
+      "custom_ash_bone": {
+        "name": "灰烬骸骨"
+      },
+      "custom_blaze_reaver": {
+        "name": "烈焰巨刃"
+      },
+      "custom_inferno_staff": {
+        "name": "地狱法杖"
+      },
+      "custom_cinderfang_dagger": {
+        "name": "焰牙匕首"
+      },
+      "custom_fire_resistance_potion": {
+        "name": "火焰抵抗药水"
+      },
+      "custom_charred_ration": {
+        "name": "炭化野战口粮"
       }
     },
     "mobs": {
@@ -4666,6 +4696,24 @@ export const zh_CN: EnTranslations = {
       },
       "brightwood_monarch": {
         "name": "明木君主"
+      },
+      "custom_lava_elemental": {
+        "name": "熔岩元素"
+      },
+      "custom_ember_imp": {
+        "name": "火焰小鬼"
+      },
+      "custom_magma_hound": {
+        "name": "岩浆猎犬"
+      },
+      "custom_cinder_troll": {
+        "name": "煤渣巨魔"
+      },
+      "custom_flamecaller": {
+        "name": "召火者"
+      },
+      "custom_molten_colossus": {
+        "name": "熔融巨人"
       },
       "elder_bristleback": {
         "name": "年长硬鬃"
@@ -4890,6 +4938,11 @@ export const zh_CN: EnTranslations = {
         "name": "奥德里克修士",
         "title": "山谷牧师",
         "greeting": "从礼拜堂墓地到世界屋脊... 线索到这里结束。我感觉山正在聆听。"
+      },
+      "custom_warden_cael": {
+        "name": "守护者卡尔",
+        "title": "余烬哨站指挥官",
+        "greeting": "炽焰坑每时每刻都愈发危险。我们需要每一双能干的手。"
       },
       "tidewatcher_ondrel": {
         "name": "翁德雷尔·凡恩",
@@ -5769,6 +5822,45 @@ export const zh_CN: EnTranslations = {
           }
         }
       },
+      "custom_q_quench_the_elementals": {
+        "title": "镇压元素",
+        "text": "熔岩元素正从裂缝中涌出，切断了我们的补给线。消灭10只并带回5个余烬核心作为证明。小心——它们濒死时会喷发热浪。",
+        "completion": "干得好。裂缝似乎暂时平静下来了。这些核心对我们的工匠或许有用。",
+        "objectives": {
+          "0": {
+            "label": "消灭的熔岩元素"
+          },
+          "1": {
+            "label": "收集的余烬核心"
+          }
+        }
+      },
+      "custom_q_hound_culling": {
+        "title": "猎犬种群",
+        "text": "岩浆猎犬一直在西部山脊游荡并袭击我们的斥候。消灭8只并收集它们的毛皮。这种皮质耐火——我们可以用来修补铠甲。",
+        "completion": "这些毛皮很不错。我们的皮革匠会在下次巡逻前将它们处理好。",
+        "objectives": {
+          "0": {
+            "label": "击杀的岩浆猎犬"
+          },
+          "1": {
+            "label": "岩浆猎犬毛皮"
+          }
+        }
+      },
+      "custom_q_troll_tide": {
+        "title": "巨魔潮",
+        "text": "煤渣巨魔正在北部集结。他们占据了古老的火焰神祠，我们不能让他们守住它。杀死6只煤渣巨魔，并带回4根他们的獠牙作为战利品。",
+        "completion": "神祠再度归我们所有。干得好。",
+        "objectives": {
+          "0": {
+            "label": "击杀的煤渣巨魔"
+          },
+          "1": {
+            "label": "煤渣巨魔獠牙"
+          }
+        }
+      },
       "q_mogger_tracks": {
         "title": "莫格的踪迹",
         "text": "在你踏上北路前，东溪还有最后一根刺：莫格。那蛮兽践踏下方草地，把野猪都逼疯了。清理它踪迹周围的草地，我们才能看出它藏在哪里。",
@@ -5950,6 +6042,24 @@ export const zh_CN: EnTranslations = {
           },
           "9": {
             "label": "墓龙圣所"
+          }
+        }
+      },
+      "custom_cinderhold": {
+        "name": "炽焰坑",
+        "welcome": "烟雾散去之前，热浪已先行来袭。欢迎来到炽焰坑。",
+        "pois": {
+          "0": {
+            "label": "余烬哨站"
+          },
+          "1": {
+            "label": "西部山脊"
+          },
+          "2": {
+            "label": "灰烬神祠"
+          },
+          "3": {
+            "label": "巨人巢穴"
           }
         }
       }

@@ -3602,4 +3602,15 @@ export const fr_FR: Partial<Record<TranslationKey, string>> = {
   "guide.worldPage.valePlaceNotes": "Eastbrook est votre premier camp de base. La Course du Loup et le Pré du Sanglier sont des terrains de chasse cléments ; le lac Miroir est une eau calme où pêcher ; le Bois des toiles et la Mine de cuivre cachent araignées et fouisseurs avides de minerai ; un Camp de bandits et la Chapelle déchue gardent des besognes plus rudes ; la clairière de Brightwood est un paisible bosquet sauvage au nord.",
   // APM telemetry label from release/v0.14.0
   "hudChrome.perf.labels.apm": "APM",
+  // Cinderhold custom items
+  "entities.items.custom_ember_core.name": "Noyau de braise ardente",
+  "entities.items.custom_magma_pelt.name": "Peau de chien de magma roussie",
+  "entities.items.custom_cinder_tusk.name": "Defenses de troll de cendres",
+  "entities.items.custom_slag_fragment.name": "Fragment de scories",
+  "entities.items.custom_ash_bone.name": "Os de cendres",
+  "entities.items.custom_blaze_reaver.name": "Ravageur de flammes",
+  "entities.items.custom_inferno_staff.name": "Baton infernal",
+  "entities.items.custom_cinderfang_dagger.name": "Dague Crochetisonnante",
+  "entities.items.custom_fire_resistance_potion.name": "Potion de resistance au feu",
+  "entities.items.custom_charred_ration.name": "Ration de campagne carbonisee",
 };

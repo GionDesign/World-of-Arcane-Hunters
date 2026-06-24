@@ -3602,4 +3602,15 @@ export const de_DE: Partial<Record<TranslationKey, string>> = {
   "guide.worldPage.valePlaceNotes": "Eastbrook ist deine erste Heimatbasis. Der Wolfslauf und die Eberwiese sind sanftes Jagdgebiet; der Spiegelsee ist stilles Wasser zum Angeln; der Netzwald und die Kupfergrube verbergen Spinnen und erzgierige Schaufler; ein Banditenlager und die Gefallene Kapelle bergen rauere Arbeit; Brightwood Glade ist ein ruhiger Wildtierhain im Norden.",
   // APM telemetry label from release/v0.14.0
   "hudChrome.perf.labels.apm": "APM",
+  // Cinderhold custom items
+  "entities.items.custom_ember_core.name": "Schwelender Glutkern",
+  "entities.items.custom_magma_pelt.name": "Versengtes Magmabestien-Fell",
+  "entities.items.custom_cinder_tusk.name": "Aschetrolls Stosszahn",
+  "entities.items.custom_slag_fragment.name": "Schlackensplitter",
+  "entities.items.custom_ash_bone.name": "Aschenknochen",
+  "entities.items.custom_blaze_reaver.name": "Flammenbrecher",
+  "entities.items.custom_inferno_staff.name": "Infernalischer Stab",
+  "entities.items.custom_cinderfang_dagger.name": "Glutfang-Dolch",
+  "entities.items.custom_fire_resistance_potion.name": "Trank der Feuerresistenz",
+  "entities.items.custom_charred_ration.name": "Verkohlte Feldration",
 };

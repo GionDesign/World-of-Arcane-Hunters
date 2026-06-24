@@ -3602,4 +3602,15 @@ export const pt_BR: Partial<Record<TranslationKey, string>> = {
   "guide.worldPage.valePlaceNotes": "Eastbrook é sua primeira base de operações. A Corrida dos Lobos e o Prado dos Javalis são terreno de caça ameno; o Lago Espelho é água tranquila para pescar; a Mata das Teias e a Escavação de Cobre escondem aranhas e escavadores gananciosos por minério; um Acampamento de Bandidos e a Capela Decaída guardam trabalhos mais duros; a Clareira de Brightwood é um bosque calmo de vida selvagem no norte.",
   // APM telemetry label from release/v0.14.0
   "hudChrome.perf.labels.apm": "APM",
+  // Cinderhold custom items
+  "entities.items.custom_ember_core.name": "Nucleo de Brasa Fumegante",
+  "entities.items.custom_magma_pelt.name": "Pele Chamuscada de Cao de Magma",
+  "entities.items.custom_cinder_tusk.name": "Presa de Troll de Cinza",
+  "entities.items.custom_slag_fragment.name": "Fragmento de Escoria",
+  "entities.items.custom_ash_bone.name": "Osso de Cinza",
+  "entities.items.custom_blaze_reaver.name": "Ceifador de Chamas",
+  "entities.items.custom_inferno_staff.name": "Cajado Infernal",
+  "entities.items.custom_cinderfang_dagger.name": "Adaga Presa-Carvao",
+  "entities.items.custom_fire_resistance_potion.name": "Pocao de Resistencia ao Fogo",
+  "entities.items.custom_charred_ration.name": "Racao de Campo Carbonizada",
 };

@@ -4463,6 +4463,36 @@ export const ko_KR: EnTranslations = {
       },
       "vanguard_chrome_armor_plate": {
         "name": "선봉대 크롬"
+      },
+      "custom_ember_core": {
+        "name": "이글거리는 불씨 핵"
+      },
+      "custom_magma_pelt": {
+        "name": "그을린 용암 사냥개 가죽"
+      },
+      "custom_cinder_tusk": {
+        "name": "잿더미 트롤 엄니"
+      },
+      "custom_slag_fragment": {
+        "name": "슬래그 파편"
+      },
+      "custom_ash_bone": {
+        "name": "재 뼈"
+      },
+      "custom_blaze_reaver": {
+        "name": "화염 격파자"
+      },
+      "custom_inferno_staff": {
+        "name": "지옥불 지팡이"
+      },
+      "custom_cinderfang_dagger": {
+        "name": "잿불송곳니 단검"
+      },
+      "custom_fire_resistance_potion": {
+        "name": "화염 저항 물약"
+      },
+      "custom_charred_ration": {
+        "name": "탄화 야전 식량"
       }
     },
     "mobs": {
@@ -4666,6 +4696,24 @@ export const ko_KR: EnTranslations = {
       },
       "brightwood_monarch": {
         "name": "브라이트우드의 군주"
+      },
+      "custom_lava_elemental": {
+        "name": "용암 정령"
+      },
+      "custom_ember_imp": {
+        "name": "불씨 임프"
+      },
+      "custom_magma_hound": {
+        "name": "마그마 사냥개"
+      },
+      "custom_cinder_troll": {
+        "name": "잿불 트롤"
+      },
+      "custom_flamecaller": {
+        "name": "화염 소환사"
+      },
+      "custom_molten_colossus": {
+        "name": "용융 거인"
       },
       "elder_bristleback": {
         "name": "늙은 뻣센등뼈"
@@ -4890,6 +4938,11 @@ export const ko_KR: EnTranslations = {
         "name": "알드릭 수사",
         "title": "계곡의 사제",
         "greeting": "예배당 묘지에서 세상의 지붕까지... 흔적은 여기서 끝납니다. 산이 듣고 있음을 느낍니다."
+      },
+      "custom_warden_cael": {
+        "name": "수호자 카엘",
+        "title": "불씨 초소 사령관",
+        "greeting": "화염소굴은 시간이 갈수록 더 위험해지고 있습니다. 모든 도움의 손길이 필요합니다."
       },
       "tidewatcher_ondrel": {
         "name": "온드렐 베인",
@@ -5769,6 +5822,45 @@ export const ko_KR: EnTranslations = {
           }
         }
       },
+      "custom_q_quench_the_elementals": {
+        "title": "정령을 잠재워라",
+        "text": "용암 정령들이 균열에서 솟아올라 보급선을 끊고 있습니다. 10마리를 처치하고 증거로 불씨 핵 5개를 가져오세요. 주의하세요 -- 죽어가면서 열기를 내뿜습니다.",
+        "completion": "잘했습니다. 균열이 한동안 잠잠해진 것 같습니다. 이 핵들은 장인에게 유용할 수 있습니다.",
+        "objectives": {
+          "0": {
+            "label": "처치한 용암 정령"
+          },
+          "1": {
+            "label": "수집한 불씨 핵"
+          }
+        }
+      },
+      "custom_q_hound_culling": {
+        "title": "사냥개 무리",
+        "text": "마그마 사냥개들이 서쪽 능선을 배회하며 우리 정찰병을 공격하고 있습니다. 8마리를 처치하고 가죽을 수집하세요. 가죽은 내화성이 있어 갑옷 수리에 사용할 수 있습니다.",
+        "completion": "이 가죽들이 좋겠군요. 가죽 장인이 다음 순찰 전에 처리할 것입니다.",
+        "objectives": {
+          "0": {
+            "label": "처치한 마그마 사냥개"
+          },
+          "1": {
+            "label": "마그마 사냥개 가죽"
+          }
+        }
+      },
+      "custom_q_troll_tide": {
+        "title": "트롤 물결",
+        "text": "잿불 트롤들이 북쪽에 집결하고 있습니다. 그들은 오래된 화염 신전을 점령했으며 그들이 지키게 둘 수 없습니다. 잿불 트롤 6마리를 처치하고 전리품으로 엄니 4개를 가져오세요.",
+        "completion": "신전을 다시 되찾았습니다. 잘 싸웠습니다.",
+        "objectives": {
+          "0": {
+            "label": "처치한 잿불 트롤"
+          },
+          "1": {
+            "label": "잿불 트롤 엄니"
+          }
+        }
+      },
       "q_mogger_tracks": {
         "title": "모거의 흔적",
         "text": "북쪽 길을 떠나기 전에 이스트브룩에는 마지막 골칫거리, 모거가 남았습니다. 그 짐승은 아래 초원을 짓밟고 멧돼지를 미치게 합니다. 흔적 주변의 초원을 정리해 은신처를 찾아내십시오.",
@@ -5950,6 +6042,24 @@ export const ko_KR: EnTranslations = {
           },
           "9": {
             "label": "무덤고룡 성소"
+          }
+        }
+      },
+      "custom_cinderhold": {
+        "name": "화염소굴",
+        "welcome": "연기가 걷히기 전에 열기가 먼저 덮쳐옵니다. 화염소굴에 오신 것을 환영합니다.",
+        "pois": {
+          "0": {
+            "label": "불씨 초소"
+          },
+          "1": {
+            "label": "서부 능선"
+          },
+          "2": {
+            "label": "재의 신전"
+          },
+          "3": {
+            "label": "거인의 소굴"
           }
         }
       }

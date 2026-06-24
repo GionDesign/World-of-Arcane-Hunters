@@ -3602,4 +3602,15 @@ export const es: Partial<Record<TranslationKey, string>> = {
   "guide.worldPage.valePlaceNotes": "Eastbrook es tu primera base de operaciones. Wolf Run y el Prado de los Jabalíes son terreno de caza apacible; el Lago Espejo es agua tranquila para pescar; el Bosque de Telarañas y la Excavación de Cobre ocultan arañas y excavadores ávidos de mineral; un Campamento de Bandidos y la Capilla Caída albergan trabajos más recios; la arboleda de Brightwood es una apacible arboleda de fauna salvaje en el norte.",
   // APM telemetry label from release/v0.14.0
   "hudChrome.perf.labels.apm": "APM",
+  // Cinderhold custom items
+  "entities.items.custom_ember_core.name": "Nucleo de ascua ardiente",
+  "entities.items.custom_magma_pelt.name": "Piel chamuscada de sabueso de magma",
+  "entities.items.custom_cinder_tusk.name": "Colmillo de trol de ceniza",
+  "entities.items.custom_slag_fragment.name": "Fragmento de escoria",
+  "entities.items.custom_ash_bone.name": "Hueso de ceniza",
+  "entities.items.custom_blaze_reaver.name": "Segador de llamas",
+  "entities.items.custom_inferno_staff.name": "Baston igneo",
+  "entities.items.custom_cinderfang_dagger.name": "Daga Colmillobrasa",
+  "entities.items.custom_fire_resistance_potion.name": "Pocion de resistencia al fuego",
+  "entities.items.custom_charred_ration.name": "Racion de campo carbonizada",
 };

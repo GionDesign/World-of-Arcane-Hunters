@@ -4463,6 +4463,36 @@ export const ja_JP: EnTranslations = {
       },
       "vanguard_chrome_armor_plate": {
         "name": "ヴァンガードクローム"
+      },
+      "custom_ember_core": {
+        "name": "くすぶる灰の核"
+      },
+      "custom_magma_pelt": {
+        "name": "焦げたマグマハウンドの毛皮"
+      },
+      "custom_cinder_tusk": {
+        "name": "灰トロルの牙"
+      },
+      "custom_slag_fragment": {
+        "name": "スラグの欠片"
+      },
+      "custom_ash_bone": {
+        "name": "灰の骨"
+      },
+      "custom_blaze_reaver": {
+        "name": "ブレイズリーパー"
+      },
+      "custom_inferno_staff": {
+        "name": "インフェルノスタッフ"
+      },
+      "custom_cinderfang_dagger": {
+        "name": "シンダーファングダガー"
+      },
+      "custom_fire_resistance_potion": {
+        "name": "炎耐性ポーション"
+      },
+      "custom_charred_ration": {
+        "name": "焦げた野戦食"
       }
     },
     "mobs": {
@@ -4666,6 +4696,24 @@ export const ja_JP: EnTranslations = {
       },
       "brightwood_monarch": {
         "name": "ブライトウッドの君主"
+      },
+      "custom_lava_elemental": {
+        "name": "溶岩エレメンタル"
+      },
+      "custom_ember_imp": {
+        "name": "灰の小悪魔"
+      },
+      "custom_magma_hound": {
+        "name": "マグマハウンド"
+      },
+      "custom_cinder_troll": {
+        "name": "灰トロル"
+      },
+      "custom_flamecaller": {
+        "name": "炎の召喚師"
+      },
+      "custom_molten_colossus": {
+        "name": "溶融巨人"
       },
       "elder_bristleback": {
         "name": "老ブリストルバック"
@@ -4890,6 +4938,11 @@ export const ja_JP: EnTranslations = {
         "name": "アルドリック修道士",
         "title": "谷の司祭",
         "greeting": "礼拝堂の墓地から世界の屋根まで... 足跡はここで終わります。山が耳を澄ませているのを感じます。"
+      },
+      "custom_warden_cael": {
+        "name": "守護者カエル",
+        "title": "炎の見張り隊長",
+        "greeting": "灰炎の穴はますます危険になっています。できる限りの助けが必要です。"
       },
       "tidewatcher_ondrel": {
         "name": "オンドレル・ヴェイン",
@@ -5769,6 +5822,45 @@ export const ja_JP: EnTranslations = {
           }
         }
       },
+      "custom_q_quench_the_elementals": {
+        "title": "エレメンタルを鎮圧せよ",
+        "text": "溶岩エレメンタルが亀裂から湧き出て補給線を断っています。10体を倒し、証拠として炎の核を5つ持ち帰ってください。注意してください -- 死ぬ際に熱波を放ちます。",
+        "completion": "よくやった。亀裂は今のところ落ち着いているようです。これらの核は職人に役立つかもしれません。",
+        "objectives": {
+          "0": {
+            "label": "倒した溶岩エレメンタル"
+          },
+          "1": {
+            "label": "収集した炎の核"
+          }
+        }
+      },
+      "custom_q_hound_culling": {
+        "title": "猟犬の群れ",
+        "text": "マグマハウンドが西の稜線をうろついて偵察兵を襲っています。8体を倒して毛皮を集めてください。毛皮は耐火性があり、鎧の修繕に使えます。",
+        "completion": "これらの毛皮は役に立つでしょう。次の哨戒前に皮革職人が処理します。",
+        "objectives": {
+          "0": {
+            "label": "倒したマグマハウンド"
+          },
+          "1": {
+            "label": "マグマハウンドの毛皮"
+          }
+        }
+      },
+      "custom_q_troll_tide": {
+        "title": "トロルの波",
+        "text": "灰トロルが北で集結しています。彼らは古い炎の聖堂を占領しており、保持させるわけにはいきません。灰トロルを6体倒し、戦利品として牙を4本持ち帰ってください。",
+        "completion": "聖堂を取り戻しました。よく戦いました。",
+        "objectives": {
+          "0": {
+            "label": "倒した灰トロル"
+          },
+          "1": {
+            "label": "灰トロルの牙"
+          }
+        }
+      },
       "q_mogger_tracks": {
         "title": "モガーの足跡",
         "text": "北への道を進む前に、イーストブルックには最後の厄介者がいます。モガーです。あの巨獣は低い草地を踏み荒らし、猪を狂わせています。足跡の周囲を片付け、巣を見つけられるようにしてください。",
@@ -5950,6 +6042,24 @@ export const ja_JP: EnTranslations = {
           },
           "9": {
             "label": "墓ワームの聖所"
+          }
+        }
+      },
+      "custom_cinderhold": {
+        "name": "灰炎の穴",
+        "welcome": "煙が晴れる前に熱気が押し寄せてきます。灰炎の穴へようこそ。",
+        "pois": {
+          "0": {
+            "label": "炎の見張り所"
+          },
+          "1": {
+            "label": "西部の稜線"
+          },
+          "2": {
+            "label": "灰の聖堂"
+          },
+          "3": {
+            "label": "巨人の巣"
           }
         }
       }
