@@ -4569,6 +4569,36 @@ export const de_DE: EnTranslations = {
       },
       "vanguard_chrome_armor_plate": {
         "name": "Vorhut-Chrom"
+      },
+      "custom_ember_core": {
+        "name": "Schwelender Glutkern"
+      },
+      "custom_magma_pelt": {
+        "name": "Versengtes Magmabestien-Fell"
+      },
+      "custom_cinder_tusk": {
+        "name": "Aschetrolls Stosszahn"
+      },
+      "custom_slag_fragment": {
+        "name": "Schlackensplitter"
+      },
+      "custom_ash_bone": {
+        "name": "Aschenknochen"
+      },
+      "custom_blaze_reaver": {
+        "name": "Flammenbrecher"
+      },
+      "custom_inferno_staff": {
+        "name": "Infernalischer Stab"
+      },
+      "custom_cinderfang_dagger": {
+        "name": "Glutfang-Dolch"
+      },
+      "custom_fire_resistance_potion": {
+        "name": "Trank der Feuerresistenz"
+      },
+      "custom_charred_ration": {
+        "name": "Verkohlte Feldration"
       }
     },
     "mobs": {
@@ -4739,6 +4769,60 @@ export const de_DE: EnTranslations = {
       },
       "nythraxis_scourge_of_thornpeak": {
         "name": "Nythraxis, Geißel von Thornpeak"
+      },
+      "brightwood_hare": {
+        "name": "Hellholz-Hase"
+      },
+      "glade_fox": {
+        "name": "Lichtungsfuchs"
+      },
+      "spotted_fawn": {
+        "name": "Geflecktes Hirschkalb"
+      },
+      "meadow_crane": {
+        "name": "Wiesenkranich"
+      },
+      "thornpelt_badger": {
+        "name": "Dornpelz-Dachs"
+      },
+      "dawnmane_doe": {
+        "name": "Morgenmähnen-Hirschkuh"
+      },
+      "bramble_lynx": {
+        "name": "Dornenluchs"
+      },
+      "brightwood_stag": {
+        "name": "Hellholz-Hirsch"
+      },
+      "grovetusk_boar": {
+        "name": "Hainhauer-Keiler"
+      },
+      "sunhide_bear": {
+        "name": "Sonnenfell-Bär"
+      },
+      "brightwood_monarch": {
+        "name": "Der Hellholz-Monarch"
+      },
+      "custom_lava_elemental": {
+        "name": "Lava Elemental"
+      },
+      "custom_ember_imp": {
+        "name": "Ember Imp"
+      },
+      "custom_magma_hound": {
+        "name": "Magma Hound"
+      },
+      "custom_cinder_troll": {
+        "name": "Cinder Troll"
+      },
+      "custom_flamecaller": {
+        "name": "Flamecaller"
+      },
+      "custom_molten_colossus": {
+        "name": "Molten Colossus"
+      },
+      "elder_bristleback": {
+        "name": "Alter Bristleback"
       },
       "ironvein_foreman": {
         "name": "Eisenader-Vorarbeiter"
@@ -4949,6 +5033,11 @@ export const de_DE: EnTranslations = {
         "name": "Bruder Aldric",
         "title": "Priester des Tals",
         "greeting": "Vom Kapellenhof im Tal bis zum Dach der Welt... die Spur endet hier. Ich spüre, wie der Berg lauscht."
+      },
+      "custom_warden_cael": {
+        "name": "Warden Cael",
+        "title": "Ember Watch Commander",
+        "greeting": "The Cinderhold grows more dangerous by the hour. We need every able hand."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -5699,6 +5788,184 @@ export const de_DE: EnTranslations = {
           }
         }
       },
+      "q_brightwood_thinning": {
+        "title": "Die Lichtung ausdünnen",
+        "text": "Die Hellholz-Lichtung ist überlaufen, {playerName}. Die Dornenluchse vermehren sich schneller, als ich sie ausmerzen kann, und die Herden zertrampeln das wenige Weideland, das noch bleibt. Erlegt 8 Dornenluchse und bringt mir 6 Lichtungsfelle, damit ich über das Wohl der übrigen urteilen kann.",
+        "completion": "Gut. Das Rudel ist ausgedünnt und diese Felle sind heil - die Lichtung wird eine weitere Jahreszeit überstehen.",
+        "objectives": {
+          "0": {
+            "label": "Dornenluchse erlegt"
+          },
+          "1": {
+            "label": "Lichtungsfell"
+          }
+        }
+      },
+      "q_brightwood_monarch": {
+        "title": "Der Hellholz-Monarch",
+        "text": "Es gibt eine Bestie, auf die ich allein keinen Pfeil löse: den Hellholz-Monarchen, den großen Hirsch, der über die tiefe Lichtung herrscht. Er ist alt und wild geworden und spießt jeden auf, der seinem Bau zu nahe kommt. Er ist mehr, als ein einzelner Jäger gewachsen ist - bringt einen Freund oder zwei mit. Bettet ihn zur Ruhe und bringt mir sein Herz, {playerName}.",
+        "completion": "So ist der alte König also gefallen. Eine schwere Sache, dies - doch ein gnädigeres Ende, als die Wölfe ihm beschert hätten. Tragt diese Krone aus seinem Geweih mit Achtung, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Das Herz des Monarchen"
+          }
+        }
+      },
+      "q_ledger_first_duty": {
+        "title": "Eines Hüters erste Pflicht",
+        "text": "Ihr wollt Euch in Eastbrook Euren Unterhalt verdienen, {playerName}? Dann fangt dort an, wo jeder Hüter anfängt. Die Dornpelz-Dachse haben ihre Baue quer durch die Hellholz-Lichtung gegraben, hoch im Norden jenseits des Wolfslaufs, und der Waldboden bricht in ihre Gänge ein. Erlegt 8 Dornpelz-Dachse, und das Verzeichnis wird sich Eures Namens entsinnen.",
+        "completion": "Acht Baue geräumt und der Waldboden hat sich gesetzt. Gut. Jeder Name in diesem Verzeichnis hat genau dort begonnen, wo Ihr jetzt steht.",
+        "objectives": {
+          "0": {
+            "label": "Dornpelz-Dachs erlegt"
+          }
+        }
+      },
+      "q_ledger_teeth": {
+        "title": "Zähne in der Dunkelheit",
+        "text": "Die Lichtungsfüchse sind kühn geworden wie Wölfe - sie schleichen sich in der Dämmerung in die Hühnerställe und sind verschwunden, ehe eine Laterne brennt, und eine hungrige Füchsin reißt ein Lamm so bereitwillig wie ein Huhn. Lichtet ihre Reihen, {playerName}. Erlegt 10 Lichtungsfüchse und lehrt den Rest, das Licht wieder zu fürchten.",
+        "completion": "Zehn Füchse, und die Hühnerställe sind in der Dämmerung wieder still. Das Verzeichnis wird Euch gnädiger.",
+        "objectives": {
+          "0": {
+            "label": "Lichtungsfüchse erlegt"
+          }
+        }
+      },
+      "q_ledger_reedwater": {
+        "title": "Schilfwasser-Patrouille",
+        "text": "Redbrook hat Euch geschickt? Gut - diese alten Knochen können nicht mehr durch die Untiefen waten. Die Wiesenkraniche haben meine Netze entdeckt, und sie spießen mehr von meinem Fang auf, als es die Schlammflossen je taten. Lichtet ihre Reihen: 8 Wiesenkraniche, und hütet Euch vor dem tiefen Wasser.",
+        "completion": "Das hält die langbeinigen Diebe eine Jahreszeit lang von meinen Netzen fern. Sagt dem Marschall, die Untiefen gehören wieder mir.",
+        "objectives": {
+          "0": {
+            "label": "Wiesenkraniche vertrieben"
+          }
+        }
+      },
+      "q_ledger_silk": {
+        "title": "Äsung und Gestrüpp",
+        "text": "Das Verzeichnis weist auch die östlichen Wälder als Hüterland aus - und meine Heilkräuterbeete gehören dazu. Die gefleckten Kitze haben mein Silberblatt und meine Blutdistel bis zur Wurzel abgefressen, und ohne diese Heilkräuter bleibt halb Eastbrook ohne Medizin. Es bereitet mir keine Freude, doch erlegt 8 Gefleckte Kitze, ehe die Herbstkräuter gänzlich verloren sind.",
+        "completion": "Die Beete mögen sich noch erholen, dank Euch. Eine harte Gnade - doch ein Kind, das im Fieber brennt, braucht die Heilkräuter dringender, als der Wald die Rehe braucht. Das Verzeichnis ist beglichen.",
+        "objectives": {
+          "0": {
+            "label": "Gefleckte Kitze erlegt"
+          }
+        }
+      },
+      "q_ledger_brood": {
+        "title": "Die laichende Finsternis",
+        "text": "Die Lauerer zu töten machte nur der Brut Platz. Die Schwarzweber-Brütlinge strömen aus dem tiefen Nest, und hundert kleine Fänge töten einen Reisenden ebenso sicher wie ein großer. Zermalmt 8 Schwarzweber-Brütlinge, ehe sie heranwachsen.",
+        "completion": "Ein grimmiges Werk, ein Nest zu ertränken. Doch Gnade jetzt erspart hundert Begräbnisse später. Die Schuld ist beglichen.",
+        "objectives": {
+          "0": {
+            "label": "Schwarzweber-Brütlinge zermalmt"
+          }
+        }
+      },
+      "q_ledger_deepvermin": {
+        "title": "Ungeziefer in der Tiefe",
+        "text": "Im Verzeichnis des Marschalls steht, Ihr räumt mit Schädlingen auf. Nun, mein Stollen hat die schlimmsten von ihnen. Die Tunnelratten vermehren sich schneller, als meine Mannschaft die Spitzhacke schwingen kann - legt 12 Tunnelratten-Gräber um, und vielleicht stoßen wir vor dem Winter auf Kupfer.",
+        "completion": "Zwölf des kerzenköpfigen Ungeziefers, dahin! Recht so, Burschen - zurück in den Schacht. Ihr habt Euch ein gutes Wort beim Marschall verdient, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Tunnelratten-Gräber erlegt"
+          }
+        }
+      },
+      "q_ledger_toll": {
+        "title": "Die Straße der Hauer",
+        "text": "Die Hainhauer-Keiler sind aus dem Lichtwald herabgekommen und auf die südöstliche Handelsstraße - mächtige, hauerbewehrte Bestien, die die Zugochsen aufspießen und die Karren umstürzen, um das verschüttete Korn zu fressen. Das Verzeichnis hat auf jeden von ihnen einen Preis gesetzt. Macht die Straße wieder frei: streckt 8 Hainhauer-Keiler nieder.",
+        "completion": "Acht Bestien fort von der Straße, und die Karren rollen wieder. Es spricht sich bereits herum, dass die Handelsstraße einen neuen Hüter hat. Das Verzeichnis steigt zu Euren Gunsten.",
+        "objectives": {
+          "0": {
+            "label": "Hainhauer-Keiler erlegt"
+          }
+        }
+      },
+      "q_ledger_vigil": {
+        "title": "Wache an der Kapelle",
+        "text": "Der Marschall schickt seine Hüter zu mir, wenn die Not über die Reichweite von Schwertern allein hinausgeht. Die Toten der Kapelle wollen nicht stillliegen, und ich bin zu alt, um die Nachtwache zu halten. Haltet sie für mich, {playerName} - bettet 10 Ruhelose Gebeine zurück zu ihrer Ruhe.",
+        "completion": "Zehn Seelen der Erde zurückgegeben und eine Nacht des Friedens für die Kapelle erkauft. Das Licht entsinnt sich solcher Wachen, selbst wenn das Verzeichnis sie vergisst.",
+        "objectives": {
+          "0": {
+            "label": "Ruhelose Gebeine zur Ruhe gebettet"
+          }
+        }
+      },
+      "q_ledger_great_boar": {
+        "title": "Der Große Borstenrücken",
+        "text": "In den westlichen Dickichten haust ein alter Eberbulle - der Alte Borstenrücken, mit einer Haut wie Borke und einem Gemüt, das dazu passt. Er hat zwei meiner Fellläufer aufgespießt. Bringt ihn zur Strecke und räumt 6 der geringeren Wildschweine fort, die sich hinter ihm verbergen, und ich werde Euren Namen hoch oben im Verzeichnis eintragen.",
+        "completion": "Der Alte Borstenrücken, von Eurer Hand erschlagen! Allein dieses Fell ist eine Handelssaison wert. Ihr habt das Verzeichnis stolz gemacht, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Alter Borstenrücken erlegt"
+          },
+          "1": {
+            "label": "Wildschweine der Rotte erlegt"
+          }
+        }
+      },
+      "q_ledger_outlaw_captain": {
+        "title": "Der Räuberhauptmann",
+        "text": "Der letzte Name im Verzeichnis ist der, den ich seit einem Jahr gestrichen sehen will: Hauptmann Verlan, der das halbe Tal in die Räuberei trieb. Er verschanzt sich hinter seinen Leutnants im südöstlichen Lager. Streckt 6 Talbanditen nieder, um zu ihm vorzudringen, und macht dann Verlan selbst ein Ende. Geht nicht allein.",
+        "completion": "Hauptmann Verlan, tot, und sein Mantel vor meiner Tür. Das Verzeichnis ist geschlossen, {playerName} - und das Tal wird den Hütern, die nach Euch kommen, den Namen dessen nennen, der es geschlossen hat.",
+        "objectives": {
+          "0": {
+            "label": "Talbanditen niedergestreckt"
+          },
+          "1": {
+            "label": "Hauptmann Verlan erlegt"
+          }
+        }
+      },
+      "custom_q_quench_the_elementals": {
+        "title": "Quench the Elementals",
+        "text": "The lava elementals are surging up from the fissures and cutting off our supply lines. Destroy 10 of them and bring back 5 ember cores as proof. Be careful -- they pulse heat as they die.",
+        "completion": "Good work. The fissures seem calmer for now. These cores could be useful to our artificers.",
+        "objectives": {
+          "0": {
+            "label": "Lava Elementals destroyed"
+          },
+          "1": {
+            "label": "Ember Cores collected"
+          }
+        }
+      },
+      "custom_q_hound_culling": {
+        "title": "The Hound Pack",
+        "text": "Magma hounds have been prowling the western ridgeline and attacking our scouts. Put down 8 of them and collect their pelts. The hide is fire-resistant -- we can use it for armor patches.",
+        "completion": "These pelts will do nicely. Our leatherworker will get them treated before the next patrol.",
+        "objectives": {
+          "0": {
+            "label": "Magma Hounds slain"
+          },
+          "1": {
+            "label": "Magma Hound Pelts"
+          }
+        }
+      },
+      "custom_q_troll_tide": {
+        "title": "Troll Tide",
+        "text": "The cinder trolls are massing to the north. They have claimed the old fire shrine and we cannot let them hold it. Kill 6 cinder trolls and bring me 4 of their tusks as trophies.",
+        "completion": "The shrine is ours again. Well fought.",
+        "objectives": {
+          "0": {
+            "label": "Cinder Trolls killed"
+          },
+          "1": {
+            "label": "Cinder Troll Tusks"
+          }
+        }
+      },
+      "q_mogger_tracks": {
+        "title": "Moggers Spur",
+        "text": "Bevor du die Straße nach Norden nimmst, hat Eastbrook noch einen letzten Dorn im Fleisch: Mogger. Der Grobian zertrampelt die untere Wiese und treibt die Eber in den Wahnsinn. Säubere die Wiese um seine Spur, damit wir sehen, wo er haust.",
+        "completion": "Diese Spuren sind frisch und tief genug, um Regen zu halten. Mogger ist kein Lagerfeuermärchen, {playerName}, und er ist nah.",
+        "objectives": {
+          "0": {
+            "label": "Wilder Eber von der Spur vertrieben"
+          }
+        }
+      },
       "q_mogger": {
         "title": "Mogger muss fallen",
         "text": "Mogger hat Karren gespalten, Zäune plattgewalzt und genug Vieh getötet, um das halbe Tal zu leeren. Stell dich ihm nicht allein. Nimm zwei starke Gefährten zur östlichen Wiese und leg den Grobian endgültig um.",
@@ -5870,6 +6137,24 @@ export const de_DE: EnTranslations = {
           },
           "9": {
             "label": "Gravewyrm-Heiligtum"
+          }
+        }
+      },
+      "custom_cinderhold": {
+        "name": "The Cinderhold",
+        "welcome": "The heat hits you before the smoke clears. Welcome to the Cinderhold.",
+        "pois": {
+          "0": {
+            "label": "Ember Watch"
+          },
+          "1": {
+            "label": "Western Ridge"
+          },
+          "2": {
+            "label": "The Ash Shrine"
+          },
+          "3": {
+            "label": "Colossus Lair"
           }
         }
       }

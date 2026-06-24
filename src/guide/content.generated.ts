@@ -1238,6 +1238,21 @@ export const GUIDE_ZONES: GuideZoneInfo[] = [
       "Gravewyrm Sanctum"
     ],
     "welcome": "Captain Thessaly holds the wall at Highwatch — barely."
+  },
+  {
+    "id": "custom_cinderhold",
+    "name": "The Cinderhold",
+    "min": 20,
+    "max": 20,
+    "biome": "peaks",
+    "hub": "Ember Watch",
+    "pois": [
+      "Ember Watch",
+      "Western Ridge",
+      "The Ash Shrine",
+      "Colossus Lair"
+    ],
+    "welcome": "The heat hits you before the smoke clears. Welcome to the Cinderhold."
   }
 ];
 

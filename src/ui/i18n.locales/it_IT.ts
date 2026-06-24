@@ -4404,4 +4404,15 @@ export const it_IT: Partial<Record<TranslationKey, string>> = {
   'hudChrome.account.exportDone':
     'I tuoi dati sono stati scaricati. Ti abbiamo inviato una conferma via email.',
   'hudChrome.account.exportFailed': 'Impossibile esportare i tuoi dati. Riprova tra un momento.',
+  // Cinderhold custom items
+  "entities.items.custom_ember_core.name": "Nucleo di braci ardenti",
+  "entities.items.custom_magma_pelt.name": "Pelle di segugio di magma bruciacchiata",
+  "entities.items.custom_cinder_tusk.name": "Zanna del troll delle ceneri",
+  "entities.items.custom_slag_fragment.name": "Frammento di scoria",
+  "entities.items.custom_ash_bone.name": "Osso di cenere",
+  "entities.items.custom_blaze_reaver.name": "Falciatore fiammante",
+  "entities.items.custom_inferno_staff.name": "Bastone infernale",
+  "entities.items.custom_cinderfang_dagger.name": "Pugnale Zannacenere",
+  "entities.items.custom_fire_resistance_potion.name": "Pozione di resistenza al fuoco",
+  "entities.items.custom_charred_ration.name": "Razione da campo carbonizzata",
 };

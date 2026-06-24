@@ -4569,6 +4569,36 @@ export const pt_BR: EnTranslations = {
       },
       "vanguard_chrome_armor_plate": {
         "name": "Vanguarda Cromada"
+      },
+      "custom_ember_core": {
+        "name": "Nucleo de Brasa Fumegante"
+      },
+      "custom_magma_pelt": {
+        "name": "Pele Chamuscada de Cao de Magma"
+      },
+      "custom_cinder_tusk": {
+        "name": "Presa de Troll de Cinza"
+      },
+      "custom_slag_fragment": {
+        "name": "Fragmento de Escoria"
+      },
+      "custom_ash_bone": {
+        "name": "Osso de Cinza"
+      },
+      "custom_blaze_reaver": {
+        "name": "Ceifador de Chamas"
+      },
+      "custom_inferno_staff": {
+        "name": "Cajado Infernal"
+      },
+      "custom_cinderfang_dagger": {
+        "name": "Adaga Presa-Carvao"
+      },
+      "custom_fire_resistance_potion": {
+        "name": "Pocao de Resistencia ao Fogo"
+      },
+      "custom_charred_ration": {
+        "name": "Racao de Campo Carbonizada"
       }
     },
     "mobs": {
@@ -4739,6 +4769,60 @@ export const pt_BR: EnTranslations = {
       },
       "nythraxis_scourge_of_thornpeak": {
         "name": "Nythraxis, Flagelo de Thornpeak"
+      },
+      "brightwood_hare": {
+        "name": "Lebre de Brightwood"
+      },
+      "glade_fox": {
+        "name": "Raposa da Clareira"
+      },
+      "spotted_fawn": {
+        "name": "Cervato Malhado"
+      },
+      "meadow_crane": {
+        "name": "Garça do Prado"
+      },
+      "thornpelt_badger": {
+        "name": "Texugo Pelo-de-espinho"
+      },
+      "dawnmane_doe": {
+        "name": "Corça Crina-da-aurora"
+      },
+      "bramble_lynx": {
+        "name": "Lince das Sarças"
+      },
+      "brightwood_stag": {
+        "name": "Cervo de Brightwood"
+      },
+      "grovetusk_boar": {
+        "name": "Javali Presa-do-bosque"
+      },
+      "sunhide_bear": {
+        "name": "Urso Pelo-do-sol"
+      },
+      "brightwood_monarch": {
+        "name": "O Monarca de Brightwood"
+      },
+      "custom_lava_elemental": {
+        "name": "Lava Elemental"
+      },
+      "custom_ember_imp": {
+        "name": "Ember Imp"
+      },
+      "custom_magma_hound": {
+        "name": "Magma Hound"
+      },
+      "custom_cinder_troll": {
+        "name": "Cinder Troll"
+      },
+      "custom_flamecaller": {
+        "name": "Flamecaller"
+      },
+      "custom_molten_colossus": {
+        "name": "Molten Colossus"
+      },
+      "elder_bristleback": {
+        "name": "Bristleback ancião"
       },
       "ironvein_foreman": {
         "name": "Capataz Veio de Ferro"
@@ -4949,6 +5033,11 @@ export const pt_BR: EnTranslations = {
         "name": "Irmão Aldric",
         "title": "Sacerdote do Vale",
         "greeting": "Do cemitério da capela ao teto do mundo... a trilha termina aqui. Sinto a montanha ouvindo."
+      },
+      "custom_warden_cael": {
+        "name": "Warden Cael",
+        "title": "Ember Watch Commander",
+        "greeting": "The Cinderhold grows more dangerous by the hour. We need every able hand."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -5699,6 +5788,184 @@ export const pt_BR: EnTranslations = {
           }
         }
       },
+      "q_brightwood_thinning": {
+        "title": "Reduzindo a Clareira",
+        "text": "A Clareira de Brightwood está infestada, {playerName}. Os linces das sarças se reproduzem mais rápido do que consigo abatê-los, e os rebanhos pisoteiam o pouco pasto que resta. Mate 8 Linces das Sarças e traga-me 6 Peles da clareira para que eu avalie a saúde do restante.",
+        "completion": "Bom. A alcateia foi reduzida e estas peles estão íntegras - a clareira aguentará mais uma estação.",
+        "objectives": {
+          "0": {
+            "label": "Lince das Sarças abatido"
+          },
+          "1": {
+            "label": "Pele da clareira"
+          }
+        }
+      },
+      "q_brightwood_monarch": {
+        "title": "O Monarca de Brightwood",
+        "text": "Há uma fera contra a qual não soltarei uma flecha sozinho: o Monarca de Brightwood, o grande cervo que reina sobre as profundezas da clareira. Ele envelheceu e se tornou selvagem, escornando todos que se aproximam de seu refúgio. É mais do que páreo para um só caçador - traga um amigo ou dois. Dê-lhe o descanso e traga-me seu coração, {playerName}.",
+        "completion": "Então o velho rei tombou. Coisa pesada, esta - mas um fim mais bondoso do que os lobos lhe dariam. Use esta coroa feita de suas galhadas com respeito, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "O Coração do Monarca"
+          }
+        }
+      },
+      "q_ledger_first_duty": {
+        "title": "O Primeiro Dever de um Guardião",
+        "text": "Quer merecer seu sustento em Eastbrook, {playerName}? Então comece onde cada guardião começa. Os texugos pelo-de-espinho cavaram suas tocas por toda a Clareira de Brightwood, lá no extremo norte, depois da Trilha dos lobos, e o chão do bosque está afundando nos buracos deles. Abata 8 Texugos Pelo-de-espinho e o livro-razão lembrará seu nome.",
+        "completion": "Oito tocas esvaziadas e o chão do bosque assentado. Bom. Cada nome neste livro-razão começou exatamente onde você está agora.",
+        "objectives": {
+          "0": {
+            "label": "Texugo Pelo-de-espinho abatido"
+          }
+        }
+      },
+      "q_ledger_teeth": {
+        "title": "Dentes na Escuridão",
+        "text": "As raposas do bosque ficaram ousadas como lobos - elas se esgueiram nos galinheiros ao anoitecer e somem antes que uma lanterna se acenda, e uma raposa faminta leva um cordeiro com a mesma facilidade que uma galinha. Reduza-as, {playerName}. Abata 10 Raposas do Bosque e que as demais voltem a temer a luz.",
+        "completion": "Dez raposas, e os galinheiros voltaram a ficar tranquilos ao anoitecer. O livro-razão fica mais brando com você.",
+        "objectives": {
+          "0": {
+            "label": "Raposa do Bosque abatida"
+          }
+        }
+      },
+      "q_ledger_reedwater": {
+        "title": "Patrulha das Águas dos Juncos",
+        "text": "Redbrook mandou você? Bom - estes ossos velhos não conseguem mais vadear os baixios. As garças do prado descobriram minhas redes e fisgam mais da minha pesca do que os Barbatana-de-lodo jamais fizeram. Reduza-as: 8 Garças do Prado, e cuidado com as águas fundas.",
+        "completion": "Isso manterá aquelas ladras pernaltas longe das minhas redes por uma estação. Diga ao Marechal que os baixios voltaram a ser meus.",
+        "objectives": {
+          "0": {
+            "label": "Garça do Prado expulsa"
+          }
+        }
+      },
+      "q_ledger_silk": {
+        "title": "Pasto e Espinheiro",
+        "text": "O livro-razão marca os bosques orientais como terra de guardião também - e meus canteiros de ervas medicinais fazem parte deles. Os cervos malhados devoraram minha folha-de-prata e meu sangue-de-cardo até a raiz, e sem esses simples metade de Eastbrook fica sem remédios. Não me alegra fazê-lo, mas abata 8 Cervos Malhados antes que as ervas do outono se percam por completo.",
+        "completion": "Os canteiros ainda podem se recuperar, graças a você. Uma misericórdia dura - mas uma criança ardendo em febre precisa mais dos simples do que o bosque precisa dos cervos. O livro-razão está acertado.",
+        "objectives": {
+          "0": {
+            "label": "Cervo Malhado abatido"
+          }
+        }
+      },
+      "q_ledger_brood": {
+        "title": "A Escuridão que Desova",
+        "text": "Matar os espreitadores só abriu espaço para a ninhada. Os filhotes Sableweb estão jorrando do ninho profundo, e cem pequenas presas matam um viajante tão certeiramente quanto uma grande. Esmague 8 Filhotes Sableweb antes que cresçam.",
+        "completion": "Trabalho sombrio, afogar um ninho. Mas a misericórdia agora são cem funerais poupados depois. O livro-razão está saldado.",
+        "objectives": {
+          "0": {
+            "label": "Filhote Sableweb esmagado"
+          }
+        }
+      },
+      "q_ledger_deepvermin": {
+        "title": "Vermes nas Profundezas",
+        "text": "O livro-razão do Marechal diz que você acaba com pragas. Pois bem, minha escavação tem as piores delas. Os ratos de túnel se reproduzem mais rápido do que minha turma consegue erguer uma picareta - derrube 12 Escavadores rato de túnel e talvez encontremos cobre antes do inverno.",
+        "completion": "Doze daqueles vermes cabeça-de-vela, mortos! Certo, rapazes - de volta ao poço. Você ganhou uma boa palavra junto ao Marechal, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Escavador rato de túnel abatido"
+          }
+        }
+      },
+      "q_ledger_toll": {
+        "title": "A Estrada das Presas",
+        "text": "Os javalis presa-do-bosque desceram da Mata Clara para a estrada de comércio do sudeste - feras enormes e presadas que escornam os bois de carga e viram as carroças atrás do grão derramado. O livro-razão tem um preço pela cabeça de cada um. Reabra a estrada: abata 8 Javalis Presa-do-Bosque.",
+        "completion": "Oito feras a menos na estrada, e as carroças voltaram a rodar. Já corre a voz de que a estrada de comércio tem um novo guardião. O livro-razão sobe a seu favor.",
+        "objectives": {
+          "0": {
+            "label": "Javali Presa-do-Bosque abatido"
+          }
+        }
+      },
+      "q_ledger_vigil": {
+        "title": "Vigília na Capela",
+        "text": "O Marechal manda seus guardiões a mim quando o problema está além do alcance das espadas. Os mortos da capela não querem ficar quietos, e estou velho demais para velar a noite. Vele por mim, {playerName} - devolva 10 Ossos inquietos ao seu descanso.",
+        "completion": "Dez almas devolvidas à terra, e uma noite de paz comprada para a capela. A Luz se lembra de tais vigílias, mesmo quando o livro-razão esquece.",
+        "objectives": {
+          "0": {
+            "label": "Ossos inquietos postos em descanso"
+          }
+        }
+      },
+      "q_ledger_great_boar": {
+        "title": "O Grande Bristleback",
+        "text": "Há um velho javali-macho nos matagais ocidentais - o Bristleback ancião, couro feito casca e gênio à altura. Ele escornou dois dos meus coureiros. Derrube-o e elimine 6 dos Javalis selvagens menores que se abrigam atrás dele, e verei seu nome bem alto no livro-razão.",
+        "completion": "O Bristleback ancião, morto por suas mãos! Só aquele couro vale uma estação de comércio. Você orgulhou o livro-razão, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Bristleback ancião abatido"
+          },
+          "1": {
+            "label": "Javali selvagem da vara abatido"
+          }
+        }
+      },
+      "q_ledger_outlaw_captain": {
+        "title": "O Capitão Foragido",
+        "text": "O último nome no livro-razão é o que há um ano desejo riscar: Capitão Verlan, que arrastou metade do Vale para o banditismo. Ele se esconde atrás de seus tenentes no acampamento a sudeste. Derrube 6 Bandidos do Vale para alcançá-lo e então acabe com o próprio Verlan. Não vá sozinho.",
+        "completion": "Capitão Verlan, morto, e seu casaco trazido à minha porta. O livro-razão está fechado, {playerName} - e o Vale contará aos guardiões vindouros o nome de quem o fechou.",
+        "objectives": {
+          "0": {
+            "label": "Bandido do Vale derrubado"
+          },
+          "1": {
+            "label": "Capitão Verlan abatido"
+          }
+        }
+      },
+      "custom_q_quench_the_elementals": {
+        "title": "Quench the Elementals",
+        "text": "The lava elementals are surging up from the fissures and cutting off our supply lines. Destroy 10 of them and bring back 5 ember cores as proof. Be careful -- they pulse heat as they die.",
+        "completion": "Good work. The fissures seem calmer for now. These cores could be useful to our artificers.",
+        "objectives": {
+          "0": {
+            "label": "Lava Elementals destroyed"
+          },
+          "1": {
+            "label": "Ember Cores collected"
+          }
+        }
+      },
+      "custom_q_hound_culling": {
+        "title": "The Hound Pack",
+        "text": "Magma hounds have been prowling the western ridgeline and attacking our scouts. Put down 8 of them and collect their pelts. The hide is fire-resistant -- we can use it for armor patches.",
+        "completion": "These pelts will do nicely. Our leatherworker will get them treated before the next patrol.",
+        "objectives": {
+          "0": {
+            "label": "Magma Hounds slain"
+          },
+          "1": {
+            "label": "Magma Hound Pelts"
+          }
+        }
+      },
+      "custom_q_troll_tide": {
+        "title": "Troll Tide",
+        "text": "The cinder trolls are massing to the north. They have claimed the old fire shrine and we cannot let them hold it. Kill 6 cinder trolls and bring me 4 of their tusks as trophies.",
+        "completion": "The shrine is ours again. Well fought.",
+        "objectives": {
+          "0": {
+            "label": "Cinder Trolls killed"
+          },
+          "1": {
+            "label": "Cinder Troll Tusks"
+          }
+        }
+      },
+      "q_mogger_tracks": {
+        "title": "A trilha de Mogger",
+        "text": "Antes de pegar a estrada ao norte, Eastbrook tem um último espinho: Mogger. A fera pisoteia o prado baixo e enlouquece os javalis. Limpe o prado ao redor da trilha para descobrirmos onde ele se esconde.",
+        "completion": "Essas pegadas são recentes e fundas o bastante para segurar chuva. Mogger não é história de acampamento, {playerName}, e está perto.",
+        "objectives": {
+          "0": {
+            "label": "Javali selvagem expulso da trilha"
+          }
+        }
+      },
       "q_mogger": {
         "title": "Mogger deve cair",
         "text": "Mogger partiu carroças, achatou cercas e matou gado suficiente para esvaziar metade do Vale. Não o enfrente só. Leve dois companheiros fortes ao prado leste e derrube a fera de vez.",
@@ -5870,6 +6137,24 @@ export const pt_BR: EnTranslations = {
           },
           "9": {
             "label": "Santuário do Gravewyrm"
+          }
+        }
+      },
+      "custom_cinderhold": {
+        "name": "The Cinderhold",
+        "welcome": "The heat hits you before the smoke clears. Welcome to the Cinderhold.",
+        "pois": {
+          "0": {
+            "label": "Ember Watch"
+          },
+          "1": {
+            "label": "Western Ridge"
+          },
+          "2": {
+            "label": "The Ash Shrine"
+          },
+          "3": {
+            "label": "Colossus Lair"
           }
         }
       }

@@ -4426,4 +4426,15 @@ export const de_DE: Partial<Record<TranslationKey, string>> = {
     'Eure Daten wurden heruntergeladen. Wir haben Euch eine Bestätigung per E-Mail gesendet.',
   'hudChrome.account.exportFailed':
     'Eure Daten konnten nicht exportiert werden. Versucht es gleich noch einmal.',
+  // Cinderhold custom items
+  "entities.items.custom_ember_core.name": "Schwelender Glutkern",
+  "entities.items.custom_magma_pelt.name": "Versengtes Magmabestien-Fell",
+  "entities.items.custom_cinder_tusk.name": "Aschetrolls Stosszahn",
+  "entities.items.custom_slag_fragment.name": "Schlackensplitter",
+  "entities.items.custom_ash_bone.name": "Aschenknochen",
+  "entities.items.custom_blaze_reaver.name": "Flammenbrecher",
+  "entities.items.custom_inferno_staff.name": "Infernalischer Stab",
+  "entities.items.custom_cinderfang_dagger.name": "Glutfang-Dolch",
+  "entities.items.custom_fire_resistance_potion.name": "Trank der Feuerresistenz",
+  "entities.items.custom_charred_ration.name": "Verkohlte Feldration",
 };

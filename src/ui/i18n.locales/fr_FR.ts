@@ -4443,4 +4443,15 @@ export const fr_FR: Partial<Record<TranslationKey, string>> = {
   'hudChrome.account.exportDone':
     'Vos données ont été téléchargées. Nous vous avons envoyé une confirmation par e-mail.',
   'hudChrome.account.exportFailed': "Impossible d'exporter vos données. Réessayez dans un moment.",
+  // Cinderhold custom items
+  "entities.items.custom_ember_core.name": "Noyau de braise ardente",
+  "entities.items.custom_magma_pelt.name": "Peau de chien de magma roussie",
+  "entities.items.custom_cinder_tusk.name": "Defenses de troll de cendres",
+  "entities.items.custom_slag_fragment.name": "Fragment de scories",
+  "entities.items.custom_ash_bone.name": "Os de cendres",
+  "entities.items.custom_blaze_reaver.name": "Ravageur de flammes",
+  "entities.items.custom_inferno_staff.name": "Baton infernal",
+  "entities.items.custom_cinderfang_dagger.name": "Dague Crochetisonnante",
+  "entities.items.custom_fire_resistance_potion.name": "Potion de resistance au feu",
+  "entities.items.custom_charred_ration.name": "Ration de campagne carbonisee",
 };

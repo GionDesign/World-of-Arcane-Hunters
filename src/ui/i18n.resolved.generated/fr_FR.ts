@@ -4569,6 +4569,36 @@ export const fr_FR: EnTranslations = {
       },
       "vanguard_chrome_armor_plate": {
         "name": "Avant-garde chrome"
+      },
+      "custom_ember_core": {
+        "name": "Noyau de braise ardente"
+      },
+      "custom_magma_pelt": {
+        "name": "Peau de chien de magma roussie"
+      },
+      "custom_cinder_tusk": {
+        "name": "Defenses de troll de cendres"
+      },
+      "custom_slag_fragment": {
+        "name": "Fragment de scories"
+      },
+      "custom_ash_bone": {
+        "name": "Os de cendres"
+      },
+      "custom_blaze_reaver": {
+        "name": "Ravageur de flammes"
+      },
+      "custom_inferno_staff": {
+        "name": "Baton infernal"
+      },
+      "custom_cinderfang_dagger": {
+        "name": "Dague Crochetisonnante"
+      },
+      "custom_fire_resistance_potion": {
+        "name": "Potion de resistance au feu"
+      },
+      "custom_charred_ration": {
+        "name": "Ration de campagne carbonisee"
       }
     },
     "mobs": {
@@ -4739,6 +4769,60 @@ export const fr_FR: EnTranslations = {
       },
       "nythraxis_scourge_of_thornpeak": {
         "name": "Nythraxis, Fléau de Thornpeak"
+      },
+      "brightwood_hare": {
+        "name": "Lièvre de Brightwood"
+      },
+      "glade_fox": {
+        "name": "Renard des clairières"
+      },
+      "spotted_fawn": {
+        "name": "Faon tacheté"
+      },
+      "meadow_crane": {
+        "name": "Grue des prés"
+      },
+      "thornpelt_badger": {
+        "name": "Blaireau Pelage-d'épines"
+      },
+      "dawnmane_doe": {
+        "name": "Biche Crinaube"
+      },
+      "bramble_lynx": {
+        "name": "Lynx des ronces"
+      },
+      "brightwood_stag": {
+        "name": "Cerf de Brightwood"
+      },
+      "grovetusk_boar": {
+        "name": "Sanglier Défense-des-bois"
+      },
+      "sunhide_bear": {
+        "name": "Ours Peau-de-soleil"
+      },
+      "brightwood_monarch": {
+        "name": "Le Monarque de Brightwood"
+      },
+      "custom_lava_elemental": {
+        "name": "Lava Elemental"
+      },
+      "custom_ember_imp": {
+        "name": "Ember Imp"
+      },
+      "custom_magma_hound": {
+        "name": "Magma Hound"
+      },
+      "custom_cinder_troll": {
+        "name": "Cinder Troll"
+      },
+      "custom_flamecaller": {
+        "name": "Flamecaller"
+      },
+      "custom_molten_colossus": {
+        "name": "Molten Colossus"
+      },
+      "elder_bristleback": {
+        "name": "Ancien Bristleback"
       },
       "ironvein_foreman": {
         "name": "Contremaître Veinefer"
@@ -4949,6 +5033,11 @@ export const fr_FR: EnTranslations = {
         "name": "Frère Aldric",
         "title": "Prêtre du Val",
         "greeting": "D'un cimetière de chapelle au toit du monde... la piste s'achève ici. Je sens la montagne écouter."
+      },
+      "custom_warden_cael": {
+        "name": "Warden Cael",
+        "title": "Ember Watch Commander",
+        "greeting": "The Cinderhold grows more dangerous by the hour. We need every able hand."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -5699,6 +5788,184 @@ export const fr_FR: EnTranslations = {
           }
         }
       },
+      "q_brightwood_thinning": {
+        "title": "Éclaircir la clairière",
+        "text": "La clairière de Brightwood est envahie, {playerName}. Les lynx des ronces se reproduisent plus vite que je ne peux les abattre, et les hardes piétinent le peu de pâture qu'il reste. Tuez 8 lynx des ronces et rapportez-moi 6 fourrures de clairière, que je juge de la santé du reste.",
+        "completion": "Bien. La harde est éclaircie et ces fourrures sont saines - la clairière tiendra une saison de plus.",
+        "objectives": {
+          "0": {
+            "label": "Lynx des ronces tué"
+          },
+          "1": {
+            "label": "Fourrure de clairière"
+          }
+        }
+      },
+      "q_brightwood_monarch": {
+        "title": "Le Monarque de Brightwood",
+        "text": "Il est une bête sur laquelle je ne décocherai pas une flèche seule : le Monarque de Brightwood, le grand cerf qui règne sur la clairière profonde. Il a vieilli et est devenu sauvage, encornant quiconque approche de son creux. Il est bien trop fort pour un seul chasseur - amenez un ami ou deux. Faites-le reposer en paix et rapportez-moi son cœur, {playerName}.",
+        "completion": "Ainsi le vieux roi est tombé. Une chose lourde à porter - mais une fin plus douce que celle que les loups lui auraient réservée. Portez cette couronne taillée dans ses andouillers avec respect, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Le Cœur du Monarque"
+          }
+        }
+      },
+      "q_ledger_first_duty": {
+        "title": "Le premier devoir d'un gardien",
+        "text": "Vous voulez gagner votre place à Eastbrook, {playerName} ? Alors commencez là où commence tout gardien. Les blaireaux pelage-d'épines ont creusé leurs terriers à travers toute la Clairière de Brightwood, loin au nord au-delà de la Piste des loups, et le sol du bosquet s'effondre dans leurs galeries. Abattez 8 Blaireaux Pelage-d'épines et le registre retiendra votre nom.",
+        "completion": "Huit terriers vidés et le sol du bosquet s'est tassé. Bien. Chaque nom de ce registre a commencé là où vous vous tenez.",
+        "objectives": {
+          "0": {
+            "label": "Blaireau Pelage-d'épines abattu"
+          }
+        }
+      },
+      "q_ledger_teeth": {
+        "title": "Des crocs dans l'obscurité",
+        "text": "Les renards des clairières sont devenus hardis comme des loups - ils se faufilent dans les poulaillers au crépuscule et disparaissent avant qu'on n'allume une lanterne, et une renarde affamée emportera un agneau aussi volontiers qu'une poule. Éclaircissez leurs rangs, {playerName}. Tuez 10 renards des clairières et que les autres réapprennent à craindre la lumière.",
+        "completion": "Dix renards, et les poulaillers sont enfin paisibles au crépuscule. Le registre se fait plus clément envers vous.",
+        "objectives": {
+          "0": {
+            "label": "Renard des clairières tué"
+          }
+        }
+      },
+      "q_ledger_reedwater": {
+        "title": "Patrouille des roselières",
+        "text": "Redbrook vous envoie ? Bien - ces vieux os ne peuvent plus patauger dans les bas-fonds. Les grues des prairies ont trouvé mes filets, et elles harponnent davantage de mes prises que les Aileron-de-boue ne l'ont jamais fait. Éclaircissez leurs rangs : 8 grues des prairies, et prenez garde à l'eau profonde.",
+        "completion": "Voilà qui tiendra ces voleuses à longues pattes loin de mes filets pour une saison. Dites au maréchal que les bas-fonds sont de nouveau à moi.",
+        "objectives": {
+          "0": {
+            "label": "Grue des prairies chassée"
+          }
+        }
+      },
+      "q_ledger_silk": {
+        "title": "Brout et broussailles",
+        "text": "Le registre marque aussi les bois de l'est comme terre de gardien - et mes plates-bandes médicinales en font partie. Les faons tachetés ont ravagé jusqu'à la racine ma feuille d'argent et mon sang-chardon, et sans ces simples la moitié d'Eastbrook se retrouve sans remèdes. Je n'y prends nulle joie, mais abattez 8 faons tachetés avant que les herbes d'automne ne soient perdues à jamais.",
+        "completion": "Les plates-bandes pourront peut-être se rétablir, grâce à vous. Une clémence cruelle - mais un enfant brûlant de fièvre a plus besoin des simples que le bois n'a besoin des cerfs. Le registre est en règle.",
+        "objectives": {
+          "0": {
+            "label": "Faon tacheté abattu"
+          }
+        }
+      },
+      "q_ledger_brood": {
+        "title": "Les ténèbres qui essaiment",
+        "text": "Tuer les rôdeurs n'a fait que laisser la place à la couvée. Les jeunes Sableweb se déversent du nid profond, et cent petits crocs tuent un voyageur aussi sûrement qu'un seul énorme. Écrasez 8 jeunes Sableweb avant qu'ils ne grandissent.",
+        "completion": "Une sombre besogne, que de noyer un nid. Mais la clémence aujourd'hui, c'est une centaine d'enterrements épargnés plus tard. Le registre est en règle.",
+        "objectives": {
+          "0": {
+            "label": "Jeune Sableweb écrasé"
+          }
+        }
+      },
+      "q_ledger_deepvermin": {
+        "title": "Vermine des profondeurs",
+        "text": "Le registre du maréchal dit que vous débarrassez des nuisibles. Eh bien, ma galerie en a les pires. Les rats des tunnels se reproduisent plus vite que mon équipe ne manie la pioche - abattez 12 Terrassiers Rat des tunnels et peut-être trouverons-nous le cuivre avant l'hiver.",
+        "completion": "Douze de ces vermines à tête de chandelle, disparues ! Bien, les gars - on redescend dans le puits. Vous avez mérité un bon mot auprès du maréchal, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Terrassier Rat des tunnels tué"
+          }
+        }
+      },
+      "q_ledger_toll": {
+        "title": "La route aux défenses",
+        "text": "Les sangliers grandcroc sont descendus de Bois-clair sur la route commerciale du sud-est - de grandes brutes à défenses qui encornent les bœufs de trait et renversent les chariots pour le grain répandu. Le registre met un prix sur la tête de chacun. Rouvrez la route : abattez 8 sangliers grandcroc.",
+        "completion": "Huit brutes débarrassées de la route, et les chariots roulent de nouveau. Le bruit court déjà que la route commerciale a un nouveau gardien. Le registre grimpe en votre faveur.",
+        "objectives": {
+          "0": {
+            "label": "Sanglier grandcroc tué"
+          }
+        }
+      },
+      "q_ledger_vigil": {
+        "title": "Veille à la chapelle",
+        "text": "Le maréchal m'envoie ses gardiens quand le trouble dépasse la portée des seules épées. Les morts de la chapelle ne veulent pas reposer en paix, et je suis trop vieux pour tenir la veille de nuit. Tenez-la pour moi, {playerName} - remettez 10 ossements agités au repos.",
+        "completion": "Dix âmes rendues à la terre, et une nuit de paix achetée pour la chapelle. La Lumière se souvient de telles veilles, même quand le registre les oublie.",
+        "objectives": {
+          "0": {
+            "label": "Ossements agités remis au repos"
+          }
+        }
+      },
+      "q_ledger_great_boar": {
+        "title": "Le grand Bristleback",
+        "text": "Il y a un vieux sanglier mâle dans les fourrés de l'ouest - l'Ancien Bristleback, une peau dure comme l'écorce et un tempérament à l'avenant. Il a encorné deux de mes écorcheurs. Abattez-le et éliminez 6 des sangliers sauvages moindres qui s'abritent derrière lui, et je ferai inscrire votre nom au plus haut du registre.",
+        "completion": "L'Ancien Bristleback, mort de votre main ! Cette peau à elle seule vaut une saison de commerce. Vous avez fait la fierté du registre, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Ancien Bristleback tué"
+          },
+          "1": {
+            "label": "Sanglier sauvage de la harde tué"
+          }
+        }
+      },
+      "q_ledger_outlaw_captain": {
+        "title": "Le capitaine hors-la-loi",
+        "text": "Le dernier nom du registre est celui que je veux rayé depuis un an : le capitaine Verlan, qui a fait basculer la moitié du Val dans le banditisme. Il se terre derrière ses lieutenants dans le camp du sud-est. Abattez 6 bandits du Val pour l'atteindre, puis achevez Verlan lui-même. N'y allez pas seul.",
+        "completion": "Le capitaine Verlan, mort, et son manteau apporté à ma porte. Le registre est clos, {playerName} - et le Val dira aux gardiens à venir le nom de celui qui l'a clos.",
+        "objectives": {
+          "0": {
+            "label": "Bandit du Val abattu"
+          },
+          "1": {
+            "label": "Capitaine Verlan tué"
+          }
+        }
+      },
+      "custom_q_quench_the_elementals": {
+        "title": "Quench the Elementals",
+        "text": "The lava elementals are surging up from the fissures and cutting off our supply lines. Destroy 10 of them and bring back 5 ember cores as proof. Be careful -- they pulse heat as they die.",
+        "completion": "Good work. The fissures seem calmer for now. These cores could be useful to our artificers.",
+        "objectives": {
+          "0": {
+            "label": "Lava Elementals destroyed"
+          },
+          "1": {
+            "label": "Ember Cores collected"
+          }
+        }
+      },
+      "custom_q_hound_culling": {
+        "title": "The Hound Pack",
+        "text": "Magma hounds have been prowling the western ridgeline and attacking our scouts. Put down 8 of them and collect their pelts. The hide is fire-resistant -- we can use it for armor patches.",
+        "completion": "These pelts will do nicely. Our leatherworker will get them treated before the next patrol.",
+        "objectives": {
+          "0": {
+            "label": "Magma Hounds slain"
+          },
+          "1": {
+            "label": "Magma Hound Pelts"
+          }
+        }
+      },
+      "custom_q_troll_tide": {
+        "title": "Troll Tide",
+        "text": "The cinder trolls are massing to the north. They have claimed the old fire shrine and we cannot let them hold it. Kill 6 cinder trolls and bring me 4 of their tusks as trophies.",
+        "completion": "The shrine is ours again. Well fought.",
+        "objectives": {
+          "0": {
+            "label": "Cinder Trolls killed"
+          },
+          "1": {
+            "label": "Cinder Troll Tusks"
+          }
+        }
+      },
+      "q_mogger_tracks": {
+        "title": "La piste de Mogger",
+        "text": "Avant de prendre la route du nord, Eastbrook a une dernière épine dans le pied : Mogger. La brute piétine le pré bas et rend les sangliers fous. Nettoyez le pré autour de sa piste pour que nous voyions où il se terre.",
+        "completion": "Ces traces sont fraîches et assez profondes pour retenir la pluie. Mogger n'est pas une histoire de camp, {playerName}, et il est proche.",
+        "objectives": {
+          "0": {
+            "label": "Sanglier sauvage chassé de la piste"
+          }
+        }
+      },
       "q_mogger": {
         "title": "Mogger doit tomber",
         "text": "Mogger a brisé des chariots, aplati des clôtures et tué assez de bétail pour vider la moitié du Val. Ne l'affrontez pas seul. Emmenez deux compagnons solides au pré de l'est et abattez la brute pour de bon.",
@@ -5870,6 +6137,24 @@ export const fr_FR: EnTranslations = {
           },
           "9": {
             "label": "Sanctuaire du Gravewyrm"
+          }
+        }
+      },
+      "custom_cinderhold": {
+        "name": "The Cinderhold",
+        "welcome": "The heat hits you before the smoke clears. Welcome to the Cinderhold.",
+        "pois": {
+          "0": {
+            "label": "Ember Watch"
+          },
+          "1": {
+            "label": "Western Ridge"
+          },
+          "2": {
+            "label": "The Ash Shrine"
+          },
+          "3": {
+            "label": "Colossus Lair"
           }
         }
       }

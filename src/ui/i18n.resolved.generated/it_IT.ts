@@ -4569,6 +4569,36 @@ export const it_IT: EnTranslations = {
       },
       "vanguard_chrome_armor_plate": {
         "name": "Avanguardia cromo"
+      },
+      "custom_ember_core": {
+        "name": "Nucleo di braci ardenti"
+      },
+      "custom_magma_pelt": {
+        "name": "Pelle di segugio di magma bruciacchiata"
+      },
+      "custom_cinder_tusk": {
+        "name": "Zanna del troll delle ceneri"
+      },
+      "custom_slag_fragment": {
+        "name": "Frammento di scoria"
+      },
+      "custom_ash_bone": {
+        "name": "Osso di cenere"
+      },
+      "custom_blaze_reaver": {
+        "name": "Falciatore fiammante"
+      },
+      "custom_inferno_staff": {
+        "name": "Bastone infernale"
+      },
+      "custom_cinderfang_dagger": {
+        "name": "Pugnale Zannacenere"
+      },
+      "custom_fire_resistance_potion": {
+        "name": "Pozione di resistenza al fuoco"
+      },
+      "custom_charred_ration": {
+        "name": "Razione da campo carbonizzata"
       }
     },
     "mobs": {
@@ -4739,6 +4769,60 @@ export const it_IT: EnTranslations = {
       },
       "nythraxis_scourge_of_thornpeak": {
         "name": "Nythraxis, Flagello di Thornpeak"
+      },
+      "brightwood_hare": {
+        "name": "Lepre di Brightwood"
+      },
+      "glade_fox": {
+        "name": "Volpe della radura"
+      },
+      "spotted_fawn": {
+        "name": "Cerbiatto maculato"
+      },
+      "meadow_crane": {
+        "name": "Gru del prato"
+      },
+      "thornpelt_badger": {
+        "name": "Tasso pellespinosa"
+      },
+      "dawnmane_doe": {
+        "name": "Cerva crindalba"
+      },
+      "bramble_lynx": {
+        "name": "Lince dei rovi"
+      },
+      "brightwood_stag": {
+        "name": "Cervo di Brightwood"
+      },
+      "grovetusk_boar": {
+        "name": "Cinghiale zannaboschiva"
+      },
+      "sunhide_bear": {
+        "name": "Orso pellesolare"
+      },
+      "brightwood_monarch": {
+        "name": "Il Monarca di Brightwood"
+      },
+      "custom_lava_elemental": {
+        "name": "Lava Elemental"
+      },
+      "custom_ember_imp": {
+        "name": "Ember Imp"
+      },
+      "custom_magma_hound": {
+        "name": "Magma Hound"
+      },
+      "custom_cinder_troll": {
+        "name": "Cinder Troll"
+      },
+      "custom_flamecaller": {
+        "name": "Flamecaller"
+      },
+      "custom_molten_colossus": {
+        "name": "Molten Colossus"
+      },
+      "elder_bristleback": {
+        "name": "Bristleback anziano"
       },
       "ironvein_foreman": {
         "name": "Caposquadra Venaferrata"
@@ -4949,6 +5033,11 @@ export const it_IT: EnTranslations = {
         "name": "Fratello Aldric",
         "title": "Sacerdote della Valle",
         "greeting": "Dal camposanto della cappella al tetto del mondo... la pista finisce qui. Sento la montagna ascoltare."
+      },
+      "custom_warden_cael": {
+        "name": "Warden Cael",
+        "title": "Ember Watch Commander",
+        "greeting": "The Cinderhold grows more dangerous by the hour. We need every able hand."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -5699,6 +5788,184 @@ export const it_IT: EnTranslations = {
           }
         }
       },
+      "q_brightwood_thinning": {
+        "title": "Diradare la radura",
+        "text": "La radura di Brightwood è invasa, {playerName}. Le linci dei rovi si riproducono più in fretta di quanto io riesca ad abbatterle, e le mandrie calpestano il poco pascolo rimasto. Uccidi 8 Linci dei rovi e portami 6 Pellicce della radura, così potrò valutare la salute delle altre.",
+        "completion": "Bene. Il branco è ridotto e queste pellicce sono integre: la radura reggerà un'altra stagione.",
+        "objectives": {
+          "0": {
+            "label": "Lince dei rovi uccisa"
+          },
+          "1": {
+            "label": "Pelliccia della radura"
+          }
+        }
+      },
+      "q_brightwood_monarch": {
+        "title": "Il Monarca di Brightwood",
+        "text": "C'è una bestia contro cui non scoccherò una freccia da solo: il Monarca di Brightwood, il grande cervo che regna sulla radura profonda. È diventato vecchio e feroce, incornando chiunque si avvicini alla sua tana. È più di quanto un solo cacciatore possa affrontare: porta con te un amico o due. Mettilo a riposo e portami il suo cuore, {playerName}.",
+        "completion": "Così il vecchio re è caduto. È una cosa pesante, questa, ma una fine più gentile di quella che gli avrebbero dato i lupi. Porta con rispetto questa corona fatta delle sue corna, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Il Cuore del Monarca"
+          }
+        }
+      },
+      "q_ledger_first_duty": {
+        "title": "Il primo dovere di un guardiano",
+        "text": "Vuoi guadagnarti il pane a Eastbrook, {playerName}? Allora comincia da dove comincia ogni guardiano. I tassi pellespinosa hanno scavato le loro tane attraverso la Radura di Brightwood, all'estremo nord oltre il Sentiero dei lupi, e il suolo del bosco sta sprofondando nelle loro gallerie. Abbatti 8 Tassi pellespinosa e il registro ricorderà il tuo nome.",
+        "completion": "Otto tane svuotate e il suolo del bosco si è riassestato. Bene. Ogni nome in questo registro è cominciato proprio dove stai tu adesso.",
+        "objectives": {
+          "0": {
+            "label": "Tasso pellespinosa abbattuto"
+          }
+        }
+      },
+      "q_ledger_teeth": {
+        "title": "Zanne nel buio",
+        "text": "Le volpi della radura sono diventate audaci come lupi: si intrufolano nei pollai al crepuscolo e spariscono prima che si accenda una lanterna, e una volpe affamata prenderà un agnello tanto quanto una gallina. Diradale, {playerName}. Uccidi 10 Volpi della radura e fa' che le altre tornino a temere la luce.",
+        "completion": "Dieci volpi, e al crepuscolo i pollai sono di nuovo tranquilli. Il registro diventa più gentile con te.",
+        "objectives": {
+          "0": {
+            "label": "Volpe della radura uccisa"
+          }
+        }
+      },
+      "q_ledger_reedwater": {
+        "title": "Pattuglia tra le canne",
+        "text": "Ti manda Redbrook? Bene: queste vecchie ossa non riescono più a guadare le secche. Le gru della prateria hanno scoperto le mie reti e mi infilzano più pesci di quanti ne abbiano mai presi i Pinnalimo. Diradale: 8 Gru della prateria, e attento all'acqua profonda.",
+        "completion": "Questo terrà quelle ladre dalle lunghe zampe lontane dalle mie reti per una stagione. Di' al Maresciallo che le secche sono di nuovo mie.",
+        "objectives": {
+          "0": {
+            "label": "Gru della prateria scacciata"
+          }
+        }
+      },
+      "q_ledger_silk": {
+        "title": "Pascolo e rovi",
+        "text": "Il registro segna anche i boschi orientali come terra di guardiani, e i miei orti officinali ne fanno parte. I cerbiatti maculati hanno spogliato fino alla radice la mia foglia d'argento e il cardo sanguigno, e senza quei semplici metà di Eastbrook resta senza medicine. Non ci trovo alcun piacere, ma abbatti 8 Cerbiatti maculati prima che le erbe d'autunno vadano perdute del tutto.",
+        "completion": "Gli orti potrebbero ancora riprendersi, grazie a te. Una dura misericordia, ma un bambino divorato dalla febbre ha più bisogno dei semplici di quanto il bosco abbia bisogno dei cervi. Il registro è in pari.",
+        "objectives": {
+          "0": {
+            "label": "Cerbiatto maculato abbattuto"
+          }
+        }
+      },
+      "q_ledger_brood": {
+        "title": "Il buio che genera",
+        "text": "Uccidere gli acquattati ha solo fatto spazio alla covata. I piccoli Sableweb sciamano fuori dal nido profondo, e cento piccole zanne uccidono un viandante con la stessa certezza di una grande. Schiaccia 8 Piccoli Sableweb prima che crescano.",
+        "completion": "Un lavoro tetro, annegare un nido. Ma la pietà ora è un centinaio di funerali risparmiati più tardi. Il conto è pareggiato.",
+        "objectives": {
+          "0": {
+            "label": "Piccolo Sableweb schiacciato"
+          }
+        }
+      },
+      "q_ledger_deepvermin": {
+        "title": "Parassiti nel profondo",
+        "text": "Il registro del Maresciallo dice che tu ti occupi dei parassiti. Be', il mio scavo ha i peggiori. I ratti di galleria si riproducono più in fretta di quanto la mia squadra sappia menare il piccone: abbatti 12 Ratti di galleria scavatori e magari troveremo il rame prima dell'inverno.",
+        "completion": "Dodici di quei parassiti dalla testa di candela, spariti! Bene, ragazzi: di nuovo giù nel pozzo. Ti sei guadagnato una buona parola dal Maresciallo, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Ratto di galleria scavatore ucciso"
+          }
+        }
+      },
+      "q_ledger_toll": {
+        "title": "La strada delle zanne",
+        "text": "I cinghiali zannaboschiva sono scesi dal Boscochiaro fino alla strada commerciale di sud-est: bestioni dalle grandi zanne che incornano i buoi da tiro e rovesciano i carri per il grano sparso. Il registro ha una taglia su ognuno di loro. Riapri la strada: abbatti 8 Cinghiali zannaboschiva.",
+        "completion": "Otto bestioni in meno sulla strada, e i carri tornano a viaggiare. Si sparge già la voce che la strada commerciale ha un nuovo guardiano. Il registro sale a tuo favore.",
+        "objectives": {
+          "0": {
+            "label": "Cinghiale zannaboschiva ucciso"
+          }
+        }
+      },
+      "q_ledger_vigil": {
+        "title": "Veglia alla cappella",
+        "text": "Il Maresciallo manda da me i suoi guardiani quando il guaio è oltre la portata delle sole spade. I morti della cappella non vogliono star fermi, e io sono troppo vecchio per reggere la veglia notturna. Tienila per me, {playerName}: rimetti a riposo 10 Ossa irrequiete.",
+        "completion": "Dieci anime restituite alla terra, e una notte di pace comprata per la cappella. La Luce ricorda queste veglie, anche quando il registro le dimentica.",
+        "objectives": {
+          "0": {
+            "label": "Ossa irrequiete messe a riposo"
+          }
+        }
+      },
+      "q_ledger_great_boar": {
+        "title": "Il grande Bristleback",
+        "text": "C'è un vecchio cinghiale maschio nei boschetti occidentali: il Bristleback anziano, con la pelle dura come corteccia e un carattere altrettanto. Ha incornato due dei miei conciatori. Abbattilo e ripulisci 6 dei Cinghiali selvatici minori che si riparano dietro di lui, e farò scrivere il tuo nome ben in alto nel registro.",
+        "completion": "Il Bristleback anziano, morto per mano tua! Quella sola pelle vale una stagione di commerci. Hai reso fiero il registro, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Bristleback anziano ucciso"
+          },
+          "1": {
+            "label": "Cinghiale selvatico del branco ucciso"
+          }
+        }
+      },
+      "q_ledger_outlaw_captain": {
+        "title": "Il capitano fuorilegge",
+        "text": "L'ultimo nome nel registro è quello che voglio cancellato da un anno: il Capitano Verlan, che ha spinto metà della Valle al banditismo. Si ripara dietro i suoi luogotenenti nel campo a sud-est. Abbatti 6 Banditi della Valle per raggiungerlo, poi metti fine a Verlan stesso. Non andarci da solo.",
+        "completion": "Il Capitano Verlan, morto, e il suo cappotto portato alla mia porta. Il registro è chiuso, {playerName}, e la Valle racconterà ai guardiani che verranno il nome di chi l'ha chiuso.",
+        "objectives": {
+          "0": {
+            "label": "Bandito della Valle abbattuto"
+          },
+          "1": {
+            "label": "Capitano Verlan ucciso"
+          }
+        }
+      },
+      "custom_q_quench_the_elementals": {
+        "title": "Quench the Elementals",
+        "text": "The lava elementals are surging up from the fissures and cutting off our supply lines. Destroy 10 of them and bring back 5 ember cores as proof. Be careful -- they pulse heat as they die.",
+        "completion": "Good work. The fissures seem calmer for now. These cores could be useful to our artificers.",
+        "objectives": {
+          "0": {
+            "label": "Lava Elementals destroyed"
+          },
+          "1": {
+            "label": "Ember Cores collected"
+          }
+        }
+      },
+      "custom_q_hound_culling": {
+        "title": "The Hound Pack",
+        "text": "Magma hounds have been prowling the western ridgeline and attacking our scouts. Put down 8 of them and collect their pelts. The hide is fire-resistant -- we can use it for armor patches.",
+        "completion": "These pelts will do nicely. Our leatherworker will get them treated before the next patrol.",
+        "objectives": {
+          "0": {
+            "label": "Magma Hounds slain"
+          },
+          "1": {
+            "label": "Magma Hound Pelts"
+          }
+        }
+      },
+      "custom_q_troll_tide": {
+        "title": "Troll Tide",
+        "text": "The cinder trolls are massing to the north. They have claimed the old fire shrine and we cannot let them hold it. Kill 6 cinder trolls and bring me 4 of their tusks as trophies.",
+        "completion": "The shrine is ours again. Well fought.",
+        "objectives": {
+          "0": {
+            "label": "Cinder Trolls killed"
+          },
+          "1": {
+            "label": "Cinder Troll Tusks"
+          }
+        }
+      },
+      "q_mogger_tracks": {
+        "title": "La traccia di Mogger",
+        "text": "Prima di prendere la strada a nord, Eastbrook ha un'ultima spina nel fianco: Mogger. Il bruto calpesta il prato basso e fa impazzire i cinghiali. Ripulisci il prato attorno alla sua traccia per scoprire dove si tana.",
+        "completion": "Quelle impronte sono fresche e abbastanza profonde da trattenere la pioggia. Mogger non è una storia da campo, {playerName}, ed è vicino.",
+        "objectives": {
+          "0": {
+            "label": "Cinghiale selvatico scacciato dalla traccia"
+          }
+        }
+      },
       "q_mogger": {
         "title": "Mogger deve cadere",
         "text": "Mogger ha spaccato carri, schiacciato recinti e ucciso bestiame quanto basta per svuotare mezzo Valle. Non affrontarlo da solo. Porta due compagni forti nel prato orientale e abbatti il bruto per sempre.",
@@ -5870,6 +6137,24 @@ export const it_IT: EnTranslations = {
           },
           "9": {
             "label": "Santuario del Gravewyrm"
+          }
+        }
+      },
+      "custom_cinderhold": {
+        "name": "The Cinderhold",
+        "welcome": "The heat hits you before the smoke clears. Welcome to the Cinderhold.",
+        "pois": {
+          "0": {
+            "label": "Ember Watch"
+          },
+          "1": {
+            "label": "Western Ridge"
+          },
+          "2": {
+            "label": "The Ash Shrine"
+          },
+          "3": {
+            "label": "Colossus Lair"
           }
         }
       }

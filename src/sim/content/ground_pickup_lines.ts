@@ -81,6 +81,10 @@ export const GROUND_PICKUP_LINES: Record<string, GroundPickupLines> = {
     deny: 'The ritual circle lies cold and dormant.',
     enough: 'The circle has nothing more to give you.',
   },
+  custom_ember_core: {
+    deny: 'The fissure core is too unstable to pry loose until you have a reason.',
+    enough: 'You already have enough ember cores.',
+  },
 };
 
 export function groundPickupDeny(itemId: string, itemName: string): string {

@@ -4393,4 +4393,15 @@ export const pt_BR: Partial<Record<TranslationKey, string>> = {
   'hudChrome.account.exportDone': 'Seus dados foram baixados. Enviamos uma confirmação por email.',
   'hudChrome.account.exportFailed':
     'Não foi possível exportar seus dados. Tente novamente em instantes.',
+  // Cinderhold custom items
+  "entities.items.custom_ember_core.name": "Nucleo de Brasa Fumegante",
+  "entities.items.custom_magma_pelt.name": "Pele Chamuscada de Cao de Magma",
+  "entities.items.custom_cinder_tusk.name": "Presa de Troll de Cinza",
+  "entities.items.custom_slag_fragment.name": "Fragmento de Escoria",
+  "entities.items.custom_ash_bone.name": "Osso de Cinza",
+  "entities.items.custom_blaze_reaver.name": "Ceifador de Chamas",
+  "entities.items.custom_inferno_staff.name": "Cajado Infernal",
+  "entities.items.custom_cinderfang_dagger.name": "Adaga Presa-Carvao",
+  "entities.items.custom_fire_resistance_potion.name": "Pocao de Resistencia ao Fogo",
+  "entities.items.custom_charred_ration.name": "Racao de Campo Carbonizada",
 };
