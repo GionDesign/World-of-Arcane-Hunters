@@ -308,6 +308,260 @@ The bundled third-party art assets (models, textures, HDRIs) keep their own lice
 
 ## Deploying to DigitalOcean + Supabase
 
+Host the game on a **DigitalOcean Droplet** with **Supabase** as the external
+Postgres database. GitHub Actions builds and pushes a Docker image on every push
+to a `release/**` branch, then hot-swaps the container on the Droplet via SSH.
+Players are disconnected for ~5 seconds during a deploy; the server saves all
+characters on shutdown.
+
+**Estimated cost:** $12/month (Droplet) + $0 Supabase free tier. Upgrade to
+Supabase Pro ($25/month) once you have regular players — it disables the free
+tier's auto-pause.
+
+### Why a Droplet and not App Platform
+
+The game runs a persistent 20 Hz WebSocket loop. App Platform wraps containers
+in a managed HTTP proxy that can interfere with long-lived WebSocket connections
+and costs the same as a Droplet. A Droplet gives direct control — Caddy handles
+TLS and forwards straight to `localhost:8787` with zero proxy hops.
+
+---
+
+### Step 1 — Create the Supabase project
+
+1. Sign in at [supabase.com](https://supabase.com) → **New project**.
+2. Pick a region close to your intended DigitalOcean datacenter (e.g. `us-east-1`
+   for NYC, `eu-west-1` for AMS).
+3. Set a strong database password and **save it** — you set it once and cannot
+   retrieve it from the dashboard later.
+4. Wait for the project to finish provisioning (~2 minutes).
+5. Go to **Project Settings → Database → Connection string → Session** and copy
+   the string that uses port **5432** (not 6543). It looks like:
+   ```
+   postgresql://postgres.[ref]:[password]@aws-0-us-east-1.pooler.supabase.com:5432/postgres
+   ```
+   This is your `DATABASE_URL`. The game schema creates itself on first boot —
+   no migration step needed.
+
+> **Port 5432 is required.** The game server uses a Postgres advisory lock
+> (`pg_advisory_xact_lock`) during schema setup; this is incompatible with
+> PgBouncer transaction-mode pooling on port 6543. Always use the Session
+> (direct) connection string.
+
+> **Free tier auto-pause:** Supabase pauses a free project after 7 days without
+> any database queries. Step 4 adds a daily cron job that prevents this.
+> Upgrade to Pro ($25/month) to disable it permanently once you have players.
+
+---
+
+### Step 2 — Create the DigitalOcean Container Registry
+
+1. DigitalOcean Console → **Container Registry → Create Registry**.
+2. Choose a name (e.g. `woc`) — remember it, this is `DO_REGISTRY_NAME`.
+3. Free tier: 1 repository, 500 MB storage — sufficient for one game image.
+4. **API → Generate New Token** → name it `woc-ci`, grant **Read & Write** scope.
+5. Copy the token immediately — this is `DO_REGISTRY_TOKEN`.
+
+---
+
+### Step 3 — Launch the Droplet
+
+DigitalOcean Console → **Create → Droplets**:
+
+| Setting | Value |
+|---|---|
+| Region | Closest to your players (NYC3 / AMS3 / SFO3) — match Supabase region |
+| Image | Ubuntu 24.04 LTS |
+| Size | Premium AMD · 1 vCPU · 2 GB RAM ($12/month) |
+| SSH key | Add your personal public key now |
+| Hostname | `woc-prod` |
+
+After creation:
+
+- **Networking → Reserved IPs → Assign** a reserved IP to the Droplet so the
+  address survives restarts.
+- Point your domain's A record at that reserved IP before setting up Caddy.
+
+---
+
+### Step 4 — Provision the Droplet (one-time SSH)
+
+SSH in as root (`ssh root@<reserved-ip>`) and run the following blocks in order.
+
+**Install Docker, Compose v2, and Caddy:**
+```bash
+export DEBIAN_FRONTEND=noninteractive
+apt-get update -qq
+apt-get install -y docker.io docker-compose-v2 caddy postgresql-client curl
+systemctl enable --now docker
+```
+
+**Create the app directory and write the runtime `.env`**
+(replace every placeholder value):
+```bash
+mkdir -p /opt/eastbrook /opt/eastbrook/media-cache
+
+cat > /opt/eastbrook/.env << 'EOF'
+# Supabase Session connection string — port 5432, not 6543
+DATABASE_URL=postgresql://postgres.[ref]:[password]@aws-0-us-east-1.pooler.supabase.com:5432/postgres
+
+# Cloudflare Turnstile server-side secret (leave empty to disable the bot gate)
+TURNSTILE_SECRET=
+
+# Random secret for the loopback /internal/restart-countdown endpoint
+RESTART_COUNTDOWN_SECRET=
+
+# Media volume — persists GLB/texture files across container replacements
+EASTBROOK_MEDIA_DIR=/opt/eastbrook/media-cache
+
+# Realm name shown to players (default: Claudemoon)
+REALM_NAME=Claudemoon
+EOF
+
+chmod 600 /opt/eastbrook/.env
+```
+
+**Authenticate Docker with the DO Container Registry** (one-time — credentials
+are saved to `/root/.docker/config.json` and reused on every future pull):
+```bash
+# Replace <DO_REGISTRY_TOKEN> with the token from Step 2
+echo "<DO_REGISTRY_TOKEN>" | docker login registry.digitalocean.com \
+  -u "<DO_REGISTRY_TOKEN>" --password-stdin
+```
+
+**Generate the deploy SSH keypair** (used by GitHub Actions):
+```bash
+ssh-keygen -t ed25519 -f /root/.ssh/woc-deploy -N "" -C "woc-deploy-ci"
+cat /root/.ssh/woc-deploy.pub >> /root/.ssh/authorized_keys
+echo ""
+echo "=== Copy the private key below into GitHub secret DROPLET_SSH_KEY ==="
+cat /root/.ssh/woc-deploy
+```
+
+**Configure Caddy** (replace `play.example.com` with your actual domain):
+```bash
+cat > /etc/caddy/Caddyfile << 'EOF'
+play.example.com {
+    reverse_proxy localhost:8787
+    encode gzip
+}
+EOF
+systemctl enable caddy && systemctl restart caddy
+```
+
+**Supabase free-tier keep-alive** — runs `SELECT 1` daily at noon UTC to
+prevent the project from auto-pausing (replace the URL with your actual one):
+```bash
+cat > /etc/cron.d/supabase-keepalive << 'EOF'
+0 12 * * * root psql "postgresql://postgres.[ref]:[password]@aws-0-us-east-1.pooler.supabase.com:5432/postgres" -c "SELECT 1" >/dev/null 2>&1
+EOF
+```
+
+---
+
+### Step 5 — Configure GitHub
+
+#### Create a `production` environment
+
+In the GitHub repository: **Settings → Environments → New environment** →
+name it `production`. Add required reviewers if you want a manual approval
+gate before each production deploy.
+
+#### Add these secrets to the `production` environment
+
+| Secret | Value |
+|---|---|
+| `DO_REGISTRY_TOKEN` | The API token from Step 2 |
+| `DO_REGISTRY_NAME` | Registry name slug (e.g. `woc`) |
+| `DROPLET_IP` | Reserved IP from Step 3 |
+| `DROPLET_SSH_KEY` | Private key printed during Step 4 (include the full `-----BEGIN…-----END…` block) |
+| `VITE_TURNSTILE_SITEKEY` | Cloudflare Turnstile **site** key (public — safe here). Leave empty if not using Turnstile. |
+
+> **Which secrets go where:**
+> - `DATABASE_URL`, `TURNSTILE_SECRET`, and `RESTART_COUNTDOWN_SECRET` stay on
+>   the **Droplet** in `/opt/eastbrook/.env` only — they never leave the server.
+> - `VITE_TURNSTILE_SITEKEY` goes in GitHub because Vite must inline it into the
+>   client bundle at build time. It is a public key by design.
+> - No other `VITE_*` variables should ever be a server secret — Vite inlines
+>   every `VITE_*` env var into the client bundle unconditionally.
+
+---
+
+### Step 6 — Trigger the first deploy
+
+Push to any `release/**` branch:
+
+```bash
+git checkout -b release/1.0
+git push origin release/1.0
+```
+
+The `deploy` workflow in `.github/workflows/deploy.yml` runs automatically:
+
+1. **Test** — full 14-locale release-tier suite + typecheck.
+2. **Build** — multi-stage Docker image; Vite inlines `VITE_TURNSTILE_SITEKEY`
+   into the client bundle.
+3. **Push** — image pushed to the DO Container Registry tagged with the commit SHA
+   and `latest`.
+4. **Deploy** — `docker-compose.prod.yml` is synced to the Droplet, the new image
+   is pulled, and only the game container is recreated (`--no-deps --force-recreate`).
+
+Watch progress under the **Actions** tab. First build takes ~4 minutes (npm install
+inside Docker). Subsequent builds are faster due to layer caching.
+
+Once the workflow is green, verify:
+```bash
+curl -s https://play.example.com/api/status
+# → {"ok":true,"players_online":0,...}
+```
+
+---
+
+### Step 7 — Grant admin to your account
+
+Create a game account in the browser, then on the Droplet:
+
+```bash
+psql "postgresql://postgres.[ref]:[password]@aws-0-us-east-1.pooler.supabase.com:5432/postgres" \
+  -c "UPDATE accounts SET is_admin = TRUE WHERE username = 'your-username';"
+```
+
+The admin dashboard is at `https://play.example.com/admin`.
+
+---
+
+### Ongoing deployments
+
+Every push to `release/**` triggers a full deploy automatically. To deploy
+without changing code (e.g. to apply an updated `.env` to the Droplet), restart
+the container manually on the server:
+
+```bash
+ssh root@<reserved-ip>
+cd /opt/eastbrook
+GAME_IMAGE=$(docker inspect eastbrook-game --format '{{.Config.Image}}') \
+  docker compose -f docker-compose.prod.yml up -d --no-deps --force-recreate game
+```
+
+To add a second realm, add another entry in `/opt/eastbrook/.env` and start
+another container pointing to the same `DATABASE_URL` with a different
+`REALM_NAME` and `PORT`. See `DEPLOY.md` for the full realms guide.
+
+---
+
+### Health check and logs
+
+```bash
+# Status (from the Droplet or any machine)
+curl -s https://play.example.com/api/status
+
+# Live game server logs
+docker logs -f eastbrook-game
+
+# Supabase DB connection test
+psql "$DATABASE_URL" -c "\conninfo"
+```
+test
 See **[docs/SETUP-DIGITALOCEAN.md](docs/SETUP-DIGITALOCEAN.md)** for the complete
 step-by-step guide: Supabase project, DigitalOcean Container Registry, Droplet
 provisioning, Caddy TLS, GitHub Actions CI/CD, admin dashboard, and all environment
