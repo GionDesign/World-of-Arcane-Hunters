@@ -561,3 +561,4 @@ docker logs -f eastbrook-game
 # Supabase DB connection test
 psql "$DATABASE_URL" -c "\conninfo"
 ```
+test
