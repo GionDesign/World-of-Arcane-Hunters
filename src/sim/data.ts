@@ -30,6 +30,13 @@ import {
   TEMPLE_CAMPS, TEMPLE_DUNGEON_DEFS, TEMPLE_DUNGEON_MOBS, TEMPLE_ITEMS, TEMPLE_MOBS,
   TEMPLE_NPCS, TEMPLE_OBJECTS, TEMPLE_PROPS, TEMPLE_QUEST_ORDER, TEMPLE_QUESTS,
 } from './content/temple';
+// Fork-exclusive custom content (src/sim/content/custom/index.ts). This import
+// and the merges below are the only fork additions to this upstream file.
+import {
+  CUSTOM_CAMPS, CUSTOM_DUNGEON_DEFS, CUSTOM_DUNGEON_MOBS, CUSTOM_ITEMS, CUSTOM_MOBS,
+  CUSTOM_NPCS, CUSTOM_OBJECTS, CUSTOM_PROPS, CUSTOM_QUEST_ORDER, CUSTOM_QUESTS,
+  CUSTOM_ROADS, CUSTOM_ZONES,
+} from './content/custom';
 
 function mergeItems(...parts: Record<string, ItemDef>[]): Record<string, ItemDef> {
   const merged = Object.assign({}, ...parts);
@@ -52,39 +59,43 @@ export type {
 // Merged content tables
 // ---------------------------------------------------------------------------
 
-export const ITEMS: Record<string, ItemDef> = mergeItems(BASE_ITEMS, ZONE2_ITEMS, ZONE3_ITEMS, TEMPLE_ITEMS);
+export const ITEMS: Record<string, ItemDef> = mergeItems(BASE_ITEMS, ZONE2_ITEMS, ZONE3_ITEMS, TEMPLE_ITEMS, CUSTOM_ITEMS);
 
 export const MOBS: Record<string, MobTemplate> = {
   ...ZONE1_MOBS, ...ZONE2_MOBS, ...ZONE3_MOBS, ...DUNGEON_MOBS,
   ...WARLOCK_PET_MOBS, ...TEMPLE_MOBS, ...TEMPLE_DUNGEON_MOBS,
+  ...CUSTOM_MOBS, ...CUSTOM_DUNGEON_MOBS,
 };
 
 export const NPCS: Record<string, NpcDef> = {
-  ...ZONE1_NPCS, ...ZONE2_NPCS, ...ZONE3_NPCS, ...TEMPLE_NPCS,
+  ...ZONE1_NPCS, ...ZONE2_NPCS, ...ZONE3_NPCS, ...TEMPLE_NPCS, ...CUSTOM_NPCS,
 };
 
 export const QUESTS: Record<string, QuestDef> = {
-  ...ZONE1_QUESTS, ...ZONE2_QUESTS, ...ZONE3_QUESTS, ...TEMPLE_QUESTS,
+  ...ZONE1_QUESTS, ...ZONE2_QUESTS, ...ZONE3_QUESTS, ...TEMPLE_QUESTS, ...CUSTOM_QUESTS,
 };
 
 export const QUEST_ORDER: string[] = [
   ...ZONE1_QUEST_ORDER, ...ZONE2_QUEST_ORDER, ...ZONE3_QUEST_ORDER, ...TEMPLE_QUEST_ORDER,
+  ...CUSTOM_QUEST_ORDER,
 ];
 
 // Camps spawn in array order, each drawing world-gen RNG, so an entry inserted
 // before others shifts their spawn positions. New rare-elite camps
 // (ZONE1_CHAPEL_CAMPS) and the Eastbrook rare Grix are appended LAST so every
 // existing zone camp keeps its exact draw order (determinism).
+// CUSTOM_CAMPS must also stay last -- see src/sim/content/custom/CLAUDE.md.
 export const CAMPS: CampDef[] = [
   ...ZONE1_CAMPS, ...ZONE2_CAMPS, ...ZONE3_CAMPS, ...TEMPLE_CAMPS, ...ZONE1_CHAPEL_CAMPS,
   { mobId: 'grix_the_tunnelking', center: { x: -95, z: -78 }, radius: 4, count: 1 },
+  ...CUSTOM_CAMPS,
 ];
 
-export const GROUND_OBJECTS: GroundObjectDef[] = [...ZONE1_OBJECTS, ...ZONE2_OBJECTS, ...ZONE3_OBJECTS, ...TEMPLE_OBJECTS];
+export const GROUND_OBJECTS: GroundObjectDef[] = [...ZONE1_OBJECTS, ...ZONE2_OBJECTS, ...ZONE3_OBJECTS, ...TEMPLE_OBJECTS, ...CUSTOM_OBJECTS];
 
-export const ROADS: { x: number; z: number }[][] = [...ZONE1_ROADS, ...ZONE2_ROADS, ...ZONE3_ROADS];
+export const ROADS: { x: number; z: number }[][] = [...ZONE1_ROADS, ...ZONE2_ROADS, ...ZONE3_ROADS, ...CUSTOM_ROADS];
 
-export const PROPS: ZonePropsDef = mergeProps([ZONE1_PROPS, ZONE2_PROPS, ZONE3_PROPS, TEMPLE_PROPS]);
+export const PROPS: ZonePropsDef = mergeProps([ZONE1_PROPS, ZONE2_PROPS, ZONE3_PROPS, TEMPLE_PROPS, CUSTOM_PROPS]);
 
 function mergeProps(sets: ZonePropsDef[]): ZonePropsDef {
   return {
@@ -132,7 +143,7 @@ export const GROUP_XP_BONUS = [1, 1, 1.166, 1.3, 1.43];
 // graveyard, its lakes, and a biome palette the renderer keys off.
 // ---------------------------------------------------------------------------
 
-export const ZONES: ZoneDef[] = [ZONE1_ZONE, ZONE2_ZONE, ZONE3_ZONE];
+export const ZONES: ZoneDef[] = [ZONE1_ZONE, ZONE2_ZONE, ZONE3_ZONE, ...CUSTOM_ZONES];
 
 export const WORLD_SIZE = 360; // world width: x spans [-180, 180]
 export const WORLD_MIN_X = -WORLD_SIZE / 2;
@@ -175,7 +186,7 @@ export function instanceOrigin(dungeonIndex: number, slot: number): { x: number;
   return { x: 900 + dungeonIndex * 600, z: -1250 + slot * 500 };
 }
 
-export const DUNGEONS: Record<string, DungeonDef> = { ...DUNGEON_DEFS, ...TEMPLE_DUNGEON_DEFS };
+export const DUNGEONS: Record<string, DungeonDef> = { ...DUNGEON_DEFS, ...TEMPLE_DUNGEON_DEFS, ...CUSTOM_DUNGEON_DEFS };
 
 export const DUNGEON_LIST: DungeonDef[] = Object.values(DUNGEONS).sort((a, b) => a.index - b.index);
 

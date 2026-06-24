@@ -562,3 +562,11 @@ docker logs -f eastbrook-game
 psql "$DATABASE_URL" -c "\conninfo"
 ```
 test
+See **[docs/SETUP-DIGITALOCEAN.md](docs/SETUP-DIGITALOCEAN.md)** for the complete
+step-by-step guide: Supabase project, DigitalOcean Container Registry, Droplet
+provisioning, Caddy TLS, GitHub Actions CI/CD, admin dashboard, and all environment
+variable reference.
+
+If you are routing traffic through **Cloudflare**, read
+**[docs/SETUP-CLOUDFLARE.md](docs/SETUP-CLOUDFLARE.md)** as well — it covers DNS,
+SSL/TLS mode, Caddy `trusted_proxies` configuration, WAF, and Turnstile integration.

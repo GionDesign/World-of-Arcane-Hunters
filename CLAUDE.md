@@ -93,6 +93,14 @@ See `README.md` for the full host/develop/play guide and the classic-fidelity ch
 - **Never set `ALLOW_DEV_COMMANDS=1` in production** (it enables level/teleport/item cheats).
 - **Never commit `.env` or secrets.**
 
+## Fork rules (read FORK.md first)
+This is a personal deployment fork. **Before making any changes, read `FORK.md`
+in the repository root.** It defines the fork maintenance rules, the custom content
+pattern (`src/sim/content/custom/`), the upstream sync workflow, and the list of
+upstream files this fork has modified. Those rules take precedence over the generic
+guidance below. `docs/MAINTAINING-FORK.md` has the full record of every change made
+to upstream files, with exact code snippets for re-applying after a bad merge.
+
 ## Conventions
 - **ESM + TypeScript `strict`** everywhere. 2-space indent; match the surrounding file.
 - **Keep the dependency set tiny.** Don't add packages without a clear need.
@@ -176,5 +184,6 @@ correct.
   `tests/localization_fixes.test.ts`), never on "looks done."
 
 ## Pointers
-`README.md` (host/develop/play + fidelity checklist) · `DEPLOY.md` (production) ·
-`CREDITS.md` (asset licenses) · `docs/design/` (design docs) · `docs/prd/` (feature specs).
+`FORK.md` (fork rules, MUST read first for this repo) · `README.md` (host/develop/play + fidelity checklist) · `DEPLOY.md` (production) ·
+`CREDITS.md` (asset licenses) · `docs/design/` (design docs) · `docs/prd/` (feature specs) ·
+`docs/MAINTAINING-FORK.md` (record of every upstream file change with re-apply snippets).
