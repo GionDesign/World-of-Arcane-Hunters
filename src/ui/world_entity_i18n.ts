@@ -73,10 +73,6 @@ const MOB_IDS = [
   'bound_guardian',
   'nythraxis_skeleton_warrior',
   'nythraxis_scourge_of_thornpeak',
-  // Brightwood Glade wildlife pack
-  'brightwood_hare', 'glade_fox', 'spotted_fawn', 'meadow_crane', 'thornpelt_badger',
-  'dawnmane_doe', 'bramble_lynx', 'brightwood_stag', 'grovetusk_boar', 'sunhide_bear',
-  'brightwood_monarch',
   // Cinderhold custom mobs
   'custom_lava_elemental', 'custom_ember_imp', 'custom_magma_hound',
   'custom_cinder_troll', 'custom_flamecaller', 'custom_molten_colossus',
@@ -121,10 +117,6 @@ const QUEST_IDS = [
   'q_breaking_the_seal', 'q_voice_below', 'q_sanctum_gate', 'q_korgath', 'q_velkhar',
   'q_gravewyrm', 'q_the_codfather', 'q_nythraxis_restless_dead', 'q_nythraxis_graves',
   'q_nythraxis_sealed_crypt', 'q_nythraxis_bound_guardian', 'q_nythraxis_scourges_end',
-  'q_brightwood_thinning', 'q_brightwood_monarch',
-  'q_ledger_first_duty', 'q_ledger_teeth', 'q_ledger_reedwater', 'q_ledger_silk',
-  'q_ledger_brood', 'q_ledger_deepvermin', 'q_ledger_toll', 'q_ledger_vigil',
-  'q_ledger_great_boar', 'q_ledger_outlaw_captain',
   // Cinderhold custom quests
   'custom_q_quench_the_elementals', 'custom_q_hound_culling', 'custom_q_troll_tide',
 ] as const;
