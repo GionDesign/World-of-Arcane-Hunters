@@ -567,3 +567,5 @@ supabase start              # fresh stack
 npm run db:local            # re-apply local .env
 npm run server              # re-applies the schema
 ```
+
+Testing deployment
