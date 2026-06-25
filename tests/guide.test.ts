@@ -89,7 +89,7 @@ describe('Guide entry wiring', () => {
   });
 
   it('lists the guide in the sitemap', () => {
-    expect(sitemapXml).toContain('<loc>https://worldofclaudecraft.com/wiki</loc>');
+    expect(sitemapXml).toContain('<loc>https://TODO-your-domain.com/wiki</loc>');
   });
 });
 
@@ -101,8 +101,8 @@ describe('guide.html shell', () => {
   });
 
   it('ships crawlable canonical + social metadata for /wiki', () => {
-    expect(guideHtml).toContain('<link rel="canonical" href="https://worldofclaudecraft.com/wiki" />');
-    expect(guideHtml).toContain('<meta property="og:url" content="https://worldofclaudecraft.com/wiki" />');
+    expect(guideHtml).toContain('<link rel="canonical" href="https://TODO-your-domain.com/wiki" />');
+    expect(guideHtml).toContain('<meta property="og:url" content="https://TODO-your-domain.com/wiki" />');
     expect(guideHtml).toContain('content="index, follow, max-image-preview:large"');
   });
 

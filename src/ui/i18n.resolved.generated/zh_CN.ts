@@ -586,7 +586,7 @@ export const zh_CN: EnTranslations = {
     }
   },
   "guide": {
-    "brand": "World of ClaudeCraft",
+    "brand": "World of Arcane Hunters",
     "brandShort": "ClaudeCraft",
     "tagline": "一款可在浏览器中免费畅玩的经典风格 MMO。",
     "skipToContent": "跳至正文",
@@ -646,7 +646,7 @@ export const zh_CN: EnTranslations = {
       "github": "GitHub 上的源代码",
       "discord": "加入 Discord",
       "communityWiki": "社区维基",
-      "rights": "World of ClaudeCraft"
+      "rights": "World of Arcane Hunters"
     },
     "language": {
       "label": "语言",
@@ -665,7 +665,7 @@ export const zh_CN: EnTranslations = {
     },
     "home": {
       "eyebrow": "经典风格浏览器 MMO",
-      "title": "World of ClaudeCraft",
+      "title": "World of Arcane Hunters",
       "subtitle": "在你的浏览器中免费接受任务、组队、探索一个纯手工打造的世界。",
       "ctaPlay": "立即游玩",
       "ctaLearn": "游戏入门",
@@ -1031,7 +1031,7 @@ export const zh_CN: EnTranslations = {
     },
     "worldPage": {
       "heading": "世界",
-      "intro": "World of ClaudeCraft 是一片连绵不绝、需你徒步穿越的大陆，三大区域由南向北依次铺展。这里没有快速旅行，因此旅途本身便是冒险的一部分。",
+      "intro": "World of Arcane Hunters 是一片连绵不绝、需你徒步穿越的大陆，三大区域由南向北依次铺展。这里没有快速旅行，因此旅途本身便是冒险的一部分。",
       "hub": "大本营",
       "mapHeading": "向北之路",
       "mapSub": "三片区域，自南向北，每一片的等级都更高一级。跟着任务线走，这片土地便会带你从山谷一路抵达群峰。",
@@ -1403,8 +1403,8 @@ export const zh_CN: EnTranslations = {
     "realmName": "服务器名称"
   },
   "footer": {
-    "copyright": "2026 World of ClaudeCraft",
-    "githubLink": "https://github.com/levy-street/world-of-claudecraft",
+    "copyright": "2026 World of Arcane Hunters",
+    "githubLink": "https://github.com/giondesign/world-of-arcane-hunters",
     "githubLabel": "开源项目",
     "terms": "服务条款",
     "privacy": "隐私政策",
@@ -1453,7 +1453,7 @@ export const zh_CN: EnTranslations = {
     "serverOnline": "在线",
     "serverOffline": "离线",
     "play": "开始游戏",
-    "playAria": "开始游玩 World of ClaudeCraft",
+    "playAria": "开始游玩 World of Arcane Hunters",
     "serverLabel": "选择你的服务器",
     "serverAria": "选择服务器：在线或离线",
     "serverOfflineSub": "即时本地世界",
@@ -1655,7 +1655,7 @@ export const zh_CN: EnTranslations = {
     "footerCta": "铸就你的传说：{siteUrl}",
     "arenaStat": "竞技场",
     "shareTierBit": "，{tier}级 $WOC 持有者",
-    "shareText": "我正在 World of ClaudeCraft 中铸就传说：{level}级 {className}{tierBit}。加入我的服务器：",
+    "shareText": "我正在 World of Arcane Hunters 中铸就传说：{level}级 {className}{tierBit}。加入我的服务器：",
     "nativeShareTitle": "ClaudeCraft 世界",
     "fileNameFallback": "玩家",
     "actionShareX": "分享到 X",
@@ -2146,14 +2146,14 @@ export const zh_CN: EnTranslations = {
     }
   },
   "seo": {
-    "title": "World of ClaudeCraft：经典风格网页 MMO",
-    "description": "在 World of ClaudeCraft 展开史诗冒险。这是一款可直接在浏览器中游玩的经典风格微型 MMO。加入持续共享的服务器，提升职业等级，击败敌人。",
+    "title": "World of Arcane Hunters：经典风格网页 MMO",
+    "description": "在 World of Arcane Hunters 展开史诗冒险。这是一款可直接在浏览器中游玩的经典风格微型 MMO。加入持续共享的服务器，提升职业等级，击败敌人。",
     "genre": "MMORPG",
     "playMode": "多人游戏",
     "applicationCategory": "游戏",
     "operatingSystem": "网页浏览器",
-    "officialLabel": "World of ClaudeCraft 官方网站",
-    "officialBody": "worldofclaudecraft.com 是 Claudemoon 服务器的官方免费浏览器 MMO。你可以用持久角色在线游玩，也可以离线单人探索，阅读 wiki，并从本站访问已验证的社区链接。"
+    "officialLabel": "World of Arcane Hunters 官方网站",
+    "officialBody": "Eastbrook 服务器的官方免费浏览器 MMO。你可以用持久角色在线游玩，也可以离线单人探索，阅读 wiki，并从本站访问已验证的社区链接。"
   },
   "a11y": {
     "goHome": "前往主页",
@@ -2161,9 +2161,9 @@ export const zh_CN: EnTranslations = {
     "mainNavigation": "主导航",
     "languageSelection": "语言选择",
     "characterActions": "角色操作",
-    "githubProject": "打开 World of ClaudeCraft 的 GitHub 项目",
-    "discordCommunity": "加入 World of ClaudeCraft 的 Discord 社区",
-    "donateProject": "捐赠支持 World of ClaudeCraft"
+    "githubProject": "打开 World of Arcane Hunters 的 GitHub 项目",
+    "discordCommunity": "加入 World of Arcane Hunters 的 Discord 社区",
+    "donateProject": "捐赠支持 World of Arcane Hunters"
   },
   "loading": {
     "world": "正在加载世界...",
@@ -2335,20 +2335,20 @@ export const zh_CN: EnTranslations = {
     "iosStandaloneDetail": "你正在从主屏幕以全屏模式运行。请保持横屏。",
     "iosInstallDetail": "若要在 iPhone 或 iPad 上获得真正全屏，请先将此页面添加到主屏幕。",
     "iosShareStep": "在 Safari 中点击分享，然后选择添加到主屏幕。",
-    "iosOpenStep": "从新的主屏幕图标打开 World of ClaudeCraft。",
+    "iosOpenStep": "从新的主屏幕图标打开 World of Arcane Hunters。",
     "androidStandaloneDetail": "你正在全屏应用模式中。请保持横屏。",
     "androidInstallDetail": "若要在 Android 上全屏，请先安装此页面或将其添加到主屏幕。",
     "androidInstallStep": "在 Chrome 中点击菜单，然后选择安装应用或添加到主屏幕。",
-    "androidOpenStep": "从新图标打开 World of ClaudeCraft。",
+    "androidOpenStep": "从新图标打开 World of Arcane Hunters。",
     "otherStandaloneDetail": "请保持设备处于横屏全屏。",
     "otherInstallDetail": "安装此页面或将其添加到主屏幕，以获得最佳移动端全屏体验。"
   },
   "serverUnavailable": {
-    "title": "World of ClaudeCraft - 服务器不可用",
-    "logoAlt": "World of ClaudeCraft",
+    "title": "World of Arcane Hunters - 服务器不可用",
+    "logoAlt": "World of Arcane Hunters",
     "eyebrow": "服务器维护",
     "heading": "服务器暂时不可用。",
-    "body": "我们正在重启游戏服务，Claudemoon 应会很快恢复。此页面会自动继续检查。",
+    "body": "我们正在重启游戏服务，Eastbrook 应会很快恢复。此页面会自动继续检查。",
     "status": "即将恢复"
   },
   "hud": {

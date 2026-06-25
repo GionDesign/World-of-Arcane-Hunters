@@ -3,6 +3,7 @@
 // (Leaves, EnTranslations, TranslationKey, ...). This file was src/ui/i18n.en.ts before
 // the i18n.catalog domain split; importers resolve './i18n.catalog' to this index.
 
+import { FORK_BRAND } from './fork_brand';
 import { worldEntityText as worldNames } from '../world_entity_i18n';
 import { abilityStrings, classAbilityNames } from './abilities';
 import { gameStrings } from './game';
@@ -114,8 +115,8 @@ export const en = {
     realmName: 'Realm Name',
   },
   footer: {
-    copyright: '2026 World of ClaudeCraft',
-    githubLink: 'https://github.com/levy-street/world-of-claudecraft',
+    copyright: `2026 ${FORK_BRAND.gameName}`,
+    githubLink: FORK_BRAND.githubUrl,
     githubLabel: 'Open Source Project',
     terms: 'Terms of Service',
     privacy: 'Privacy Policy',
@@ -167,7 +168,7 @@ export const en = {
     serverOnline: 'Online',
     serverOffline: 'Offline',
     play: 'Play',
-    playAria: 'Play World of ClaudeCraft',
+    playAria: `Play ${FORK_BRAND.gameName}`,
     serverLabel: 'Choose your realm',
     serverAria: 'Select realm: Online or Offline',
     serverOfflineSub: 'Instant local world',
@@ -320,8 +321,8 @@ export const en = {
     levelClass: 'Level {level} - {className}',
     topPercent: 'TOP {percent}%',
     realmSubtitle: '{realm} Realm',
-    defaultRealm: 'World of ClaudeCraft',
-    brandWordmark: 'WORLD OF CLAUDECRAFT',
+    defaultRealm: FORK_BRAND.gameName,
+    brandWordmark: FORK_BRAND.gameNameUpperCase,
     recruited: '{count} recruited',
     footerHandle: '@{handle}',
     footerHandleWithRecruits: '@{handle} - {recruited}',
@@ -329,8 +330,8 @@ export const en = {
     arenaStat: 'Arena',
     shareTierBit: ', {tier}-rank $WOC holder',
     shareText:
-      "I'm forging my legend in World of ClaudeCraft: Level {level} {className}{tierBit}. Join my realm:",
-    nativeShareTitle: 'World of ClaudeCraft',
+      `I'm forging my legend in ${FORK_BRAND.gameName}: Level {level} {className}{tierBit}. Join my realm:`,
+    nativeShareTitle: FORK_BRAND.gameName,
     fileNameFallback: 'player',
     actionShareX: 'Share to X',
     actionCopyReferral: 'Copy Referral Link',

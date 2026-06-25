@@ -7,7 +7,7 @@ import type * as http from 'node:http';
 // value, so two processes with different REALM_NAME share a DB yet form fully
 // isolated worlds. Defaults to a single realm for local dev / single-shard prod.
 
-export const DEFAULT_REALM_NAME = 'Claudemoon';
+export const DEFAULT_REALM_NAME = 'Eastbrook';
 
 export function resolveRealm(rawName: string | undefined): string {
   const raw = (rawName ?? '').trim();
@@ -109,11 +109,13 @@ export const CONFIGURED_PUBLIC_ORIGIN = resolvePublicOrigin(process.env.PUBLIC_O
 export const REALM_PUBLIC_ORIGIN =
   CONFIGURED_PUBLIC_ORIGIN || publicOriginForRealm(REALM, REALM_DIRECTORY);
 
-const DEFAULT_PRODUCTION_PUBLIC_ORIGIN = 'https://worldofclaudecraft.com';
+// TODO(fork): Replace with your production domain. Also update play.html canonical/hreflang,
+// guide.html canonical/hreflang, public/sitemap.xml, and FORK_BRAND.siteUrl in
+// src/ui/i18n.catalog/fork_brand.ts. Set PUBLIC_ORIGIN env var in .env to avoid this fallback.
+const DEFAULT_PRODUCTION_PUBLIC_ORIGIN = 'https://TODO-your-domain.com';
 const TRUSTED_PUBLIC_HOST_ORIGINS = new Map([
-  ['worldofclaudecraft.com', DEFAULT_PRODUCTION_PUBLIC_ORIGIN],
-  ['www.worldofclaudecraft.com', DEFAULT_PRODUCTION_PUBLIC_ORIGIN],
-  ['dev.worldofclaudecraft.com', 'https://dev.worldofclaudecraft.com'],
+  ['TODO-your-domain.com', DEFAULT_PRODUCTION_PUBLIC_ORIGIN],
+  ['www.TODO-your-domain.com', DEFAULT_PRODUCTION_PUBLIC_ORIGIN],
 ]);
 
 function firstHeaderValue(value: string | string[] | undefined): string {

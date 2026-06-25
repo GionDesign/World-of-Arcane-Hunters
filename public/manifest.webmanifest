@@ -1,7 +1,7 @@
 {
-  "name": "World of ClaudeCraft",
-  "short_name": "ClaudeCraft",
-  "description": "World of ClaudeCraft mobile realm",
+  "name": "World of Arcane Hunters",
+  "short_name": "WoAH",
+  "description": "World of Arcane Hunters mobile realm",
   "start_url": "/",
   "scope": "/",
   "display": "fullscreen",

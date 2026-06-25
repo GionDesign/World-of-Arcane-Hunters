@@ -125,3 +125,8 @@ A full list of all upstream file modifications with exact code snippets is in
 - `DEPLOY.md` -- added Cloudflare guide link and rate-limiting note
 - `README.md` -- replaced DigitalOcean deployment section with pointer to `docs/SETUP-DIGITALOCEAN.md`
 - `src/sim/data.ts` -- added import + merges for `src/sim/content/custom/`
+- **Brand rename (2026-06):** ~30 upstream files updated -- game name, realm name, domain, GitHub URL.
+  See the "Brand rename" section in `docs/MAINTAINING-FORK.md` for the full replacement map.
+
+**Fork-owned new files (never conflict with upstream):**
+- `src/ui/i18n.catalog/fork_brand.ts` -- central brand constants (`FORK_BRAND`); imported by `index.ts`

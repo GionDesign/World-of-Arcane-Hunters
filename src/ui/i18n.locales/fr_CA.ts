@@ -14,9 +14,9 @@ export const fr_CA: Partial<Record<TranslationKey, string>> = {
   // Stat tooltips inherit the fr_FR base: none of these strings has a genuine
   // Quebec-specific form, so per the divergence-only policy fr_CA carries no
   // hudChrome.statInfo.* overrides.
-  'seo.title': 'World of ClaudeCraft: MMO Web de style classique',
+  'seo.title': 'World of Arcane Hunters: MMO Web de style classique',
   'seo.description':
-    "Partez à l'aventure dans World of ClaudeCraft, un micro-MMO de style classique jouable directement dans votre navigateur. Rejoignez un royaume partagé, faites progresser vos classes et terrassez des ennemis.",
+    "Partez à l'aventure dans World of Arcane Hunters, un micro-MMO de style classique jouable directement dans votre navigateur. Rejoignez un royaume partagé, faites progresser vos classes et terrassez des ennemis.",
   'seo.operatingSystem': 'Navigateur Web',
   'a11y.toggleMenu': 'Ouvrir ou fermer le menu',
   'loading.assetsFailed': 'Le chargement des ressources a échoué: rechargez la page. {error}',
@@ -66,7 +66,7 @@ export const fr_CA: Partial<Record<TranslationKey, string>> = {
   'mobilePreflight.androidInstallStep':
     "Dans Chrome, touchez le menu, puis Installer l'application ou Ajouter à l'écran d'accueil.",
   'serverUnavailable.body':
-    'Nous redémarrons le service de jeu et Claudemoon devrait revenir sous peu. Cette page continuera de vérifier automatiquement.',
+    'Nous redémarrons le service de jeu et Eastbrook devrait revenir sous peu. Cette page continuera de vérifier automatiquement.',
   'serverUnavailable.status': 'De retour bientôt',
   'delveUi.affix.candleblind': 'Aveuglement de chandelle',
   'delveUi.blessing.chapel_candle':

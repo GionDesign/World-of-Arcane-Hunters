@@ -14,9 +14,7 @@
 import type { TranslationKey } from '../i18n.catalog';
 
 export const fr_FR: Partial<Record<TranslationKey, string>> = {
-  'seo.officialLabel': 'Site officiel de World of ClaudeCraft',
-  'seo.officialBody':
-    'worldofclaudecraft.com est le MMO gratuit officiel sur navigateur du royaume Claudemoon. Jouez en ligne avec un personnage persistant, explorez en solo hors ligne, lisez le wiki et suivez les liens communautaires vérifiés depuis ce site.',
+  'seo.officialLabel': 'Site officiel de World of Arcane Hunters',
   'hudChrome.questShare.notShareable': 'Cette quête ne peut pas être partagée.',
   'hudChrome.questShare.notInSharerParty':
     'Vous devez être dans le groupe de {name} pour accepter cette quête.',
@@ -375,8 +373,8 @@ export const fr_FR: Partial<Record<TranslationKey, string>> = {
   'stats.accountsCreated': 'Joueurs',
   'stats.playersOnline': 'Joueurs en ligne',
   'stats.realmName': 'Nom du royaume',
-  'footer.copyright': '2026 World of ClaudeCraft',
-  'footer.githubLink': 'https://github.com/levy-street/world-of-claudecraft',
+  'footer.copyright': '2026 World of Arcane Hunters',
+  'footer.githubLink': 'https://github.com/giondesign/world-of-arcane-hunters',
   'footer.githubLabel': 'Projet open source',
   'footer.terms': "Conditions d'utilisation",
   'footer.privacy': 'Politique de confidentialité',
@@ -566,7 +564,7 @@ export const fr_FR: Partial<Record<TranslationKey, string>> = {
   'playerCard.arenaStat': 'Arène',
   'playerCard.shareTierBit': ', détenteur $WOC de rang {tier}',
   'playerCard.shareText':
-    'Je forge ma légende dans World of ClaudeCraft: niveau {level} {className}{tierBit}. Rejoignez mon royaume:',
+    'Je forge ma légende dans World of Arcane Hunters: niveau {level} {className}{tierBit}. Rejoignez mon royaume:',
   'playerCard.nativeShareTitle': 'Monde de ClaudeCraft',
   'playerCard.fileNameFallback': 'joueur',
   'playerCard.actionShareX': 'Partager sur X',
@@ -629,9 +627,9 @@ export const fr_FR: Partial<Record<TranslationKey, string>> = {
   'controls.emoteWheel': 'Maintenir la roue des emotes',
   'controls.friends': 'Amis et guilde',
   'controls.chat': 'Ouvrir le chat',
-  'seo.title': 'World of ClaudeCraft: MMO web de style classique',
+  'seo.title': 'World of Arcane Hunters: MMO web de style classique',
   'seo.description':
-    'Partez pour une aventure épique dans World of ClaudeCraft, un micro-MMO au style classique jouable directement dans votre navigateur. Rejoignez un royaume persistant, progressez en classe et terrassez vos ennemis.',
+    'Partez pour une aventure épique dans World of Arcane Hunters, un micro-MMO au style classique jouable directement dans votre navigateur. Rejoignez un royaume persistant, progressez en classe et terrassez vos ennemis.',
   'seo.genre': 'MMORPG',
   'seo.playMode': 'Multijoueur',
   'seo.applicationCategory': 'Jeu',
@@ -641,9 +639,9 @@ export const fr_FR: Partial<Record<TranslationKey, string>> = {
   'a11y.mainNavigation': 'Navigation principale',
   'a11y.languageSelection': 'Sélection de la langue',
   'a11y.characterActions': 'Actions de personnage',
-  'a11y.githubProject': 'Ouvrir le projet World of ClaudeCraft sur GitHub',
-  'a11y.discordCommunity': 'Rejoindre la communauté World of ClaudeCraft sur Discord',
-  'a11y.donateProject': 'Faire un don pour soutenir World of ClaudeCraft',
+  'a11y.githubProject': 'Ouvrir le projet World of Arcane Hunters sur GitHub',
+  'a11y.discordCommunity': 'Rejoindre la communauté World of Arcane Hunters sur Discord',
+  'a11y.donateProject': 'Faire un don pour soutenir World of Arcane Hunters',
   'loading.world': 'Chargement du monde...',
   'loading.worldProgress': 'Chargement du monde... {done}/{total}',
   'loading.enteringWorld': 'Entrée dans le monde...',
@@ -783,23 +781,23 @@ export const fr_FR: Partial<Record<TranslationKey, string>> = {
   'mobilePreflight.iosShareStep':
     "Dans Safari, touchez Partager, puis Ajouter à l'écran d'accueil.",
   'mobilePreflight.iosOpenStep':
-    "Ouvrez World of ClaudeCraft depuis la nouvelle icône de l'écran d'accueil.",
+    "Ouvrez World of Arcane Hunters depuis la nouvelle icône de l'écran d'accueil.",
   'mobilePreflight.androidStandaloneDetail':
     "Vous êtes en mode application plein écran. Gardez l'appareil en paysage.",
   'mobilePreflight.androidInstallDetail':
     "Pour le plein écran sur Android, installez cette page ou ajoutez-la à l'écran d'accueil.",
   'mobilePreflight.androidInstallStep':
     "Dans Chrome, ouvrez le menu, puis Installer l'application ou Ajouter à l'écran d'accueil.",
-  'mobilePreflight.androidOpenStep': 'Ouvrez World of ClaudeCraft depuis la nouvelle icône.',
+  'mobilePreflight.androidOpenStep': 'Ouvrez World of Arcane Hunters depuis la nouvelle icône.',
   'mobilePreflight.otherStandaloneDetail': 'Gardez votre appareil en plein écran paysage.',
   'mobilePreflight.otherInstallDetail':
     "Installez ou ajoutez cette page à votre écran d'accueil pour la meilleure expérience mobile plein écran.",
-  'serverUnavailable.title': 'World of ClaudeCraft - Royaume indisponible',
-  'serverUnavailable.logoAlt': 'World of ClaudeCraft',
+  'serverUnavailable.title': 'World of Arcane Hunters - Royaume indisponible',
+  'serverUnavailable.logoAlt': 'World of Arcane Hunters',
   'serverUnavailable.eyebrow': 'Maintenance du royaume',
   'serverUnavailable.heading': 'Le royaume est temporairement indisponible.',
   'serverUnavailable.body':
-    'Nous redémarrons le service de jeu et Claudemoon devrait revenir bientôt. Cette page continuera de vérifier automatiquement.',
+    'Nous redémarrons le service de jeu et Eastbrook devrait revenir bientôt. Cette page continuera de vérifier automatiquement.',
   'serverUnavailable.status': 'Bientôt de retour',
   'hud.core.elite': 'ÉLITE',
   'hud.core.boss': 'BOSS',
@@ -3012,7 +3010,7 @@ export const fr_FR: Partial<Record<TranslationKey, string>> = {
   'mode.caNote':
     "WOC est notre jeton communautaire. Il n'est pas nécessaire pour jouer. Rejoignez le Discord pour discuter de l'utilité et de la dynamique du WOC.",
   'mode.play': 'Jouer',
-  'mode.playAria': 'Jouer à World of ClaudeCraft',
+  'mode.playAria': 'Jouer à World of Arcane Hunters',
   'mode.serverAria': 'Choisir le royaume : En ligne ou Hors ligne',
   'mode.serverLabel': 'Choisissez votre royaume',
   'mode.serverOffline': 'Hors ligne',
@@ -3468,7 +3466,7 @@ export const fr_FR: Partial<Record<TranslationKey, string>> = {
   'guide.bestiary.levels': 'Niveaux {min} à {max}',
   'guide.bestiary.levelsSame': 'Niveau {min}',
   'guide.bestiary.rare': 'Rare',
-  'guide.brand': 'World of ClaudeCraft',
+  'guide.brand': 'World of Arcane Hunters',
   'guide.brandShort': 'ClaudeCraft',
   'guide.classHook.druid':
     'Un métamorphe qui encaisse en ours, taille les ennemis en fauve ou soigne au cœur de la mêlée.',
@@ -3611,7 +3609,7 @@ export const fr_FR: Partial<Record<TranslationKey, string>> = {
   'guide.footer.discord': 'Rejoindre le Discord',
   'guide.footer.github': 'Code source sur GitHub',
   'guide.footer.playNow': 'Jouer maintenant',
-  'guide.footer.rights': 'World of ClaudeCraft',
+  'guide.footer.rights': 'World of Arcane Hunters',
   'guide.glossary.aggroDef':
     "L'attention d'un ennemi. Le joueur qui génère le plus de menace conserve l'aggro et se fait attaquer.",
   'guide.glossary.aggroTerm': 'Aggro',
@@ -3685,7 +3683,7 @@ export const fr_FR: Partial<Record<TranslationKey, string>> = {
     'Le monde se parcourt en solo, mais le meilleur butin attend derrière un bon groupe.',
   'guide.home.subtitle':
     'Partez en quête, formez un groupe et explorez un monde façonné à la main, gratuitement dans votre navigateur.',
-  'guide.home.title': 'World of ClaudeCraft',
+  'guide.home.title': 'World of Arcane Hunters',
   'guide.home.what.heading': 'Un MMO classique, conçu pour être pris en main',
   'guide.home.what.pillarClassesBody':
     'Encaissez, soignez ou infligez les dégâts. Chaque classe se joue comme son archétype le veut, avec des talents pour la rendre vôtre.',
@@ -3810,7 +3808,7 @@ export const fr_FR: Partial<Record<TranslationKey, string>> = {
   'guide.worldPage.heading': 'Le monde',
   'guide.worldPage.hub': 'Camp de base',
   'guide.worldPage.intro':
-    "World of ClaudeCraft est une seule terre continue que l'on traverse à pied, trois zones disposées du sud au nord. Il n'y a pas de voyage rapide, alors le trajet fait partie de l'aventure.",
+    "World of Arcane Hunters est une seule terre continue que l'on traverse à pied, trois zones disposées du sud au nord. Il n'y a pas de voyage rapide, alors le trajet fait partie de l'aventure.",
   'guide.worldPage.marshBlurb':
     "Une contrée noyée de brume et de ruines. Les murlocs pullulent dans les hauts-fonds et quelque chose de plus ancien s'agite sous l'eau, surveillé depuis la ville-pont de Fenbridge.",
   'guide.worldPage.peaksBlurb':

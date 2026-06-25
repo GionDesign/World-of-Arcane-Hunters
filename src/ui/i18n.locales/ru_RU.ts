@@ -14,9 +14,9 @@
 import type { TranslationKey } from '../i18n.catalog';
 
 export const ru_RU: Partial<Record<TranslationKey, string>> = {
-  'seo.officialLabel': 'Официальный сайт World of ClaudeCraft',
+  'seo.officialLabel': 'Официальный сайт World of Arcane Hunters',
   'seo.officialBody':
-    'worldofclaudecraft.com - официальная бесплатная браузерная MMO для мира Claudemoon. Играйте онлайн с постоянным персонажем, исследуйте мир в одиночку офлайн, читайте wiki и переходите по проверенным ссылкам сообщества с этого сайта.',
+    'Официальная бесплатная браузерная MMO для мира Eastbrook. Играйте онлайн с постоянным персонажем, исследуйте мир в одиночку офлайн, читайте wiki и переходите по проверенным ссылкам сообщества с этого сайта.',
   'hudChrome.questShare.notShareable': 'Этим заданием нельзя поделиться.',
   'hudChrome.questShare.notInSharerParty':
     'Вы должны состоять в группе игрока {name}, чтобы принять это задание.',
@@ -362,8 +362,8 @@ export const ru_RU: Partial<Record<TranslationKey, string>> = {
   'stats.accountsCreated': 'Игроки',
   'stats.playersOnline': 'Игроков в сети',
   'stats.realmName': 'Название игрового мира',
-  'footer.copyright': '2026 World of ClaudeCraft',
-  'footer.githubLink': 'https://github.com/levy-street/world-of-claudecraft',
+  'footer.copyright': '2026 World of Arcane Hunters',
+  'footer.githubLink': 'https://github.com/giondesign/world-of-arcane-hunters',
   'footer.githubLabel': 'Проект с открытым исходным кодом',
   'footer.terms': 'Условия использования',
   'footer.privacy': 'Политика конфиденциальности',
@@ -554,7 +554,7 @@ export const ru_RU: Partial<Record<TranslationKey, string>> = {
   'playerCard.arenaStat': 'Арена',
   'playerCard.shareTierBit': ', держатель $WOC ранга {tier}',
   'playerCard.shareText':
-    'Я создаю свою легенду в World of ClaudeCraft: уровень {level}, {className}{tierBit}. Присоединяйтесь к моему миру:',
+    'Я создаю свою легенду в World of Arcane Hunters: уровень {level}, {className}{tierBit}. Присоединяйтесь к моему миру:',
   'playerCard.nativeShareTitle': 'Мир ClaudeCraft',
   'playerCard.fileNameFallback': 'игрок',
   'playerCard.actionShareX': 'Поделиться в X',
@@ -616,9 +616,9 @@ export const ru_RU: Partial<Record<TranslationKey, string>> = {
   'controls.emoteWheel': 'Удерживать колесо эмоций',
   'controls.friends': 'Друзья и гильдия',
   'controls.chat': 'Открыть чат',
-  'seo.title': 'World of ClaudeCraft: веб-MMO в классическом стиле',
+  'seo.title': 'World of Arcane Hunters: веб-MMO в классическом стиле',
   'seo.description':
-    'Отправьтесь в эпическое приключение в World of ClaudeCraft, микро-MMO в классическом стиле прямо в браузере. Присоединяйтесь к общему миру, развивайте классы и побеждайте врагов.',
+    'Отправьтесь в эпическое приключение в World of Arcane Hunters, микро-MMO в классическом стиле прямо в браузере. Присоединяйтесь к общему миру, развивайте классы и побеждайте врагов.',
   'seo.genre': 'MMORPG',
   'seo.playMode': 'Многопользовательская игра',
   'seo.applicationCategory': 'Игра',
@@ -628,9 +628,9 @@ export const ru_RU: Partial<Record<TranslationKey, string>> = {
   'a11y.mainNavigation': 'Основная навигация',
   'a11y.languageSelection': 'Выбор языка',
   'a11y.characterActions': 'Действия персонажа',
-  'a11y.githubProject': 'Открыть проект World of ClaudeCraft на GitHub',
-  'a11y.discordCommunity': 'Присоединиться к Discord-сообществу World of ClaudeCraft',
-  'a11y.donateProject': 'Пожертвовать на поддержку World of ClaudeCraft',
+  'a11y.githubProject': 'Открыть проект World of Arcane Hunters на GitHub',
+  'a11y.discordCommunity': 'Присоединиться к Discord-сообществу World of Arcane Hunters',
+  'a11y.donateProject': 'Пожертвовать на поддержку World of Arcane Hunters',
   'loading.world': 'Загрузка мира...',
   'loading.worldProgress': 'Загрузка мира... {done}/{total}',
   'loading.enteringWorld': 'Вход в мир...',
@@ -783,23 +783,23 @@ export const ru_RU: Partial<Record<TranslationKey, string>> = {
     'Для настоящего полноэкранного режима на iPhone или iPad сначала добавьте эту страницу на домашний экран.',
   'mobilePreflight.iosShareStep': 'В Safari нажмите Поделиться, затем На экран Домой.',
   'mobilePreflight.iosOpenStep':
-    'Откройте World of ClaudeCraft через новый значок на домашнем экране.',
+    'Откройте World of Arcane Hunters через новый значок на домашнем экране.',
   'mobilePreflight.androidStandaloneDetail':
     'Вы в полноэкранном режиме приложения. Держите устройство горизонтально.',
   'mobilePreflight.androidInstallDetail':
     'Для полноэкранного режима на Android установите эту страницу или добавьте ее на главный экран.',
   'mobilePreflight.androidInstallStep':
     'В Chrome откройте меню, затем выберите Установить приложение или Добавить на главный экран.',
-  'mobilePreflight.androidOpenStep': 'Откройте World of ClaudeCraft через новый значок.',
+  'mobilePreflight.androidOpenStep': 'Откройте World of Arcane Hunters через новый значок.',
   'mobilePreflight.otherStandaloneDetail': 'Держите устройство в полноэкранном альбомном режиме.',
   'mobilePreflight.otherInstallDetail':
     'Установите эту страницу или добавьте ее на главный экран для лучшего мобильного полноэкранного опыта.',
-  'serverUnavailable.title': 'World of ClaudeCraft - мир недоступен',
-  'serverUnavailable.logoAlt': 'World of ClaudeCraft',
+  'serverUnavailable.title': 'World of Arcane Hunters - мир недоступен',
+  'serverUnavailable.logoAlt': 'World of Arcane Hunters',
   'serverUnavailable.eyebrow': 'Технические работы',
   'serverUnavailable.heading': 'Мир временно недоступен.',
   'serverUnavailable.body':
-    'Мы перезапускаем игровой сервис и ожидаем, что Claudemoon скоро вернется. Эта страница продолжит проверку автоматически.',
+    'Мы перезапускаем игровой сервис и ожидаем, что Eastbrook скоро вернется. Эта страница продолжит проверку автоматически.',
   'serverUnavailable.status': 'Скоро вернется',
   'hud.core.elite': 'ЭЛИТА',
   'hud.core.boss': 'БОСС',
@@ -2992,7 +2992,7 @@ export const ru_RU: Partial<Record<TranslationKey, string>> = {
   'mode.caNote':
     'WOC - токен нашего сообщества. Он не нужен для игры. Присоединяйтесь к Discord, чтобы обсудить применение и экосистему WOC.',
   'mode.play': 'Играть',
-  'mode.playAria': 'Играть в World of ClaudeCraft',
+  'mode.playAria': 'Играть в World of Arcane Hunters',
   'mode.serverAria': 'Выберите мир: В сети или Не в сети',
   'mode.serverLabel': 'Выберите свой мир',
   'mode.serverOffline': 'Не в сети',
@@ -3461,7 +3461,7 @@ export const ru_RU: Partial<Record<TranslationKey, string>> = {
   'hudChrome.bags.searchAria': 'Поиск предметов в сумках по названию',
   'hudChrome.bags.noMatch': 'Нет предметов, соответствующих фильтрам.',
   // Guide (/guide) localization.
-  'guide.brand': 'World of ClaudeCraft',
+  'guide.brand': 'World of Arcane Hunters',
   'guide.brandShort': 'ClaudeCraft',
   'guide.tagline': 'Классическая MMO, в которую можно играть бесплатно прямо в браузере.',
   'guide.skipToContent': 'Перейти к основному содержимому',
@@ -3495,11 +3495,11 @@ export const ru_RU: Partial<Record<TranslationKey, string>> = {
   'guide.footer.github': 'Исходный код на GitHub',
   'guide.footer.discord': 'Присоединиться к Discord',
   'guide.footer.communityWiki': 'Вики сообщества',
-  'guide.footer.rights': 'World of ClaudeCraft',
+  'guide.footer.rights': 'World of Arcane Hunters',
   'guide.language.label': 'Язык',
   'guide.language.select': 'Выберите язык',
   'guide.home.eyebrow': 'Классическая браузерная MMO',
-  'guide.home.title': 'World of ClaudeCraft',
+  'guide.home.title': 'World of Arcane Hunters',
   'guide.home.subtitle':
     'Выполняйте задания, объединяйтесь в группы и исследуйте созданный вручную мир бесплатно прямо в браузере.',
   'guide.home.ctaPlay': 'Играть',
@@ -3759,7 +3759,7 @@ export const ru_RU: Partial<Record<TranslationKey, string>> = {
     'Живая буря и камень, привязанные к диким местам, где стихии особенно сильны.',
   'guide.worldPage.heading': 'Мир',
   'guide.worldPage.intro':
-    'World of ClaudeCraft - это единый цельный край, который вы пересекаете пешком, три зоны, протянувшиеся с юга на север. Здесь нет быстрых перемещений, так что дорога - это часть приключения.',
+    'World of Arcane Hunters - это единый цельный край, который вы пересекаете пешком, три зоны, протянувшиеся с юга на север. Здесь нет быстрых перемещений, так что дорога - это часть приключения.',
   'guide.worldPage.hub': 'Опорная база',
   'guide.worldPage.valeBlurb':
     'Зеленая стартовая долина, где новые герои набираются опыта на волках и разбойниках вокруг города Восточный Брод.',

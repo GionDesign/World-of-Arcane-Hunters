@@ -14,9 +14,9 @@
 import type { TranslationKey } from '../i18n.catalog';
 
 export const ja_JP: Partial<Record<TranslationKey, string>> = {
-  'seo.officialLabel': 'World of ClaudeCraft 公式サイト',
+  'seo.officialLabel': 'World of Arcane Hunters 公式サイト',
   'seo.officialBody':
-    'worldofclaudecraft.com は Claudemoon レルムの公式無料ブラウザMMOです。永続キャラクターでオンラインプレイし、オフラインでソロ探索し、wikiを読み、このサイトから確認済みのコミュニティリンクをたどれます。',
+    'Eastbrook レルムの公式無料ブラウザMMOです。永続キャラクターでオンラインプレイし、オフラインでソロ探索し、wikiを読み、このサイトから確認済みのコミュニティリンクをたどれます。',
   'hudChrome.questShare.notShareable': 'このクエストは共有できません。',
   'hudChrome.questShare.notInSharerParty':
     '{name} のパーティに参加していないと、このクエストを受諾できません。',
@@ -350,8 +350,8 @@ export const ja_JP: Partial<Record<TranslationKey, string>> = {
   'stats.accountsCreated': 'プレイヤー',
   'stats.playersOnline': 'オンラインプレイヤー数',
   'stats.realmName': 'レルム名',
-  'footer.copyright': '2026 World of ClaudeCraft',
-  'footer.githubLink': 'https://github.com/levy-street/world-of-claudecraft',
+  'footer.copyright': '2026 World of Arcane Hunters',
+  'footer.githubLink': 'https://github.com/giondesign/world-of-arcane-hunters',
   'footer.githubLabel': 'オープンソースプロジェクト',
   'footer.terms': '利用規約',
   'footer.privacy': 'プライバシーポリシー',
@@ -538,7 +538,7 @@ export const ja_JP: Partial<Record<TranslationKey, string>> = {
   'playerCard.arenaStat': 'アリーナ',
   'playerCard.shareTierBit': ', {tier}ランクの$WOCホルダー',
   'playerCard.shareText':
-    'World of ClaudeCraftで伝説を鍛えています: レベル{level} {className}{tierBit}。私のレルムに参加してください:',
+    'World of Arcane Huntersで伝説を鍛えています: レベル{level} {className}{tierBit}。私のレルムに参加してください:',
   'playerCard.nativeShareTitle': 'ClaudeCraftの世界',
   'playerCard.fileNameFallback': 'プレイヤー',
   'playerCard.actionShareX': 'Xで共有',
@@ -600,9 +600,9 @@ export const ja_JP: Partial<Record<TranslationKey, string>> = {
   'controls.emoteWheel': 'エモートホイールを長押し',
   'controls.friends': 'フレンド & ギルド',
   'controls.chat': 'チャットを開く',
-  'seo.title': 'World of ClaudeCraft: クラシック風Web MMO',
+  'seo.title': 'World of Arcane Hunters: クラシック風Web MMO',
   'seo.description':
-    'ブラウザで直接遊べるクラシック風マイクロMMO、World of ClaudeCraft で壮大な冒険に出ましょう。永続的な共有レルムに参加し、クラスを育て、敵を倒してください。',
+    'ブラウザで直接遊べるクラシック風マイクロMMO、World of Arcane Hunters で壮大な冒険に出ましょう。永続的な共有レルムに参加し、クラスを育て、敵を倒してください。',
   'seo.genre': 'MMORPG',
   'seo.playMode': 'マルチプレイヤー',
   'seo.applicationCategory': 'ゲーム',
@@ -612,9 +612,9 @@ export const ja_JP: Partial<Record<TranslationKey, string>> = {
   'a11y.mainNavigation': 'メインナビゲーション',
   'a11y.languageSelection': '言語選択',
   'a11y.characterActions': 'キャラクター操作',
-  'a11y.githubProject': 'GitHubでWorld of ClaudeCraftプロジェクトを開く',
-  'a11y.discordCommunity': 'World of ClaudeCraftのDiscordコミュニティに参加',
-  'a11y.donateProject': 'World of ClaudeCraftを支援するために寄付',
+  'a11y.githubProject': 'GitHubでWorld of Arcane Huntersプロジェクトを開く',
+  'a11y.discordCommunity': 'World of Arcane HuntersのDiscordコミュニティに参加',
+  'a11y.donateProject': 'World of Arcane Huntersを支援するために寄付',
   'loading.world': '世界を読み込み中...',
   'loading.worldProgress': '世界を読み込み中... {done}/{total}',
   'loading.enteringWorld': '世界に入っています...',
@@ -764,23 +764,23 @@ export const ja_JP: Partial<Record<TranslationKey, string>> = {
   'mobilePreflight.iosInstallDetail':
     'iPhoneまたはiPadで本当の全画面を使うには、先にこのページをホーム画面に追加してください。',
   'mobilePreflight.iosShareStep': 'Safariで共有をタップし、ホーム画面に追加を選びます。',
-  'mobilePreflight.iosOpenStep': '新しいホーム画面アイコンからWorld of ClaudeCraftを開きます。',
+  'mobilePreflight.iosOpenStep': '新しいホーム画面アイコンからWorld of Arcane Huntersを開きます。',
   'mobilePreflight.androidStandaloneDetail':
     '全画面アプリモードです。端末を横向きに保ってください。',
   'mobilePreflight.androidInstallDetail':
     'Androidで全画面にするには、このページをインストールするかホーム画面に追加してください。',
   'mobilePreflight.androidInstallStep':
     'Chromeでメニューを開き、アプリをインストールまたはホーム画面に追加を選びます。',
-  'mobilePreflight.androidOpenStep': '新しいアイコンからWorld of ClaudeCraftを開きます。',
+  'mobilePreflight.androidOpenStep': '新しいアイコンからWorld of Arcane Huntersを開きます。',
   'mobilePreflight.otherStandaloneDetail': '端末を横向き全画面に保ってください。',
   'mobilePreflight.otherInstallDetail':
     '最高のモバイル全画面体験のため、このページをインストールするかホーム画面に追加してください。',
-  'serverUnavailable.title': 'World of ClaudeCraft - レルム利用不可',
-  'serverUnavailable.logoAlt': 'World of ClaudeCraft',
+  'serverUnavailable.title': 'World of Arcane Hunters - レルム利用不可',
+  'serverUnavailable.logoAlt': 'World of Arcane Hunters',
   'serverUnavailable.eyebrow': 'レルムメンテナンス',
   'serverUnavailable.heading': 'レルムは一時的に利用できません。',
   'serverUnavailable.body':
-    'ゲームサービスを再起動しています。Claudemoonはまもなく戻る予定です。このページは自動的に確認を続けます。',
+    'ゲームサービスを再起動しています。Eastbrookはまもなく戻る予定です。このページは自動的に確認を続けます。',
   'serverUnavailable.status': 'まもなく復帰',
   'hud.core.elite': 'エリート',
   'hud.core.boss': 'ボス',
@@ -2955,7 +2955,7 @@ export const ja_JP: Partial<Record<TranslationKey, string>> = {
   'mode.caNote':
     'WOCはコミュニティトークンです。プレイには必要ありません。Discordに参加して、WOCのユーティリティとフライホイールについて語り合いましょう。',
   'mode.play': 'プレイ',
-  'mode.playAria': 'World of ClaudeCraftをプレイ',
+  'mode.playAria': 'World of Arcane Huntersをプレイ',
   'mode.serverAria': 'レルムを選択：オンラインまたはオフライン',
   'mode.serverLabel': 'レルムを選択',
   'mode.serverOffline': 'オフライン',
@@ -3411,7 +3411,7 @@ export const ja_JP: Partial<Record<TranslationKey, string>> = {
   'hudChrome.bags.searchAria': '名前でバッグのアイテムを検索',
   'hudChrome.bags.noMatch': '条件に一致するアイテムはありません。',
   // Guide (/guide) localization.
-  'guide.brand': 'World of ClaudeCraft',
+  'guide.brand': 'World of Arcane Hunters',
   'guide.brandShort': 'ClaudeCraft',
   'guide.tagline': 'ブラウザで無料で遊べる、クラシックスタイルのMMO。',
   'guide.skipToContent': 'メインコンテンツへスキップ',
@@ -3445,11 +3445,11 @@ export const ja_JP: Partial<Record<TranslationKey, string>> = {
   'guide.footer.github': 'GitHubのソース',
   'guide.footer.discord': 'Discordに参加',
   'guide.footer.communityWiki': 'コミュニティWiki',
-  'guide.footer.rights': 'World of ClaudeCraft',
+  'guide.footer.rights': 'World of Arcane Hunters',
   'guide.language.label': '言語',
   'guide.language.select': '言語を選択',
   'guide.home.eyebrow': 'クラシックスタイルのブラウザMMO',
-  'guide.home.title': 'World of ClaudeCraft',
+  'guide.home.title': 'World of Arcane Hunters',
   'guide.home.subtitle':
     'クエストをこなし、仲間と組み、手作りのワールドを冒険しよう。ブラウザで無料。',
   'guide.home.ctaPlay': '今すぐプレイ',
@@ -3695,7 +3695,7 @@ export const ja_JP: Partial<Record<TranslationKey, string>> = {
   'guide.family.elemental.desc': '嵐や岩が命を得た存在。元素の力が強く渦巻く荒野に縛られています。',
   'guide.worldPage.heading': '世界',
   'guide.worldPage.intro':
-    'World of ClaudeCraftは、自らの足で歩いて渡る一続きの大地です。南から北へと3つのゾーンが連なっています。ファストトラベルはなく、その旅路こそが冒険の一部です。',
+    'World of Arcane Huntersは、自らの足で歩いて渡る一続きの大地です。南から北へと3つのゾーンが連なっています。ファストトラベルはなく、その旅路こそが冒険の一部です。',
   'guide.worldPage.hub': '拠点',
   'guide.worldPage.valeBlurb':
     '緑あふれる始まりの谷。新たな英雄たちが、イーストブルックの町の周りでオオカミや盗賊を相手に腕を磨く場所です。',

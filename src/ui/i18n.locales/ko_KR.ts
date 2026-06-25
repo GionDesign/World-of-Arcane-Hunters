@@ -14,9 +14,9 @@
 import type { TranslationKey } from '../i18n.catalog';
 
 export const ko_KR: Partial<Record<TranslationKey, string>> = {
-  'seo.officialLabel': 'World of ClaudeCraft 공식 웹사이트',
+  'seo.officialLabel': 'World of Arcane Hunters 공식 웹사이트',
   'seo.officialBody':
-    'worldofclaudecraft.com은 Claudemoon 렐름의 공식 무료 브라우저 MMO입니다. 지속 캐릭터로 온라인 플레이를 하거나, 오프라인에서 혼자 탐험하고, wiki를 읽고, 이 사이트에서 검증된 커뮤니티 링크를 확인하세요.',
+    'Eastbrook 렐름의 공식 무료 브라우저 MMO입니다. 지속 캐릭터로 온라인 플레이를 하거나, 오프라인에서 혼자 탐험하고, wiki를 읽고, 이 사이트에서 검증된 커뮤니티 링크를 확인하세요.',
   'hudChrome.questShare.notShareable': '이 퀘스트는 공유할 수 없습니다.',
   'hudChrome.questShare.notInSharerParty':
     '{name}님의 파티에 속해 있어야 이 퀘스트를 수락할 수 있습니다.',
@@ -352,8 +352,8 @@ export const ko_KR: Partial<Record<TranslationKey, string>> = {
   'stats.accountsCreated': '플레이어',
   'stats.playersOnline': '현재 접속자 수',
   'stats.realmName': '렐름 이름',
-  'footer.copyright': '2026 World of ClaudeCraft',
-  'footer.githubLink': 'https://github.com/levy-street/world-of-claudecraft',
+  'footer.copyright': '2026 World of Arcane Hunters',
+  'footer.githubLink': 'https://github.com/giondesign/world-of-arcane-hunters',
   'footer.githubLabel': '오픈 소스 프로젝트',
   'footer.terms': '서비스 이용약관',
   'footer.privacy': '개인정보 처리방침',
@@ -535,7 +535,7 @@ export const ko_KR: Partial<Record<TranslationKey, string>> = {
   'playerCard.arenaStat': '투기장',
   'playerCard.shareTierBit': ', {tier} 등급 $WOC 보유자',
   'playerCard.shareText':
-    'World of ClaudeCraft에서 제 전설을 벼리고 있습니다: {level}레벨 {className}{tierBit}. 제 렐름에 합류하세요:',
+    'World of Arcane Hunters에서 제 전설을 벼리고 있습니다: {level}레벨 {className}{tierBit}. 제 렐름에 합류하세요:',
   'playerCard.nativeShareTitle': 'ClaudeCraft의 세계',
   'playerCard.fileNameFallback': '플레이어',
   'playerCard.actionShareX': 'X에 공유',
@@ -597,9 +597,9 @@ export const ko_KR: Partial<Record<TranslationKey, string>> = {
   'controls.emoteWheel': '감정표현 휠 길게 누르기',
   'controls.friends': '친구 및 길드',
   'controls.chat': '채팅창 열기',
-  'seo.title': 'World of ClaudeCraft: 클래식 스타일 웹 MMO',
+  'seo.title': 'World of Arcane Hunters: 클래식 스타일 웹 MMO',
   'seo.description':
-    '브라우저에서 바로 즐기는 클래식 스타일 마이크로 MMO, World of ClaudeCraft에서 장대한 모험을 시작하세요. 지속되는 공유 렐름에 접속해 직업을 성장시키고 적을 물리치세요.',
+    '브라우저에서 바로 즐기는 클래식 스타일 마이크로 MMO, World of Arcane Hunters에서 장대한 모험을 시작하세요. 지속되는 공유 렐름에 접속해 직업을 성장시키고 적을 물리치세요.',
   'seo.genre': 'MMORPG',
   'seo.playMode': '멀티플레이어',
   'seo.applicationCategory': '게임',
@@ -609,9 +609,9 @@ export const ko_KR: Partial<Record<TranslationKey, string>> = {
   'a11y.mainNavigation': '기본 탐색',
   'a11y.languageSelection': '언어 선택',
   'a11y.characterActions': '캐릭터 작업',
-  'a11y.githubProject': 'GitHub에서 World of ClaudeCraft 프로젝트 열기',
-  'a11y.discordCommunity': 'World of ClaudeCraft Discord 커뮤니티 참여',
-  'a11y.donateProject': 'World of ClaudeCraft 후원하기',
+  'a11y.githubProject': 'GitHub에서 World of Arcane Hunters 프로젝트 열기',
+  'a11y.discordCommunity': 'World of Arcane Hunters Discord 커뮤니티 참여',
+  'a11y.donateProject': 'World of Arcane Hunters 후원하기',
   'loading.world': '세계 불러오는 중...',
   'loading.worldProgress': '세계 불러오는 중... {done}/{total}',
   'loading.enteringWorld': '세계에 입장하는 중...',
@@ -757,22 +757,22 @@ export const ko_KR: Partial<Record<TranslationKey, string>> = {
   'mobilePreflight.iosInstallDetail':
     'iPhone 또는 iPad에서 진짜 전체 화면을 사용하려면 먼저 이 페이지를 홈 화면에 추가하세요.',
   'mobilePreflight.iosShareStep': 'Safari에서 공유를 누른 뒤 홈 화면에 추가를 선택하세요.',
-  'mobilePreflight.iosOpenStep': '새 홈 화면 아이콘에서 World of ClaudeCraft를 여세요.',
+  'mobilePreflight.iosOpenStep': '새 홈 화면 아이콘에서 World of Arcane Hunters를 여세요.',
   'mobilePreflight.androidStandaloneDetail': '전체 화면 앱 모드입니다. 기기를 가로로 유지하세요.',
   'mobilePreflight.androidInstallDetail':
     'Android에서 전체 화면을 사용하려면 이 페이지를 설치하거나 홈 화면에 추가하세요.',
   'mobilePreflight.androidInstallStep':
     'Chrome에서 메뉴를 누른 뒤 앱 설치 또는 홈 화면에 추가를 선택하세요.',
-  'mobilePreflight.androidOpenStep': '새 아이콘에서 World of ClaudeCraft를 여세요.',
+  'mobilePreflight.androidOpenStep': '새 아이콘에서 World of Arcane Hunters를 여세요.',
   'mobilePreflight.otherStandaloneDetail': '기기를 가로 전체 화면으로 유지하세요.',
   'mobilePreflight.otherInstallDetail':
     '최상의 모바일 전체 화면 경험을 위해 이 페이지를 설치하거나 홈 화면에 추가하세요.',
-  'serverUnavailable.title': 'World of ClaudeCraft - 렐름 이용 불가',
-  'serverUnavailable.logoAlt': 'World of ClaudeCraft',
+  'serverUnavailable.title': 'World of Arcane Hunters - 렐름 이용 불가',
+  'serverUnavailable.logoAlt': 'World of Arcane Hunters',
   'serverUnavailable.eyebrow': '렐름 점검',
   'serverUnavailable.heading': '렐름을 일시적으로 이용할 수 없습니다.',
   'serverUnavailable.body':
-    '게임 서비스를 재시작하고 있으며 Claudemoon은 곧 돌아올 예정입니다. 이 페이지는 자동으로 계속 확인합니다.',
+    '게임 서비스를 재시작하고 있으며 Eastbrook은 곧 돌아올 예정입니다. 이 페이지는 자동으로 계속 확인합니다.',
   'serverUnavailable.status': '곧 돌아옵니다',
   'hud.core.elite': '정예',
   'hud.core.boss': '우두머리',
@@ -2952,7 +2952,7 @@ export const ko_KR: Partial<Record<TranslationKey, string>> = {
   'mode.caNote':
     'WOC는 커뮤니티 토큰입니다. 플레이에는 필요하지 않습니다. WOC의 활용과 선순환 구조에 관해 이야기하려면 Discord에 참여하세요.',
   'mode.play': '플레이',
-  'mode.playAria': 'World of ClaudeCraft 플레이',
+  'mode.playAria': 'World of Arcane Hunters 플레이',
   'mode.serverAria': '렐름 선택: 온라인 또는 오프라인',
   'mode.serverLabel': '렐름을 선택하세요',
   'mode.serverOffline': '오프라인',
@@ -3414,7 +3414,7 @@ export const ko_KR: Partial<Record<TranslationKey, string>> = {
   'hudChrome.bags.searchAria': '이름으로 가방 아이템 검색',
   'hudChrome.bags.noMatch': '필터와 일치하는 아이템이 없습니다.',
   // Guide (/guide) localization.
-  'guide.brand': 'World of ClaudeCraft',
+  'guide.brand': 'World of Arcane Hunters',
   'guide.brandShort': 'ClaudeCraft',
   'guide.tagline': '브라우저에서 무료로 즐기는 클래식 스타일 MMO입니다.',
   'guide.skipToContent': '본문으로 건너뛰기',
@@ -3448,11 +3448,11 @@ export const ko_KR: Partial<Record<TranslationKey, string>> = {
   'guide.footer.github': 'GitHub 소스 코드',
   'guide.footer.discord': 'Discord 참여하기',
   'guide.footer.communityWiki': '커뮤니티 위키',
-  'guide.footer.rights': 'World of ClaudeCraft',
+  'guide.footer.rights': 'World of Arcane Hunters',
   'guide.language.label': '언어',
   'guide.language.select': '언어 선택',
   'guide.home.eyebrow': '클래식 스타일 브라우저 MMO',
-  'guide.home.title': 'World of ClaudeCraft',
+  'guide.home.title': 'World of Arcane Hunters',
   'guide.home.subtitle':
     '퀘스트를 수행하고, 파티를 맺고, 손수 빚은 세계를 브라우저에서 무료로 탐험하세요.',
   'guide.home.ctaPlay': '지금 플레이',
@@ -3700,7 +3700,7 @@ export const ko_KR: Partial<Record<TranslationKey, string>> = {
     '원소가 강하게 흐르는 야생의 장소에 매여 있는, 살아 있는 폭풍과 돌.',
   'guide.worldPage.heading': '세계',
   'guide.worldPage.intro':
-    'World of ClaudeCraft는 두 발로 가로지르는 하나로 이어진 대지이며, 남에서 북으로 펼쳐진 세 개의 지역으로 이루어져 있습니다. 빠른 이동이 없으니, 여정 자체가 모험의 일부입니다.',
+    'World of Arcane Hunters는 두 발로 가로지르는 하나로 이어진 대지이며, 남에서 북으로 펼쳐진 세 개의 지역으로 이루어져 있습니다. 빠른 이동이 없으니, 여정 자체가 모험의 일부입니다.',
   'guide.worldPage.hub': '본거지',
   'guide.worldPage.valeBlurb':
     '새내기 영웅들이 동개울 마을 주변에서 늑대와 산적을 상대로 실력을 갈고닦는 푸른 시작의 골짜기.',
