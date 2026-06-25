@@ -15,6 +15,8 @@ import type { TranslationKey } from '../i18n.catalog';
 
 export const it_IT: Partial<Record<TranslationKey, string>> = {
   'seo.officialLabel': 'Sito ufficiale di World of Arcane Hunters',
+  'seo.officialBody':
+    "L'MMO gratuito ufficiale da browser del reame Eastbrook. Gioca online con un personaggio persistente, esplora offline in solitaria, leggi il wiki e segui i link della community verificati da questo sito.",
   'hudChrome.questShare.notShareable': 'Questa missione non può essere condivisa.',
   'hudChrome.questShare.notInSharerParty':
     'Devi essere nel gruppo di {name} per accettare quella missione.',

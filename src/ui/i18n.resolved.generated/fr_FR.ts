@@ -2153,7 +2153,7 @@ export const fr_FR: EnTranslations = {
     "applicationCategory": "Jeu",
     "operatingSystem": "Navigateur web",
     "officialLabel": "Site officiel de World of Arcane Hunters",
-    "officialBody": "The official free browser MMO for the Eastbrook realm. Play online with a persistent character, explore solo offline, read the wiki, and follow verified community links from this site."
+    "officialBody": "Le MMO gratuit officiel sur navigateur du royaume Eastbrook. Jouez en ligne avec un personnage persistant, explorez en solo hors ligne, lisez le wiki et suivez les liens communautaires vérifiés depuis ce site."
   },
   "a11y": {
     "goHome": "Aller à l'accueil",

@@ -9,31 +9,17 @@
 // Reproducibility is checked by tests/i18n_resolved_equivalence.test.ts.
 
 export const pending: Record<string, readonly string[]> = {
-  "es": [
-    "seo.officialBody"
-  ],
-  "es_ES": [
-    "seo.officialBody"
-  ],
-  "fr_FR": [
-    "seo.officialBody"
-  ],
-  "fr_CA": [
-    "seo.officialBody"
-  ],
+  "es": [],
+  "es_ES": [],
+  "fr_FR": [],
+  "fr_CA": [],
   "en_CA": [],
-  "it_IT": [
-    "seo.officialBody"
-  ],
-  "de_DE": [
-    "seo.officialBody"
-  ],
+  "it_IT": [],
+  "de_DE": [],
   "zh_CN": [],
   "zh_TW": [],
   "ko_KR": [],
   "ja_JP": [],
-  "pt_BR": [
-    "seo.officialBody"
-  ],
+  "pt_BR": [],
   "ru_RU": []
 };
