@@ -281,16 +281,105 @@ re-run `npm run i18n:gen && npm run i18n:hash -- --write`, then `npm test`.
 The tests will catch any missed replacements.
 
 **TODOs for this fork (pending user input):**
-- Set real production domain: replace all `TODO-your-domain.com` (index.html, play.html,
-  guide.html, admin.html, public/*.html, public/sitemap.xml, public/robots.txt,
-  src/main.ts `SITE_URL`, server/realm.ts `TRUSTED_PUBLIC_HOST_ORIGINS`,
-  src/ui/i18n.catalog/fork_brand.ts `siteUrl`)
-- Set Discord URL: replace `https://discord.gg/TODO`
-- Set donate/sponsor URL: replace `https://github.com/sponsors/TODO`
+
+The client bundle (HTML, JS) is handled automatically at build time via the variable substitution
+system (see FORK.md "Build-time brand URL injection"). You only need to set GitHub Actions
+repository variables -- no source edits required for these:
+- Set `VITE_SITE_URL` GitHub Actions repo variable (Settings > Secrets and variables > Actions >
+  Variables) to your production domain (e.g. `https://mysite.com`).
+- Set `VITE_DISCORD_URL` repo variable to your Discord invite URL, or leave empty if none.
+- Set `VITE_DONATE_URL` repo variable to your donate URL, or leave empty if none.
+
+These still require manual source edits (server or i18n scripts, not Vite-bundled):
+- `server/realm.ts` `TRUSTED_PUBLIC_HOST_ORIGINS`: add your real domain (the `PUBLIC_ORIGIN`
+  server runtime env var is the primary setting; the `TRUSTED_PUBLIC_HOST_ORIGINS` list is
+  a secondary allowlist for multi-realm setups).
+- `src/ui/i18n.catalog/fork_brand.ts` `siteUrl`/`discordUrl`/`donateUrl`: update these
+  display-only constants if you want them to show the real values in places that don't use
+  Vite defines (currently unused in runtime code; purely documentary).
+
+Other pending items:
 - Replace logo images: `public/worldofclaudecraft-logo.png`, `public/woc_logo_square.webp`,
   `public/woc-logo-hero.webp`, favicon files
 - Update social handles in `public/links.html` copy object (X/Twitter, Instagram, TikTok,
   YouTube, Reddit)
+
+---
+
+#### Build-time brand URL injection (2026-06) -- variable substitution system
+
+Added to prevent upstream file changes from breaking the domain/Discord/donate
+configurations. Source files keep `TODO-your-domain.com` / `https://discord.gg/TODO` /
+`https://github.com/sponsors/TODO` as placeholder tokens. At deploy time, three
+environment variables replace them in the build output. No source edits are needed.
+
+**New fork-owned file:** `scripts/brand_inject.mjs` -- post-build token patcher for
+`dist/` static files (robots.txt, sitemap.xml, legal pages).
+
+**Upstream files modified:**
+
+`vite.config.ts` -- added `siteUrl`/`discordUrl`/`donateUrl` env reads, `__SITE_URL__`/
+`__DISCORD_URL__`/`__DONATE_URL__` in the `define` block, and `brandTokenPlugin()` in the
+plugins list. If a merge drops these, re-add after the `appBuildId` block:
+```typescript
+const siteUrl = (env(['VITE_SITE_URL']) ?? 'https://TODO-your-domain.com').replace(/\/$/, '');
+const discordUrl = env(['VITE_DISCORD_URL']) ?? 'https://discord.gg/TODO';
+const donateUrl = env(['VITE_DONATE_URL']) ?? 'https://github.com/sponsors/TODO';
+```
+And the plugin:
+```typescript
+function brandTokenPlugin() {
+  const siteDomain = siteUrl.replace(/^https?:\/\//, '');
+  return {
+    name: 'woc-brand-token',
+    apply: 'build' as const,
+    transformIndexHtml(html: string): string {
+      return html
+        .replaceAll('https://TODO-your-domain.com', siteUrl)
+        .replaceAll('TODO-your-domain.com', siteDomain)
+        .replaceAll('https://discord.gg/TODO', discordUrl)
+        .replaceAll('https://github.com/sponsors/TODO', donateUrl);
+    },
+  };
+}
+```
+Add `brandTokenPlugin()` to the `plugins` array and `__SITE_URL__`/`__DISCORD_URL__`/
+`__DONATE_URL__` to the `define` block.
+
+`scripts/build_sitemap.mjs` -- changed `const ORIGIN = 'https://worldofclaudecraft.com'` to:
+```javascript
+const ORIGIN = (process.env.VITE_SITE_URL ?? 'https://TODO-your-domain.com').replace(/\/$/, '');
+```
+
+`src/main.ts` -- replaced `const SITE_URL = 'https://TODO-your-domain.com/';` with:
+```typescript
+declare const __SITE_URL__: string;
+const SITE_URL = __SITE_URL__.replace(/\/?$/, '/');
+```
+And replaced all hardcoded `'https://TODO-your-domain.com/...'` strings in the JSON-LD
+builder with template literals using `SITE_URL` (e.g. `\`${SITE_URL}#website\``).
+
+`src/ui/hud.ts` -- added `declare const __SITE_URL__: string;` after the imports and
+changed `siteUrl: 'worldofclaudecraft.com'` (player card footer display) to:
+```typescript
+siteUrl: __SITE_URL__.replace(/^https?:\/\//, '').replace(/\/$/, ''),
+```
+
+`Dockerfile` -- added `ARG VITE_SITE_URL="https://TODO-your-domain.com"`,
+`ARG VITE_DISCORD_URL="https://discord.gg/TODO"`, `ARG VITE_DONATE_URL=...`, and
+passes them as env vars to `npm run build`; also runs `npm run brand:inject` post-build.
+
+`.github/workflows/deploy.yml` -- added `--build-arg VITE_SITE_URL`, `VITE_DISCORD_URL`,
+`VITE_DONATE_URL` to the docker build step (reads from GitHub Actions repo variables).
+
+`.env.example` -- added documentation block for `VITE_SITE_URL`, `VITE_DISCORD_URL`,
+`VITE_DONATE_URL`.
+
+**If upstream changes the placeholder domain:** The upstream project uses
+`worldofclaudecraft.com`. Our fork uses `TODO-your-domain.com` as the placeholder. If
+upstream adds NEW files containing `worldofclaudecraft.com`, those will NOT be patched by
+`brand_inject.mjs` (which only replaces `TODO-your-domain.com`). After a merge, search for
+`worldofclaudecraft.com` in the merged result and update as needed.
 
 ---
 

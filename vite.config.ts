@@ -50,6 +50,36 @@ const appBuildId = env([
   'CF_PAGES_COMMIT_SHA',
 ]) ?? gitSha() ?? appBuildDate.replace(/[-:TZ.]/g, '').slice(0, 12);
 
+// Fork brand URLs: injected from build environment variables so the deployed
+// bundle carries the real domain/Discord/donate links without requiring source
+// edits. Defaults to TODO- placeholders so tests and source-file checks pass
+// even when the vars are not set. Set VITE_SITE_URL/VITE_DISCORD_URL/
+// VITE_DONATE_URL as Docker build args (see Dockerfile) or GitHub Actions
+// repository variables (see .github/workflows/deploy.yml).
+const siteUrl = (env(['VITE_SITE_URL']) ?? 'https://TODO-your-domain.com').replace(/\/$/, '');
+const discordUrl = env(['VITE_DISCORD_URL']) ?? 'https://discord.gg/TODO';
+const donateUrl = env(['VITE_DONATE_URL']) ?? 'https://github.com/sponsors/TODO';
+
+// Build-time brand token replacement for HTML entry files (index.html, play.html,
+// guide.html, admin.html). Replaces TODO placeholder URLs with the values resolved
+// above so the deployed bundle is clean without touching the source files.
+// Public/ static files (robots.txt, sitemap.xml, legal pages) are handled by the
+// post-build scripts/brand_inject.mjs step instead.
+function brandTokenPlugin() {
+  const siteDomain = siteUrl.replace(/^https?:\/\//, '');
+  return {
+    name: 'woc-brand-token',
+    apply: 'build' as const,
+    transformIndexHtml(html: string): string {
+      return html
+        .replaceAll('https://TODO-your-domain.com', siteUrl)
+        .replaceAll('TODO-your-domain.com', siteDomain)
+        .replaceAll('https://discord.gg/TODO', discordUrl)
+        .replaceAll('https://github.com/sponsors/TODO', donateUrl);
+    },
+  };
+}
+
 // Pretty-URL aliases for standalone static HTML pages. Mirrors the production
 // server rewrite in server/main.ts so these paths resolve in dev and preview too.
 const STATIC_PAGE_ALIASES = new Map([
@@ -124,12 +154,15 @@ function i18nModulepreloadPlugin() {
 
 export default defineConfig({
   base: '/',
-  plugins: [staticPageAliasPlugin(), i18nModulepreloadPlugin()],
+  plugins: [staticPageAliasPlugin(), brandTokenPlugin(), i18nModulepreloadPlugin()],
   resolve: { alias: { '#bot-detector': botDetectorImpl } },
   define: {
     __APP_VERSION__: JSON.stringify(appVersion),
     __APP_BUILD_ID__: JSON.stringify(appBuildId.slice(0, 12)),
     __APP_BUILD_DATE__: JSON.stringify(appBuildDate),
+    __SITE_URL__: JSON.stringify(siteUrl),
+    __DISCORD_URL__: JSON.stringify(discordUrl),
+    __DONATE_URL__: JSON.stringify(donateUrl),
   },
   // Parent dir has a postcss.config.js with Tailwind — ignore it; this project has no CSS pipeline.
   css: {

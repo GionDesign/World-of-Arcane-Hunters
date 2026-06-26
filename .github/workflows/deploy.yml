@@ -11,6 +11,15 @@ name: Deploy
 #   DROPLET_SSH_KEY     — Private ED25519 key whose public half is in /root/.ssh/authorized_keys
 #   VITE_TURNSTILE_SITEKEY — Cloudflare Turnstile site key (public; baked into client bundle)
 #                            Set to empty string if not using Turnstile.
+#
+# Required GitHub Actions repository variables (Settings > Secrets and variables >
+# Actions > Variables — use variables, not secrets, since these are public URLs):
+#   VITE_SITE_URL    — full https:// origin of your site, no trailing slash
+#                      (e.g. https://mysite.com)
+#   VITE_DISCORD_URL — Discord invite URL (e.g. https://discord.gg/abcdef)
+#                      Omit or leave empty if you have no Discord server.
+#   VITE_DONATE_URL  — Donate/sponsor URL (e.g. https://github.com/sponsors/me)
+#                      Omit or leave empty if you have no donation link.
 
 on:
   push:
@@ -69,6 +78,9 @@ jobs:
         run: |
           docker build \
             --build-arg VITE_TURNSTILE_SITEKEY="${{ secrets.VITE_TURNSTILE_SITEKEY }}" \
+            --build-arg VITE_SITE_URL="${{ vars.VITE_SITE_URL }}" \
+            --build-arg VITE_DISCORD_URL="${{ vars.VITE_DISCORD_URL }}" \
+            --build-arg VITE_DONATE_URL="${{ vars.VITE_DONATE_URL }}" \
             -t "$IMAGE:${{ github.sha }}" \
             -t "$IMAGE:latest" \
             .

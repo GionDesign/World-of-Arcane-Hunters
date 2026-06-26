@@ -19,8 +19,23 @@ COPY private ./private
 # VITE_* from the environment). Empty defaults keep optional UI disabled:
 # Turnstile widget off. Passed through from compose build args.
 ARG VITE_TURNSTILE_SITEKEY=""
+# Fork brand URLs: injected at build time so the deployed bundle carries real
+# links without source edits. Defaults to TODO- placeholders (safe for dev/CI).
+# Set these as --build-arg in docker build (see .github/workflows/deploy.yml)
+# using GitHub Actions repository variables.
+ARG VITE_SITE_URL="https://TODO-your-domain.com"
+ARG VITE_DISCORD_URL="https://discord.gg/TODO"
+ARG VITE_DONATE_URL="https://github.com/sponsors/TODO"
 RUN VITE_TURNSTILE_SITEKEY="$VITE_TURNSTILE_SITEKEY" \
-    npm run build && cp -a dist/media ./media-build && rm -rf dist/media && npm run build:server
+    VITE_SITE_URL="$VITE_SITE_URL" \
+    VITE_DISCORD_URL="$VITE_DISCORD_URL" \
+    VITE_DONATE_URL="$VITE_DONATE_URL" \
+    npm run build && \
+    VITE_SITE_URL="$VITE_SITE_URL" \
+    VITE_DISCORD_URL="$VITE_DISCORD_URL" \
+    VITE_DONATE_URL="$VITE_DONATE_URL" \
+    npm run brand:inject && \
+    cp -a dist/media ./media-build && rm -rf dist/media && npm run build:server
 
 FROM node:22-alpine
 WORKDIR /app

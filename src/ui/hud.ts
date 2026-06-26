@@ -301,6 +301,8 @@ import {
 } from './wallet_balance';
 import { formatXp, xpBarView } from './xp_bar';
 
+declare const __SITE_URL__: string;
+
 // hooks main wires after Input exists (the options menu drives input, audio,
 // graphics, and logout, all of which live outside the HUD). PerfOverlayHooks
 // (the customizable performance overlay's config seam) lives in
@@ -10248,7 +10250,7 @@ export class Hud {
       balance: showWallet ? verifiedWocBalance() : null,
       referralHandle: referral?.slug ?? this.cardSlug(p.name),
       referralCount: referral?.count ?? null,
-      siteUrl: 'worldofclaudecraft.com',
+      siteUrl: __SITE_URL__.replace(/^https?:\/\//, '').replace(/\/$/, ''),
     };
   }
 

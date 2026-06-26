@@ -14,7 +14,7 @@ import path from 'node:path';
 
 const root = process.cwd();
 const sitemapPath = path.join(root, 'public', 'sitemap.xml');
-const ORIGIN = 'https://worldofclaudecraft.com';
+const ORIGIN = (process.env.VITE_SITE_URL ?? 'https://TODO-your-domain.com').replace(/\/$/, '');
 
 const entrySource = `
   export { GUIDE_ROUTES, hrefFor } from './src/guide/routes.ts';

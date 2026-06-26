@@ -130,3 +130,27 @@ A full list of all upstream file modifications with exact code snippets is in
 
 **Fork-owned new files (never conflict with upstream):**
 - `src/ui/i18n.catalog/fork_brand.ts` -- central brand constants (`FORK_BRAND`); imported by `index.ts`
+- `scripts/brand_inject.mjs` -- post-build token replacement: patches dist/ static files with real brand URLs
+
+**Build-time brand URL injection (variable substitution system):**
+Source files keep `TODO-your-domain.com` / `https://discord.gg/TODO` / `https://github.com/sponsors/TODO`
+as placeholders so tests and source-level checks always pass. At deploy time, three environment
+variables replace the placeholders in the built output:
+
+| Variable | Where to set | Description |
+|---|---|---|
+| `VITE_SITE_URL` | GitHub Actions repo variable | Full https:// origin, no trailing slash |
+| `VITE_DISCORD_URL` | GitHub Actions repo variable | Discord invite URL |
+| `VITE_DONATE_URL` | GitHub Actions repo variable | Donate/sponsor URL |
+
+These are passed as Docker `--build-arg` values in `.github/workflows/deploy.yml`. The build
+pipeline substitutes them in three places:
+1. **JS/TS bundles** -- via Vite `define` block (`__SITE_URL__`, `__DISCORD_URL__`, `__DONATE_URL__`)
+2. **HTML entry files** (index.html, play.html, guide.html) -- via `brandTokenPlugin` in `vite.config.ts`
+3. **Static public/ files** (robots.txt, sitemap.xml, legal pages) -- via `npm run brand:inject` (post-build)
+
+If upstream updates these files and changes a TODO placeholder URL to something else, the
+`brand_inject.mjs` script will no longer match the old token. In that case:
+1. Update the TODO placeholder in `brand_inject.mjs` / `vite.config.ts` to match the new token.
+2. Run `npm run build && npm run brand:inject` to verify the replacement works.
+3. Document the updated token in `docs/MAINTAINING-FORK.md`.

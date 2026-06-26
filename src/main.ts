@@ -178,7 +178,8 @@ let homepageMusicStarted = false;
 let homepageMusicMuted = readHomepageMusicMuted();
 let removeHomepageMusicGestureListeners: (() => void) | null = null;
 
-const SITE_URL = 'https://TODO-your-domain.com/';
+declare const __SITE_URL__: string;
+const SITE_URL = __SITE_URL__.replace(/\/?$/, '/');
 
 const RESOURCE_KEYS = {
   mana: 'classDetails.resources.mana',
@@ -3897,34 +3898,34 @@ function updateSeoMetadata(lang: SupportedLanguage): void {
         '@graph': [
           {
             '@type': 'WebSite',
-            '@id': 'https://TODO-your-domain.com/#website',
+            '@id': `${SITE_URL}#website`,
             name: 'World of Arcane Hunters',
             url: canonicalHref,
             inLanguage: languageTag(lang),
             description: t('seo.description'),
-            publisher: { '@id': 'https://TODO-your-domain.com/#organization' },
+            publisher: { '@id': `${SITE_URL}#organization` },
           },
           {
             '@type': 'Organization',
-            '@id': 'https://TODO-your-domain.com/#organization',
+            '@id': `${SITE_URL}#organization`,
             name: 'World of Arcane Hunters',
-            url: 'https://TODO-your-domain.com/',
-            logo: 'https://TODO-your-domain.com/woc_logo_square.webp',
+            url: SITE_URL,
+            logo: `${SITE_URL}woc_logo_square.webp`,
             sameAs,
           },
           {
             '@type': 'VideoGame',
-            '@id': 'https://TODO-your-domain.com/#game',
+            '@id': `${SITE_URL}#game`,
             name: 'World of Arcane Hunters',
             genre: t('seo.genre'),
             playMode: t('seo.playMode'),
             applicationCategory: t('seo.applicationCategory'),
             operatingSystem: t('seo.operatingSystem'),
             url: canonicalHref,
-            image: 'https://TODO-your-domain.com/woc_logo_square.webp',
+            image: `${SITE_URL}woc_logo_square.webp`,
             description: t('seo.description'),
             inLanguage: languageTag(lang),
-            publisher: { '@id': 'https://TODO-your-domain.com/#organization' },
+            publisher: { '@id': `${SITE_URL}#organization` },
             sameAs,
           },
         ],
