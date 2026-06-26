@@ -112,10 +112,9 @@ export const REALM_PUBLIC_ORIGIN =
 // TODO(fork): Replace with your production domain. Also update play.html canonical/hreflang,
 // guide.html canonical/hreflang, public/sitemap.xml, and FORK_BRAND.siteUrl in
 // src/ui/i18n.catalog/fork_brand.ts. Set PUBLIC_ORIGIN env var in .env to avoid this fallback.
-const DEFAULT_PRODUCTION_PUBLIC_ORIGIN = 'https://world.arcanehunters.com';
+const DEFAULT_PRODUCTION_PUBLIC_ORIGIN = 'https://TODO-your-domain.com';
 const TRUSTED_PUBLIC_HOST_ORIGINS = new Map([
-  ['world.arcanehunters.com', DEFAULT_PRODUCTION_PUBLIC_ORIGIN],
-  ['www.world.arcanehunters.com', DEFAULT_PRODUCTION_PUBLIC_ORIGIN],
+  ['world.arcanehunters.com', DEFAULT_PRODUCTION_PUBLIC_ORIGIN]
 ]);
 
 function firstHeaderValue(value: string | string[] | undefined): string {
