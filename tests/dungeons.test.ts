@@ -254,9 +254,9 @@ describe("dungeons: Dragon's Maw copper loot", () => {
     warden.dead = true;
     warden.tappedById = pid;
     warden.lootRecipientIds = [pid];
-    (sim as AnySim).rollLoot(warden, meta, [meta]);
+    (sim as unknown as { rollLoot: (m: unknown, meta: unknown, eligible: unknown[]) => void }).rollLoot(warden, meta, [meta]);
     expect(warden.loot).not.toBeNull();
-    expect(warden.loot.copper).toBeGreaterThan(0);
+    expect(warden.loot!.copper).toBeGreaterThan(0);
     expect(warden.lootable).toBe(true);
 
     // Teleport the player onto the mob so the distance check passes.
@@ -282,7 +282,7 @@ describe("dungeons: Dragon's Maw copper loot", () => {
       const mob = createMob(-99, template, 20, { x: 0, y: 0, z: 0 });
       mob.tappedById = pid;
       mob.lootRecipientIds = [pid];
-      (sim as AnySim).rollLoot(mob, meta, [meta]);
+      (sim as unknown as { rollLoot: (m: unknown, meta: unknown, eligible: unknown[]) => void }).rollLoot(mob, meta, [meta]);
       if (mob.loot && mob.loot.copper > 0) copperDrops++;
       if (mob.loot?.items.some((s: any) => s.itemId === 'custom_ignaraxis_greatblade')) weaponDrops++;
     }
