@@ -18,8 +18,12 @@ The engine (`sim.ts`) sees your content identically to upstream content.
 
 ## Adding content
 
+Full step-by-step guides, field references, and examples for every content type
+live in `docs/custom-content/`. Links are provided in each section below.
+
 ### New mobs / creatures
 Add to `CUSTOM_MOBS` in `index.ts`. Each entry is a `MobTemplate` from `../types`.
+Dungeon-only mobs go in `CUSTOM_DUNGEON_MOBS` (same shape, never appear overworld).
 
 ID rules:
 - Use a descriptive snake_case id with a `custom_` prefix: `custom_direwolf`
@@ -44,26 +48,46 @@ custom_direwolf: {
 ```
 
 To make mobs spawn in the world, add a `CampDef` entry to `CUSTOM_CAMPS`.
+Full guide: `docs/custom-content/mobs.md` -- `docs/custom-content/camps.md`
 
 ### New items
 Add to `CUSTOM_ITEMS` in `index.ts`. Each entry is an `ItemDef` from `../types`.
 Use `custom_` prefix. Items used only as quest objectives can have `kind: 'quest'`.
+Full guide: `docs/custom-content/items.md`
+
+### New NPCs
+Add to `CUSTOM_NPCS` in `index.ts`. Each entry is a `NpcDef` from `../types`.
+NPCs stand at a fixed world position and can give quests, sell items, or both.
+Full guide: `docs/custom-content/npcs.md`
 
 ### New zones / maps
 Add a `ZoneDef` to `CUSTOM_ZONES`. Zones are a north-running strip:
 - `zMin`/`zMax` define the z-axis band (must be higher than the last upstream zone)
-- `biome` controls terrain color and texture (`'forest'`, `'desert'`, `'tundra'`, etc.)
+- `biome` controls terrain color and texture (`'vale'`, `'marsh'`, `'peaks'`)
 - `hub` is the main settlement (terrain flattens there)
 - `graveyard` is where players respawn in this zone
 
-The last existing upstream zone (zone 3) ends at `zMax: 360`. Start custom zones
-at `zMin: 360` to extend the world northward.
+**Upstream zone boundaries (verified from source):**
+- Zone 1 (Eastbrook Vale): zMin -180, zMax 180
+- Zone 2 (Mirefen Marsh): zMin 180, zMax 540
+- Zone 3 (Thornpeak Heights): zMin 540, zMax 900
+
+**Start custom zones at `zMin: 2000` or higher.** The z=2000+ buffer gives runway
+for upstream to add several more zones without conflicting with yours. If you place a
+custom zone at z=900 and upstream later adds zone 4 at z=900-1260, that upstream zone
+wins the biome and zone lookups (it is spread before CUSTOM_ZONES in the ZONES array).
+
+**After any upstream merge:** compare the highest upstream zone zMax against your
+custom zones' zMin values. See `docs/custom-content/zones.md` for the full overlap
+detection and recovery procedure.
 
 Add mob spawn points to `CUSTOM_CAMPS` with `center.z` inside your zone's band.
+Full guide: `docs/custom-content/zones.md`
 
 ### New quests
 Add to `CUSTOM_QUESTS` (a `QuestDef`) and list the id in `CUSTOM_QUEST_ORDER`
 (determines quest-log order and level-gate progression).
+Full guide: `docs/custom-content/quests.md`
 
 ### New dungeons
 Add a `DungeonDef` to `CUSTOM_DUNGEON_DEFS` and any dungeon-only mobs to
@@ -75,9 +99,13 @@ Dungeon index rules:
 - Custom dungeons: **use index 10+ to be safe** (e.g. `index: 10`, `index: 11`, ...)
 - The x-origin of each dungeon is `900 + index * 600` -- so index 10 = x: 6900
 
+Full guide: `docs/custom-content/dungeons.md`
+
 ### Props and static world objects
 Add buildings, wells, crates, etc. to `CUSTOM_PROPS` (a `ZonePropsDef`).
 Add interactable ground objects (herbs, ore) to `CUSTOM_OBJECTS`.
+Add terrain road markings to `CUSTOM_ROADS`.
+Full guides: `docs/custom-content/props.md` -- `docs/custom-content/ground-objects.md` -- `docs/custom-content/roads.md`
 
 ## What you CANNOT add without touching upstream files
 

@@ -533,6 +533,8 @@ grep -n "CUSTOM_CAMPS" src/sim/data.ts
 ls docs/SETUP-DIGITALOCEAN.md docs/SETUP-LOCAL-MAC.md \
    docs/SETUP-CLOUDFLARE.md docs/MAINTAINING-FORK.md \
    docs/custom-content/ADDING-CUSTOM-CONTENT.md \
+   docs/custom-content/items.md docs/custom-content/mobs.md \
+   docs/custom-content/zones.md docs/custom-content/dungeons.md \
    src/sim/content/custom/index.ts FORK.md
 ```
 

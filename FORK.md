@@ -94,6 +94,12 @@ ls docs/SETUP-DIGITALOCEAN.md docs/SETUP-LOCAL-MAC.md docs/SETUP-CLOUDFLARE.md \
 
 # Verify README pointer survived (not the full upstream section)
 grep -c "docs/SETUP-DIGITALOCEAN.md" README.md
+
+# Check for zone overlap (upstream ends at z=900; custom zones must start at z=2000+)
+grep -n "zMax" src/sim/content/zone*.ts src/sim/content/temple.ts 2>/dev/null
+grep -n "zMin" src/sim/content/custom/index.ts
+# If any upstream zMax reaches or exceeds your custom zMin, see
+# docs/custom-content/zones.md for the fix procedure.
 ```
 
 If `grep` returns nothing, re-apply the code from `docs/MAINTAINING-FORK.md`.
@@ -121,6 +127,11 @@ grep -n "CUSTOM_CAMPS\|CUSTOM_MOBS\|CUSTOM_ITEMS\|CUSTOM_NPCS\|CUSTOM_QUESTS\|CU
 ls docs/SETUP-DIGITALOCEAN.md docs/SETUP-LOCAL-MAC.md docs/SETUP-CLOUDFLARE.md \
    docs/SETUP-LOCAL-SUPABASE.md docs/MAINTAINING-FORK.md docs/CUSTOM-CONTENT.md \
    docs/custom-content/ADDING-CUSTOM-CONTENT.md docs/custom-content/CREATURE-MODELS.md \
+   docs/custom-content/items.md docs/custom-content/mobs.md docs/custom-content/camps.md \
+   docs/custom-content/npcs.md docs/custom-content/quests.md docs/custom-content/zones.md \
+   docs/custom-content/ground-objects.md docs/custom-content/props.md \
+   docs/custom-content/roads.md docs/custom-content/dungeons.md \
+   docs/custom-content/complete-example.md \
    FORK.md \
    src/sim/content/custom/index.ts src/sim/content/custom/CLAUDE.md \
    src/render/characters/custom/index.ts src/render/characters/custom/CLAUDE.md \
@@ -140,6 +151,14 @@ grep -n "VITE_SITE_URL\|VITE_DISCORD_URL\|VITE_DONATE_URL" Dockerfile
 
 # Verify the deploy workflow passes the brand args
 grep -n "VITE_SITE_URL\|VITE_DISCORD_URL\|VITE_DONATE_URL" .github/workflows/deploy.yml
+
+# Check for zone overlap: compare upstream zone z-boundaries against custom zone zMin values
+grep -n "zMin\|zMax" src/sim/content/zone*.ts src/sim/content/temple.ts 2>/dev/null
+# Then check your custom zones:
+grep -n "zMin\|zMax" src/sim/content/custom/index.ts
+# Confirm no upstream zMax is >= your lowest custom zMin (custom zones should start at 2000+)
+# If any upstream zone's zMax reaches or exceeds a custom zone's zMin, shift the
+# custom zone northward -- see docs/custom-content/zones.md for the fix procedure.
 ```
 
 If any check returns nothing or is missing, re-apply from `docs/MAINTAINING-FORK.md`
@@ -195,8 +214,10 @@ that `src/sim/content/custom/index.ts` imports (e.g. `MobTemplate`, `ItemDef`,
 **If upstream changed the `ZoneDef`, `MobTemplate`, `ItemDef`, `DungeonDef`, or
 `NpcDef` interface shape** (added a required field, changed a field type, removed
 a field), then `src/sim/content/custom/index.ts` may have type errors. Fix them
-by updating the custom content entries to satisfy the new shape. Also update
-`docs/custom-content/ADDING-CUSTOM-CONTENT.md` to show the new field requirements.
+by updating the custom content entries to satisfy the new shape. Also update the
+relevant guide in `docs/custom-content/` (e.g. `zones.md` for ZoneDef, `items.md`
+for ItemDef, `mobs.md` for MobTemplate, `dungeons.md` for DungeonDef) to show the
+new field requirements.
 
 ### Step 4 -- fix TypeScript errors before running tests
 
@@ -259,9 +280,11 @@ After all code is fixed and tests are green, update the docs to reflect the new 
 2. **`FORK.md` "What was changed from upstream" short list** -- if the change
    description or file path changed, update the one-liner.
 
-3. **`docs/custom-content/ADDING-CUSTOM-CONTENT.md`** -- if any type interface
-   changed (new required fields, renamed fields), update the field reference tables
-   and examples to match. This is the guide future content additions will follow.
+3. **`docs/custom-content/`** -- if any type interface changed (new required fields,
+   renamed fields), update the field reference table and example in the relevant
+   per-type guide: `zones.md`, `items.md`, `mobs.md`, `dungeons.md`, `npcs.md`,
+   `quests.md`, `camps.md`, `props.md`, `ground-objects.md`, or `roads.md`.
+   `ADDING-CUSTOM-CONTENT.md` is now the index; the per-type files carry the detail.
 
 4. **`src/sim/content/custom/CLAUDE.md`** -- if the authoring rules changed
    (e.g., a new upstream dungeon index now takes index 3-9, pushing the custom
@@ -308,7 +331,18 @@ A full list of all upstream file modifications with exact code snippets is in
 **Fork-owned new files (never conflict with upstream):**
 - `src/ui/i18n.catalog/fork_brand.ts` -- central brand constants (`FORK_BRAND`); imported by `index.ts`
 - `scripts/brand_inject.mjs` -- post-build token replacement: patches dist/ static files with real brand URLs
-- `docs/custom-content/ADDING-CUSTOM-CONTENT.md` -- step-by-step authoring guide for all custom content types
+- `docs/custom-content/ADDING-CUSTOM-CONTENT.md` -- index and quick-reference for all custom content guides
+- `docs/custom-content/items.md` -- items guide
+- `docs/custom-content/mobs.md` -- overworld and dungeon mobs guide
+- `docs/custom-content/camps.md` -- camp spawn placement guide
+- `docs/custom-content/npcs.md` -- NPC guide
+- `docs/custom-content/quests.md` -- quests guide
+- `docs/custom-content/zones.md` -- zones guide (includes overlap avoidance)
+- `docs/custom-content/ground-objects.md` -- ground objects guide
+- `docs/custom-content/props.md` -- props guide
+- `docs/custom-content/roads.md` -- roads guide
+- `docs/custom-content/dungeons.md` -- dungeons guide
+- `docs/custom-content/complete-example.md` -- complete zone template
 - `src/render/characters/custom/index.ts` -- custom creature visual overrides (CUSTOM_VISUALS + CUSTOM_MOB_KEYS)
 - `src/render/characters/custom/CLAUDE.md` -- authoring guide for the custom visual directory
 - `public/models/creatures/custom/` -- fork-owned directory for custom GLB model files
