@@ -5111,6 +5111,15 @@ export const ko_KR: EnTranslations = {
       "custom_ignaraxis": {
         "name": "영원한 이그나락시스"
       },
+      "custom_skullfire_brute": {
+        "name": "Skullfire Brute"
+      },
+      "custom_blightshroud_stalker": {
+        "name": "Blightshroud Stalker"
+      },
+      "custom_ironpelt_monkroose": {
+        "name": "Ironpelt Monkroose"
+      },
       "ironvein_foreman": {
         "name": "철맥 감독관"
       },

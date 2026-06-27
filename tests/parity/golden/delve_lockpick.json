@@ -15,8 +15,8 @@
     {
       "tick": 0,
       "time": 0,
-      "nextId": 430,
-      "state": "a6d8b68f",
+      "nextId": 453,
+      "state": "9d599e6f",
       "events": "741638a5",
       "rng": {
         "draws": 0,
@@ -34,7 +34,7 @@
           "counters": {},
           "delveClears": {},
           "delveDaily": {},
-          "entityId": 429,
+          "entityId": 452,
           "equipment": {
             "chest": "footpad_jerkin",
             "mainhand": "rusty_dagger"
@@ -56,7 +56,7 @@
           "fallStartY": 1.5,
           "fiveSecondRule": 99,
           "hp": 62,
-          "id": 429,
+          "id": 452,
           "kind": "player",
           "level": 1,
           "maxHp": 62,
@@ -99,9 +99,9 @@
     {
       "tick": 10,
       "time": 0.5,
-      "nextId": 443,
-      "state": "c83be5ec",
-      "events": "cd957b78",
+      "nextId": 466,
+      "state": "80826e68",
+      "events": "ff52f188",
       "rng": {
         "draws": 4,
         "digest": "e1f30e03"
@@ -110,8 +110,8 @@
     {
       "tick": 20,
       "time": 1,
-      "nextId": 443,
-      "state": "6cac058d",
+      "nextId": 466,
+      "state": "83b44bd1",
       "events": "741638a5",
       "rng": {
         "draws": 4,
@@ -121,9 +121,9 @@
     {
       "tick": 30,
       "time": 1.5,
-      "nextId": 443,
-      "state": "a3a65172",
-      "events": "3703feae",
+      "nextId": 466,
+      "state": "f2ad55c2",
+      "events": "954aeba4",
       "rng": {
         "draws": 5,
         "digest": "0d1e87b1"
@@ -132,9 +132,9 @@
     {
       "tick": 38,
       "time": 1.9,
-      "nextId": 445,
-      "state": "f457816f",
-      "events": "227cb0b5",
+      "nextId": 468,
+      "state": "aa0fb12e",
+      "events": "dd49d345",
       "rng": {
         "draws": 8,
         "digest": "20464699"
@@ -167,7 +167,7 @@
             "eastbrook_ledger"
           ],
           "delveMarks": 3,
-          "entityId": 429,
+          "entityId": 452,
           "equipment": {
             "chest": "footpad_jerkin",
             "mainhand": "rusty_dagger"
@@ -190,7 +190,7 @@
           "dodgeChance": 0.0715,
           "fiveSecondRule": 100.9,
           "hp": 50000,
-          "id": 429,
+          "id": 452,
           "inCombat": true,
           "kind": "player",
           "level": 7,
@@ -220,7 +220,7 @@
             "sta": 23,
             "str": 23
           },
-          "targetId": 439,
+          "targetId": 462,
           "templateId": "rogue",
           "weapon": {
             "dagger": true,
@@ -238,14 +238,14 @@
           "facing": -2.378458,
           "fiveSecondRule": 99,
           "hp": 103,
-          "id": 438,
+          "id": 461,
           "kind": "mob",
           "level": 4,
           "maxHp": 103,
           "moveSpeed": 7,
           "onGround": true,
           "overpowerUntil": -1,
-          "ownerId": 429,
+          "ownerId": 452,
           "petMode": "defensive",
           "pos": {
             "x": 5300,
@@ -278,7 +278,7 @@
           "facing": -2.583314,
           "fiveSecondRule": 99,
           "hostile": true,
-          "id": 439,
+          "id": 462,
           "inCombat": true,
           "kind": "mob",
           "leashAnchor": {
@@ -290,7 +290,7 @@
             "copper": 439
           },
           "lootRecipientIds": [
-            429
+            452
           ],
           "lootable": true,
           "maxHp": 635,
@@ -312,7 +312,7 @@
             "armor": 160
           },
           "stompTimer": 12,
-          "tappedById": 429,
+          "tappedById": 452,
           "templateId": "deacon_varric",
           "wanderTarget": {
             "x": 5295.28058,
@@ -334,7 +334,7 @@
           "facing": 3.141593,
           "fiveSecondRule": 99,
           "hp": 1,
-          "id": 443,
+          "id": 466,
           "kind": "object",
           "level": 1,
           "lootable": true,
@@ -366,8 +366,8 @@
     {
       "tick": 40,
       "time": 2,
-      "nextId": 445,
-      "state": "ef7bbbef",
+      "nextId": 468,
+      "state": "f11b7026",
       "events": "741638a5",
       "rng": {
         "draws": 8,
@@ -377,8 +377,8 @@
     {
       "tick": 40,
       "time": 2,
-      "nextId": 445,
-      "state": "ef7bbbef",
+      "nextId": 468,
+      "state": "f11b7026",
       "events": "741638a5",
       "rng": {
         "draws": 8,
@@ -412,7 +412,7 @@
             "eastbrook_ledger"
           ],
           "delveMarks": 3,
-          "entityId": 429,
+          "entityId": 452,
           "equipment": {
             "chest": "footpad_jerkin",
             "mainhand": "rusty_dagger"
@@ -435,7 +435,7 @@
           "dodgeChance": 0.0715,
           "fiveSecondRule": 101,
           "hp": 50000,
-          "id": 429,
+          "id": 452,
           "inCombat": true,
           "kind": "player",
           "level": 7,
@@ -465,7 +465,7 @@
             "sta": 23,
             "str": 23
           },
-          "targetId": 439,
+          "targetId": 462,
           "templateId": "rogue",
           "weapon": {
             "dagger": true,
@@ -483,14 +483,14 @@
           "facing": -2.378458,
           "fiveSecondRule": 99,
           "hp": 103,
-          "id": 438,
+          "id": 461,
           "kind": "mob",
           "level": 4,
           "maxHp": 103,
           "moveSpeed": 7,
           "onGround": true,
           "overpowerUntil": -1,
-          "ownerId": 429,
+          "ownerId": 452,
           "petMode": "defensive",
           "pos": {
             "x": 5300,
@@ -523,7 +523,7 @@
           "facing": -2.583314,
           "fiveSecondRule": 99,
           "hostile": true,
-          "id": 439,
+          "id": 462,
           "inCombat": true,
           "kind": "mob",
           "leashAnchor": {
@@ -535,7 +535,7 @@
             "copper": 439
           },
           "lootRecipientIds": [
-            429
+            452
           ],
           "lootable": true,
           "maxHp": 635,
@@ -557,7 +557,7 @@
             "armor": 160
           },
           "stompTimer": 12,
-          "tappedById": 429,
+          "tappedById": 452,
           "templateId": "deacon_varric",
           "wanderTarget": {
             "x": 5295.28058,
@@ -579,7 +579,7 @@
           "facing": 3.141593,
           "fiveSecondRule": 99,
           "hp": 1,
-          "id": 443,
+          "id": 466,
           "kind": "object",
           "level": 1,
           "lootable": true,

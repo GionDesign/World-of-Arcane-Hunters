@@ -5111,6 +5111,15 @@ export const es: EnTranslations = {
       "custom_ignaraxis": {
         "name": "Ignaraxis el Eterno"
       },
+      "custom_skullfire_brute": {
+        "name": "Skullfire Brute"
+      },
+      "custom_blightshroud_stalker": {
+        "name": "Blightshroud Stalker"
+      },
+      "custom_ironpelt_monkroose": {
+        "name": "Ironpelt Monkroose"
+      },
       "ironvein_foreman": {
         "name": "Capataz Vena de Hierro"
       },

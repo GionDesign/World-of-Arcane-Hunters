@@ -5111,6 +5111,15 @@ export const ja_JP: EnTranslations = {
       "custom_ignaraxis": {
         "name": "永遠なるイグナラクシス"
       },
+      "custom_skullfire_brute": {
+        "name": "Skullfire Brute"
+      },
+      "custom_blightshroud_stalker": {
+        "name": "Blightshroud Stalker"
+      },
+      "custom_ironpelt_monkroose": {
+        "name": "Ironpelt Monkroose"
+      },
       "ironvein_foreman": {
         "name": "鉄脈の現場監督"
       },

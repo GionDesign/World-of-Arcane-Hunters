@@ -173,6 +173,57 @@ export const CUSTOM_MOBS: Record<string, MobTemplate> = {
     scale: 1.25, color: 0xAA3311,
   },
 
+  // Skullfire Brutes: orcish marauders drawn to the Blight by the dragon's call.
+  // L18-19, humanoid, solid melee fighters. Patrol the southern blight edge.
+  custom_skullfire_brute: {
+    id: 'custom_skullfire_brute',
+    name: 'Skullfire Brute',
+    minLevel: 18, maxLevel: 19,
+    family: 'humanoid',
+    hpBase: 58, hpPerLevel: 20,
+    dmgBase: 11, dmgPerLevel: 2.3,
+    attackSpeed: 2.0,
+    armorPerLevel: 15,
+    moveSpeed: 7,
+    aggroRadius: 10,
+    loot: [{ copper: 90, chance: 1 }],
+    scale: 1.2, color: 0x664422,
+  },
+
+  // Blightshroud Stalkers: swift shadow hunters that stalk the deeper Blight.
+  // L19-20, humanoid, fast attack speed and high aggro range.
+  custom_blightshroud_stalker: {
+    id: 'custom_blightshroud_stalker',
+    name: 'Blightshroud Stalker',
+    minLevel: 19, maxLevel: 20,
+    family: 'humanoid',
+    hpBase: 48, hpPerLevel: 16,
+    dmgBase: 12, dmgPerLevel: 2.4,
+    attackSpeed: 1.6,
+    armorPerLevel: 14,
+    moveSpeed: 9,
+    aggroRadius: 14,
+    loot: [{ copper: 105, chance: 1 }],
+    scale: 0.95, color: 0x222233,
+  },
+
+  // Ironpelt Monkroose: a blight-touched bipedal mongoose beast.
+  // L18-19, humanoid, quick but not threatening alone. Found in packs.
+  custom_ironpelt_monkroose: {
+    id: 'custom_ironpelt_monkroose',
+    name: 'Ironpelt Monkroose',
+    minLevel: 18, maxLevel: 19,
+    family: 'humanoid',
+    hpBase: 55, hpPerLevel: 19,
+    dmgBase: 10, dmgPerLevel: 2.2,
+    attackSpeed: 1.8,
+    armorPerLevel: 14,
+    moveSpeed: 8,
+    aggroRadius: 11,
+    loot: [{ copper: 80, chance: 1 }],
+    scale: 1.05, color: 0x886633,
+  },
+
   // Blighted Sentinels: ancient dragonkin guardians corrupted by Ignaraxis's aura.
   // L20 elite -- intended as a 2-player challenge. Patrol near the dungeon entrance.
   custom_blighted_sentinel: {
@@ -452,6 +503,18 @@ export const CUSTOM_CAMPS: CampDef[] = [
   // Blighted sentinels -- patrolling near the dungeon entrance
   { mobId: 'custom_blighted_sentinel', center: { x: -60, z: 1140 }, radius: 30, count: 2 },
   { mobId: 'custom_blighted_sentinel', center: { x: 10,  z: 1170 }, radius: 25, count: 2 },
+
+  // Skullfire Brutes -- southern blight edge, between the drake packs
+  { mobId: 'custom_skullfire_brute', center: { x: 60,  z: 915 }, radius: 22, count: 4 },
+  { mobId: 'custom_skullfire_brute', center: { x: -40, z: 935 }, radius: 20, count: 4 },
+
+  // Blightshroud Stalkers -- north of the scout outpost
+  { mobId: 'custom_blightshroud_stalker', center: { x: -45, z: 1100 }, radius: 22, count: 3 },
+  { mobId: 'custom_blightshroud_stalker', center: { x: 30,  z: 1130 }, radius: 20, count: 3 },
+
+  // Ironpelt Monkroose -- scattered across the southern blight
+  { mobId: 'custom_ironpelt_monkroose', center: { x: -65, z: 910 }, radius: 25, count: 5 },
+  { mobId: 'custom_ironpelt_monkroose', center: { x: 25,  z: 945 }, radius: 22, count: 4 },
 ];
 
 // ---------------------------------------------------------------------------

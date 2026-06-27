@@ -9,7 +9,7 @@
 // Both are spread LAST into manifest.ts so custom entries always take precedence.
 // See docs/custom-content/CREATURE-MODELS.md for the full authoring guide.
 
-import type { VisualDef } from '../manifest';
+import type { ClipMap, VisualDef } from '../manifest';
 
 // Base path for GLBs placed in this fork's exclusive model directory.
 // Drop .glb files into public/models/creatures/custom/ and reference them as:
@@ -44,8 +44,13 @@ export const CUSTOM_MOB_KEYS: Record<string, string> = {
   infernal:   'mob_demonalt',
   doomguard:  'mob_demonalt',
 
-  // Example -- override wolf to use a custom model when you have one:
-  // timber_wolf: 'custom_timber_wolf',
+  // Custom overworld creatures (Dragon's Blight zone).
+  custom_skullfire_brute:      'custom_orcskull',
+  custom_blightshroud_stalker: 'custom_ninja',
+  custom_ironpelt_monkroose:   'custom_monkroose',
+
+  // Dragon's Maw boss uses the alien model.
+  custom_ignaraxis: 'custom_alien_boss',
 };
 
 // ---------------------------------------------------------------------------
@@ -66,6 +71,18 @@ export const CUSTOM_MOB_KEYS: Record<string, string> = {
 // See docs/custom-content/CREATURE-MODELS.md for field reference and examples.
 // ---------------------------------------------------------------------------
 
+// ClipMap for the 14-animation biped rig used by all four new creature GLBs
+// (orcskull / alien / ninja / monkroose). Clip names match the GLB exactly.
+const BIPED14_JUMP: ClipMap = {
+  idle:   'Idle',
+  walk:   'Walk',
+  run:    'Run',
+  attack: ['Punch', 'Weapon'],
+  hit:    ['HitReact'],
+  death:  'Death',
+  jump:   'Jump_Idle',
+};
+
 export const CUSTOM_VISUALS: Record<string, VisualDef> = {
   // Example -- new creature from a Quaternius pack:
   // custom_forest_bear: {
@@ -84,4 +101,41 @@ export const CUSTOM_VISUALS: Record<string, VisualDef> = {
   //   tint: 'entity',
   //   tintStrength: 0.5,
   // },
+
+  // Skullfire Brute (orcskull.glb) -- orc marauder overworld mob.
+  custom_orcskull: {
+    url: `${CUSTOM_CREATURES}/orcskull.glb`,
+    height: 1.85,
+    clips: BIPED14_JUMP,
+    tint: 'entity',
+    tintStrength: 0.35,
+  },
+
+  // Blightshroud Stalker (ninja.glb) -- swift humanoid overworld mob.
+  custom_ninja: {
+    url: `${CUSTOM_CREATURES}/ninja.glb`,
+    height: 1.70,
+    clips: BIPED14_JUMP,
+    tint: 'entity',
+    tintStrength: 0.30,
+  },
+
+  // Ironpelt Monkroose (monkroose.glb) -- bipedal beast overworld mob.
+  custom_monkroose: {
+    url: `${CUSTOM_CREATURES}/monkroose.glb`,
+    height: 1.65,
+    clips: BIPED14_JUMP,
+    tint: 'entity',
+    tintStrength: 0.35,
+  },
+
+  // Ignaraxis the Eternal boss (alien.glb) -- Dragon's Maw final boss.
+  // Scale 1.8 on the mob template gives an imposing in-game height of ~3.15 u.
+  custom_alien_boss: {
+    url: `${CUSTOM_CREATURES}/alien.glb`,
+    height: 1.75,
+    clips: BIPED14_JUMP,
+    tint: 'entity',
+    tintStrength: 0.50,
+  },
 };
