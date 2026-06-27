@@ -517,9 +517,13 @@ grep -c "CUSTOM_" src/ui/world_entity_i18n.ts
 ```
 
 Each of the 13 non-English `src/ui/i18n.locales/<lang>.ts` overlay files also has
-the matching 49 translation keys (`entities.mobs.custom_*.name`,
+the matching 52 translation keys (`entities.mobs.custom_*.name`,
 `entities.npcs.custom_*.*`, `entities.quests.custom_*.*`,
-`entities.zones.custom_*.name`, `entities.dungeons.custom_*.name`). These overlay
+`entities.zones.custom_*.name`, `entities.dungeons.custom_*.name`). Note: es_ES and
+fr_CA inherit the 3 new overworld mob name keys (custom_skullfire_brute,
+custom_blightshroud_stalker, custom_ironpelt_monkroose) from their base locales (es
+and fr_FR respectively) rather than carrying explicit entries -- the dialect-resolution
+test requires any explicit dialect key to diverge from its base. These overlay
 files are fork-owned (no upstream equivalent), so they can never conflict -- but
 they DO need to be re-populated if they are accidentally deleted or if upstream
 renames the overlay file format. After any mass deletion or format change, re-add
@@ -685,6 +689,49 @@ casts a spell. The GCD check confirms the ability was processed by the engine.
 
 If this change is lost (upstream restores the hp check), the test will flake on any
 RNG state where flame_shock misses. Re-apply the GCD check to make it robust.
+
+---
+
+#### `tests/dungeons.test.ts` -- TypeScript access fixes for rollLoot and loot field
+
+The upstream dungeon test exercises `rollLoot` (a private method on `Sim`) and reads
+`warden.loot.copper`. Two TypeScript strict-mode errors required fork fixes:
+
+**Fix 1** -- `rollLoot` is declared `private` in `Sim`, so `(sim as AnySim).rollLoot`
+does not bypass the visibility check. The fix casts through `unknown` to an explicit
+inline type:
+
+```typescript
+// Old (TS2341 -- 'rollLoot' is private):
+(sim as AnySim).rollLoot(warden, meta, [meta]);
+
+// New (bypasses private visibility via unknown intermediary):
+(sim as unknown as { rollLoot: (m: unknown, meta: unknown, eligible: unknown[]) => void })
+  .rollLoot(warden, meta, [meta]);
+```
+
+This pattern appears twice in the file: once for the dragonclaw warden loot test (line ~257)
+and once inside the ignaraxis loot loop (line ~285).
+
+**Fix 2** -- `warden.loot` is typed `LootBag | null`. TypeScript does not narrow through
+Vitest's `expect(...).not.toBeNull()`. The fix adds a non-null assertion on the next line:
+
+```typescript
+// Old (TS18047 -- 'warden.loot' is possibly 'null'):
+expect(warden.loot.copper).toBeGreaterThan(0);
+
+// New:
+expect(warden.loot!.copper).toBeGreaterThan(0);
+```
+
+**Verification:**
+```bash
+grep -n "rollLoot\|warden\.loot!" tests/dungeons.test.ts
+# Expect: two rollLoot lines with the unknown-cast pattern and warden.loot! with the assertion
+```
+
+If upstream refactors `rollLoot` to be public or changes `loot` to non-nullable, these
+workarounds can be removed.
 
 ---
 
