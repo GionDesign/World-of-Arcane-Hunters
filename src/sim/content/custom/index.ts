@@ -224,8 +224,7 @@ export const CUSTOM_DUNGEON_MOBS: Record<string, MobTemplate> = {
     scale: 1.25, color: 0x773322,
   },
 
-  // Ignaraxis the Eternal: ancient fire dragon, the dragon hunt's final quarry.
-  // A 3-player boss. The epic loot only drops when quest 5 (custom_eternal_flame) is active.
+  // Ignaraxis the Eternal: ancient fire dragon, the dragon hunt's final quarry. 3-player boss.
   custom_ignaraxis: {
     id: 'custom_ignaraxis',
     name: 'Ignaraxis the Eternal',
@@ -244,9 +243,9 @@ export const CUSTOM_DUNGEON_MOBS: Record<string, MobTemplate> = {
     enrage: { belowHpPct: 0.25, dmgMult: 1.6, hasteMult: 1.4 },
     loot: [
       { copper: 60000, chance: 1 },
-      { itemId: 'custom_ignaraxis_greatblade', chance: 0.30, questId: 'custom_eternal_flame' },
-      { itemId: 'custom_cinderstave_eternal',  chance: 0.30, questId: 'custom_eternal_flame' },
-      { itemId: 'custom_fang_of_ignaraxis',    chance: 0.30, questId: 'custom_eternal_flame' },
+      { itemId: 'custom_ignaraxis_greatblade', chance: 0.30 },
+      { itemId: 'custom_cinderstave_eternal',  chance: 0.30 },
+      { itemId: 'custom_fang_of_ignaraxis',    chance: 0.30 },
     ],
     scale: 1.8, color: 0x992200,
   },
@@ -384,7 +383,6 @@ export const CUSTOM_QUESTS: Record<string, QuestDef> = {
   },
 
   // Quest 5: Enter Dragon's Maw and slay Ignaraxis. The epic culmination.
-  // The boss's epic loot only drops when this quest is active (questId on loot entries).
   custom_eternal_flame: {
     id: 'custom_eternal_flame',
     name: 'The Eternal Flame',

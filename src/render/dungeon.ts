@@ -23,7 +23,6 @@ import {
   DUNGEON_WALL_HW,
   DUNGEON_WALL_X,
   type DungeonLayout,
-  DRAGONS_MAW_LAYOUT,
   type GridPoint,
   NYTHRAXIS_LAYOUT,
   SANCTUM_LAYOUT,
@@ -34,6 +33,16 @@ import {
 import { loadGltf, releaseGltf } from './assets/loader';
 import { sharedUniforms } from './gfx';
 import { radialGlowTexture } from './textures';
+import {
+  type CustomDungeonVariantId,
+  CUSTOM_TORCH_COLORS,
+  CUSTOM_NO_BANNER_VARIANTS,
+  getCustomDungeonLayout,
+  isCustomDungeonVariant,
+  customFloorKind,
+  customWallKind,
+  customWallDressing as applyCustomWallDressing,
+} from './dungeon_custom';
 
 const FLAME_EMISSIVE_HIGH = 2.2;
 // dungeon torch point lights: pumped + hung low so warm pools break up the
@@ -54,6 +63,7 @@ export type DungeonInteriorVariant =
   | 'temple'
   | 'arena'
   | 'nythraxis'
+  | CustomDungeonVariantId
   // Collapsed Reliquary delve sub-themes (share the ember crypt-stone base, see
   // isDelveVariant; differ only in wall-side props, clutter, and the dais).
   | 'delve_ossuary'
@@ -97,6 +107,7 @@ const TORCH_COLORS: Record<Variant, TorchColors> = {
   // the Ashen Coliseum burns warm — amber braziers ringing the fighting sands
   arena: { flame: 0xffb24a, emissive: 0xcc5a14, light: 0xff9a3c },
   nythraxis: { flame: 0x8f5cff, emissive: 0x4b1c9a, light: 0x7b4dff },
+  ...CUSTOM_TORCH_COLORS,
   // delve reliquaries burn with grave-ember red: warm coals over cold stone
   delve_ossuary: { flame: 0xff7a3c, emissive: 0xcc3a14, light: 0xff6a3c },
   delve_bell: { flame: 0xff7a3c, emissive: 0xcc3a14, light: 0xff6a3c },
@@ -555,17 +566,16 @@ export class DungeonInteriors {
     // while collision used the real delve footprint, drifting walls and floor.
     const layout =
       opts?.layout ??
-      (interior === 'dragons_maw'
-        ? DRAGONS_MAW_LAYOUT
-        : interior === 'sanctum'
-          ? SANCTUM_LAYOUT
-          : interior === 'temple'
-            ? TEMPLE_LAYOUT
-            : interior === 'arena'
-              ? ARENA_LAYOUT
-              : interior === 'nythraxis'
-                ? NYTHRAXIS_LAYOUT
-                : CRYPT_LAYOUT);
+      getCustomDungeonLayout(interior) ??
+      (interior === 'sanctum'
+        ? SANCTUM_LAYOUT
+        : interior === 'temple'
+          ? TEMPLE_LAYOUT
+          : interior === 'arena'
+            ? ARENA_LAYOUT
+            : interior === 'nythraxis'
+              ? NYTHRAXIS_LAYOUT
+              : CRYPT_LAYOUT);
     const variant = opts?.variant ?? this.variantFor(interior, ox);
     const group = new THREE.Group();
     const p = new Placements();
@@ -724,7 +734,7 @@ export class DungeonInteriors {
   private variantFor(interior: string, ox: number): Variant {
     if (interior === 'arena') return 'arena';
     if (interior === 'nythraxis') return 'nythraxis';
-    if (interior === 'dragons_maw') return 'sanctum';
+    if (isCustomDungeonVariant(interior)) return interior;
     if (interior === 'sanctum') return 'sanctum';
     if (interior === 'temple') return 'temple';
     const bastionX = instanceOrigin(1, 0).x;
@@ -850,6 +860,7 @@ export class DungeonInteriors {
         t,
       );
     }
+    if (isCustomDungeonVariant(variant)) return customFloorKind(variant, t);
     if (variant === 'sanctum') {
       return pickKind(
         [
@@ -1000,6 +1011,7 @@ export class DungeonInteriors {
         t,
       );
     }
+    if (isCustomDungeonVariant(variant)) return customWallKind(variant, t);
     if (variant === 'sanctum') {
       return pickKind(
         [
@@ -1123,7 +1135,7 @@ export class DungeonInteriors {
       for (let z = layout.zMin; z <= layout.zMax + 2; z += 8, i++) {
         const kind = this.wallKind(variant, hash2(side * 13.7, z));
         target.add(kind, side * wallX, 0, z, ry, MODULE_SCALE);
-        if (i % bannerEvery === 2 && kind !== 'wall_archedwindow_gated') {
+        if (i % bannerEvery === 2 && kind !== 'wall_archedwindow_gated' && !CUSTOM_NO_BANNER_VARIANTS.has(variant)) {
           target.add(
             this.bannerKind(variant, hash2(z, side * 7.3)),
             side * wallX,
@@ -1487,6 +1499,11 @@ export class DungeonInteriors {
           );
         }
       }
+      return;
+    }
+    // Custom variants own all their dressing (including rubble) in dungeon_custom.ts
+    if (isCustomDungeonVariant(variant)) {
+      applyCustomWallDressing(variant, (k, x, y, z, ry, sc) => p.add(k, x, y, z, ry, sc), layout);
       return;
     }
     // collapsed masonry in the legacy rubble corners

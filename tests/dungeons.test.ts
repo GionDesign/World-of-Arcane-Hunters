@@ -4,7 +4,8 @@
 // the party-shared instance, the claim -> free empty-reset, and the raid-lockout gate.
 
 import { describe, expect, it } from 'vitest';
-import { DUNGEONS, instanceOrigin } from '../src/sim/data';
+import { DUNGEONS, instanceOrigin, MOBS } from '../src/sim/data';
+import { createMob } from '../src/sim/entity';
 import {
   enterDungeon,
   instanceKeyFor,
@@ -233,5 +234,61 @@ describe('dungeons: leaveDungeon guard', () => {
     leaveDungeon(sim.ctx, pid);
     expect(p.pos.x).toBe(before.x);
     expect(p.pos.z).toBe(before.z);
+  });
+});
+
+describe("dungeons: Dragon's Maw copper loot", () => {
+  it("looting a dragonclaw warden credits copper to the player's wallet", () => {
+    const sim = makeSim();
+    const pid = sim.addPlayer('warrior', 'Solo');
+    const meta = sim.players.get(pid)!;
+    enterDungeon(sim.ctx, 'custom_dragons_maw', pid);
+
+    // Find the first dragonclaw_warden spawned in the instance.
+    const warden = [...sim.entities.values()].find(
+      (e: AnyEntity) => e.templateId === 'custom_dragonclaw_warden',
+    ) as AnyEntity;
+    expect(warden).toBeDefined();
+
+    // Simulate death: roll loot and mark as lootable.
+    warden.dead = true;
+    warden.tappedById = pid;
+    warden.lootRecipientIds = [pid];
+    (sim as unknown as { rollLoot: (m: unknown, meta: unknown, eligible: unknown[]) => void }).rollLoot(warden, meta, [meta]);
+    expect(warden.loot).not.toBeNull();
+    expect(warden.loot!.copper).toBeGreaterThan(0);
+    expect(warden.lootable).toBe(true);
+
+    // Teleport the player onto the mob so the distance check passes.
+    const p = sim.entities.get(pid) as AnyEntity;
+    teleport(sim, p, warden.pos.x, warden.pos.z);
+
+    const copperBefore = meta.copper;
+    sim.lootCorpse(warden.id, pid);
+    expect(meta.copper).toBeGreaterThan(copperBefore);
+  });
+
+  it("ignaraxis drops copper and can drop epic weapons without a quest gate", () => {
+    // One sim, one player, many rollLoot calls (same pattern as loot_drops.test.ts).
+    const TRIALS = 5000;
+    const sim = makeSim(7);
+    const pid = sim.addPlayer('warrior', 'Solo');
+    const meta = sim.players.get(pid)!;
+    const template = MOBS['custom_ignaraxis'];
+    expect(template).toBeDefined();
+    let copperDrops = 0;
+    let weaponDrops = 0;
+    for (let i = 0; i < TRIALS; i++) {
+      const mob = createMob(-99, template, 20, { x: 0, y: 0, z: 0 });
+      mob.tappedById = pid;
+      mob.lootRecipientIds = [pid];
+      (sim as unknown as { rollLoot: (m: unknown, meta: unknown, eligible: unknown[]) => void }).rollLoot(mob, meta, [meta]);
+      if (mob.loot && mob.loot.copper > 0) copperDrops++;
+      if (mob.loot?.items.some((s: any) => s.itemId === 'custom_ignaraxis_greatblade')) weaponDrops++;
+    }
+    expect(copperDrops).toBe(TRIALS); // 100% copper — chance:1 always fires
+    // greatblade at 30%; in 5000 trials expect 1250-1750 (~10σ margin)
+    expect(weaponDrops).toBeGreaterThan(1250);
+    expect(weaponDrops).toBeLessThan(1750);
   });
 });

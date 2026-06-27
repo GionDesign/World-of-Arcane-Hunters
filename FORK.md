@@ -152,9 +152,12 @@ grep -c "dragons_maw" src/sim/types.ts
 grep -c "DRAGONS_MAW_LAYOUT" src/sim/dungeon_layout.ts
 # Expect: 1
 
-# Verify Dragon's Maw renderer wiring survived in dungeon.ts
-grep -c "dragons_maw" src/render/dungeon.ts
-# Expect: 2 (buildInterior case + variantFor case)
+# Verify custom dungeon renderer hooks survived in dungeon.ts
+grep -c "CUSTOM_TORCH_COLORS\|isCustomDungeonVariant\|applyCustomWallDressing\|dungeon_custom" src/render/dungeon.ts
+# Expect: 7+ (import block + TORCH_COLORS spread + variantFor + floorKind + wallKind + placeWalls + placeWallDressing)
+
+# Verify fork-owned dungeon rendering custom file exists
+ls src/render/dungeon_custom.ts
 
 # Verify Dragon's Maw colliders survived in colliders.ts
 grep -c "DRAGONS_MAW" src/sim/colliders.ts
@@ -354,7 +357,7 @@ A full list of all upstream file modifications with exact code snippets is in
 - `src/render/characters/manifest.ts` -- added import + spreads for `src/render/characters/custom/`
 - `src/sim/types.ts` -- `DungeonDef.interior` union extended with `'dragons_maw'`
 - `src/sim/dungeon_layout.ts` -- added `DRAGONS_MAW_LAYOUT` for the Dragon's Maw custom dungeon interior
-- `src/render/dungeon.ts` -- added `'dragons_maw'` case to `buildInterior` (layout chain) and `variantFor`
+- `src/render/dungeon.ts` -- added import + hook points for `dungeon_custom.ts`: `CustomDungeonVariantId` in union, `...CUSTOM_TORCH_COLORS` spread, `isCustomDungeonVariant` delegates in `variantFor`/`floorKind`/`wallKind`/`placeWallDressing`, `getCustomDungeonLayout` in `buildInterior`, `CUSTOM_NO_BANNER_VARIANTS` check in `placeWalls`
 - `src/sim/colliders.ts` -- added `DRAGONS_MAW_COLLIDERS` and `dragons_maw` entry in `INTERIOR_COLLIDERS`
 - `src/sim/sim.ts` -- secondary RNG (`customRng = new Rng(seed ^ 0x464f524b)`) for CUSTOM_CAMPS mob init to prevent main RNG stream shift
 - `src/ui/world_entity_i18n.ts` -- imports Dragon's Blight entity IDs from `src/sim/content/custom/i18n_ids.ts` via spread
@@ -380,6 +383,7 @@ A full list of all upstream file modifications with exact code snippets is in
 - `docs/custom-content/roads.md` -- roads guide
 - `docs/custom-content/dungeons.md` -- dungeons guide
 - `docs/custom-content/complete-example.md` -- complete zone template
+- `src/render/dungeon_custom.ts` -- fork-owned Dragon's Maw dungeon rendering: `CustomDungeonVariantId` type, torch colours, layout lookup, floor/wall kind tables, wall dressing (hooked into `dungeon.ts` via small delegates)
 - `src/render/characters/custom/index.ts` -- custom creature visual overrides (CUSTOM_VISUALS + CUSTOM_MOB_KEYS)
 - `src/render/characters/custom/CLAUDE.md` -- authoring guide for the custom visual directory
 - `public/models/creatures/custom/` -- fork-owned directory for custom GLB model files
