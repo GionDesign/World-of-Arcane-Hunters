@@ -94,6 +94,12 @@ ls docs/SETUP-DIGITALOCEAN.md docs/SETUP-LOCAL-MAC.md docs/SETUP-CLOUDFLARE.md \
 
 # Verify README pointer survived (not the full upstream section)
 grep -c "docs/SETUP-DIGITALOCEAN.md" README.md
+
+# Check for zone overlap (upstream ends at z=900; custom zones must start at z=2000+)
+grep -n "zMax" src/sim/content/zone*.ts src/sim/content/temple.ts 2>/dev/null
+grep -n "zMin" src/sim/content/custom/index.ts
+# If any upstream zMax reaches or exceeds your custom zMin, see section 7 of
+# docs/custom-content/ADDING-CUSTOM-CONTENT.md for the fix procedure.
 ```
 
 If `grep` returns nothing, re-apply the code from `docs/MAINTAINING-FORK.md`.
@@ -140,6 +146,14 @@ grep -n "VITE_SITE_URL\|VITE_DISCORD_URL\|VITE_DONATE_URL" Dockerfile
 
 # Verify the deploy workflow passes the brand args
 grep -n "VITE_SITE_URL\|VITE_DISCORD_URL\|VITE_DONATE_URL" .github/workflows/deploy.yml
+
+# Check for zone overlap: compare upstream zone z-boundaries against custom zone zMin values
+grep -n "zMin\|zMax" src/sim/content/zone*.ts src/sim/content/temple.ts 2>/dev/null
+# Then check your custom zones:
+grep -n "zMin\|zMax" src/sim/content/custom/index.ts
+# Confirm no upstream zMax is >= your lowest custom zMin (custom zones should start at 2000+)
+# If any upstream zone's zMax reaches or exceeds a custom zone's zMin, shift the
+# custom zone northward -- see docs/custom-content/ADDING-CUSTOM-CONTENT.md section 7.
 ```
 
 If any check returns nothing or is missing, re-apply from `docs/MAINTAINING-FORK.md`

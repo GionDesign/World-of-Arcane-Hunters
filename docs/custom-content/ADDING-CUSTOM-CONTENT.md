@@ -32,10 +32,10 @@ target) will cause a runtime error when the sim tries to resolve it.
 **World coordinate reference:**
 - x: west to east (-180 to +180, with 0 at centre)
 - z: increases northward
-  - Zone 1 (Greenvale): z -180 to 0
-  - Zone 2 (Marshfen): z 0 to 180
-  - Zone 3 (Frostpeak): z 180 to 360
-  - Custom zones: z 360 and above (extend northward)
+  - Zone 1 (Eastbrook Vale): z -180 to 180
+  - Zone 2 (Mirefen Marsh): z 180 to 540
+  - Zone 3 (Thornpeak Heights): z 540 to 900
+  - Custom zones: z 2000 and above (see zone overlap notes in section 7)
 
 ---
 
@@ -517,8 +517,9 @@ export const CUSTOM_QUEST_ORDER: string[] = [
 
 ## 7. Zones (new world areas)
 
-Zones are north-running world bands. Upstream zone 3 ends at z 360; all custom
-zones extend northward from there.
+Zones are north-running world bands. Upstream zone 3 (Thornpeak Heights) ends at
+z 900. Custom zones should start at z 2000 or higher -- see the overlap avoidance
+section below before choosing your z values.
 
 **Section in index.ts:** `CUSTOM_ZONES`
 
@@ -528,7 +529,7 @@ zones extend northward from there.
 |---|---|---|---|
 | `id` | string | yes | Unique ID with `custom_` prefix |
 | `name` | string | yes | Zone name shown on map (English) |
-| `zMin` | number | yes | Southern boundary (360 or higher; zones stack northward) |
+| `zMin` | number | yes | Southern boundary (2000 or higher; zones stack northward) |
 | `zMax` | number | yes | Northern boundary |
 | `levelRange` | [min, max] | yes | Recommended player level range |
 | `biome` | BiomeId | yes | `'vale'`, `'marsh'`, or `'peaks'` (controls terrain color and texture) |
@@ -545,14 +546,14 @@ hub: { x: number, z: number, radius: number, name: string }
 The radius is the settlement flat zone (terrain geometry flattens within it).
 
 **Biome reference:**
-- `'vale'` - green rolling hills (like zone 1 Greenvale)
-- `'marsh'` - murky wetlands (like zone 2 Marshfen)
-- `'peaks'` - snowy high-altitude terrain (like zone 3 Frostpeak)
+- `'vale'` - green rolling hills (like zone 1 Eastbrook Vale)
+- `'marsh'` - murky wetlands (like zone 2 Mirefen Marsh)
+- `'peaks'` - snowy high-altitude terrain (like zone 3 Thornpeak Heights)
 
 ### Step-by-step
 
-1. Decide the z band. Start at 360 for your first zone. If you add a second
-   zone, start it at the first zone's zMax.
+1. Decide the z band. Start at 2000 for your first zone (see overlap avoidance
+   below). If you add a second zone, start it at the first zone's zMax.
 2. Add your zone inside the `CUSTOM_ZONES` array:
 
 ```typescript
@@ -560,18 +561,18 @@ export const CUSTOM_ZONES: ZoneDef[] = [
   {
     id: 'custom_ashenmoor',
     name: 'The Ashenmoor',
-    zMin: 360,
-    zMax: 540,
+    zMin: 2000,
+    zMax: 2360,
     levelRange: [18, 25],
     biome: 'marsh',
-    hub: { x: 0, z: 420, radius: 30, name: 'Ashenmoor Camp' },
-    graveyard: { x: -10, z: 430 },
+    hub: { x: 0, z: 2060, radius: 30, name: 'Ashenmoor Camp' },
+    graveyard: { x: -10, z: 2070 },
     lakes: [
-      { x: 60, z: 480, radius: 40 },
+      { x: 60, z: 2120, radius: 40 },
     ],
     pois: [
-      { x: 0,  z: 420, label: 'Ashenmoor Camp' },
-      { x: 60, z: 480, label: 'The Mire' },
+      { x: 0,  z: 2060, label: 'Ashenmoor Camp' },
+      { x: 60, z: 2120, label: 'The Mire' },
     ],
     welcome: 'The Ashenmoor stretches before you, bleak and fog-shrouded.',
   },
@@ -580,6 +581,48 @@ export const CUSTOM_ZONES: ZoneDef[] = [
 
 3. Add NPC and camp spawn points with z coordinates inside your zone's band.
 4. Run `npm test` to verify no errors.
+
+### Zone overlap avoidance
+
+**Why overlap happens:** `CUSTOM_ZONES` are appended LAST into the engine's `ZONES`
+array (by `src/sim/data.ts`). When the engine resolves which zone a player is in, it
+searches `ZONES` in order. If an upstream zone covers the same z range as a custom zone,
+the upstream zone appears earlier in the array and wins -- the custom zone's hub, level
+range, and welcome text are invisible even though the zone entry exists.
+
+**Why z=2000+ is the safe starting point:** Upstream currently ends at z=900 (zone 3).
+With the z=2000+ buffer, upstream would need to add at least 3 more full-width zones
+before colliding with custom content. Each upstream zone so far spans ~360 units
+(zone 2 and zone 3 each span 360), so a buffer of 1100+ units is comfortable runway.
+
+**Detecting overlap after a merge:** Any upstream merge that adds a new zone file is
+visible from the file list in the merge commit. After a merge, run:
+
+```bash
+# Check the current upstream zone z-boundaries (zone files only, not custom)
+grep -n "zMin\|zMax" src/sim/content/zone*.ts src/sim/content/temple.ts 2>/dev/null
+```
+
+Compare the highest `zMax` value in that output against the lowest `zMin` in your
+`CUSTOM_ZONES`. If any upstream zMax is greater than or equal to your custom zMin,
+you have an overlap.
+
+**Fixing an overlap:** Only files you own need to change. Open
+`src/sim/content/custom/index.ts` and shift all your custom z values northward:
+
+1. Increase every `CUSTOM_ZONES` entry's `zMin` and `zMax` to clear the upstream
+   zone's `zMax` by at least 100 units (e.g. upstream new zMax=1260, shift custom
+   start to 1400 or higher).
+2. Update every `CUSTOM_CAMPS` entry: shift `center.z` by the same delta.
+3. Update hub `z`, `graveyard.z`, `lakes[].z`, and `pois[].z` inside `CUSTOM_ZONES`
+   by the same delta.
+4. Update any `CUSTOM_NPCS`, `CUSTOM_ROADS`, `CUSTOM_PROPS`, and `CUSTOM_OBJECTS`
+   positions that were inside the old z band.
+5. Run `npm test` to confirm no errors.
+
+The fix is always safe: all custom content lives in the fork-owned `custom/index.ts`
+and no upstream merge can overwrite it. A number change in that file is all that is
+ever needed to resolve an overlap.
 
 ---
 
@@ -770,18 +813,18 @@ trace the path. The renderer connects them into a painted strip.
 
 ```typescript
 export const CUSTOM_ROADS: { x: number; z: number }[][] = [
-  // Road from zone 3 border (z=360) north to Ashenmoor Camp (z=420)
+  // Road from zone entry point north to Ashenmoor Camp
   [
-    { x: 0, z: 360 },
-    { x: 2, z: 380 },
-    { x: 1, z: 400 },
-    { x: 0, z: 420 },
+    { x: 0, z: 2000 },
+    { x: 2, z: 2020 },
+    { x: 1, z: 2040 },
+    { x: 0, z: 2060 },
   ],
   // Branch road east to The Mire
   [
-    { x: 0,  z: 420 },
-    { x: 30, z: 450 },
-    { x: 60, z: 480 },
+    { x: 0,  z: 2060 },
+    { x: 30, z: 2090 },
+    { x: 60, z: 2120 },
   ],
 ];
 ```
@@ -850,7 +893,7 @@ export const CUSTOM_DUNGEON_DEFS: Record<string, DungeonDef> = {
     id: 'custom_ashenmoor_crypt',
     name: 'Ashenmoor Crypt',
     index: 10,                              // x-origin = 900 + 10*600 = 6900
-    doorPos: { x: -50, z: 395 },           // overworld entrance portal
+    doorPos: { x: -50, z: 2020 },          // overworld entrance portal (inside custom zone)
     entry: { x: 0, z: 20 },               // player appears here inside
     exitOffset: { x: 0, z: 5 },           // exit portal, instance-local
     interior: 'crypt',
@@ -1075,14 +1118,14 @@ export const CUSTOM_ZONES: ZoneDef[] = [
   {
     id: 'custom_ashenmoor',
     name: 'The Ashenmoor',
-    zMin: 360, zMax: 540,
+    zMin: 2000, zMax: 2360,
     levelRange: [18, 25],
     biome: 'marsh',
-    hub: { x: 0, z: 420, radius: 30, name: 'Ashenmoor Camp' },
-    graveyard: { x: -10, z: 430 },
-    lakes: [{ x: 60, z: 480, radius: 40 }],
+    hub: { x: 0, z: 2060, radius: 30, name: 'Ashenmoor Camp' },
+    graveyard: { x: -10, z: 2070 },
+    lakes: [{ x: 60, z: 2120, radius: 40 }],
     pois: [
-      { x: 0, z: 420, label: 'Ashenmoor Camp' },
+      { x: 0, z: 2060, label: 'Ashenmoor Camp' },
     ],
     welcome: 'The Ashenmoor stretches before you, bleak and fog-shrouded.',
   },
@@ -1096,7 +1139,7 @@ export const CUSTOM_DUNGEON_DEFS: Record<string, DungeonDef> = {
     id: 'custom_ashenmoor_crypt',
     name: 'Ashenmoor Crypt',
     index: 10,                        // x-origin = 900 + 10*600 = 6900
-    doorPos: { x: -50, z: 395 },
+    doorPos: { x: -50, z: 2020 },    // overworld entrance portal
     entry: { x: 0, z: 20 },
     exitOffset: { x: 0, z: 5 },
     interior: 'crypt',

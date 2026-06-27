@@ -52,12 +52,23 @@ Use `custom_` prefix. Items used only as quest objectives can have `kind: 'quest
 ### New zones / maps
 Add a `ZoneDef` to `CUSTOM_ZONES`. Zones are a north-running strip:
 - `zMin`/`zMax` define the z-axis band (must be higher than the last upstream zone)
-- `biome` controls terrain color and texture (`'forest'`, `'desert'`, `'tundra'`, etc.)
+- `biome` controls terrain color and texture (`'vale'`, `'marsh'`, `'peaks'`)
 - `hub` is the main settlement (terrain flattens there)
 - `graveyard` is where players respawn in this zone
 
-The last existing upstream zone (zone 3) ends at `zMax: 360`. Start custom zones
-at `zMin: 360` to extend the world northward.
+**Upstream zone boundaries (verified from source):**
+- Zone 1 (Eastbrook Vale): zMin -180, zMax 180
+- Zone 2 (Mirefen Marsh): zMin 180, zMax 540
+- Zone 3 (Thornpeak Heights): zMin 540, zMax 900
+
+**Start custom zones at `zMin: 2000` or higher.** The z=2000+ buffer gives runway
+for upstream to add several more zones without conflicting with yours. If you place a
+custom zone at z=900 and upstream later adds zone 4 at z=900-1260, that upstream zone
+wins the biome and zone lookups (it is spread before CUSTOM_ZONES in the ZONES array).
+
+**After any upstream merge:** compare the highest upstream zone zMax against your
+custom zones' zMin values. See `docs/custom-content/ADDING-CUSTOM-CONTENT.md` section 7
+for the full overlap detection and recovery procedure.
 
 Add mob spawn points to `CUSTOM_CAMPS` with `center.z` inside your zone's band.
 
