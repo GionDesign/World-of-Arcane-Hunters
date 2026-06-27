@@ -18,8 +18,12 @@ The engine (`sim.ts`) sees your content identically to upstream content.
 
 ## Adding content
 
+Full step-by-step guides, field references, and examples for every content type
+live in `docs/custom-content/`. Links are provided in each section below.
+
 ### New mobs / creatures
 Add to `CUSTOM_MOBS` in `index.ts`. Each entry is a `MobTemplate` from `../types`.
+Dungeon-only mobs go in `CUSTOM_DUNGEON_MOBS` (same shape, never appear overworld).
 
 ID rules:
 - Use a descriptive snake_case id with a `custom_` prefix: `custom_direwolf`
@@ -44,10 +48,17 @@ custom_direwolf: {
 ```
 
 To make mobs spawn in the world, add a `CampDef` entry to `CUSTOM_CAMPS`.
+Full guide: `docs/custom-content/mobs.md` -- `docs/custom-content/camps.md`
 
 ### New items
 Add to `CUSTOM_ITEMS` in `index.ts`. Each entry is an `ItemDef` from `../types`.
 Use `custom_` prefix. Items used only as quest objectives can have `kind: 'quest'`.
+Full guide: `docs/custom-content/items.md`
+
+### New NPCs
+Add to `CUSTOM_NPCS` in `index.ts`. Each entry is a `NpcDef` from `../types`.
+NPCs stand at a fixed world position and can give quests, sell items, or both.
+Full guide: `docs/custom-content/npcs.md`
 
 ### New zones / maps
 Add a `ZoneDef` to `CUSTOM_ZONES`. Zones are a north-running strip:
@@ -71,10 +82,12 @@ custom zones' zMin values. See `docs/custom-content/zones.md` for the full overl
 detection and recovery procedure.
 
 Add mob spawn points to `CUSTOM_CAMPS` with `center.z` inside your zone's band.
+Full guide: `docs/custom-content/zones.md`
 
 ### New quests
 Add to `CUSTOM_QUESTS` (a `QuestDef`) and list the id in `CUSTOM_QUEST_ORDER`
 (determines quest-log order and level-gate progression).
+Full guide: `docs/custom-content/quests.md`
 
 ### New dungeons
 Add a `DungeonDef` to `CUSTOM_DUNGEON_DEFS` and any dungeon-only mobs to
@@ -86,9 +99,13 @@ Dungeon index rules:
 - Custom dungeons: **use index 10+ to be safe** (e.g. `index: 10`, `index: 11`, ...)
 - The x-origin of each dungeon is `900 + index * 600` -- so index 10 = x: 6900
 
+Full guide: `docs/custom-content/dungeons.md`
+
 ### Props and static world objects
 Add buildings, wells, crates, etc. to `CUSTOM_PROPS` (a `ZonePropsDef`).
 Add interactable ground objects (herbs, ore) to `CUSTOM_OBJECTS`.
+Add terrain road markings to `CUSTOM_ROADS`.
+Full guides: `docs/custom-content/props.md` -- `docs/custom-content/ground-objects.md` -- `docs/custom-content/roads.md`
 
 ## What you CANNOT add without touching upstream files
 
