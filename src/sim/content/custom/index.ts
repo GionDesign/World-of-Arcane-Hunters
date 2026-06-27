@@ -511,7 +511,7 @@ export const CUSTOM_PROPS: ZonePropsDef = {
   docks:     [],
   mudHuts:   [],
   ruinRings: [{ x: -50, z: 1140, ringR: 18, columns: 6 }],
-  graveyards: [],
+  graveyards: [{ x: -10, z: 958 }],
 };
 
 // ---------------------------------------------------------------------------
