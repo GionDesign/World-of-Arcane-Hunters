@@ -167,4 +167,7 @@ export const fr_CA: Partial<Record<TranslationKey, string>> = {
   'sim.lockpick.lockJammed':
     "La serrure est bloquée, impossible à crocheter : terminez l'excavation de nouveau pour une autre tentative.",
   'sim.lockpick.lockYields': 'La serrure cède! Butin {tier}.',
+  'entities.mobs.custom_skullfire_brute.name': 'Brute Craneflame',
+  'entities.mobs.custom_blightshroud_stalker.name': 'Traqueur du Voile Maudit',
+  'entities.mobs.custom_ironpelt_monkroose.name': 'Monkroose Cuir-de-Fer',
 };

@@ -222,4 +222,7 @@ export const es_ES: Partial<Record<TranslationKey, string>> = {
   'sim.lockpick.noAttempt': 'No hay ningún intento de forzar la cerradura en curso.',
   'sim.lockpick.tierPremium': 'Premium',
   'sim.lockpick.toolSlips': 'Esa herramienta resbala en esta cerradura.',
+  'entities.mobs.custom_skullfire_brute.name': 'Maton Craneoflama',
+  'entities.mobs.custom_blightshroud_stalker.name': 'Acechador del Sudario Maldito',
+  'entities.mobs.custom_ironpelt_monkroose.name': 'Monkroose Piel de Hierro',
 };

@@ -9,45 +9,17 @@
 // Reproducibility is checked by tests/i18n_resolved_equivalence.test.ts.
 
 export const pending: Record<string, readonly string[]> = {
-  "es": [
-    "entities.mobs.custom_blightshroud_stalker.name",
-    "entities.mobs.custom_ironpelt_monkroose.name",
-    "entities.mobs.custom_skullfire_brute.name"
-  ],
-  "es_ES": [
-    "entities.mobs.custom_blightshroud_stalker.name",
-    "entities.mobs.custom_ironpelt_monkroose.name",
-    "entities.mobs.custom_skullfire_brute.name"
-  ],
-  "fr_FR": [
-    "entities.mobs.custom_blightshroud_stalker.name",
-    "entities.mobs.custom_ironpelt_monkroose.name",
-    "entities.mobs.custom_skullfire_brute.name"
-  ],
-  "fr_CA": [
-    "entities.mobs.custom_blightshroud_stalker.name",
-    "entities.mobs.custom_ironpelt_monkroose.name",
-    "entities.mobs.custom_skullfire_brute.name"
-  ],
+  "es": [],
+  "es_ES": [],
+  "fr_FR": [],
+  "fr_CA": [],
   "en_CA": [],
-  "it_IT": [
-    "entities.mobs.custom_blightshroud_stalker.name",
-    "entities.mobs.custom_ironpelt_monkroose.name",
-    "entities.mobs.custom_skullfire_brute.name"
-  ],
-  "de_DE": [
-    "entities.mobs.custom_blightshroud_stalker.name",
-    "entities.mobs.custom_ironpelt_monkroose.name",
-    "entities.mobs.custom_skullfire_brute.name"
-  ],
+  "it_IT": [],
+  "de_DE": [],
   "zh_CN": [],
   "zh_TW": [],
   "ko_KR": [],
   "ja_JP": [],
-  "pt_BR": [
-    "entities.mobs.custom_blightshroud_stalker.name",
-    "entities.mobs.custom_ironpelt_monkroose.name",
-    "entities.mobs.custom_skullfire_brute.name"
-  ],
+  "pt_BR": [],
   "ru_RU": []
 };
