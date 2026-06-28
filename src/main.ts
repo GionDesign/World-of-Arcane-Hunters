@@ -697,6 +697,9 @@ function exitBrowserFullscreen(): void {
 
 function requestPreferredFullscreen(): void {
   if (NATIVE_APP) return;
+  // Skip auto-fullscreen in local dev (npm run dev) so the window stays at its
+  // current size. Players can still enable fullscreen via the options menu.
+  if (import.meta.env.DEV) return;
   if (useTouchInterface()) {
     requestMobileFullscreenLandscape();
     return;

@@ -134,6 +134,7 @@ ls docs/SETUP-DIGITALOCEAN.md docs/SETUP-LOCAL-MAC.md docs/SETUP-CLOUDFLARE.md \
    docs/custom-content/ground-objects.md docs/custom-content/props.md \
    docs/custom-content/roads.md docs/custom-content/dungeons.md \
    docs/custom-content/complete-example.md \
+   docs/custom-content/map-layout.md docs/custom-content/developer-commands.md \
    FORK.md \
    src/sim/content/custom/index.ts src/sim/content/custom/CLAUDE.md \
    src/render/characters/custom/index.ts src/render/characters/custom/CLAUDE.md \
@@ -364,6 +365,7 @@ A full list of all upstream file modifications with exact code snippets is in
 - `src/ui/i18n.catalog/items.ts` -- imports Dragon's Blight item IDs + English names from `src/sim/content/custom/i18n_ids.ts` via spread
 - `tests/threat.test.ts` -- ghost wolf cancellation test: replaced RNG-sensitive `wolf.hp` check with GCD check
 - `tests/dungeons.test.ts` -- rollLoot private-access and loot null-safety fixes (TypeScript strict-mode TS2341/TS18047)
+- `src/main.ts` -- `requestPreferredFullscreen()` skips auto-fullscreen in local dev (`import.meta.env.DEV`)
 - `src/sim/data.ts` -- `ARENA_X` shifted 4200 -> 4700 and `DELVE_X_MIN` shifted 4800 -> 5300 to open dungeon index 6 (x=4500) for Dragon's Maw; all upstream indices 0-5 were occupied
 - `tests/delves.test.ts` -- pin test updated from `DELVE_X_MIN = 4800` to 5300 and from `ARENA_X = 4200` comment to 4700
 - **Brand rename (2026-06):** ~30 upstream files updated -- game name, realm name, domain, GitHub URL.
@@ -384,6 +386,8 @@ A full list of all upstream file modifications with exact code snippets is in
 - `docs/custom-content/roads.md` -- roads guide
 - `docs/custom-content/dungeons.md` -- dungeons guide
 - `docs/custom-content/complete-example.md` -- complete zone template
+- `docs/custom-content/map-layout.md` -- step-by-step guide for relocating and adding camps, buildings, respawn points, and all prop types
+- `docs/custom-content/developer-commands.md` -- all dev/debug commands for local development
 - `src/render/dungeon_custom.ts` -- fork-owned Dragon's Maw dungeon rendering: `CustomDungeonVariantId` type, torch colours, layout lookup, floor/wall kind tables, wall dressing (hooked into `dungeon.ts` via small delegates)
 - `src/render/characters/custom/index.ts` -- custom creature visual overrides (CUSTOM_VISUALS + CUSTOM_MOB_KEYS)
 - `src/render/characters/custom/CLAUDE.md` -- authoring guide for the custom visual directory

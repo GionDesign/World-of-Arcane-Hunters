@@ -58,6 +58,8 @@ you want to add, then follow the cross-links for anything it depends on.
 | [dungeons.md](./dungeons.md) | Instanced dungeon areas | `CUSTOM_DUNGEON_DEFS` |
 | [complete-example.md](./complete-example.md) | Full zone template (all types together) | all |
 | [CREATURE-MODELS.md](./CREATURE-MODELS.md) | Custom creature GLB models and visual overrides | render-side only |
+| [map-layout.md](./map-layout.md) | Step-by-step guide: relocating and adding camps, buildings, respawn points, and all prop types | `CUSTOM_CAMPS`, `CUSTOM_PROPS`, `CUSTOM_ZONES` |
+| [developer-commands.md](./developer-commands.md) | All dev/debug commands for local development | n/a |
 
 ---
 

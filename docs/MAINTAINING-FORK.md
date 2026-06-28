@@ -736,6 +736,53 @@ workarounds can be removed.
 
 ---
 
+#### `src/main.ts` -- skip auto-fullscreen in local dev
+
+`requestPreferredFullscreen()` was extended with an early return when Vite's dev
+mode is active (`import.meta.env.DEV`). This prevents the browser from
+auto-entering fullscreen during `npm run dev`, making local iteration easier.
+Players can still toggle fullscreen via the options menu.
+
+**Code change** (inside `requestPreferredFullscreen`, after the `if (NATIVE_APP) return;` guard):
+
+```typescript
+// Before:
+function requestPreferredFullscreen(): void {
+  if (NATIVE_APP) return;
+  if (useTouchInterface()) {
+    requestMobileFullscreenLandscape();
+    return;
+  }
+  if (new Settings().get('fullscreen') >= 0.5) requestBrowserFullscreen();
+}
+
+// After:
+function requestPreferredFullscreen(): void {
+  if (NATIVE_APP) return;
+  // Skip auto-fullscreen in local dev (npm run dev) so the window stays at its
+  // current size. Players can still enable fullscreen via the options menu.
+  if (import.meta.env.DEV) return;
+  if (useTouchInterface()) {
+    requestMobileFullscreenLandscape();
+    return;
+  }
+  if (new Settings().get('fullscreen') >= 0.5) requestBrowserFullscreen();
+}
+```
+
+**Verification:**
+```bash
+grep -n "import.meta.env.DEV" src/main.ts
+# Expect: at least 2 hits -- one in requestPreferredFullscreen and one for devCommands
+grep -A5 "function requestPreferredFullscreen" src/main.ts
+# Expect: NATIVE_APP guard, then import.meta.env.DEV guard, then touch/fullscreen logic
+```
+
+If this is lost in a merge, the window auto-enters fullscreen on `npm run dev`.
+Re-add the two-line comment+guard after the `if (NATIVE_APP) return;` line.
+
+---
+
 #### `src/sim/types.ts` -- Dragon's Maw interior type added to DungeonDef union
 
 The `DungeonDef.interior` field is a TypeScript literal union. Adding a new interior
