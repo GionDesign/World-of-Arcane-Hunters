@@ -20,6 +20,7 @@ Mac. By the end you will have:
 4. [Choose a Local Database Option](#4-choose-a-local-database-option)
    - [Option A — Docker Compose (simplest)](#option-a--docker-compose-simplest)
    - [Option B — Supabase CLI (local Supabase stack)](#option-b--supabase-cli-local-supabase-stack)
+   - [Option C — No Docker (UTM VM / remote Supabase)](#option-c--no-docker-utm-vm--remote-supabase)
 5. [Configure the `.env` File](#5-configure-the-env-file)
 6. [Start the Game Server](#6-start-the-game-server)
 7. [Start the Vite Dev Server](#7-start-the-vite-dev-server)
@@ -78,7 +79,11 @@ source ~/.zshrc
 node --version
 ```
 
-### 1.3 Docker Desktop for Mac
+### 1.3 Docker Desktop for Mac (Options A and B only)
+
+> **Skip this step if you are on a UTM virtual machine or any environment where
+> Docker does not work.** Use [Option C](#option-c--no-docker-utm-vm--remote-supabase)
+> instead — it requires no Docker at all.
 
 Docker Desktop runs the database and (optionally) the full Supabase stack in containers.
 
@@ -272,6 +277,76 @@ supabase stop --no-backup
 
 ---
 
+### Option C — No Docker (UTM VM / remote Supabase)
+
+Use this option when Docker is not available on your machine — for example, inside a
+**UTM virtual machine on Apple Silicon Mac**, a plain Linux box, or any environment
+where Docker containers do not work.
+
+Instead of running a local database container, you point `DATABASE_URL` directly at
+your existing Supabase project (production or a separate staging project). The game
+server and Vite dev server run as plain Node processes — no containers needed.
+
+> **Which Supabase project should you use?**
+> Using production means real player data is live during your session. This is fine
+> for read-heavy tasks or testing features that don't create or destroy data. For
+> active development that writes accounts, characters, or chat, create a free second
+> Supabase project at [supabase.com](https://supabase.com) and use that as staging.
+> Both options use the exact same steps below.
+
+#### C.1 Find your Supabase connection string
+
+1. Open [supabase.com](https://supabase.com) and log in.
+2. Select your project.
+3. Go to **Settings > Database**.
+4. Scroll to **Connection string** and click the **URI** tab.
+5. Copy the string. It looks like:
+   ```
+   postgres://postgres:[YOUR-PASSWORD]@db.[YOUR-PROJECT-REF].supabase.co:5432/postgres
+   ```
+   Replace `[YOUR-PASSWORD]` with your database password (set when you created the project,
+   or reset under **Settings > Database > Reset database password**).
+
+> **Note:** Use the **Direct connection** string (port 5432), not the Transaction pooler
+> (port 6543). The direct connection gives the server a persistent session, which is
+> required for some Postgres features used at startup. The Session pooler (also port 5432
+> but under **Connection pooling**) also works if the direct connection is firewalled.
+
+#### C.2 Configure your environment file
+
+Copy the no-Docker example and edit it:
+
+```bash
+cp .env.local.example .env
+```
+
+Open `.env` and set `DATABASE_URL` to the connection string from step C.1:
+
+```env
+DATABASE_URL=postgres://postgres:[YOUR-PASSWORD]@db.[YOUR-PROJECT-REF].supabase.co:5432/postgres
+```
+
+That is the only required change. Every other variable in `.env.local.example` has a
+working default for local dev and can stay commented out.
+
+> **POSTGRES_PASSWORD is not needed.** It is only read by `docker-compose.yml`, which
+> you are not using. Leave it absent from your `.env`.
+
+Skip to [Step 6](#6-start-the-game-server) — you do not need to start any database
+container. The server connects to Supabase over the internet.
+
+#### Connection details summary for Option C
+
+| Setting | Value |
+|---|---|
+| Host | `db.[YOUR-PROJECT-REF].supabase.co` |
+| Port | `5432` |
+| User | `postgres` |
+| Database | `postgres` |
+| Full URL | from Supabase dashboard Settings > Database > URI tab |
+
+---
+
 ## 5. Configure the `.env` File
 
 Copy the example and edit it:
@@ -314,6 +389,18 @@ POSTGRES_PASSWORD=local-dev-not-used
 # Use the DB URL from `supabase start` output
 DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:54322/postgres
 ```
+
+**For Option C (No Docker — remote Supabase):**
+
+```env
+# POSTGRES_PASSWORD is NOT needed for this option — omit it entirely.
+
+# Paste the URI from Supabase dashboard > Settings > Database > URI tab:
+DATABASE_URL=postgres://postgres:[YOUR-PASSWORD]@db.[YOUR-PROJECT-REF].supabase.co:5432/postgres
+```
+
+If you used `cp .env.local.example .env` in Option C step C.2, the file is already
+structured correctly — just fill in `DATABASE_URL`.
 
 ### 5.2 Full annotated `.env` for local development
 
@@ -740,9 +827,31 @@ in Claudemoon and Ironforge cannot see each other.
 - The Postgres container is not running.
   - Option A: `npm run db:up` (then `docker compose ps` to verify `eastbrook-db` is healthy)
   - Option B: `supabase start` (then `supabase status` to check state)
+  - Option C: no container needed — verify your `DATABASE_URL` in `.env` is set correctly
+    (see step C.1 for how to find it in the Supabase dashboard).
 - The `DATABASE_URL` in `.env` does not match the running database.
   - Option A: check that the password in `DATABASE_URL` matches `POSTGRES_PASSWORD` in `.env`.
   - Option B: confirm the port is `54322` (not 5432 or 5433).
+  - Option C: confirm the password in the URL is your Supabase database password (not your
+    Supabase login password). Reset it under Settings > Database if needed.
+
+### Option C — server connects but SSL or timeout errors
+
+Some network environments (VM NAT, corporate firewalls) block outbound port 5432 to
+Supabase's direct connection host.
+
+1. Try the **Session pooler** URL instead (Settings > Database > Connection pooling >
+   Session mode, port 5432 on a different host):
+   ```env
+   DATABASE_URL=postgres://postgres.[YOUR-PROJECT-REF]:[PASSWORD]@aws-0-[region].pooler.supabase.com:5432/postgres
+   ```
+2. If the VM's NAT blocks all outbound Postgres traffic, open port 5432 in your UTM
+   network settings or switch to a bridged network adapter.
+3. Test connectivity directly from the VM:
+   ```bash
+   # Should print the Postgres version if the connection works:
+   psql "postgres://postgres:[PASSWORD]@db.[REF].supabase.co:5432/postgres" -c "SELECT version();"
+   ```
 
 ### `npm run dev` — blank page or websocket errors in browser console
 

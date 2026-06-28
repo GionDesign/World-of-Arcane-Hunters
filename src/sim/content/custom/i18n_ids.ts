@@ -10,6 +10,9 @@ export const CUSTOM_MOB_IDS = [
   'custom_blighted_sentinel',
   'custom_dragonclaw_warden',
   'custom_ignaraxis',
+  'custom_skullfire_brute',
+  'custom_blightshroud_stalker',
+  'custom_ironpelt_monkroose',
 ] as const;
 
 export const CUSTOM_NPC_IDS = [

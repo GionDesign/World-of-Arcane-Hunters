@@ -5111,6 +5111,15 @@ export const ru_RU: EnTranslations = {
       "custom_ignaraxis": {
         "name": "Игнараксис Вечный"
       },
+      "custom_skullfire_brute": {
+        "name": "Черепопламенный Громила"
+      },
+      "custom_blightshroud_stalker": {
+        "name": "Чумной Преследователь"
+      },
+      "custom_ironpelt_monkroose": {
+        "name": "Железнокожий Мункруз"
+      },
       "ironvein_foreman": {
         "name": "Прораб Железной жилы"
       },

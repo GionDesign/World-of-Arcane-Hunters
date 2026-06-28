@@ -5111,6 +5111,15 @@ export const zh_TW: EnTranslations = {
       "custom_ignaraxis": {
         "name": "永恆的伊格納拉克斯"
       },
+      "custom_skullfire_brute": {
+        "name": "顱焰蠻兵"
+      },
+      "custom_blightshroud_stalker": {
+        "name": "瘟霧潛襲者"
+      },
+      "custom_ironpelt_monkroose": {
+        "name": "鐵皮僧鼬"
+      },
       "ironvein_foreman": {
         "name": "鐵脈工頭"
       },

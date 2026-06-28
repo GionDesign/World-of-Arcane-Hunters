@@ -363,6 +363,7 @@ A full list of all upstream file modifications with exact code snippets is in
 - `src/ui/world_entity_i18n.ts` -- imports Dragon's Blight entity IDs from `src/sim/content/custom/i18n_ids.ts` via spread
 - `src/ui/i18n.catalog/items.ts` -- imports Dragon's Blight item IDs + English names from `src/sim/content/custom/i18n_ids.ts` via spread
 - `tests/threat.test.ts` -- ghost wolf cancellation test: replaced RNG-sensitive `wolf.hp` check with GCD check
+- `tests/dungeons.test.ts` -- rollLoot private-access and loot null-safety fixes (TypeScript strict-mode TS2341/TS18047)
 - `src/sim/data.ts` -- `ARENA_X` shifted 4200 -> 4700 and `DELVE_X_MIN` shifted 4800 -> 5300 to open dungeon index 6 (x=4500) for Dragon's Maw; all upstream indices 0-5 were occupied
 - `tests/delves.test.ts` -- pin test updated from `DELVE_X_MIN = 4800` to 5300 and from `ARENA_X = 4200` comment to 4700
 - **Brand rename (2026-06):** ~30 upstream files updated -- game name, realm name, domain, GitHub URL.

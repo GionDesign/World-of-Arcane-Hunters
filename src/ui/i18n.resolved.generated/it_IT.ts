@@ -5111,6 +5111,15 @@ export const it_IT: EnTranslations = {
       "custom_ignaraxis": {
         "name": "Ignaraxis l'Eterno"
       },
+      "custom_skullfire_brute": {
+        "name": "Bruto Craniofiamma"
+      },
+      "custom_blightshroud_stalker": {
+        "name": "Cacciatore del Sudario Pestilenziale"
+      },
+      "custom_ironpelt_monkroose": {
+        "name": "Monkroose Pelame di Ferro"
+      },
       "ironvein_foreman": {
         "name": "Caposquadra Venaferrata"
       },

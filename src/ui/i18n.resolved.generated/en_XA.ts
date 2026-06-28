@@ -5111,6 +5111,15 @@ export const en_XA: EnTranslations = {
       "custom_ignaraxis": {
         "name": "[Íĝñáŕáẋíš ţĥé Éţéŕñáļ]"
       },
+      "custom_skullfire_brute": {
+        "name": "[Šķúļļƒíŕé Ɓŕúţé]"
+      },
+      "custom_blightshroud_stalker": {
+        "name": "[Ɓļíĝĥţšĥŕóúð Šţáļķéŕ]"
+      },
+      "custom_ironpelt_monkroose": {
+        "name": "[Íŕóñþéļţ Ɱóñķŕóóšé]"
+      },
       "ironvein_foreman": {
         "name": "[Íŕóñʋéíñ Ƒóŕéɱáñ]"
       },

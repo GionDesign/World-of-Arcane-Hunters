@@ -5111,6 +5111,15 @@ export const pt_BR: EnTranslations = {
       "custom_ignaraxis": {
         "name": "Ignaraxis o Eterno"
       },
+      "custom_skullfire_brute": {
+        "name": "Brutao Craniofogo"
+      },
+      "custom_blightshroud_stalker": {
+        "name": "Perseguidor do Sudario Maldito"
+      },
+      "custom_ironpelt_monkroose": {
+        "name": "Monkroose Pele de Ferro"
+      },
       "ironvein_foreman": {
         "name": "Capataz Veio de Ferro"
       },
