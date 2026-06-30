@@ -14,8 +14,8 @@
     {
       "tick": 0,
       "time": 0,
-      "nextId": 453,
-      "state": "50bcb49c",
+      "nextId": 389,
+      "state": "022204d4",
       "events": "741638a5",
       "rng": {
         "draws": 0,
@@ -58,6 +58,7 @@
           "id": 452,
           "kind": "player",
           "level": 1,
+          "lootFfaTimer": "Infinity",
           "maxHp": 95,
           "maxResource": 93,
           "moveSpeed": 7,
@@ -77,6 +78,7 @@
             "y": 1.5,
             "z": -2
           },
+          "spellPower": 7,
           "stats": {
             "agi": 17,
             "armor": 99,
@@ -97,9 +99,9 @@
     {
       "tick": 20,
       "time": 1,
-      "nextId": 454,
-      "state": "ad7d257a",
-      "events": "6d0aecac",
+      "nextId": 390,
+      "state": "66a148c4",
+      "events": "8dff930e",
       "rng": {
         "draws": 4,
         "digest": "e457e920"
@@ -108,8 +110,8 @@
     {
       "tick": 40,
       "time": 2,
-      "nextId": 454,
-      "state": "61f460ab",
+      "nextId": 390,
+      "state": "e929a125",
       "events": "741638a5",
       "rng": {
         "draws": 4,
@@ -119,9 +121,9 @@
     {
       "tick": 60,
       "time": 3,
-      "nextId": 454,
-      "state": "ce85a4c5",
-      "events": "9f596994",
+      "nextId": 390,
+      "state": "bd702825",
+      "events": "52d50b86",
       "rng": {
         "draws": 94,
         "digest": "a2908c0f"
@@ -130,8 +132,8 @@
     {
       "tick": 80,
       "time": 4,
-      "nextId": 454,
-      "state": "94e48ede",
+      "nextId": 390,
+      "state": "32435dfa",
       "events": "741638a5",
       "rng": {
         "draws": 196,
@@ -141,9 +143,9 @@
     {
       "tick": 100,
       "time": 5,
-      "nextId": 454,
-      "state": "4bd6d994",
-      "events": "87db2da0",
+      "nextId": 390,
+      "state": "aed428e8",
+      "events": "8ee385d4",
       "rng": {
         "draws": 317,
         "digest": "07be2597"
@@ -152,8 +154,8 @@
     {
       "tick": 120,
       "time": 6,
-      "nextId": 454,
-      "state": "ad92b329",
+      "nextId": 390,
+      "state": "7fdc160d",
       "events": "741638a5",
       "rng": {
         "draws": 455,
@@ -163,9 +165,9 @@
     {
       "tick": 140,
       "time": 7,
-      "nextId": 454,
-      "state": "5fa71aa8",
-      "events": "501cc0ae",
+      "nextId": 390,
+      "state": "320b602a",
+      "events": "721cba51",
       "rng": {
         "draws": 599,
         "digest": "c2ab278a"
@@ -174,8 +176,8 @@
     {
       "tick": 160,
       "time": 8,
-      "nextId": 454,
-      "state": "fd799e1e",
+      "nextId": 390,
+      "state": "b1eea714",
       "events": "741638a5",
       "rng": {
         "draws": 744,
@@ -185,9 +187,9 @@
     {
       "tick": 180,
       "time": 9,
-      "nextId": 454,
-      "state": "066632c2",
-      "events": "abcedab7",
+      "nextId": 390,
+      "state": "62d43bd9",
+      "events": "810b221f",
       "rng": {
         "draws": 914,
         "digest": "a5046d92"
@@ -196,8 +198,8 @@
     {
       "tick": 200,
       "time": 10,
-      "nextId": 454,
-      "state": "f2e58315",
+      "nextId": 390,
+      "state": "cdf84d16",
       "events": "741638a5",
       "rng": {
         "draws": 1082,
@@ -207,8 +209,8 @@
     {
       "tick": 201,
       "time": 10.05,
-      "nextId": 454,
-      "state": "c9f14127",
+      "nextId": 390,
+      "state": "2197284a",
       "events": "741638a5",
       "rng": {
         "draws": 1083,
@@ -224,7 +226,7 @@
           "cls": "paladin",
           "companionUpgrades": {},
           "counters": {
-            "damageDealt": 161
+            "damageDealt": 164
           },
           "delveClears": {},
           "delveDaily": {},
@@ -255,6 +257,7 @@
           "inCombat": true,
           "kind": "player",
           "level": 20,
+          "lootFfaTimer": "Infinity",
           "maxHp": 50000,
           "maxResource": 660,
           "moveSpeed": 7,
@@ -274,6 +277,7 @@
             "y": 1.5,
             "z": -2
           },
+          "spellPower": 16,
           "stats": {
             "agi": 36,
             "armor": 365,
@@ -301,8 +305,8 @@
           "fallStartY": 1.5,
           "fiveSecondRule": 99,
           "hostile": true,
-          "hp": 39839,
-          "id": 453,
+          "hp": 39836,
+          "id": 389,
           "inCombat": true,
           "kind": "mob",
           "leashAnchor": {
@@ -311,6 +315,7 @@
             "z": 0.950118
           },
           "level": 5,
+          "lootFfaTimer": "Infinity",
           "maxHp": 40000,
           "moveSpeed": 8,
           "onGround": true,
@@ -335,8 +340,8 @@
           "templateId": "forest_wolf",
           "threat": [
             [
-              452,
-              162
+              388,
+              165
             ]
           ],
           "wanderTarget": {
