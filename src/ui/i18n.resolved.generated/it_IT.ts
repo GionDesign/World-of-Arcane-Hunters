@@ -2290,7 +2290,7 @@ export const it_IT: EnTranslations = {
     "playMode": "Multigiocatore",
     "applicationCategory": "Gioco",
     "operatingSystem": "Browser web",
-    "officialLabel": "Sito ufficiale di World of Arcane Hunters",
+    "officialLabel": "Sito ufficiale di World of ClaudeCraft",
     "officialBody": "L'MMO gratuito ufficiale da browser del reame Eastbrook. Gioca online con un personaggio persistente, esplora offline in solitaria, leggi il wiki e segui i link della community verificati da questo sito."
   },
   "a11y": {

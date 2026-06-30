@@ -4537,6 +4537,33 @@ export const id_ID: EnTranslations = {
       "monarch_crown_helm": {
         "name": "Mahkota Sang Raja"
       },
+      "custom_drake_scale": {
+        "name": "Sisik Naga Penjelajah Abu"
+      },
+      "custom_wyvern_heartstone": {
+        "name": "Batu Hati Sayap Bakar"
+      },
+      "custom_blight_ember": {
+        "name": "Bara Kutukan"
+      },
+      "custom_drakebone_shoulders": {
+        "name": "Bahu Tulang Naga"
+      },
+      "custom_scorchwing_cowl": {
+        "name": "Tudung Sayap Bakar"
+      },
+      "custom_blight_stalkers_hood": {
+        "name": "Tudung Pemburu Kutukan"
+      },
+      "custom_ignaraxis_greatblade": {
+        "name": "Pedang Besar Ignaraxis"
+      },
+      "custom_cinderstave_eternal": {
+        "name": "Tongkat Abu Abadi"
+      },
+      "custom_fang_of_ignaraxis": {
+        "name": "Taring Ignaraxis"
+      },
       "bristleback_maul": {
         "name": "Cabikan Punggung Berbulu"
       },
@@ -5211,6 +5238,30 @@ export const id_ID: EnTranslations = {
       "acolyte_tessa": {
         "name": "Akolit Tessa"
       },
+      "custom_ashwalker_drake": {
+        "name": "Naga Penjelajah Abu"
+      },
+      "custom_scorchwing_wyvern": {
+        "name": "Wyvern Sayap Bakar"
+      },
+      "custom_blighted_sentinel": {
+        "name": "Penjaga Terkutuk"
+      },
+      "custom_dragonclaw_warden": {
+        "name": "Penjaga Cakar Naga"
+      },
+      "custom_ignaraxis": {
+        "name": "Ignaraxis Abadi"
+      },
+      "custom_skullfire_brute": {
+        "name": "Kepala Tengkorak Berapi"
+      },
+      "custom_blightshroud_stalker": {
+        "name": "Pemburu Jubah Kutukan"
+      },
+      "custom_ironpelt_monkroose": {
+        "name": "Monkroose Kulit Besi"
+      },
       "ironvein_foreman": {
         "name": "Mandor Ironvein"
       },
@@ -5425,6 +5476,21 @@ export const id_ID: EnTranslations = {
         "name": "Bruder Halven",
         "title": "Penjaga Relikuari",
         "greeting": "Relikuari di bawah bergeser lagi."
+      },
+      "custom_commander_vael": {
+        "name": "Komandan Vael",
+        "title": "Perwira Pengawal Wabah",
+        "greeting": "Bersiaplah, {playerName}. Wabah ini tidak tidur, dan kami pun tidak."
+      },
+      "custom_scout_fenris": {
+        "name": "Pengintai Fenris",
+        "title": "Pengintai Pengawal Wabah",
+        "greeting": "Kau sudah melintasi wilayah wyvern? Bagus. Aku butuh seseorang yang mampu di sini."
+      },
+      "custom_elder_draxis": {
+        "name": "Tetua Draxis",
+        "title": "Pembunuh Naga",
+        "greeting": "Aku telah berburu naga tiga puluh tahun, {playerName}. Ignaraxis berbeda dari yang lain."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -6185,6 +6251,75 @@ export const id_ID: EnTranslations = {
           }
         }
       },
+      "custom_proving_ground": {
+        "title": "Medan Pembuktian",
+        "text": "Naga penjelajah abu telah maju hingga ke tepi kamp kami, {playerName}. Kurangi jumlah mereka -- sepuluh dari mereka -- dan buktikan kau layak berada di Wabah ini.",
+        "completion": "Sepuluh naga jatuh. Lumayan. Mungkin kau bisa bertahan di sini, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Naga Penjelajah Abu Terbunuh"
+          }
+        }
+      },
+      "custom_marks_of_the_drake": {
+        "title": "Tanda Naga",
+        "text": "Sisik naga sekeras baju zirah pelat, {playerName}. Aku butuh delapan untuk membekali pemimpin patroli berikutnya. Naga tidak akan menyerahkannya dengan mudah -- ambil apa yang bisa kau dapatkan.",
+        "completion": "Delapan sisik. Mereka akan menahan api lebih baik dari apa pun yang bisa kita tempa. Kerja bagus.",
+        "objectives": {
+          "0": {
+            "label": "Sisik Naga Penjelajah Abu"
+          }
+        }
+      },
+      "custom_into_the_blight": {
+        "title": "Masuk ke Wabah",
+        "text": "Wyvern sayap bakar itu bersarang di antara kami dan penjara bawah tanah, {playerName}. Delapan dari mereka harus pergi, dan aku butuh lima batu hatinya untuk alkimiawan komandan. Mereka jauh di dalam, tapi aku tahu kau bisa mencapainya.",
+        "completion": "Sarangnya sudah dibersihkan. Batu hati itu lebih berharga dari yang kau kira.",
+        "objectives": {
+          "0": {
+            "label": "Wyvern Sayap Bakar Terbunuh"
+          },
+          "1": {
+            "label": "Batu Hati Wyvern"
+          }
+        }
+      },
+      "custom_eye_of_the_storm": {
+        "title": "Mata Badai",
+        "text": "Para penjaga terkutuk adalah pelindung luar Ignaraxis, {playerName}. Makhluk naga kuno yang terpuntir oleh berabad-abad berdekatan dengan sosok itu. Tumbangkan tiga dari mereka dan bawa bara kutukan dari inti mereka. Jika kau bisa mengalahkan mereka, kau siap untuk Rahang.",
+        "completion": "Tiga penjaga jatuh dan bara di tangan. Kau sudah siap, {playerName}. Pergi bicara dengan Tetua Draxis di pos. Dia sudah lama menunggu ini.",
+        "objectives": {
+          "0": {
+            "label": "Penjaga Terkutuk Terbunuh"
+          },
+          "1": {
+            "label": "Bara Kutukan"
+          }
+        }
+      },
+      "custom_eternal_flame": {
+        "title": "Api Abadi",
+        "text": "Ignaraxis Abadi telah tidur di Rahang Naga selama satu era, {playerName}. Wabah di atas kita adalah nafasnya yang berbentuk. Masuki Rahang, hadapi dia di sarangnya, dan akhiri semua ini. Rekan-rekanmu akan diperlukan -- ini bukan perburuan untuk satu orang saja.",
+        "completion": "Api Abadi telah padam, {playerName}. Aku sudah menunggu tiga puluh tahun untuk mengucapkan kata-kata itu. Wabah akan menghilang sekarang. Ambil ini -- kau sudah memperolehnya dengan sepenuh hati.",
+        "objectives": {
+          "0": {
+            "label": "Ignaraxis Abadi Terbunuh"
+          }
+        }
+      },
+      "custom_blight_patrol": {
+        "title": "Patroli Wabah",
+        "text": "Kita tidak bisa membiarkan naga dan wyvern membanjiri jalur masuk, {playerName}. Patroli Wabah, bunuh lima belas naga dan delapan wyvern, dan kembali. Itu menjaga sayap kita bersih sementara rantai komando mengelola gambaran besarnya.",
+        "completion": "Sayap sudah bersih. Para prajurit bernapas lebih lega ketika ada seseorang di luar sana yang membuat perbedaan. Kerja bagus, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Naga Penjelajah Abu Terbunuh"
+          },
+          "1": {
+            "label": "Wyvern Sayap Bakar Terbunuh"
+          }
+        }
+      },
       "q_drowned_choir": {
         "title": "Paduan Suara Tenggelam",
         "text": "Para pengarung tak bergerak sendiri. Di antara mereka berjalan para Pemuja Tenggelam, sekte yang karam bersama kuil, masih dalam busana lapuk, masih menyanyikan doa dari batu karang tepi pantai. Bungkam delapan dari mereka, dan bawakan padaku enam persembahan yang mereka bawa. Aku ingin tahu apa yang hendak mereka berikan pada dewi mereka.",
@@ -6351,6 +6486,21 @@ export const id_ID: EnTranslations = {
             "label": "Sanktum Gravewyrm"
           }
         }
+      },
+      "custom_dragons_blight": {
+        "name": "Kutukan Naga",
+        "welcome": "Kutukan Naga membentang di hadapanmu, tercekik oleh abu dan gaung jauh dari api purba.",
+        "pois": {
+          "0": {
+            "label": "Pos Pengawal Wabah"
+          },
+          "1": {
+            "label": "Pos Terdepan Fenris"
+          },
+          "2": {
+            "label": "Rahang Naga"
+          }
+        }
       }
     },
     "dungeons": {
@@ -6378,6 +6528,11 @@ export const id_ID: EnTranslations = {
         "name": "Arena Raid Nythraxis",
         "enterText": "Kau melewati pintu kerajaan yang tersegel.",
         "leaveText": "Kau kembali ke udara dingin Thornpeak."
+      },
+      "custom_dragons_maw": {
+        "name": "Rahang Naga",
+        "enterText": "Panasnya mencekik. Sesuatu yang besar bergerak dalam kegelapan di depan.",
+        "leaveText": "Kau keluar dari Rahang Naga, udara luar terasa dingin di kulitmu."
       },
       "drowned_temple": {
         "name": "Kuil Tenggelam",

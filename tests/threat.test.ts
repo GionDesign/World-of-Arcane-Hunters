@@ -1484,6 +1484,7 @@ describe('shaman travel and shock mechanics', () => {
     expect(sim.player.auras.some((a) => a.id === 'ghost_wolf')).toBe(true);
 
     sim.player.gcdRemaining = 0;
+    const beforeHp = wolf.hp;
     sim.castAbility('flame_shock');
     expect(sim.player.auras.some((a) => a.id === 'ghost_wolf')).toBe(false);
     // Flame Shock is a projectile now: its damage lands when the bolt reaches the

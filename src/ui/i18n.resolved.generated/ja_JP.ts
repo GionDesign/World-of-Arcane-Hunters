@@ -2290,7 +2290,7 @@ export const ja_JP: EnTranslations = {
     "playMode": "マルチプレイヤー",
     "applicationCategory": "ゲーム",
     "operatingSystem": "Webブラウザ",
-    "officialLabel": "World of Arcane Hunters 公式サイト",
+    "officialLabel": "World of ClaudeCraft 公式サイト",
     "officialBody": "Eastbrook レルムの公式無料ブラウザMMOです。永続キャラクターでオンラインプレイし、オフラインでソロ探索し、wikiを読み、このサイトから確認済みのコミュニティリンクをたどれます。"
   },
   "a11y": {

@@ -4537,6 +4537,33 @@ export const vi_VN: EnTranslations = {
       "monarch_crown_helm": {
         "name": "Vương Miện Quân Vương"
       },
+      "custom_drake_scale": {
+        "name": "Vảy Rồng Đi Trên Tro"
+      },
+      "custom_wyvern_heartstone": {
+        "name": "Đá Tim Cánh Thiêu"
+      },
+      "custom_blight_ember": {
+        "name": "Than Tro Nguyền Rủa"
+      },
+      "custom_drakebone_shoulders": {
+        "name": "Vai Xương Rồng"
+      },
+      "custom_scorchwing_cowl": {
+        "name": "Mũ Trùm Cánh Thiêu"
+      },
+      "custom_blight_stalkers_hood": {
+        "name": "Mũ Trùm Thợ Săn Blight"
+      },
+      "custom_ignaraxis_greatblade": {
+        "name": "Đại Kiếm Ignaraxis"
+      },
+      "custom_cinderstave_eternal": {
+        "name": "Gậy Tro Vĩnh Cửu"
+      },
+      "custom_fang_of_ignaraxis": {
+        "name": "Nanh Ignaraxis"
+      },
       "bristleback_maul": {
         "name": "Vồ Lưng Gai"
       },
@@ -5211,6 +5238,30 @@ export const vi_VN: EnTranslations = {
       "acolyte_tessa": {
         "name": "Tế Đồ Tessa"
       },
+      "custom_ashwalker_drake": {
+        "name": "Rồng Đi Trên Tro"
+      },
+      "custom_scorchwing_wyvern": {
+        "name": "Wyvern Cánh Thiêu"
+      },
+      "custom_blighted_sentinel": {
+        "name": "Lính Gác Bị Nguyền"
+      },
+      "custom_dragonclaw_warden": {
+        "name": "Người Gác Móng Rồng"
+      },
+      "custom_ignaraxis": {
+        "name": "Ignaraxis Vĩnh Cửu"
+      },
+      "custom_skullfire_brute": {
+        "name": "Hung Thần Đầu Lửa"
+      },
+      "custom_blightshroud_stalker": {
+        "name": "Thợ Săn Bóng Ô Nhiễm"
+      },
+      "custom_ironpelt_monkroose": {
+        "name": "Monkroose Da Sắt"
+      },
       "ironvein_foreman": {
         "name": "Quản Đốc Mạch Sắt"
       },
@@ -5425,6 +5476,21 @@ export const vi_VN: EnTranslations = {
         "name": "Tu Huynh Halven",
         "title": "Người Giữ Thánh Tích",
         "greeting": "Hầm thánh tích bên dưới lại dịch chuyển lần nữa."
+      },
+      "custom_commander_vael": {
+        "name": "Chỉ Huy Vael",
+        "title": "Sĩ Quan Blight Vệ Binh",
+        "greeting": "Hãy sẵn sàng, {playerName}. Blight này không ngủ, và chúng ta cũng vậy."
+      },
+      "custom_scout_fenris": {
+        "name": "Trinh Sát Fenris",
+        "title": "Trinh Sát Blight Vệ Binh",
+        "greeting": "Bạn đã đi qua lãnh thổ wyvern chưa? Tốt. Tôi cần ai đó có năng lực ở đây."
+      },
+      "custom_elder_draxis": {
+        "name": "Trưởng Lão Draxis",
+        "title": "Kẻ Giết Rồng",
+        "greeting": "Tôi đã săn rồng trong ba mươi năm, {playerName}. Ignaraxis khác với những con còn lại."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -6185,6 +6251,75 @@ export const vi_VN: EnTranslations = {
           }
         }
       },
+      "custom_proving_ground": {
+        "title": "Bãi Thử Thách",
+        "text": "Những con rồng đi trên tro đã tiến đến rìa trại của chúng ta, {playerName}. Giảm số lượng của chúng -- mười con -- và chứng minh bạn thuộc về Blight.",
+        "completion": "Mười con rồng đã ngã. Không tệ. Có lẽ bạn sẽ sống sót ở đây, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Rồng Đi Trên Tro Bị Giết"
+          }
+        }
+      },
+      "custom_marks_of_the_drake": {
+        "title": "Dấu Ấn Rồng",
+        "text": "Vảy rồng cứng như giáp tấm, {playerName}. Tôi cần tám cái cho chỉ huy tuần tra tiếp theo. Những con rồng sẽ không dễ dàng cho đi -- hãy lấy những gì bạn có thể.",
+        "completion": "Tám vảy. Chúng chịu lửa tốt hơn bất cứ thứ gì chúng ta có thể rèn. Làm tốt lắm.",
+        "objectives": {
+          "0": {
+            "label": "Vảy Rồng Đi Trên Tro"
+          }
+        }
+      },
+      "custom_into_the_blight": {
+        "title": "Vào Trong Blight",
+        "text": "Những con wyvern cánh thiêu đang làm tổ giữa chúng ta và ngục tối, {playerName}. Tám trong số chúng phải biến mất, và tôi cần năm viên đá tim của chúng cho nhà giả kim của chỉ huy. Chúng ở sâu bên trong, nhưng tôi biết bạn có thể đến được.",
+        "completion": "Tổ đã được dọn sạch. Những viên đá tim đó có giá trị hơn bạn nghĩ.",
+        "objectives": {
+          "0": {
+            "label": "Wyvern Cánh Thiêu Bị Giết"
+          },
+          "1": {
+            "label": "Đá Tim Wyvern"
+          }
+        }
+      },
+      "custom_eye_of_the_storm": {
+        "title": "Mắt Bão",
+        "text": "Những lính gác bị nguyền là vệ binh ngoài cùng của Ignaraxis, {playerName}. Những sinh vật rồng cổ xưa bị vặn vẹo qua nhiều thế kỷ gần gũi với thực thể đó. Hạ ba trong số chúng và mang cho tôi than tro nguyền rủa từ lõi của chúng. Nếu bạn có thể đối phó với chúng, bạn đã sẵn sàng cho Hàm Răng.",
+        "completion": "Ba lính gác đã ngã và than trong tay. Bạn đã sẵn sàng, {playerName}. Hãy đến nói chuyện với Trưởng Lão Draxis tại tiền đồn. Ông ấy đã chờ đợi điều này rất lâu.",
+        "objectives": {
+          "0": {
+            "label": "Lính Gác Bị Nguyền Bị Giết"
+          },
+          "1": {
+            "label": "Than Tro Nguyền Rủa"
+          }
+        }
+      },
+      "custom_eternal_flame": {
+        "title": "Ngọn Lửa Vĩnh Cửu",
+        "text": "Ignaraxis Vĩnh Cửu đã ngủ trong Hàm Rồng suốt một thời đại, {playerName}. Blight trên chúng ta là hơi thở của nó được định hình. Hãy vào Hàm Răng, đối mặt với nó trong hang ổ của nó và kết thúc tất cả. Đồng đội của bạn sẽ cần thiết -- đây không phải cuộc săn cho một mình.",
+        "completion": "Ngọn Lửa Vĩnh Cửu đã bị dập tắt, {playerName}. Tôi đã chờ ba mươi năm để nói những lời đó. Blight bây giờ sẽ tan biến. Hãy lấy thứ này -- bạn đã kiếm được nó hoàn toàn xứng đáng.",
+        "objectives": {
+          "0": {
+            "label": "Ignaraxis Vĩnh Cửu Bị Giết"
+          }
+        }
+      },
+      "custom_blight_patrol": {
+        "title": "Tuần Tra Blight",
+        "text": "Chúng ta không thể để rồng và wyvern tràn qua các lối vào, {playerName}. Tuần tra Blight, giết mười lăm con rồng và tám con wyvern, rồi quay lại. Nó giữ sườn chúng ta sạch trong khi chuỗi chỉ huy quản lý bức tranh lớn hơn.",
+        "completion": "Các sườn đã sạch. Quân lính thở dễ hơn khi có ai đó ở ngoài đó tạo ra sự khác biệt. Làm tốt lắm, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Rồng Đi Trên Tro Bị Giết"
+          },
+          "1": {
+            "label": "Wyvern Cánh Thiêu Bị Giết"
+          }
+        }
+      },
       "q_drowned_choir": {
         "title": "Dàn Đồng Ca Chết Chìm",
         "text": "Lũ lội nước không hành động một mình. Giữa chúng có những Tín Đồ Chết Chìm bước đi — giáo phái đã chìm cùng ngôi đền, vẫn khoác lễ phục mục nát, vẫn hát lời cầu nguyện từ những tảng đá ven bờ. Hãy làm câm tám tên trong số chúng, và mang cho ta sáu vật tế mà chúng mang theo. Ta muốn biết chúng định dâng gì cho nữ thần của chúng.",
@@ -6351,6 +6486,21 @@ export const vi_VN: EnTranslations = {
             "label": "Thánh Đường Mộ Long"
           }
         }
+      },
+      "custom_dragons_blight": {
+        "name": "Lời Nguyền Rồng",
+        "welcome": "Lời Nguyền Rồng trải dài trước mặt bạn, nghẹt thở trong tro bụi và tiếng vang xa xôi của lửa cổ đại.",
+        "pois": {
+          "0": {
+            "label": "Pháo Đài Blight Vệ Binh"
+          },
+          "1": {
+            "label": "Tiền Đồn Fenris"
+          },
+          "2": {
+            "label": "Hàm Rồng"
+          }
+        }
       }
     },
     "dungeons": {
@@ -6378,6 +6528,11 @@ export const vi_VN: EnTranslations = {
         "name": "Đấu Trường Raid Nythraxis",
         "enterText": "Bạn đi qua cánh cửa hoàng gia niêm phong.",
         "leaveText": "Bạn trở lại không khí lạnh giá của Đỉnh Gai."
+      },
+      "custom_dragons_maw": {
+        "name": "Hàm Rồng",
+        "enterText": "Sức nóng ngột ngạt. Thứ gì đó khổng lồ đang cựa quậy trong bóng tối phía trước.",
+        "leaveText": "Bạn ra khỏi Hàm Rồng, không khí bên ngoài mát lạnh trên da."
       },
       "drowned_temple": {
         "name": "Ngôi Đền Chết Chìm",

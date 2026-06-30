@@ -4537,6 +4537,33 @@ export const da_DK: EnTranslations = {
       "monarch_crown_helm": {
         "name": "Monarkens Krone"
       },
+      "custom_drake_scale": {
+        "name": "Askevandrer Drageskæl"
+      },
+      "custom_wyvern_heartstone": {
+        "name": "Brændvinge Hjertesten"
+      },
+      "custom_blight_ember": {
+        "name": "Forbandelsesglød"
+      },
+      "custom_drakebone_shoulders": {
+        "name": "Drakeknogle-skulderpanser"
+      },
+      "custom_scorchwing_cowl": {
+        "name": "Brændvinge-hætte"
+      },
+      "custom_blight_stalkers_hood": {
+        "name": "Forbandelsesstalkers hætte"
+      },
+      "custom_ignaraxis_greatblade": {
+        "name": "Ignaraxis Storklinge"
+      },
+      "custom_cinderstave_eternal": {
+        "name": "Den Evige Gloedstav"
+      },
+      "custom_fang_of_ignaraxis": {
+        "name": "Ignaraxis Tand"
+      },
       "bristleback_maul": {
         "name": "Børsterygs-Lemlæster"
       },
@@ -5211,6 +5238,30 @@ export const da_DK: EnTranslations = {
       "acolyte_tessa": {
         "name": "Akolyt Tessa"
       },
+      "custom_ashwalker_drake": {
+        "name": "Ashwalker Drake"
+      },
+      "custom_scorchwing_wyvern": {
+        "name": "Scorchwing Wyvern"
+      },
+      "custom_blighted_sentinel": {
+        "name": "Blighted Sentinel"
+      },
+      "custom_dragonclaw_warden": {
+        "name": "Dragonclaw Warden"
+      },
+      "custom_ignaraxis": {
+        "name": "Ignaraxis den Evigbrændende"
+      },
+      "custom_skullfire_brute": {
+        "name": "Skullfire Brute"
+      },
+      "custom_blightshroud_stalker": {
+        "name": "Blightshroud Stalker"
+      },
+      "custom_ironpelt_monkroose": {
+        "name": "Ironpelt Monkroose"
+      },
       "ironvein_foreman": {
         "name": "Jernåre-Formand"
       },
@@ -5318,6 +5369,27 @@ export const da_DK: EnTranslations = {
       },
       "ysolei": {
         "name": "Ysolei, den Druknede Månes Avatar"
+      },
+      "custom_ashscale_whelp": {
+        "name": "Askeskæl-drage"
+      },
+      "custom_cinderclaw_raptor": {
+        "name": "Gloedklo-raptor"
+      },
+      "custom_blightfire_elemental": {
+        "name": "Forbandelsesild-elementar"
+      },
+      "custom_scorchveil_spider": {
+        "name": "Brændsløredderkop"
+      },
+      "custom_ironwing_gargoyle": {
+        "name": "Jernvinge-gargoyle"
+      },
+      "custom_blight_ghoul": {
+        "name": "Forbandelsesghul"
+      },
+      "custom_moltenscale_basilisk": {
+        "name": "Smeltsskæl-basilisk"
       }
     },
     "npcs": {
@@ -5426,10 +5498,30 @@ export const da_DK: EnTranslations = {
         "title": "Relikvarievogter",
         "greeting": "Relikvariet nedenunder har flyttet sig igen."
       },
+      "custom_commander_vael": {
+        "name": "Commander Vael",
+        "title": "Blightwatch Officer",
+        "greeting": "Stand ready, {playerName}. This blight does not sleep, and neither do we."
+      },
+      "custom_scout_fenris": {
+        "name": "Scout Fenris",
+        "title": "Blightwatch Scout",
+        "greeting": "You made it through the wyvern grounds? Good. I could use someone capable out here."
+      },
+      "custom_elder_draxis": {
+        "name": "Elder Draxis",
+        "title": "Dragonslayer",
+        "greeting": "I have hunted dragons for thirty years, {playerName}. Ignaraxis is not like the others."
+      },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
         "title": "Tidevogter",
         "greeting": "Søen drikker måneskinnet, {className}, og giver de druknede tilbage. Jeg har vogtet den port i tredive nætter - og i nat står den åben."
+      },
+      "custom_warden_thessaly": {
+        "name": "Vogter Thessaly",
+        "title": "Dragebanes Vogternes Orden",
+        "greeting": "En anden eventyrer... Pas dig, fremmed. Drakenforbandelsen sluger disse lande. Vi har brug for stærke vaabenfæller, ikke svage sjæle."
       }
     },
     "quests": {
@@ -6185,6 +6277,75 @@ export const da_DK: EnTranslations = {
           }
         }
       },
+      "custom_proving_ground": {
+        "title": "Proving Ground",
+        "text": "The ashwalker drakes have pushed to the edges of our camp, {playerName}. Thin their numbers -- ten of them -- and prove you belong in the Blight.",
+        "completion": "Ten drakes down. Not bad. You might just survive out here, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Ashwalker Drakes slain"
+          }
+        }
+      },
+      "custom_marks_of_the_drake": {
+        "title": "Marks of the Drake",
+        "text": "Drake scales are tough as plate, {playerName}. I need eight of them to outfit the next patrol. The drakes do not give them up easily -- take what you can.",
+        "completion": "Eight scales. These will hold up against fire better than anything we can forge. Well done.",
+        "objectives": {
+          "0": {
+            "label": "Ashwalker Drake Scales"
+          }
+        }
+      },
+      "custom_into_the_blight": {
+        "title": "Into the Blight",
+        "text": "Those scorchwing wyverns are nesting between us and the dungeon, {playerName}. Eight of them need to go, and I need five of their heartstones for the commander's alchemist. They're deep, but I know you can reach them.",
+        "completion": "The nesting ground is clear. Those heartstones will be worth more to us than you know.",
+        "objectives": {
+          "0": {
+            "label": "Scorchwing Wyverns slain"
+          },
+          "1": {
+            "label": "Scorchwing Heartstones"
+          }
+        }
+      },
+      "custom_eye_of_the_storm": {
+        "title": "Eye of the Storm",
+        "text": "The blighted sentinels are Ignaraxis's outer guard, {playerName}. Ancient dragonkin warped by centuries near that creature. Take down three of them and bring me the blight embers from their cores. If you can manage them, you're ready for the maw.",
+        "completion": "Three sentinels down and embers in hand. You're ready, {playerName}. Go speak with Elder Draxis back at the post. He has been waiting a long time for this.",
+        "objectives": {
+          "0": {
+            "label": "Blighted Sentinels slain"
+          },
+          "1": {
+            "label": "Blight Embers"
+          }
+        }
+      },
+      "custom_eternal_flame": {
+        "title": "The Eternal Flame",
+        "text": "Ignaraxis the Eternal has slumbered in the Dragon's Maw for an age, {playerName}. The Blight above us is his breath given form. Enter the maw, face him in his lair, and end it. Your companions will be necessary -- this is not a hunt for one alone.",
+        "completion": "The Eternal Flame is extinguished, {playerName}. I have waited thirty years to say those words. The Blight will fade now. Take this -- you've more than earned it.",
+        "objectives": {
+          "0": {
+            "label": "Ignaraxis the Eternal slain"
+          }
+        }
+      },
+      "custom_blight_patrol": {
+        "title": "Blight Patrol",
+        "text": "We cannot let the drakes and wyverns overrun the approaches, {playerName}. Patrol the Blight, cut down fifteen drakes and eight wyverns, and report back. Keeps our flanks clear while the chain of command handles the bigger picture.",
+        "completion": "Flanks are clear. The men breathe easier when someone is out there making a difference. Good work, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Ashwalker Drakes slain"
+          },
+          "1": {
+            "label": "Scorchwing Wyverns slain"
+          }
+        }
+      },
       "q_drowned_choir": {
         "title": "Det Druknede Kor",
         "text": "Vaderne handler ikke alene. Blandt dem vandrer de Druknede Tilbedere - kulten, der sank med templet, stadig i deres rådne ornater, stadig syngende bønnen fra strandklipperne. Bring otte af dem til tavshed, og bring mig seks af de offergaver, de bærer. Jeg vil vide, hvad de agter at give deres gudinde.",
@@ -6246,6 +6407,23 @@ export const da_DK: EnTranslations = {
           "0": {
             "label": "Glimmermere-Vader dræbt"
           }
+        }
+      },
+      "custom_blight_awakening": {
+        "title": "Forbandelsens Opvagnen",
+        "text": "Drakenforbandelsens ondskab breder sig fra Ignaraxis tilbedelse af disse lande. Dræb askeskæl-drage og cinderklo-raptorer for at dæmme op for trusselen.",
+        "completion": "Du har gjort mere end de fleste tør. Forbandelsens flammer er en smule svagere nu, men Ignaraxis venter endnu.",
+        "objectives": {
+          "slay_whelps": "Dræb askeskæl-drage (0/5)",
+          "slay_raptors": "Dræb cinderklo-raptorer (0/3)"
+        }
+      },
+      "custom_ignaraxis_bounty": {
+        "title": "Ignaraxis Dusøren",
+        "text": "Ordenen udbyder en dusør for Ignaraxis den Evigbrændendes hoved. Den evige drage har fortæret tre af vores bedste vaabenfæller. Bevis din værd.",
+        "completion": "Det kan ikke lade sig gøre... og alligevel er det sket. Du har fældet det udødelige uhyre. Ordenen ærer dig, helt.",
+        "objectives": {
+          "slay_ignaraxis": "Dræb Ignaraxis (0/1)"
         }
       }
     },
@@ -6351,6 +6529,24 @@ export const da_DK: EnTranslations = {
             "label": "Gravormens Helligdom"
           }
         }
+      },
+      "custom_dragons_blight": {
+        "name": "Drakenforbandelsen",
+        "welcome": "Du træder ind i Drakenforbandelsen",
+        "pois": {
+          "0": {
+            "label": "Blightwatch Post"
+          },
+          "1": {
+            "label": "Fenris's Outpost"
+          },
+          "2": {
+            "label": "Dragon's Maw"
+          }
+        },
+        "poi_ashveil_ruins": "Asksløret Ruiner",
+        "poi_ember_sanctum": "Gloedhelligdommen",
+        "poi_ignaraxis_lair": "Ignaraxis Hule"
       }
     },
     "dungeons": {
@@ -6378,6 +6574,11 @@ export const da_DK: EnTranslations = {
         "name": "Nythraxis Raidarena",
         "enterText": "Du passerer gennem den forseglede kongelige dør.",
         "leaveText": "Du vender tilbage til Tornetops kolde luft."
+      },
+      "custom_dragons_maw": {
+        "name": "Dragensgabet",
+        "enterText": "Du er nu inde i Dragensgabet.",
+        "leaveText": "Du forlader Dragensgabet."
       },
       "drowned_temple": {
         "name": "Det Druknede Tempel",

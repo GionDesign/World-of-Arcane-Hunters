@@ -9,14 +9,14 @@
     "applyTaunt pet auto-taunt arm (~8110)",
     "applyTaunt pet manual-taunt arm (petTaunt, ~4885)"
   ],
-  "draws": 1053,
-  "drawDigest": "133d4dcf",
+  "draws": 1206,
+  "drawDigest": "59a15ffc",
   "frames": [
     {
       "tick": 0,
       "time": 0,
-      "nextId": 389,
-      "state": "e28a2d3d",
+      "nextId": 453,
+      "state": "94f7b505",
       "events": "741638a5",
       "rng": {
         "draws": 0,
@@ -100,9 +100,9 @@
     {
       "tick": 20,
       "time": 1,
-      "nextId": 389,
-      "state": "90b543eb",
-      "events": "e2644273",
+      "nextId": 453,
+      "state": "d1a54bf3",
+      "events": "b57e6139",
       "rng": {
         "draws": 0,
         "digest": "811c9dc5"
@@ -111,8 +111,8 @@
     {
       "tick": 40,
       "time": 2,
-      "nextId": 389,
-      "state": "ddd29445",
+      "nextId": 453,
+      "state": "ca2a1ebd",
       "events": "741638a5",
       "rng": {
         "draws": 0,
@@ -122,8 +122,8 @@
     {
       "tick": 60,
       "time": 3,
-      "nextId": 389,
-      "state": "62be064e",
+      "nextId": 453,
+      "state": "689e4906",
       "events": "741638a5",
       "rng": {
         "draws": 120,
@@ -133,8 +133,8 @@
     {
       "tick": 80,
       "time": 4,
-      "nextId": 389,
-      "state": "0264e6e3",
+      "nextId": 453,
+      "state": "368ab3cb",
       "events": "741638a5",
       "rng": {
         "draws": 221,
@@ -144,9 +144,9 @@
     {
       "tick": 100,
       "time": 5,
-      "nextId": 390,
-      "state": "0ff7664f",
-      "events": "c85a9d08",
+      "nextId": 454,
+      "state": "614021bf",
+      "events": "ec065e12",
       "rng": {
         "draws": 322,
         "digest": "92eba571"
@@ -155,78 +155,78 @@
     {
       "tick": 120,
       "time": 6,
-      "nextId": 391,
-      "state": "5258ad54",
-      "events": "10f4737c",
+      "nextId": 455,
+      "state": "a7800b2b",
+      "events": "ded98f53",
       "rng": {
-        "draws": 365,
-        "digest": "c19bea6a"
+        "draws": 448,
+        "digest": "1ee6081f"
       }
     },
     {
       "tick": 140,
       "time": 7,
-      "nextId": 391,
-      "state": "f6f29551",
-      "events": "480f5d27",
+      "nextId": 455,
+      "state": "83f94950",
+      "events": "5e9fd62a",
       "rng": {
-        "draws": 493,
-        "digest": "00c4329c"
+        "draws": 597,
+        "digest": "a0e59500"
       }
     },
     {
       "tick": 160,
       "time": 8,
-      "nextId": 391,
-      "state": "c219c29c",
-      "events": "9c410b7b",
+      "nextId": 455,
+      "state": "a8cc84c1",
+      "events": "52899905",
       "rng": {
-        "draws": 630,
-        "digest": "62fc8fe6"
+        "draws": 755,
+        "digest": "055a1c9d"
       }
     },
     {
       "tick": 180,
       "time": 9,
-      "nextId": 391,
-      "state": "d0089227",
-      "events": "f53bdc97",
+      "nextId": 455,
+      "state": "899d62a0",
+      "events": "2c173d62",
       "rng": {
-        "draws": 769,
-        "digest": "27ac6cee"
+        "draws": 926,
+        "digest": "1ac86f31"
       }
     },
     {
       "tick": 200,
       "time": 10,
-      "nextId": 391,
-      "state": "c54376ba",
-      "events": "1b638bbe",
+      "nextId": 455,
+      "state": "9dc2c4ba",
+      "events": "e03c0e82",
       "rng": {
-        "draws": 929,
-        "digest": "3507d179"
+        "draws": 1101,
+        "digest": "81ac7797"
       }
     },
     {
       "tick": 220,
       "time": 11,
-      "nextId": 391,
-      "state": "9b67deb9",
-      "events": "c0b843fe",
+      "nextId": 455,
+      "state": "1c2aea91",
+      "events": "2c173d62",
       "rng": {
-        "draws": 1024,
-        "digest": "155ff9f0"
+        "draws": 1183,
+        "digest": "10422f6e"
       }
     },
     {
       "tick": 220,
       "time": 11,
-      "nextId": 391,
-      "state": "5b27336c",
+      "nextId": 455,
+      "state": "5bf9cdaa",
       "events": "741638a5",
       "rng": {
-        "draws": 1024,
-        "digest": "155ff9f0"
+        "draws": 1183,
+        "digest": "10422f6e"
       },
       "label": "pet-taunt",
       "players": [
@@ -238,7 +238,7 @@
           "cls": "warlock",
           "companionUpgrades": {},
           "counters": {
-            "damageDealt": 20
+            "damageDealt": 16
           },
           "delveClears": {},
           "delveDaily": {},
@@ -366,8 +366,8 @@
           "forcedTargetId": 453,
           "forcedTargetTimer": 3,
           "hostile": true,
-          "hp": 49953,
-          "id": 390,
+          "hp": 49933,
+          "id": 454,
           "inCombat": true,
           "kind": "mob",
           "leashAnchor": {
@@ -402,12 +402,12 @@
           "templateId": "forest_wolf",
           "threat": [
             [
-              388,
-              21
+              452,
+              17
             ],
             [
-              389,
-              29
+              453,
+              53
             ]
           ],
           "weapon": {
@@ -421,12 +421,12 @@
     {
       "tick": 224,
       "time": 11.2,
-      "nextId": 391,
-      "state": "cd09af30",
-      "events": "3c2ff05a",
+      "nextId": 455,
+      "state": "f3344b4d",
+      "events": "8b1b0a2e",
       "rng": {
-        "draws": 1053,
-        "digest": "133d4dcf"
+        "draws": 1206,
+        "digest": "59a15ffc"
       },
       "label": "final",
       "players": [
@@ -438,7 +438,7 @@
           "cls": "warlock",
           "companionUpgrades": {},
           "counters": {
-            "damageDealt": 20
+            "damageDealt": 16
           },
           "delveClears": {},
           "delveDaily": {},
@@ -568,8 +568,8 @@
           "forcedTargetId": 453,
           "forcedTargetTimer": 2.8,
           "hostile": true,
-          "hp": 49940,
-          "id": 390,
+          "hp": 49920,
+          "id": 454,
           "inCombat": true,
           "kind": "mob",
           "leashAnchor": {
@@ -604,12 +604,12 @@
           "templateId": "forest_wolf",
           "threat": [
             [
-              388,
-              21
+              452,
+              17
             ],
             [
-              389,
-              42
+              453,
+              66
             ]
           ],
           "weapon": {

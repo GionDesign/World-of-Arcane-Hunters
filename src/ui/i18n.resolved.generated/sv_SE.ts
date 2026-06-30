@@ -4537,6 +4537,33 @@ export const sv_SE: EnTranslations = {
       "monarch_crown_helm": {
         "name": "Monarkens krona"
       },
+      "custom_drake_scale": {
+        "name": "Askrypare Drakfjäll"
+      },
+      "custom_wyvern_heartstone": {
+        "name": "Brivinge Hjartsten"
+      },
+      "custom_blight_ember": {
+        "name": "Fordärvat Glod"
+      },
+      "custom_drakebone_shoulders": {
+        "name": "Drakknogle Axelstycken"
+      },
+      "custom_scorchwing_cowl": {
+        "name": "Brivinge Kapa"
+      },
+      "custom_blight_stalkers_hood": {
+        "name": "Blightjagare Huva"
+      },
+      "custom_ignaraxis_greatblade": {
+        "name": "Ignaraxis Svardsblad"
+      },
+      "custom_cinderstave_eternal": {
+        "name": "Evig Askstav"
+      },
+      "custom_fang_of_ignaraxis": {
+        "name": "Ignaraxis Huggtand"
+      },
       "bristleback_maul": {
         "name": "Borstryggens klubba"
       },
@@ -5211,6 +5238,30 @@ export const sv_SE: EnTranslations = {
       "acolyte_tessa": {
         "name": "Akolyten Tessa"
       },
+      "custom_ashwalker_drake": {
+        "name": "Askrypare Draken"
+      },
+      "custom_scorchwing_wyvern": {
+        "name": "Brivingevivern"
+      },
+      "custom_blighted_sentinel": {
+        "name": "Forvitrad Vaktpost"
+      },
+      "custom_dragonclaw_warden": {
+        "name": "Drakklovan Vardare"
+      },
+      "custom_ignaraxis": {
+        "name": "Ignaraxis den Evige"
+      },
+      "custom_skullfire_brute": {
+        "name": "Skalleldsbuse"
+      },
+      "custom_blightshroud_stalker": {
+        "name": "Blightsloja Jagare"
+      },
+      "custom_ironpelt_monkroose": {
+        "name": "Jarnskinn Monkroose"
+      },
       "ironvein_foreman": {
         "name": "Järnådersförman"
       },
@@ -5425,6 +5476,21 @@ export const sv_SE: EnTranslations = {
         "name": "Broder Halven",
         "title": "Relikvarievaktare",
         "greeting": "Relikvariet där nere har förskjutits igen."
+      },
+      "custom_commander_vael": {
+        "name": "Befalhavare Vael",
+        "title": "Officer i Blight-vakten",
+        "greeting": "Var beredd, {playerName}. Denna Blight sover inte, och inte vi heller."
+      },
+      "custom_scout_fenris": {
+        "name": "Spanare Fenris",
+        "title": "Spanare i Blight-vakten",
+        "greeting": "Gick du igenom wyvernterritoriet? Bra. Jag behövde nagon kapabel har."
+      },
+      "custom_elder_draxis": {
+        "name": "Aldste Draxis",
+        "title": "Drakdodare",
+        "greeting": "Jag har jagat drakar i trettio ar, {playerName}. Ignaraxis ar annorlunda an de andra."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -6185,6 +6251,75 @@ export const sv_SE: EnTranslations = {
           }
         }
       },
+      "custom_proving_ground": {
+        "title": "Provningsfalt",
+        "text": "Askrypardrakarna har avancerat till kanten av vart lager, {playerName}. Minska deras antal -- tio av dem -- och bevisa att du hor hemma i Blight.",
+        "completion": "Tio drakar fallda. Inte illa. Kanske overlever du har, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Askrypare Drakar Doda"
+          }
+        }
+      },
+      "custom_marks_of_the_drake": {
+        "title": "Drakmärken",
+        "text": "Drakfjäll ar lika harda som plattrustning, {playerName}. Jag behover atta stycken for nasta patrullbefal. Drakarna ger inte upp dem latt -- ta vad du kan.",
+        "completion": "Atta fjäll. De klarar eld battre an nagot vi kan smida. Bra jobbat.",
+        "objectives": {
+          "0": {
+            "label": "Askrypare Drakfjäll"
+          }
+        }
+      },
+      "custom_into_the_blight": {
+        "title": "In i Blight",
+        "text": "De dar brivingevivernerna hakar sig fast mellan oss och fangelset, {playerName}. Atta av dem maste bort, och jag behover fem av deras hjartstenar till befalets alkemist. De sitter djupt inne, men jag vet att du kan na dem.",
+        "completion": "Boet har rensats. De har hjartstenarnas ar mer varda an du tror.",
+        "objectives": {
+          "0": {
+            "label": "Brivinge Vivernar Doda"
+          },
+          "1": {
+            "label": "Vivern Hjartstenar"
+          }
+        }
+      },
+      "custom_eye_of_the_storm": {
+        "title": "Stormens Oga",
+        "text": "De forvitrader vakterna ar Ignaraxis yttre skydd, {playerName}. Uraldriga drakvarelser vridna av arhundraden nara det vasendet. Sla ned tre av dem och ta med mig de fordarvade gloden fran deras karnor. Om du klarar av dem ar du redo for Kakorna.",
+        "completion": "Tre vakter falla och glod i hand. Du ar redo, {playerName}. Ga och prata med Aldste Draxis vid fortet. Han har vantat lange pa det har.",
+        "objectives": {
+          "0": {
+            "label": "Forvitrader Vakter Doda"
+          },
+          "1": {
+            "label": "Fordärvade Glod"
+          }
+        }
+      },
+      "custom_eternal_flame": {
+        "title": "Den Eviga Lagan",
+        "text": "Ignaraxis den Evige har sovit i Drakgapet en era, {playerName}. Blighten over oss ar hans anda given form. Ga in i Gapet, mott honom i hans lya och avsluta det. Dina kamrater kommer att behovas -- detta ar ingen jakt for en ensam person.",
+        "completion": "Den Eviga Lagan har slackts, {playerName}. Jag har vantat trettio ar pa att saga de orden. Blighten kommer nu att ebba ut. Ta det har -- du har forjanat det med besked.",
+        "objectives": {
+          "0": {
+            "label": "Ignaraxis den Evige Dod"
+          }
+        }
+      },
+      "custom_blight_patrol": {
+        "title": "Blight-patrull",
+        "text": "Vi kan inte lata drakarna och vivernarna oversvamma tillfarterna, {playerName}. Patrullera Blighten, doda femton drakar och atta vivernar, och atervänd. Det haller vara flanker fria medan befalskedjan hanterar den storre bilden.",
+        "completion": "Flankerna ar fria. Männen andas lattare nar nagon ar dar ute och gor skillnad. Bra jobbat, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Askrypare Drakar Doda"
+          },
+          "1": {
+            "label": "Brivinge Vivernar Doda"
+          }
+        }
+      },
       "q_drowned_choir": {
         "title": "Den drunknade kören",
         "text": "Vadarna agerar inte ensamma. Bland dem vandrar de Drunknade tillbedjarna - kulten som sjönk med templet, fortfarande i sina ruttna skrudar, fortfarande sjungande bönen från strandklipporna. Tysta åtta av dem och hämta mig sex av de offergåvor de bär. Jag vill veta vad de tänker ge sin gudinna.",
@@ -6351,6 +6486,21 @@ export const sv_SE: EnTranslations = {
             "label": "Gravlindormens helgedom"
           }
         }
+      },
+      "custom_dragons_blight": {
+        "name": "Drakforbannelsen",
+        "welcome": "Drakforbannelsen stracker sig framfor dig, kvavd av aska och det langa ekoet av urforntidig eld.",
+        "pois": {
+          "0": {
+            "label": "Blight-vaktens Fort"
+          },
+          "1": {
+            "label": "Fenris Forvakt"
+          },
+          "2": {
+            "label": "Drakgapet"
+          }
+        }
       }
     },
     "dungeons": {
@@ -6378,6 +6528,11 @@ export const sv_SE: EnTranslations = {
         "name": "Nythraxis raidarena",
         "enterText": "Du passerar genom den förseglade kungliga dörren.",
         "leaveText": "Du återvänder till Törntopps kalla luft."
+      },
+      "custom_dragons_maw": {
+        "name": "Drakgapet",
+        "enterText": "Varmen ar kvavande. Nagot massivt ror sig i morkret framfor dig.",
+        "leaveText": "Du kommer ut ur Drakgapet, utomhusluften kylig mot din hud."
       },
       "drowned_temple": {
         "name": "Det dränkta templet",
