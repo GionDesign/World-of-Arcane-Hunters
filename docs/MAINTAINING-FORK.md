@@ -1308,7 +1308,7 @@ git reset --hard origin/master
 # DANGER — this force-overwrites all your branch history
 git push --force origin master
 
-# AVOID — a plain merge without -X theirs stops at every conflict and
+# AVOID: a plain merge without -X theirs stops at every conflict and
 # requires manual resolution; it is easy to accidentally discard an upstream
 # fix or leave a merge marker in the file. Always use -X theirs instead.
 git merge origin/master   # plain merge -- use "git merge -X theirs origin/master"
