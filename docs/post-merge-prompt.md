@@ -18,10 +18,19 @@ This is normal and expected -- the steps below are the standard re-apply cycle, 
 an error-recovery path.
 
 Please read `FORK.md` and `docs/MAINTAINING-FORK.md` in full before making any
-changes, then work through every numbered step below in order. Commit and push after
-step 11. Do not skip or reorder steps. Every health check that returns fewer hits
-than expected means upstream overwrote that addition; re-apply it from the code block
-in `docs/MAINTAINING-FORK.md` before moving on.
+changes. The cycle has three phases:
+
+1. **Re-apply**: restore every fork addition that upstream overwrote (Steps 1-2).
+2. **Adapt**: check whether upstream changed the surrounding code in a way that means
+   the restored snippet no longer fits -- new required fields, renamed functions,
+   refactored patterns -- and update the re-applied code to match (Steps 3-5).
+3. **Verify and document**: run tests, build, and update all docs so the next merge
+   starts with an accurate record (Steps 6-11).
+
+Work through every step in order. Commit and push after step 10. Do not skip or
+reorder steps. Every health check that returns fewer hits than expected means upstream
+overwrote that addition; re-apply it from the code block in `docs/MAINTAINING-FORK.md`
+before moving on.
 
 ### Step 1 -- health check: fork-owned files
 
@@ -117,7 +126,53 @@ grep -n "VITE_SITE_URL\|VITE_DISCORD_URL\|VITE_DONATE_URL" .github/workflows/dep
 grep -c "WOC:GA:START\|WOC:META:START" index.html
 ```
 
-### Step 3 -- zone contiguity check
+### Step 3 -- adapt: check that re-applied code still fits upstream's new shape
+
+Re-applying a code block verbatim is only correct if upstream did not also change the
+surrounding context. Upstream may have: renamed a function, changed a type signature,
+moved a block, added a required field, or refactored a pattern. Each of these means
+the verbatim snippet re-applies cleanly but is now wrong. This step catches that.
+
+**3a -- TypeScript compile check.** This is the fastest signal that a re-applied
+snippet is structurally wrong:
+
+```bash
+npx tsc --noEmit 2>&1 | head -60
+```
+
+For every error in a fork-modified file:
+1. Read the error. Does it reference a type or field that changed upstream?
+2. Open `src/sim/types.ts` (or the file the error points to) and find the new shape.
+3. Update the re-applied code to match -- do not just suppress the error.
+4. Document the new required-field or type change in `docs/MAINTAINING-FORK.md`.
+
+Common upstream interface changes and how they affect fork content:
+- New required field on `ArmorItemDef` -> add it to all 3 armor items in
+  `dragons_blight/items.ts`; document in MAINTAINING-FORK.md
+- New required field on `MobTemplate` -> all mobs in `dragons_blight/mobs.ts`
+- New required field on `ZoneDef` -> `dragons_blight/zones.ts`
+- New required field on `DungeonDef` -> `dragons_blight/dungeons.ts`
+- New required field on `NpcDef` -> `dragons_blight/npcs.ts`
+- Renamed export in `dungeon_layout.ts` or `colliders.ts` -> update the import
+  in the fork's re-applied hook in `dungeon.ts` / `colliders.ts`
+
+**3b -- Functional diff review.** Even if TypeScript is happy, upstream may have
+changed the LOGIC around a re-applied addition in a way that makes it incorrect.
+Check the git diff for each upstream file this fork modifies:
+
+```bash
+git diff ORIG_HEAD..HEAD -- server/main.ts src/sim/data.ts src/sim/sim.ts \
+  src/render/characters/manifest.ts src/render/dungeon.ts \
+  src/sim/types.ts src/sim/dungeon_layout.ts src/sim/colliders.ts \
+  src/ui/world_entity_i18n.ts src/ui/i18n.catalog/items.ts \
+  src/ui/i18n.catalog/index.ts vite.config.ts
+```
+
+For each file, ask: did upstream change the function or block that the fork addition
+hooks into? If yes, adapt the addition to fit the new upstream shape. The intent of
+the fork addition stays; only the syntax or insertion point changes.
+
+**3c -- Zone contiguity check.** If upstream added or extended a zone:
 
 ```bash
 grep -n "zMin\|zMax" src/sim/content/zone*.ts src/sim/content/temple.ts 2>/dev/null
@@ -125,31 +180,10 @@ grep -n "zMin\|zMax" src/sim/content/custom/dragons_blight/zones.ts
 ```
 
 Dragon's Blight must start exactly where the last upstream zone ends (`zMin: 900`).
-If upstream added a new zone that extends past z=900, the custom zone must shift
-northward -- see `docs/custom-content/zones.md` for the fix procedure.
+If any upstream zone now has `zMax > 900`, the custom zone must shift northward.
+See `docs/custom-content/zones.md` for the fix procedure.
 
-### Step 4 -- check for upstream interface changes
-
-Upstream may have added required fields to shared types. Check for TypeScript errors:
-
-```bash
-npx tsc --noEmit 2>&1 | head -40
-```
-
-If errors reference `dragons_blight/` files, open the failing file and compare the
-relevant type definition in `src/sim/types.ts` against the custom content record. Fix
-the record to satisfy the new shape, then document the required-field addition in
-`docs/MAINTAINING-FORK.md` under `src/sim/content/custom/dragons_blight/items.ts`
-(or the appropriate per-zone file).
-
-Common upstream interface changes and where to look:
-- New required field on `ArmorItemDef` -> `dragons_blight/items.ts` (3 armor pieces)
-- New required field on `MobTemplate` -> `dragons_blight/mobs.ts`
-- New required field on `ZoneDef` -> `dragons_blight/zones.ts`
-- New required field on `DungeonDef` -> `dragons_blight/dungeons.ts`
-- New required field on `NpcDef` -> `dragons_blight/npcs.ts`
-
-### Step 5 -- check for upstream naming / brand drift
+### Step 4 -- upstream naming and brand drift
 
 Upstream uses `worldofclaudecraft.com`, `World of ClaudeCraft`, `Claudemoon`. This
 fork replaces those with `TODO-your-domain.com` placeholders and the `World of Arcane
@@ -174,7 +208,7 @@ replacement map:
 git diff origin/master..HEAD --name-only | xargs grep -l "worldofclaudecraft" 2>/dev/null
 ```
 
-### Step 6 -- check for new upstream features that need custom adaptation
+### Step 5 -- new upstream features that need custom adaptation
 
 Review the upstream changelog or the git diff for new systems that may need fork-side
 adjustments. Focus on:
@@ -210,7 +244,7 @@ adjustments. Focus on:
    UPDATE_PARITY=1 npx vitest run tests/parity
    ```
 
-### Step 7 -- i18n: custom entities and regeneration
+### Step 6 -- i18n: restore custom entities and regenerate
 
 If the merge touched any locale file or the catalog, verify Dragon's Blight custom
 entity translations are intact in all 13 non-English overlays:
@@ -242,7 +276,7 @@ I18N_RELEASE_TIER=1 npx vitest run tests/i18n_completeness.test.ts \
   tests/i18n_resolved_equivalence.test.ts
 ```
 
-### Step 8 -- run the full test suite
+### Step 7 -- full test suite
 
 ```bash
 npm test
@@ -271,7 +305,7 @@ git add src/ui/i18n.resolved.generated/ src/ui/i18n.resolved.sha256
 npm test
 ```
 
-### Step 9 -- verify the build pipeline and brand injection
+### Step 8 -- build pipeline and brand injection
 
 ```bash
 npm run build
@@ -297,7 +331,7 @@ grep -c "googletagmanager\|facebook.net" dist/index.html
 # Expect: 0 (blocks stripped because VITE_GA_ID and VITE_META_PIXEL_ID were not set above)
 ```
 
-### Step 10 -- update documentation to match any upstream refactors
+### Step 9 -- update all documentation
 
 If any fork-applied code was re-applied or adapted because upstream refactored the
 surrounding code, update `docs/MAINTAINING-FORK.md`:
@@ -344,7 +378,7 @@ surrounding code, update `docs/MAINTAINING-FORK.md`:
    This keeps the prompt self-maintaining: one merge cycle of work, and the next
    session starts with an accurate checklist.
 
-### Step 11 -- commit and push
+### Step 10 -- commit and push
 
 ```bash
 git add -p   # review and stage everything
