@@ -1239,18 +1239,23 @@ Full code snippets to re-apply any lost change are in the sections above.
 # 1. Fetch the latest upstream changes
 git fetch origin master
 
-# 2. Merge onto your branch — NOT reset --hard
-git merge origin/master
+# 2. Merge with upstream winning all conflicts automatically
+git merge -X theirs origin/master
 ```
 
-`git merge` creates a merge commit. Your fork-specific commits are preserved in the
-history and appear in `git log`. If there is a conflict:
+`git merge -X theirs` creates a merge commit and preserves the full fork history in
+`git log`. When the same lines were changed by both upstream and the fork, `-X theirs`
+keeps upstream's version automatically -- no manual conflict resolution required.
 
-- Git will stop and print the conflicting files
-- Open the file; conflicts are marked with `<<<`, `===`, and `>>>`
-- Keep **both** your additions AND the upstream additions (usually they're in
-  different parts of the file)
-- Run `git add <file>` then `git commit` to finish the merge
+**This is intentional.** Fork additions to upstream files are small, documented, and
+re-applied from `docs/MAINTAINING-FORK.md` after every merge. Letting upstream win
+automatically is safer than resolving a complex upstream diff by hand, where it is
+easy to accidentally discard an upstream fix or introduce a merge artifact.
+
+**After the merge, the health checks below are the recovery step.** Treat them as
+the normal part of every merge cycle, not as an exceptional response to a failure.
+Every check that returns fewer hits than expected means upstream overwrote that
+addition; re-apply it from the code block in the relevant section of this file.
 
 ### What to check after a merge
 
@@ -1302,9 +1307,16 @@ git reset --hard origin/master
 
 # DANGER — this force-overwrites all your branch history
 git push --force origin master
+
+# AVOID — a plain merge without -X theirs stops at every conflict and
+# requires manual resolution; it is easy to accidentally discard an upstream
+# fix or leave a merge marker in the file. Always use -X theirs instead.
+git merge origin/master   # plain merge -- use "git merge -X theirs origin/master"
 ```
 
-These operations are irreversible without knowing the exact commit hash to restore.
+`reset --hard` and `push --force` are irreversible without the exact commit hash.
+A plain merge is recoverable (`git merge --abort`) but unnecessary -- `-X theirs`
+handles conflicts automatically and produces a cleaner result.
 
 ---
 

@@ -11,10 +11,17 @@ instructs it to do so. Run this every time; do not skip steps.
 
 ---
 
-I have just merged the latest `master` (upstream) into this fork. Please read
-`FORK.md` and `docs/MAINTAINING-FORK.md` in full before making any changes, then
-work through every numbered step below in order. Commit and push after step 9. Do
-not skip or reorder steps. If you find any damage, repair it before moving on.
+I have just merged the latest `master` (upstream) into this fork using
+`git merge -X theirs origin/master`. Upstream wins all conflicts automatically, so
+fork additions to upstream files are routinely overwritten and must be re-applied.
+This is normal and expected -- the steps below are the standard re-apply cycle, not
+an error-recovery path.
+
+Please read `FORK.md` and `docs/MAINTAINING-FORK.md` in full before making any
+changes, then work through every numbered step below in order. Commit and push after
+step 11. Do not skip or reorder steps. Every health check that returns fewer hits
+than expected means upstream overwrote that addition; re-apply it from the code block
+in `docs/MAINTAINING-FORK.md` before moving on.
 
 ### Step 1 -- health check: fork-owned files
 
@@ -51,10 +58,12 @@ ls docs/SETUP-DIGITALOCEAN.md docs/SETUP-LOCAL-MAC.md docs/SETUP-CLOUDFLARE.md \
 If any file is missing, re-create it from `docs/MAINTAINING-FORK.md` or the git
 history (`git log --all --full-history -- <path>`).
 
-### Step 2 -- health check: upstream file modifications
+### Step 2 -- re-apply: upstream file modifications
 
-Run each grep command and compare against the expected results. If a check returns
-fewer hits than expected, re-apply the change from `docs/MAINTAINING-FORK.md`.
+Because upstream wins all conflicts, every addition this fork made to an upstream
+file may have been overwritten. Run each grep command below. Any check that returns
+fewer hits than expected means that addition was lost; re-apply it immediately from
+the matching code block in `docs/MAINTAINING-FORK.md` before running the next check.
 
 ```bash
 # ADMIN_HOSTNAME in server/main.ts (expect 2: constant + adminByHost line)

@@ -77,16 +77,22 @@ See `src/sim/content/custom/CLAUDE.md` for:
 
 ## Rule 4: Safe upstream sync workflow
 
-When pulling upstream updates:
+When pulling upstream updates, upstream always wins conflicts. Use `-X theirs` so
+every conflict is auto-resolved in upstream's favour without manual intervention:
 
 ```bash
-# SAFE: merge preserves our commits
 git fetch origin master
-git merge origin/master
+git merge -X theirs origin/master
 
 # NEVER do this -- it silently discards all fork-specific commits
 git reset --hard origin/master
 ```
+
+`-X theirs` means: when upstream and this fork changed the same lines, upstream's
+version is kept automatically. This is intentional -- fork additions to upstream
+files are small, documented, and easy to re-apply; manual conflict resolution on a
+complex upstream diff is error-prone. The health checks below are the recovery step
+and run after EVERY merge as a matter of routine, not only when things look broken.
 
 After any merge, run this health check:
 
@@ -113,15 +119,19 @@ grep -n "zMin\|zMax" src/sim/content/custom/dragons_blight/zones.ts
 # shift custom zone northward -- see docs/custom-content/zones.md for the fix procedure.
 ```
 
-If `grep` returns nothing, re-apply the code from `docs/MAINTAINING-FORK.md`.
+If any grep returns fewer hits than expected, upstream overwrote that addition.
+Re-apply it from the matching code block in `docs/MAINTAINING-FORK.md`.
+Run the full protocol in Rule 5 -- every check, every time.
 
 ---
 
-## Rule 5: Post-merge failure recovery protocol
+## Rule 5: Post-merge re-apply protocol
 
-If the build fails, tests break, or the server crashes after pulling from upstream/master,
-follow this protocol in order. Do not skip steps -- a passing test suite is the only
-acceptable exit condition.
+After every upstream merge (`git merge -X theirs origin/master`), upstream's version
+of any conflicting file is kept automatically. Fork additions to upstream files are
+therefore routinely overwritten and must be re-applied. This is the expected, normal
+workflow -- not an error condition. Run through every step below after every merge.
+A passing test suite is the only acceptable exit condition.
 
 ### Step 1 -- run the health checks
 
