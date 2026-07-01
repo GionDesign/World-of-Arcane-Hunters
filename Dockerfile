@@ -8,6 +8,7 @@ RUN npm ci --no-audit --no-fund
 COPY .browserslistrc tsconfig.json vite.config.ts index.html admin.html play.html guide.html ./
 COPY src ./src
 COPY server ./server
+COPY bot ./bot
 COPY headless ./headless
 COPY scripts ./scripts
 COPY public ./public
@@ -33,17 +34,7 @@ ARG VITE_DONATE_URL="https://github.com/sponsors/TODO"
 ARG VITE_GA_ID=""
 ARG VITE_META_PIXEL_ID=""
 RUN VITE_TURNSTILE_SITEKEY="$VITE_TURNSTILE_SITEKEY" \
-    VITE_SITE_URL="$VITE_SITE_URL" \
-    VITE_DISCORD_URL="$VITE_DISCORD_URL" \
-    VITE_DONATE_URL="$VITE_DONATE_URL" \
-    VITE_GA_ID="$VITE_GA_ID" \
-    VITE_META_PIXEL_ID="$VITE_META_PIXEL_ID" \
-    npm run build && \
-    VITE_SITE_URL="$VITE_SITE_URL" \
-    VITE_DISCORD_URL="$VITE_DISCORD_URL" \
-    VITE_DONATE_URL="$VITE_DONATE_URL" \
-    npm run brand:inject && \
-    cp -a dist/media ./media-build && rm -rf dist/media && npm run build:server
+    npm run build && cp -a dist/media ./media-build && rm -rf dist/media && npm run build:server && npm run build:bot
 
 FROM node:22-alpine
 WORKDIR /app
@@ -51,6 +42,7 @@ ENV NODE_ENV=production
 COPY --from=build /app/dist ./dist
 COPY --from=build /app/media-build ./media-build
 COPY --from=build /app/dist-server ./dist-server
+COPY --from=build /app/dist-bot ./dist-bot
 RUN mkdir -p /app/dist/media && chown -R node:node /app/dist/media
 EXPOSE 8787
 USER node
