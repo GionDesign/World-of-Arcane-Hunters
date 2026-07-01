@@ -4,6 +4,7 @@
 // the i18n.catalog domain split; importers resolve './i18n.catalog' to this index.
 
 import { ITEM_SETS } from '../../sim/data';
+import { FORK_BRAND } from './fork_brand';
 import { worldEntityText as worldNames } from '../world_entity_i18n';
 import { abilityStrings, classAbilityNames } from './abilities';
 import { gameStrings } from './game';

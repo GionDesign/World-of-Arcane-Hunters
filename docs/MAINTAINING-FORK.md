@@ -677,27 +677,31 @@ grep -n "customRng\|customCampSet\|CUSTOM_CAMPS" src/sim/sim.ts
 
 ---
 
-#### `tests/threat.test.ts` -- ghost wolf cancellation test (RNG-independent)
+#### `tests/threat.test.ts` -- ghost wolf cancellation test (projectile-loop fix)
 
 The "Ghost Wolf drops before casting shaman spells from the same button press" test
-originally checked `wolf.hp < beforeHp` after casting flame_shock to verify the spell
-fired. This check is sensitive to the spell hit roll (99% hit at equal levels, 1%
-miss) and failed after the secondary RNG fix restored the upstream RNG state.
+verifies that casting flame_shock while in ghost wolf form drops the form. Upstream
+v0.16.0 rewrote the test to make flame_shock reliable: the player is set to `gm = true`
+(invulnerable, so the wolf cannot kill them), the wolf's `moveSpeed = 0` (rooted, so
+it cannot escape), and a projectile loop waits up to 20 ticks for the bolt to land.
+This is now upstream behaviour, not a fork change.
 
-**Fork change** -- replaced the RNG-sensitive hp check with a GCD check:
+During the v0.16.0 merge the `const beforeHp = wolf.hp;` variable declaration was
+accidentally dropped, causing a `ReferenceError: beforeHp is not defined` at runtime.
+
+**Fork fix** -- restored the missing `beforeHp` declaration before the cast:
 ```typescript
-// Old (fragile -- depends on flame_shock landing):
+sim.player.gcdRemaining = 0;
+const beforeHp = wolf.hp;   // must be declared before castAbility
+sim.castAbility('flame_shock');
+expect(sim.player.auras.some((a) => a.id === 'ghost_wolf')).toBe(false);
+// Flame Shock is a projectile: damage lands when the bolt reaches the wolf.
+for (let i = 0; i < 20 && wolf.hp >= beforeHp; i++) sim.tick();
 expect(wolf.hp).toBeLessThan(beforeHp);
-
-// New (GCD is set before applyAbility, so it is non-zero regardless of hit/miss):
-expect(sim.player.gcdRemaining).toBeGreaterThan(0);
 ```
 
-The test still fully verifies its primary concern: ghost wolf drops when a shaman
-casts a spell. The GCD check confirms the ability was processed by the engine.
-
-If this change is lost (upstream restores the hp check), the test will flake on any
-RNG state where flame_shock misses. Re-apply the GCD check to make it robust.
+If this is lost in a future merge, look for the flame_shock cast in the ghost wolf
+block and ensure `const beforeHp = wolf.hp;` appears immediately before `castAbility`.
 
 ---
 
@@ -1083,6 +1087,109 @@ Also update the nearby arena comment from `ARENA_X = 4200` to `ARENA_X = 4700`.
 **Verification:**
 ```bash
 grep "DELVE_X_MIN\).toBe" tests/delves.test.ts   # should show 5300
+```
+
+---
+
+#### `tests/map_window_view.test.ts` -- makeDelveWorld player position uses DELVE_X_MIN (5300)
+
+The `makeDelveWorld` helper builds a stub world for testing the map-window delve mode
+discriminator. It sets the player's `pos.x` and the `delveRun.origin.x` to a coordinate
+inside the delve band. The upstream test used x=5000 (valid for the upstream DELVE_X_MIN
+of 4800) but this fork shifts DELVE_X_MIN to 5300 to open a custom dungeon slot; x=5000
+falls BELOW the fork's DELVE_X_MIN and is treated as overworld, causing the discriminator
+to return 'overworld' instead of 'delve'.
+
+**Fork change** -- `makeDelveWorld` uses x=5300 to stay inside the fork's delve band:
+```typescript
+// Old (upstream x=5000, outside the fork delve band DELVE_X_MIN=5300):
+player: { ..., pos: { x: 5000, z: 0 }, ... },
+delveRun: { ..., origin: { x: 5000, z: 0 } },
+
+// New (fork x=5300, at the fork DELVE_X_MIN boundary):
+player: { ..., pos: { x: 5300, z: 0 }, ... },
+delveRun: { ..., origin: { x: 5300, z: 0 } },
+```
+
+**Verification:**
+```bash
+grep "makeDelveWorld\|x: 5" tests/map_window_view.test.ts | head -5
+# Expect: pos: { x: 5300, z: 0 } and origin: { x: 5300, z: 0 }
+```
+
+If this is lost (upstream updates the helper with a new x value below 5300), update
+both the `pos.x` and `origin.x` to any value >= 5300 that places the player inside
+the delve band.
+
+---
+
+#### `src/ui/i18n.catalog/index.ts` -- FORK_BRAND import (upstream merge may drop it)
+
+The English catalog barrel imports `FORK_BRAND` from the fork-owned
+`src/ui/i18n.catalog/fork_brand.ts` to embed the game name, GitHub URL, and other
+brand constants into seven catalog string values. This import line can be silently
+dropped during an upstream merge that rewrites the top of `index.ts`.
+
+**Import to restore** (add alongside the other local catalog imports):
+```typescript
+import { FORK_BRAND } from './fork_brand';
+```
+
+The seven usages are: `meta.copyright`, `meta.githubLink`, `shell.playAria`,
+`social.defaultRealm`, `social.brandWordmark`, `social.nativeShareBody`, and
+`social.nativeShareTitle`.
+
+**Verification:**
+```bash
+grep "FORK_BRAND" src/ui/i18n.catalog/index.ts | head -3
+# Expect: import line + at least 2 usage lines
+```
+
+If missing, `node scripts/i18n_scan.mjs` will throw `ReferenceError: FORK_BRAND is not
+defined` and `npm run i18n:gen` will fail, so this is caught early.
+
+---
+
+#### `src/sim/content/custom/dragons_blight/items.ts` -- armorType required field (upstream v0.16.0+)
+
+Upstream v0.16.0 added `armorType: ArmorType` as a REQUIRED field on `ArmorItemDef`
+(`src/sim/types.ts`). Custom armor items must include this field or `armor_type_catalog.test.ts`
+will fail.
+
+The three Dragon's Blight armor pieces and their correct values:
+
+```typescript
+custom_drakebone_shoulders: { armorType: 'mail', ... }   // warrior/paladin/shaman
+custom_scorchwing_cowl:     { armorType: 'cloth', ... }  // mage/priest/warlock/druid
+custom_blight_stalkers_hood: { armorType: 'leather', ... } // rogue/hunter
+```
+
+To verify after a merge:
+```bash
+grep "armorType" src/sim/content/custom/dragons_blight/items.ts
+# Expect: 3 hits (one per armor piece)
+npx vitest run tests/armor_type_catalog.test.ts
+```
+
+---
+
+#### `src/sim/content/custom/dragons_blight/items.ts` -- epic weapon stat budget (upstream v0.16.0+)
+
+Upstream v0.16.0 added item level stat budget enforcement. Epic quality weapons at sourceLevel=20
+have itemLevel = 20 + QUALITY_ILVL_BONUS[epic=6] = 26, mainhand slotMult=1.0, quality epic mult=1.0,
+STAT_PER_ILVL=0.7 => budget = Math.round(26 * 1.0 * 1.0 * 0.7) = 18.
+
+The three Dragon's Blight epic weapons must sum to exactly 18 primary stats:
+
+```typescript
+custom_ignaraxis_greatblade: { stats: { str: 12, sta: 6 } }    // 12+6 = 18
+custom_cinderstave_eternal:  { stats: { int: 13, spi: 5 } }    // 13+5 = 18
+custom_fang_of_ignaraxis:    { stats: { agi: 12, sta: 6 } }    // 12+6 = 18
+```
+
+To verify after a merge:
+```bash
+npx vitest run tests/item_level.test.ts
 ```
 
 ---

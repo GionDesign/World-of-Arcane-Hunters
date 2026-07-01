@@ -4537,6 +4537,33 @@ export const da_DK: EnTranslations = {
       "monarch_crown_helm": {
         "name": "Monarkens Krone"
       },
+      "custom_drake_scale": {
+        "name": "Askvandrer Drageskæl"
+      },
+      "custom_wyvern_heartstone": {
+        "name": "Brændvinge Hjertesten"
+      },
+      "custom_blight_ember": {
+        "name": "Forbandelsesgløde"
+      },
+      "custom_drakebone_shoulders": {
+        "name": "Drakeknogle-skulderstykker"
+      },
+      "custom_scorchwing_cowl": {
+        "name": "Brændvinge-hætte"
+      },
+      "custom_blight_stalkers_hood": {
+        "name": "Forbandelsesjægers hætte"
+      },
+      "custom_ignaraxis_greatblade": {
+        "name": "Ignaraxis Storklinge"
+      },
+      "custom_cinderstave_eternal": {
+        "name": "Den Evige Askestav"
+      },
+      "custom_fang_of_ignaraxis": {
+        "name": "Ignaraxis Hugtak"
+      },
       "bristleback_maul": {
         "name": "Børsterygs-Lemlæster"
       },
@@ -5211,6 +5238,30 @@ export const da_DK: EnTranslations = {
       "acolyte_tessa": {
         "name": "Akolyt Tessa"
       },
+      "custom_ashwalker_drake": {
+        "name": "Askvandrer-drage"
+      },
+      "custom_scorchwing_wyvern": {
+        "name": "Brændvinge-wyvern"
+      },
+      "custom_blighted_sentinel": {
+        "name": "Forbandet Vagt"
+      },
+      "custom_dragonclaw_warden": {
+        "name": "Drakeklo-vogter"
+      },
+      "custom_ignaraxis": {
+        "name": "Ignaraxis den Evige"
+      },
+      "custom_skullfire_brute": {
+        "name": "Kranieild-brut"
+      },
+      "custom_blightshroud_stalker": {
+        "name": "Forbandelsesskygge-krybskytte"
+      },
+      "custom_ironpelt_monkroose": {
+        "name": "Jernpels-monkros"
+      },
       "ironvein_foreman": {
         "name": "Jernåre-Formand"
       },
@@ -5425,6 +5476,21 @@ export const da_DK: EnTranslations = {
         "name": "Broder Halven",
         "title": "Relikvarievogter",
         "greeting": "Relikvariet nedenunder har flyttet sig igen."
+      },
+      "custom_commander_vael": {
+        "name": "Kommandant Vael",
+        "title": "Officer i Blight Vagten",
+        "greeting": "Vær parat, {playerName}. Denne Blight sover ikke, og det gør vi heller ikke."
+      },
+      "custom_scout_fenris": {
+        "name": "Speider Fenris",
+        "title": "Speider i Blight Vagten",
+        "greeting": "Er du gået igennem wyvern-territoriet? Godt. Jeg havde brug for en dygtig her."
+      },
+      "custom_elder_draxis": {
+        "name": "Aeldste Draxis",
+        "title": "Dræber af Drager",
+        "greeting": "Jeg har jaget drager i tredive år, {playerName}. Ignaraxis er anderledes end de andre."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -6185,6 +6251,75 @@ export const da_DK: EnTranslations = {
           }
         }
       },
+      "custom_proving_ground": {
+        "title": "Prøvelsernes Mark",
+        "text": "Askvandrer-dragerne er rykket frem til kanten af vores lejr, {playerName}. Reducér deres antal -- ti af dem -- og bevis at du fortjener en plads i Blight.",
+        "completion": "Ti drager fældet. Ikke dårligt. Måske overlever du det alligevel, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Askvandrer-drager dræbt"
+          }
+        }
+      },
+      "custom_marks_of_the_drake": {
+        "title": "Dragens Mærker",
+        "text": "Drageskæl er så hårde som pladepanser, {playerName}. Jeg har brug for otte af dem til den næste patruljefører. Dragerne giver dem ikke frivilligt -- tag hvad du kan.",
+        "completion": "Otte skæl. De modstår ild bedre end alt hvad vi kan smedde. Godt arbejde.",
+        "objectives": {
+          "0": {
+            "label": "Askvandrer-drageskæl"
+          }
+        }
+      },
+      "custom_into_the_blight": {
+        "title": "Ind i Blight",
+        "text": "De brændvinge-wyvernerne slår sig ned mellem os og fængslet, {playerName}. Otte af dem skal væk, og jeg har brug for fem af deres hjertesten til kommandantens alkymist. De er godt gemt, men jeg ved at du kan nå dem.",
+        "completion": "Redet er ryddet. Hjertestenene er mere værd end du tror.",
+        "objectives": {
+          "0": {
+            "label": "Brændvinge-wyvernere dræbt"
+          },
+          "1": {
+            "label": "Wyvern-hjertesten"
+          }
+        }
+      },
+      "custom_eye_of_the_storm": {
+        "title": "Stormens Øje",
+        "text": "De forbandede vagter er Ignaraxis ydre vogtere, {playerName}. Gamle dragevæsener fordrejet af årtusinders nærhed til det uhyre. Fæld tre og bring mig forbandelsesasken fra deres kerne. Hvis du kan klare dem, er du klar til Gabet.",
+        "completion": "Tre vagter fældet og aske i hånden. Du er klar, {playerName}. Tal med Aeldste Draxis ved fortet. Han har ventet længe på dette.",
+        "objectives": {
+          "0": {
+            "label": "Forbandede Vagter dræbt"
+          },
+          "1": {
+            "label": "Forbandelses-aske"
+          }
+        }
+      },
+      "custom_eternal_flame": {
+        "title": "Den Evige Flamme",
+        "text": "Ignaraxis den Evige har sovet i Dragens Gab i et tidsalder, {playerName}. Blight over os er hans ånde i fast form. Gå ind i Gabet, konfronter ham i sin rede og gør en ende på det. Du vil have brug for allierede -- dette er ikke en jagt for en enkelt.",
+        "completion": "Den Evige Flamme er slukket, {playerName}. Jeg har ventet tredive år på at sige de ord. Blight vil nu svinde. Tag dette -- du har mere end fortjent det.",
+        "objectives": {
+          "0": {
+            "label": "Ignaraxis den Evige dræbt"
+          }
+        }
+      },
+      "custom_blight_patrol": {
+        "title": "Blight Patrulje",
+        "text": "Vi kan ikke lade dragerne og wyvernerne overvælde adgangsvejene, {playerName}. Patruljer Blight, dræb femten drager og otte wyvernere, og vend tilbage. Det holder vores flanker fri mens kommandokæden styrer det store billede.",
+        "completion": "Flankerne er frie. Mændene trækker vejret lettere når nogen derinde gør en forskel. Godt arbejde, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Askvandrer-drager dræbt"
+          },
+          "1": {
+            "label": "Brændvinge-wyvernere dræbt"
+          }
+        }
+      },
       "q_drowned_choir": {
         "title": "Det Druknede Kor",
         "text": "Vaderne handler ikke alene. Blandt dem vandrer de Druknede Tilbedere - kulten, der sank med templet, stadig i deres rådne ornater, stadig syngende bønnen fra strandklipperne. Bring otte af dem til tavshed, og bring mig seks af de offergaver, de bærer. Jeg vil vide, hvad de agter at give deres gudinde.",
@@ -6351,6 +6486,21 @@ export const da_DK: EnTranslations = {
             "label": "Gravormens Helligdom"
           }
         }
+      },
+      "custom_dragons_blight": {
+        "name": "Drakens Forbandelse",
+        "welcome": "Drakens Forbandelse strækker sig foran dig, kvalt i aske og den fjerne klang af urfornyt ild.",
+        "pois": {
+          "0": {
+            "label": "Blight Vagt-fort"
+          },
+          "1": {
+            "label": "Fenris Forpost"
+          },
+          "2": {
+            "label": "Dragens Gab"
+          }
+        }
       }
     },
     "dungeons": {
@@ -6378,6 +6528,11 @@ export const da_DK: EnTranslations = {
         "name": "Nythraxis Raidarena",
         "enterText": "Du passerer gennem den forseglede kongelige dør.",
         "leaveText": "Du vender tilbage til Tornetops kolde luft."
+      },
+      "custom_dragons_maw": {
+        "name": "Dragens Gab",
+        "enterText": "Varmen er kvælende. Noget massivt rører sig i mørket foran dig.",
+        "leaveText": "Du stiger ud af Dragens Gab, udeluften kølig mod din hud."
       },
       "drowned_temple": {
         "name": "Det Druknede Tempel",

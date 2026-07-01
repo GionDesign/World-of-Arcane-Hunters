@@ -4537,6 +4537,33 @@ export const nl_NL: EnTranslations = {
       "monarch_crown_helm": {
         "name": "Monarchenkroon"
       },
+      "custom_drake_scale": {
+        "name": "Aslouper Draakschub"
+      },
+      "custom_wyvern_heartstone": {
+        "name": "Schroeiwieks Hartsteen"
+      },
+      "custom_blight_ember": {
+        "name": "Vloekgloei"
+      },
+      "custom_drakebone_shoulders": {
+        "name": "Draakbeen Schouderstukken"
+      },
+      "custom_scorchwing_cowl": {
+        "name": "Schroeiwieks Kap"
+      },
+      "custom_blight_stalkers_hood": {
+        "name": "Vloeksluier Kap"
+      },
+      "custom_ignaraxis_greatblade": {
+        "name": "Ignaraxis Grootzwaard"
+      },
+      "custom_cinderstave_eternal": {
+        "name": "Eeuwige Askei"
+      },
+      "custom_fang_of_ignaraxis": {
+        "name": "Tand van Ignaraxis"
+      },
       "bristleback_maul": {
         "name": "Borstelrug-Strijdhamer"
       },
@@ -5211,6 +5238,30 @@ export const nl_NL: EnTranslations = {
       "acolyte_tessa": {
         "name": "Acoliet Tessa"
       },
+      "custom_ashwalker_drake": {
+        "name": "Aslouper Draak"
+      },
+      "custom_scorchwing_wyvern": {
+        "name": "Schroeiwieks Wyvern"
+      },
+      "custom_blighted_sentinel": {
+        "name": "Vervloekte Schildwacht"
+      },
+      "custom_dragonclaw_warden": {
+        "name": "Drakenklauw Bewaker"
+      },
+      "custom_ignaraxis": {
+        "name": "Ignaraxis de Eeuwige"
+      },
+      "custom_skullfire_brute": {
+        "name": "Schedelbrander"
+      },
+      "custom_blightshroud_stalker": {
+        "name": "Vloeksluier Sluipjager"
+      },
+      "custom_ironpelt_monkroose": {
+        "name": "IJzervacht Monkroose"
+      },
       "ironvein_foreman": {
         "name": "IJzerader-Voorman"
       },
@@ -5425,6 +5476,21 @@ export const nl_NL: EnTranslations = {
         "name": "Broeder Halven",
         "title": "Reliekbewaarder",
         "greeting": "Het reliekschrijn beneden is opnieuw verschoven."
+      },
+      "custom_commander_vael": {
+        "name": "Commandant Vael",
+        "title": "Officier van de Blight Garde",
+        "greeting": "Wees voorbereid, {playerName}. Deze Blight slaapt niet, en wij ook niet."
+      },
+      "custom_scout_fenris": {
+        "name": "Verkenner Fenris",
+        "title": "Verkenner van de Blight Garde",
+        "greeting": "Ben je door het wyvern-territorium gegaan? Goed. Ik had iemand bekwaam nodig hier."
+      },
+      "custom_elder_draxis": {
+        "name": "Oudste Draxis",
+        "title": "Drakendoder",
+        "greeting": "Ik heb dertig jaar draken gejaagd, {playerName}. Ignaraxis is anders dan de anderen."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -6185,6 +6251,75 @@ export const nl_NL: EnTranslations = {
           }
         }
       },
+      "custom_proving_ground": {
+        "title": "Het Beproevingsveld",
+        "text": "De aslouper draken zijn opgerukt tot aan de rand van ons kamp, {playerName}. Verminder hun aantal -- tien van hen -- en bewijs dat je een plek in de Blight verdient.",
+        "completion": "Tien draken geveld. Niet slecht. Misschien overleef je dit toch, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Aslouper Draken gedood"
+          }
+        }
+      },
+      "custom_marks_of_the_drake": {
+        "title": "Merktekens van de Draak",
+        "text": "Draakschubben zijn zo hard als plaatpantser, {playerName}. Ik heb er acht nodig voor de volgende patrouilleaanvoerder. De draken geven ze niet zomaar -- pak wat je kunt.",
+        "completion": "Acht schubben. Ze weerstaan vuur beter dan alles wat we kunnen smeden. Goed werk.",
+        "objectives": {
+          "0": {
+            "label": "Aslouper Draakschubben"
+          }
+        }
+      },
+      "custom_into_the_blight": {
+        "title": "De Blight In",
+        "text": "Die schroeiwieks-wyvernen nestelen zich tussen ons en het kerker, {playerName}. Acht van hen moeten weg, en ik heb vijf van hun hartstenen nodig voor de alchemist van de commandant. Ze zitten diep verscholen, maar ik weet dat jij ze kunt bereiken.",
+        "completion": "Het nest is geruimd. Die hartstenen zijn meer waard dan je denkt.",
+        "objectives": {
+          "0": {
+            "label": "Schroeiwieks Wyvernen gedood"
+          },
+          "1": {
+            "label": "Wyvern Hartstenen"
+          }
+        }
+      },
+      "custom_eye_of_the_storm": {
+        "title": "Oog van de Storm",
+        "text": "De vervloekte schildwachten zijn de buitenste bewakers van Ignaraxis, {playerName}. Oude drakenwezens verdraaid door eeuwen nabij dat schepsel. Sla er drie neer en breng me de vloekassen uit hun kern. Als jij hen aankan, ben je klaar voor de Kaken.",
+        "completion": "Drie schildwachten geveld en assen in de hand. Je bent klaar, {playerName}. Ga met Oudste Draxis bij het fort praten. Hij heeft hier lang op gewacht.",
+        "objectives": {
+          "0": {
+            "label": "Vervloekte Schildwachten gedood"
+          },
+          "1": {
+            "label": "Vloekassen"
+          }
+        }
+      },
+      "custom_eternal_flame": {
+        "title": "De Eeuwige Vlam",
+        "text": "Ignaraxis de Eeuwige heeft een tijdperk lang geslapen in de Drakenkaken, {playerName}. De Blight boven ons is zijn adem in vaste vorm. Ga de Kaken in, confronteer hem in zijn leger en maak er een einde aan. Je bondgenoten zullen nodig zijn -- dit is niet een jacht voor alleen.",
+        "completion": "De Eeuwige Vlam is gedoofd, {playerName}. Ik heb dertig jaar gewacht om die woorden te zeggen. De Blight zal nu wegebben. Neem dit -- je hebt het ruimschoots verdiend.",
+        "objectives": {
+          "0": {
+            "label": "Ignaraxis de Eeuwige gedood"
+          }
+        }
+      },
+      "custom_blight_patrol": {
+        "title": "Blight Patrouille",
+        "text": "We kunnen de draken en wyvernen de toegangswegen niet laten overweldigen, {playerName}. Patrouilleer de Blight, dood vijftien draken en acht wyvernen, en keer terug. Het houdt onze flanken vrij terwijl de commandoketen het grote geheel beheert.",
+        "completion": "De flanken zijn vrij. De mannen ademen gemakkelijker als iemand daarbinnen het verschil maakt. Goed werk, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Aslouper Draken gedood"
+          },
+          "1": {
+            "label": "Schroeiwieks Wyvernen gedood"
+          }
+        }
+      },
       "q_drowned_choir": {
         "title": "Het Verdronken Koor",
         "text": "De waders handelen niet alleen. Tussen hen lopen de Verdronken Aanbidders, de sekte die met de tempel zonk, nog in hun verrotte gewaden, nog steeds het gebed zingend vanaf de oeverrotsen. Breng er acht tot zwijgen, en breng me zes van de offergaven die ze dragen. Ik wil weten wat ze hun godin willen geven.",
@@ -6351,6 +6486,21 @@ export const nl_NL: EnTranslations = {
             "label": "Grafwurm-Heiligdom"
           }
         }
+      },
+      "custom_dragons_blight": {
+        "name": "De Drakenvloek",
+        "welcome": "De Drakenvloek strekt zich voor je uit, verstikt in as en de verre echo van eeuwoud vuur.",
+        "pois": {
+          "0": {
+            "label": "Blight Garde Fort"
+          },
+          "1": {
+            "label": "Fenris Voorpost"
+          },
+          "2": {
+            "label": "De Drakenkaken"
+          }
+        }
       }
     },
     "dungeons": {
@@ -6378,6 +6528,11 @@ export const nl_NL: EnTranslations = {
         "name": "Nythraxis Raid-Arena",
         "enterText": "Je gaat door de verzegelde koninklijke deur.",
         "leaveText": "Je keert terug naar de koude lucht van Doorntop."
+      },
+      "custom_dragons_maw": {
+        "name": "De Drakenkaken",
+        "enterText": "De hitte is verstikkend. Iets massaals roert zich in de duisternis voor je.",
+        "leaveText": "Je komt uit de Drakenkaken, de buitenlucht koel op je huid."
       },
       "drowned_temple": {
         "name": "De Verdronken Tempel",

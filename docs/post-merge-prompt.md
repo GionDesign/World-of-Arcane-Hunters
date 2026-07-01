@@ -1,0 +1,396 @@
+# Post-Merge Maintenance Prompt
+
+Copy the block below verbatim and paste it as your first message in a new Claude
+Code session immediately after completing a `git merge origin/master`. The session
+must have read `FORK.md` and `docs/MAINTAINING-FORK.md` before acting -- the prompt
+instructs it to do so. Run this every time; do not skip steps.
+
+---
+
+## The prompt (copy from the dashes below)
+
+---
+
+I have just merged the latest `master` (upstream) into this fork. Please read
+`FORK.md` and `docs/MAINTAINING-FORK.md` in full before making any changes, then
+work through every numbered step below in order. Commit and push after step 9. Do
+not skip or reorder steps. If you find any damage, repair it before moving on.
+
+### Step 1 -- health check: fork-owned files
+
+Verify all fork-owned files still exist:
+
+```bash
+ls docs/SETUP-DIGITALOCEAN.md docs/SETUP-LOCAL-MAC.md docs/SETUP-CLOUDFLARE.md \
+   docs/SETUP-LOCAL-SUPABASE.md docs/MAINTAINING-FORK.md docs/CUSTOM-CONTENT.md \
+   docs/custom-content/ADDING-CUSTOM-CONTENT.md docs/custom-content/CREATURE-MODELS.md \
+   docs/custom-content/items.md docs/custom-content/mobs.md docs/custom-content/camps.md \
+   docs/custom-content/npcs.md docs/custom-content/quests.md docs/custom-content/zones.md \
+   docs/custom-content/ground-objects.md docs/custom-content/props.md \
+   docs/custom-content/roads.md docs/custom-content/dungeons.md \
+   docs/custom-content/complete-example.md \
+   docs/custom-content/map-layout.md docs/custom-content/developer-commands.md \
+   docs/post-merge-prompt.md \
+   FORK.md \
+   src/sim/content/custom/index.ts src/sim/content/custom/i18n_ids.ts \
+   src/sim/content/custom/CLAUDE.md \
+   src/sim/content/custom/dragons_blight/items.ts \
+   src/sim/content/custom/dragons_blight/mobs.ts \
+   src/sim/content/custom/dragons_blight/npcs.ts \
+   src/sim/content/custom/dragons_blight/quests.ts \
+   src/sim/content/custom/dragons_blight/zones.ts \
+   src/sim/content/custom/dragons_blight/camps.ts \
+   src/sim/content/custom/dragons_blight/props.ts \
+   src/sim/content/custom/dragons_blight/dungeons.ts \
+   src/render/dungeon_custom.ts \
+   src/render/characters/custom/index.ts src/render/characters/custom/CLAUDE.md \
+   public/models/creatures/custom/.gitkeep \
+   scripts/brand_inject.mjs src/ui/i18n.catalog/fork_brand.ts
+```
+
+If any file is missing, re-create it from `docs/MAINTAINING-FORK.md` or the git
+history (`git log --all --full-history -- <path>`).
+
+### Step 2 -- health check: upstream file modifications
+
+Run each grep command and compare against the expected results. If a check returns
+fewer hits than expected, re-apply the change from `docs/MAINTAINING-FORK.md`.
+
+```bash
+# ADMIN_HOSTNAME in server/main.ts (expect 2: constant + adminByHost line)
+grep -n "ADMIN_HOSTNAME" server/main.ts
+
+# Custom content hook in data.ts (expect: import block + one spread per table)
+grep -n "CUSTOM_CAMPS\|CUSTOM_MOBS\|CUSTOM_ITEMS\|CUSTOM_NPCS\|CUSTOM_QUESTS\|CUSTOM_ZONES\|CUSTOM_DUNGEON" src/sim/data.ts
+
+# Custom visual hook in manifest.ts (expect 3: import + 2 spreads)
+grep -n "CUSTOM_MOB_KEYS\|CUSTOM_VISUALS" src/render/characters/manifest.ts
+
+# Dragon's Maw interior type (expect 1)
+grep -c "dragons_maw" src/sim/types.ts
+
+# Dragon's Maw layout (expect 1)
+grep -c "DRAGONS_MAW_LAYOUT" src/sim/dungeon_layout.ts
+
+# Custom dungeon renderer hooks (expect 7+)
+grep -c "CUSTOM_TORCH_COLORS\|isCustomDungeonVariant\|applyCustomWallDressing\|dungeon_custom" src/render/dungeon.ts
+
+# Dragon's Maw colliders (expect 3)
+grep -c "DRAGONS_MAW" src/sim/colliders.ts
+
+# Secondary RNG for CUSTOM_CAMPS (expect 3+)
+grep -c "customRng\|customCampSet" src/sim/sim.ts
+
+# ARENA_X and DELVE_X_MIN fork values
+grep "ARENA_X = " src/sim/data.ts          # expect 4700
+grep "DELVE_X_MIN = " src/sim/data.ts      # expect 5300
+grep "DELVE_X_MIN\).toBe" tests/delves.test.ts  # expect 5300
+
+# Dragon's Blight i18n spreads in world_entity_i18n.ts (expect 10)
+grep -c "CUSTOM_" src/ui/world_entity_i18n.ts
+
+# Dragon's Blight item spreads in items catalog (expect 4)
+grep -c "CUSTOM_" src/ui/i18n.catalog/items.ts
+
+# FORK_BRAND import in catalog index (expect 3+: import + usages)
+grep -c "FORK_BRAND" src/ui/i18n.catalog/index.ts
+
+# Brand injection in vite.config.ts (expect: siteUrl + define entries + brandTokenPlugin)
+grep -n "brandTokenPlugin\|__SITE_URL__\|VITE_SITE_URL" vite.config.ts
+
+# Brand args in Dockerfile (expect: VITE_SITE_URL + VITE_DISCORD_URL + VITE_DONATE_URL)
+grep -n "VITE_SITE_URL\|VITE_DISCORD_URL\|VITE_DONATE_URL" Dockerfile
+
+# Brand args in deploy workflow (expect same 3)
+grep -n "VITE_SITE_URL\|VITE_DISCORD_URL\|VITE_DONATE_URL" .github/workflows/deploy.yml
+
+# GA / Meta Pixel markers in index.html (expect WOC:GA:START and WOC:META:START)
+grep -c "WOC:GA:START\|WOC:META:START" index.html
+```
+
+### Step 3 -- zone contiguity check
+
+```bash
+grep -n "zMin\|zMax" src/sim/content/zone*.ts src/sim/content/temple.ts 2>/dev/null
+grep -n "zMin\|zMax" src/sim/content/custom/dragons_blight/zones.ts
+```
+
+Dragon's Blight must start exactly where the last upstream zone ends (`zMin: 900`).
+If upstream added a new zone that extends past z=900, the custom zone must shift
+northward -- see `docs/custom-content/zones.md` for the fix procedure.
+
+### Step 4 -- check for upstream interface changes
+
+Upstream may have added required fields to shared types. Check for TypeScript errors:
+
+```bash
+npx tsc --noEmit 2>&1 | head -40
+```
+
+If errors reference `dragons_blight/` files, open the failing file and compare the
+relevant type definition in `src/sim/types.ts` against the custom content record. Fix
+the record to satisfy the new shape, then document the required-field addition in
+`docs/MAINTAINING-FORK.md` under `src/sim/content/custom/dragons_blight/items.ts`
+(or the appropriate per-zone file).
+
+Common upstream interface changes and where to look:
+- New required field on `ArmorItemDef` -> `dragons_blight/items.ts` (3 armor pieces)
+- New required field on `MobTemplate` -> `dragons_blight/mobs.ts`
+- New required field on `ZoneDef` -> `dragons_blight/zones.ts`
+- New required field on `DungeonDef` -> `dragons_blight/dungeons.ts`
+- New required field on `NpcDef` -> `dragons_blight/npcs.ts`
+
+### Step 5 -- check for upstream naming / brand drift
+
+Upstream uses `worldofclaudecraft.com`, `World of ClaudeCraft`, `Claudemoon`. This
+fork replaces those with `TODO-your-domain.com` placeholders and the `World of Arcane
+Hunters` / `Eastbrook` brand. After any merge that touches public HTML, source files,
+or locale files, search for upstream brand leakage:
+
+```bash
+grep -r "worldofclaudecraft\|ClaudeCraft\|Claudemoon" \
+  index.html play.html admin.html guide.html \
+  src/main.ts src/ui/hud.ts \
+  public/server-unavailable.html public/links.html public/sitemap.xml \
+  server/realm.ts 2>/dev/null | grep -v "node_modules" | grep -v ".git"
+```
+
+If any hits appear in files this fork controls, re-apply the brand replacement from the
+"Brand rename (2026-06)" section in `docs/MAINTAINING-FORK.md`.
+
+Also check for new upstream files that contain the upstream domain but were not in our
+replacement map:
+
+```bash
+git diff origin/master..HEAD --name-only | xargs grep -l "worldofclaudecraft" 2>/dev/null
+```
+
+### Step 6 -- check for new upstream features that need custom adaptation
+
+Review the upstream changelog or the git diff for new systems that may need fork-side
+adjustments. Focus on:
+
+1. **New HTML entry points** (new `.html` files): check for upstream brand strings and
+   analytics IDs that need the `TODO-` placeholder treatment and marker comments.
+
+2. **New static public/ files** (robots.txt siblings, new legal pages): if they contain
+   the upstream domain, add them to `scripts/brand_inject.mjs` token replacement list.
+
+3. **New analytics or tracking IDs**: wrap in `<!-- WOC:GA:START/END -->` or
+   `<!-- WOC:META:START/END -->` markers so the build plugin can strip/inject them.
+
+4. **New locale overlay format or new locale files**: if upstream added a new language
+   overlay file, add the Dragon's Blight entity translation block to it (copy the
+   pattern from an existing overlay like `nl_NL.ts`). Registered entity IDs are in
+   `src/sim/content/custom/i18n_ids.ts`.
+
+5. **New catalog domain files** (`src/ui/i18n.catalog/<domain>.ts`): if upstream added
+   a new catalog file, it may include brand strings from the upstream project name;
+   apply the brand replacement map.
+
+6. **New upstream test assertions that hardcode world constants**: ARENA_X, DELVE_X_MIN,
+   realm names, domains. Update them to match fork values.
+
+7. **New dungeon interiors**: if upstream added a new `DungeonDef.interior` union member,
+   verify the `CustomDungeonVariantId` union in `src/render/dungeon_custom.ts` does not
+   conflict with the new member name.
+
+8. **New CAMPS in upstream zones**: if upstream added new overworld camps, the main RNG
+   stream shifts and all parity golden traces need regeneration:
+   ```bash
+   UPDATE_PARITY=1 npx vitest run tests/parity
+   ```
+
+### Step 7 -- i18n: custom entities and regeneration
+
+If the merge touched any locale file or the catalog, verify Dragon's Blight custom
+entity translations are intact in all 13 non-English overlays:
+
+```bash
+# Quick spot-check: each overlay must have at least one custom_ entity key
+for f in src/ui/i18n.locales/*.ts; do
+  count=$(grep -c "custom_" "$f" 2>/dev/null || echo 0)
+  echo "$f: $count custom keys"
+done
+```
+
+Each overlay should have approximately 52 keys (mobs, NPCs, quests, zone, dungeon,
+items). If any overlay shows 0 or far fewer, re-add the block from the
+`src/ui/world_entity_i18n.ts` section of `docs/MAINTAINING-FORK.md`.
+
+If any locale or catalog file was changed (including by the merge), regenerate:
+
+```bash
+npm run i18n:gen && node scripts/i18n_resolved_hash.mjs --write
+git add src/ui/i18n.resolved.generated/ src/ui/i18n.resolved.sha256 \
+        src/ui/i18n.status.summary.json
+```
+
+Verify at release tier (pending=0 required):
+
+```bash
+I18N_RELEASE_TIER=1 npx vitest run tests/i18n_completeness.test.ts \
+  tests/i18n_resolved_equivalence.test.ts
+```
+
+### Step 8 -- run the full test suite
+
+```bash
+npm test
+```
+
+Key tests to pay attention to:
+- `tests/architecture.test.ts` -- sim purity; zero DOM/browser imports in sim/
+- `tests/sim.test.ts` -- custom content IDs, basic sim health
+- `tests/parity/` -- RNG golden traces; fails if upstream content shifted camp/mob order
+- `tests/localization_fixes.test.ts` -- S3 i18n guard; new sim strings need a matcher
+- `tests/armor_type_catalog.test.ts` -- all armor items have armorType
+- `tests/item_level.test.ts` -- epic weapon stat budgets correct
+- `tests/delves.test.ts` -- DELVE_X_MIN=5300 and rollFor(42)
+- `tests/dungeons.test.ts` -- Dragon's Maw loot, Dragon's Blight NPCs
+
+If parity tests fail after upstream content changes:
+```bash
+UPDATE_PARITY=1 npx vitest run tests/parity
+npm test
+```
+
+If i18n equivalence tests fail after locale regeneration, make sure the generated
+files are staged:
+```bash
+git add src/ui/i18n.resolved.generated/ src/ui/i18n.resolved.sha256
+npm test
+```
+
+### Step 9 -- verify the build pipeline and brand injection
+
+```bash
+npm run build
+```
+
+After a clean build, run the brand injection and verify no placeholder tokens remain:
+
+```bash
+VITE_SITE_URL=https://world.arcanehunters.com \
+VITE_DISCORD_URL=https://discord.gg/TODO \
+VITE_DONATE_URL=https://github.com/sponsors/TODO \
+npm run brand:inject
+
+grep -r "TODO-your-domain\|discord.gg/TODO\|sponsors/TODO" dist/ \
+  --include="*.html" --include="*.txt" --include="*.xml"
+# Expect: no output (all tokens replaced)
+```
+
+Also verify the GA/Meta Pixel blocks are stripped when env vars are unset:
+
+```bash
+grep -c "googletagmanager\|facebook.net" dist/index.html
+# Expect: 0 (blocks stripped because VITE_GA_ID and VITE_META_PIXEL_ID were not set above)
+```
+
+### Step 10 -- update documentation to match any upstream refactors
+
+If any fork-applied code was re-applied or adapted because upstream refactored the
+surrounding code, update `docs/MAINTAINING-FORK.md`:
+
+1. **Code snippet out of date?** Update the snippet to show the new surrounding context,
+   the exact insertion point, and the re-apply instructions.
+
+2. **New required interface field?** Add a section under the relevant per-zone file
+   (e.g. `dragons_blight/items.ts`) documenting the field, its correct value for each
+   custom content entry, and a verification command.
+
+3. **Upstream refactored a function or moved a file?** Update the grep verification
+   command in the matching MAINTAINING-FORK.md section, and update FORK.md Rule 4 and
+   Rule 5 Step 2 if the health-check grep needs to change.
+
+4. **New upstream feature adapted for the fork?** Add a full entry to
+   `docs/MAINTAINING-FORK.md` under "Lives in git -- changes to upstream files" and a
+   one-liner to the "Short list" section of `FORK.md`.
+
+5. **FORK.md "This is a personal fork" section**: if the live deployment branch name
+   changed, update it.
+
+6. **`src/sim/content/custom/CLAUDE.md`**: if dungeon index rules changed (upstream
+   used a previously custom-reserved slot), update the index table.
+
+7. **`docs/custom-content/*.md` guides**: if any type interface changed (new required
+   fields, renamed fields), update the field reference table and example in the relevant
+   per-type guide.
+
+8. **`docs/post-merge-prompt.md` (this file)**: if any of the above changes affected
+   what future merges need to check, update this prompt so the next run reflects the
+   new reality. Specifically:
+   - A new fork-owned file -> add it to the Step 1 `ls` command.
+   - A new upstream file modification -> add a grep line to Step 2.
+   - A new interface field that will need re-checking -> add it to Step 4's "Common
+     upstream interface changes" list.
+   - A new brand token or new upstream placeholder URL -> add it to Step 5's grep
+     and to the Step 6 guidance.
+   - A new test that hardcodes a fork value -> add it to Step 8's key-tests list.
+   - A new entry in the MAINTAINING-FORK.md short list -> add a row to the
+     "Quick-reference: what this fork changes" table at the bottom of this file.
+   - A new fork-owned file -> add a bullet to the "Quick-reference: fork-owned new
+     files" list at the bottom of this file.
+   This keeps the prompt self-maintaining: one merge cycle of work, and the next
+   session starts with an accurate checklist.
+
+### Step 11 -- commit and push
+
+```bash
+git add -p   # review and stage everything
+git status   # confirm no unexpected files
+git commit -m "chore(fork): post-merge maintenance after upstream sync"
+git push -u origin <branch>
+```
+
+---
+
+## Quick-reference: what this fork changes from upstream
+
+| System | Where | What |
+|---|---|---|
+| Admin routing | `server/main.ts` | `ADMIN_HOSTNAME` env var + `/admin` path support |
+| Custom content hook | `src/sim/data.ts` | CUSTOM_* imports + spreads (last in every table) |
+| Custom visual hook | `src/render/characters/manifest.ts` | CUSTOM_VISUALS + CUSTOM_MOB_KEYS spreads |
+| Dragon's Maw interior | `src/sim/types.ts` | `'dragons_maw'` added to DungeonDef.interior union |
+| Dragon's Maw layout | `src/sim/dungeon_layout.ts` | DRAGONS_MAW_LAYOUT added |
+| Dragon's Maw renderer | `src/render/dungeon.ts` | 7+ hook points delegating to `dungeon_custom.ts` |
+| Dragon's Maw colliders | `src/sim/colliders.ts` | DRAGONS_MAW_COLLIDERS + entry in INTERIOR_COLLIDERS |
+| Secondary camp RNG | `src/sim/sim.ts` | customRng (seed^0x464f524b) for CUSTOM_CAMPS mob init |
+| Dungeon x-origin space | `src/sim/data.ts` | ARENA_X 4200->4700, DELVE_X_MIN 4800->5300 |
+| Delves test pin | `tests/delves.test.ts` | DELVE_X_MIN assertion: 4800->5300 |
+| Delve world test | `tests/map_window_view.test.ts` | makeDelveWorld x: 5000->5300 |
+| Entity i18n | `src/ui/world_entity_i18n.ts` | CUSTOM_MOB/NPC/QUEST/ZONE/DUNGEON_IDS spreads |
+| Item catalog i18n | `src/ui/i18n.catalog/items.ts` | CUSTOM_ITEM_ENTITY_IDS + CUSTOM_ITEM_EN_NAMES spreads |
+| Fork brand constants | `src/ui/i18n.catalog/index.ts` | `import { FORK_BRAND } from './fork_brand'` |
+| Brand URL injection | `vite.config.ts` | siteUrl/discordUrl/donateUrl env reads + define block + brandTokenPlugin |
+| Brand static files | `scripts/build_sitemap.mjs` | ORIGIN reads VITE_SITE_URL |
+| Brand JS constant | `src/main.ts` | `declare const __SITE_URL__` + template literals |
+| Brand HUD display | `src/ui/hud.ts` | siteUrl reads `__SITE_URL__` |
+| Docker brand args | `Dockerfile` | ARG VITE_SITE_URL/DISCORD_URL/DONATE_URL/GA_ID/META_PIXEL_ID |
+| Deploy workflow | `.github/workflows/deploy.yml` | --build-arg for all 5 brand vars |
+| GA/Meta Pixel control | `index.html`, `play.html`, `vite.config.ts` | WOC:GA/META markers + brandTokenPlugin strip/inject |
+| Dev fullscreen skip | `src/main.ts` | `if (import.meta.env.DEV) return` in requestPreferredFullscreen |
+| Ghost wolf test fix | `tests/threat.test.ts` | `const beforeHp = wolf.hp` restored before castAbility |
+| Dungeon test fixes | `tests/dungeons.test.ts` | rollLoot unknown-cast + warden.loot! non-null |
+| Realm name | `server/realm.ts` | DEFAULT_REALM_NAME = 'Eastbrook' |
+| Snapshots test | `tests/snapshots.test.ts` | Claudemoon -> Eastbrook |
+
+## Quick-reference: fork-owned new files (never conflict with upstream)
+
+- `src/sim/content/custom/` -- all Dragon's Blight custom game content
+- `src/sim/content/custom/i18n_ids.ts` -- entity ID extension point for i18n
+- `src/render/dungeon_custom.ts` -- Dragon's Maw dungeon rendering
+- `src/render/characters/custom/` -- custom creature visual overrides
+- `public/models/creatures/custom/` -- custom GLB model files
+- `src/ui/i18n.catalog/fork_brand.ts` -- FORK_BRAND constants
+- `scripts/brand_inject.mjs` -- post-build token replacement for static files
+- `docs/SETUP-DIGITALOCEAN.md` -- DigitalOcean + Supabase deployment guide
+- `docs/SETUP-LOCAL-MAC.md` -- local Mac dev guide
+- `docs/SETUP-CLOUDFLARE.md` -- Cloudflare guide
+- `docs/SETUP-LOCAL-SUPABASE.md` -- local Supabase guide
+- `docs/CUSTOM-CONTENT.md` -- overview guide for custom content
+- `docs/custom-content/` -- per-type authoring guides
+- `docs/post-merge-prompt.md` -- this file
+- `FORK.md` -- fork rules

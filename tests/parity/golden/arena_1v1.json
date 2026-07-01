@@ -8,8 +8,8 @@
     "multi-player PlayerMeta sampling",
     "classes:warrior,mage"
   ],
-  "draws": 590,
-  "drawDigest": "dc021ba2",
+  "draws": 596,
+  "drawDigest": "fdc9977c",
   "frames": [
     {
       "tick": 0,
@@ -28,9 +28,9 @@
     {
       "tick": 25,
       "time": 1.25,
-      "nextId": 390,
-      "state": "a8f669ff",
-      "events": "1efd6e51",
+      "nextId": 454,
+      "state": "d0f63183",
+      "events": "1e26f771",
       "rng": {
         "draws": 0,
         "digest": "811c9dc5"
@@ -39,9 +39,9 @@
     {
       "tick": 50,
       "time": 2.5,
-      "nextId": 390,
-      "state": "d9147193",
-      "events": "512123de",
+      "nextId": 454,
+      "state": "851bac47",
+      "events": "1a40288e",
       "rng": {
         "draws": 56,
         "digest": "82c570dd"
@@ -50,45 +50,45 @@
     {
       "tick": 75,
       "time": 3.75,
-      "nextId": 390,
-      "state": "20109887",
-      "events": "29b2784e",
+      "nextId": 454,
+      "state": "518cbd33",
+      "events": "547dd6c2",
       "rng": {
-        "draws": 174,
-        "digest": "75a99dc5"
+        "draws": 175,
+        "digest": "e02095c7"
       }
     },
     {
       "tick": 100,
       "time": 5,
-      "nextId": 390,
-      "state": "59d527d7",
-      "events": "fb5c1fd6",
+      "nextId": 454,
+      "state": "bdecfe73",
+      "events": "725dbf82",
       "rng": {
-        "draws": 320,
-        "digest": "fc4c1ac7"
+        "draws": 323,
+        "digest": "099855e2"
       }
     },
     {
       "tick": 125,
       "time": 6.25,
-      "nextId": 390,
-      "state": "d44f461c",
-      "events": "721addb9",
+      "nextId": 454,
+      "state": "d11b1e50",
+      "events": "98ca965f",
       "rng": {
-        "draws": 475,
-        "digest": "9d49913b"
+        "draws": 480,
+        "digest": "6be68535"
       }
     },
     {
       "tick": 142,
       "time": 7.1,
-      "nextId": 390,
-      "state": "a7e37734",
+      "nextId": 454,
+      "state": "3b15c4b0",
       "events": "741638a5",
       "rng": {
-        "draws": 590,
-        "digest": "dc021ba2"
+        "draws": 596,
+        "digest": "fdc9977c"
       },
       "label": "final",
       "players": [

@@ -4537,6 +4537,33 @@ export const pl_PL: EnTranslations = {
       "monarch_crown_helm": {
         "name": "Korona monarchy"
       },
+      "custom_drake_scale": {
+        "name": "Luska Smoka Wulkanicznego"
+      },
+      "custom_wyvern_heartstone": {
+        "name": "Sercokamien Plomiennych Skrzydel"
+      },
+      "custom_blight_ember": {
+        "name": "Zaraza Zarowa"
+      },
+      "custom_drakebone_shoulders": {
+        "name": "Naramienniki z Koci Smoka"
+      },
+      "custom_scorchwing_cowl": {
+        "name": "Kaptur Plomiennych Skrzydel"
+      },
+      "custom_blight_stalkers_hood": {
+        "name": "Kaptur Lapacza Zarazy"
+      },
+      "custom_ignaraxis_greatblade": {
+        "name": "Wielki Miecz Ignaraxisa"
+      },
+      "custom_cinderstave_eternal": {
+        "name": "Wieczny Kij Popiolowy"
+      },
+      "custom_fang_of_ignaraxis": {
+        "name": "Kiel Ignaraxisa"
+      },
       "bristleback_maul": {
         "name": "Tłuk szczeciniastych"
       },
@@ -5211,6 +5238,30 @@ export const pl_PL: EnTranslations = {
       "acolyte_tessa": {
         "name": "Akolitka Tessa"
       },
+      "custom_ashwalker_drake": {
+        "name": "Smok Wulkaniczny"
+      },
+      "custom_scorchwing_wyvern": {
+        "name": "Wiwerna Plomiennych Skrzydel"
+      },
+      "custom_blighted_sentinel": {
+        "name": "Skalany Stroz"
+      },
+      "custom_dragonclaw_warden": {
+        "name": "Straz Smoczego Szponu"
+      },
+      "custom_ignaraxis": {
+        "name": "Ignaraxis Wieczny"
+      },
+      "custom_skullfire_brute": {
+        "name": "Plomiennoczelny Brutal"
+      },
+      "custom_blightshroud_stalker": {
+        "name": "Skaz Przelwatki Lapacz"
+      },
+      "custom_ironpelt_monkroose": {
+        "name": "Zelaznoskorny Mongroze"
+      },
       "ironvein_foreman": {
         "name": "Sztygar z Żelaznej Żyły"
       },
@@ -5425,6 +5476,21 @@ export const pl_PL: EnTranslations = {
         "name": "Brat Halven",
         "title": "Strażnik Relikwiarza",
         "greeting": "Relikwiarz poniżej znów się przesunął."
+      },
+      "custom_commander_vael": {
+        "name": "Komendant Vael",
+        "title": "Oficer Strazy Blightu",
+        "greeting": "Badz gotowy, {playerName}. Ten Blight nie spi, my tez nie."
+      },
+      "custom_scout_fenris": {
+        "name": "Zwiadowca Fenris",
+        "title": "Zwiadowca Strazy Blightu",
+        "greeting": "Przeszedl przez tereny wiwern? Dobrze. Potrzebowalam tu kogos zdolnego."
+      },
+      "custom_elder_draxis": {
+        "name": "Starszyzna Draxis",
+        "title": "Zabojca Smokow",
+        "greeting": "Przez trzydziesci lat polowalem na smoki, {playerName}. Ignaraxis jest inny od pozostalych."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -6185,6 +6251,75 @@ export const pl_PL: EnTranslations = {
           }
         }
       },
+      "custom_proving_ground": {
+        "title": "Pole Proby",
+        "text": "Smoki wulkaniczne podeszly az pod obrzeza naszego obozu, {playerName}. Zmniejsz ich liczebnosc -- dziesiec z nich -- i udowodnij, ze nalezysz do Blightu.",
+        "completion": "Dziesiec smokow poleglych. Niezle. Moze tu przezyjesz, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Polegly Smoki Wulkaniczne"
+          }
+        }
+      },
+      "custom_marks_of_the_drake": {
+        "title": "Znaki Smoka",
+        "text": "Luski smocze sa twarde jak pancerz plytkowy, {playerName}. Potrzebuje osmiu na nastepnego dowodce patrolu. Smoki nie oddadza ich latwo -- wezmij co mozesz.",
+        "completion": "Osiem lusek. Wytrzymaja ogien lepiej niz wszystko, co mozemy ukuc. Dobra robota.",
+        "objectives": {
+          "0": {
+            "label": "Luski Smoka Wulkanicznego"
+          }
+        }
+      },
+      "custom_into_the_blight": {
+        "title": "W Glab Blightu",
+        "text": "Te wiwerni plomiennych skrzydel gniezdzil sie miedzy nami a lochami, {playerName}. Osiem z nich musi zniknac, a potrzebuje pieciu ich sercokamieni dla alchemika komendanta. Sa glboko w srodku, ale wiem, ze mozesz je zdobyc.",
+        "completion": "Gniazdo zostalo oczyszczone. Te sercokamienie sa warte wiecej niz myslisz.",
+        "objectives": {
+          "0": {
+            "label": "Wiwerni Plomiennych Skrzydel zabite"
+          },
+          "1": {
+            "label": "Sercokamienie Wiwerni"
+          }
+        }
+      },
+      "custom_eye_of_the_storm": {
+        "title": "Oko Burzy",
+        "text": "Skalani straze to zewnetrzna ochrona Ignaraxisa, {playerName}. Pradawne stwory smocze wypaczone przez wieki bliskosci tej istoty. Pokonaj trzech z nich i przyniesc mi skalane popiolki z ich rdzeni. Jesli sobie z nimi poradzisz, jestes gotowy na Szczeki.",
+        "completion": "Trzech strazy pokonanych i popiolki w reku. Jestes gotowy, {playerName}. Pojdz porozmawiac ze Starszyzna Draxis na posterunku. Czekala na to dlugo.",
+        "objectives": {
+          "0": {
+            "label": "Skalani Straze zabici"
+          },
+          "1": {
+            "label": "Skalane Popiolki"
+          }
+        }
+      },
+      "custom_eternal_flame": {
+        "title": "Wieczny Plomien",
+        "text": "Ignaraxis Wieczny spik w Smoczych Szczekach przez epoke, {playerName}. Blight nad nami to jego oddech przybrany w ksztalt. Wejdz do Szczek, skonfrontuj go w jego siedzibie i poloz temu kres. Potrzebni beda twoi towarzysze -- to nie jest polowanie dla jednej osoby.",
+        "completion": "Wieczny Plomien zostal ugaszony, {playerName}. Czekalem trzydziesci lat, zeby wypowiedziec te slowa. Blight teraz zaniknie. Wezmij to -- zasluzylas w pelni.",
+        "objectives": {
+          "0": {
+            "label": "Ignaraxis Wieczny zabity"
+          }
+        }
+      },
+      "custom_blight_patrol": {
+        "title": "Patrol Blightu",
+        "text": "Nie mozemy pozwolic smokom i wiwerni zalewac dojsc, {playerName}. Patroluj Blight, zabij pietnastu smokow i osiem wiwerni, i wróc. Utrzymuje nasze flanki wolne, gdy lancuch dowodzenia zarzadza obrazem ogolnym.",
+        "completion": "Flanki sa wolne. Ludzie oddychaja latwiej, gdy ktos jest tam na zewnatrz i robi roznice. Dobra robota, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Smoki Wulkaniczne zabite"
+          },
+          "1": {
+            "label": "Wiwerni Plomiennych Skrzydel zabite"
+          }
+        }
+      },
       "q_drowned_choir": {
         "title": "Utopiony chór",
         "text": "Brodzący nie działają sami. Wśród nich kroczą Utopieni Wyznawcy — kult, który zatonął wraz ze świątynią, wciąż w zbutwiałych szatach, wciąż śpiewający modlitwę z nadbrzeżnych skał. Ucisz ośmiu z nich i przynieś mi sześć ofiar, które noszą. Chcę wiedzieć, co zamierzają złożyć swojej bogini.",
@@ -6351,6 +6486,21 @@ export const pl_PL: EnTranslations = {
             "label": "Sanktuarium Grobowego Żmija"
           }
         }
+      },
+      "custom_dragons_blight": {
+        "name": "Smocza Zaraza",
+        "welcome": "Smocza Zaraza rozciaga sie przed toba, duszona popiolem i dalekim echem pradawnego ognia.",
+        "pois": {
+          "0": {
+            "label": "Fort Strazy Blightu"
+          },
+          "1": {
+            "label": "Punkt Zwiadowcy Fenris"
+          },
+          "2": {
+            "label": "Smocze Szczeki"
+          }
+        }
       }
     },
     "dungeons": {
@@ -6378,6 +6528,11 @@ export const pl_PL: EnTranslations = {
         "name": "Rajdowa Arena Nythraxis",
         "enterText": "Przechodzisz przez zapieczętowane królewskie wrota.",
         "leaveText": "Wracasz w zimne powietrze Ciernistego Szczytu."
+      },
+      "custom_dragons_maw": {
+        "name": "Smocze Szczeki",
+        "enterText": "Upal jest duszacy. Cos ogromnego porusza sie w ciemnosci przed toba.",
+        "leaveText": "Wychodziesc ze Smoczych Szczek, zewnetrzne powietrze chlodne na skórze."
       },
       "drowned_temple": {
         "name": "Zatopiona Świątynia",

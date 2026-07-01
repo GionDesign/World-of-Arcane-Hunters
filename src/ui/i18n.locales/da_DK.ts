@@ -4725,4 +4725,83 @@ export const da_DK: Partial<Record<TranslationKey, string>> = {
   'hudChrome.itemArmorType.cloth': 'Stof',
   'hudChrome.itemArmorType.leather': 'Læder',
   'hudChrome.itemArmorType.mail': 'Ringbrynje',
+  'entities.mobs.custom_ashwalker_drake.name': 'Askvandrer-drage',
+  'entities.mobs.custom_scorchwing_wyvern.name': 'Brændvinge-wyvern',
+  'entities.mobs.custom_blighted_sentinel.name': 'Forbandet Vagt',
+  'entities.mobs.custom_dragonclaw_warden.name': 'Drakeklo-vogter',
+  'entities.mobs.custom_ignaraxis.name': 'Ignaraxis den Evige',
+  'entities.mobs.custom_skullfire_brute.name': 'Kranieild-brut',
+  'entities.mobs.custom_blightshroud_stalker.name': 'Forbandelsesskygge-krybskytte',
+  'entities.mobs.custom_ironpelt_monkroose.name': 'Jernpels-monkros',
+  'entities.npcs.custom_commander_vael.name': 'Kommandant Vael',
+  'entities.npcs.custom_commander_vael.title': 'Officer i Blight Vagten',
+  'entities.npcs.custom_commander_vael.greeting':
+    'Vær parat, {playerName}. Denne Blight sover ikke, og det gør vi heller ikke.',
+  'entities.npcs.custom_scout_fenris.name': 'Speider Fenris',
+  'entities.npcs.custom_scout_fenris.title': 'Speider i Blight Vagten',
+  'entities.npcs.custom_scout_fenris.greeting':
+    'Er du gået igennem wyvern-territoriet? Godt. Jeg havde brug for en dygtig her.',
+  'entities.npcs.custom_elder_draxis.name': 'Aeldste Draxis',
+  'entities.npcs.custom_elder_draxis.title': 'Dræber af Drager',
+  'entities.npcs.custom_elder_draxis.greeting':
+    'Jeg har jaget drager i tredive år, {playerName}. Ignaraxis er anderledes end de andre.',
+  'entities.quests.custom_proving_ground.title': 'Prøvelsernes Mark',
+  'entities.quests.custom_proving_ground.text':
+    'Askvandrer-dragerne er rykket frem til kanten af vores lejr, {playerName}. Reducér deres antal -- ti af dem -- og bevis at du fortjener en plads i Blight.',
+  'entities.quests.custom_proving_ground.completion':
+    'Ti drager fældet. Ikke dårligt. Måske overlever du det alligevel, {playerName}.',
+  'entities.quests.custom_proving_ground.objectives.0.label': 'Askvandrer-drager dræbt',
+  'entities.quests.custom_marks_of_the_drake.title': 'Dragens Mærker',
+  'entities.quests.custom_marks_of_the_drake.text':
+    'Drageskæl er så hårde som pladepanser, {playerName}. Jeg har brug for otte af dem til den næste patruljefører. Dragerne giver dem ikke frivilligt -- tag hvad du kan.',
+  'entities.quests.custom_marks_of_the_drake.completion':
+    'Otte skæl. De modstår ild bedre end alt hvad vi kan smedde. Godt arbejde.',
+  'entities.quests.custom_marks_of_the_drake.objectives.0.label': 'Askvandrer-drageskæl',
+  'entities.quests.custom_into_the_blight.title': 'Ind i Blight',
+  'entities.quests.custom_into_the_blight.text':
+    'De brændvinge-wyvernerne slår sig ned mellem os og fængslet, {playerName}. Otte af dem skal væk, og jeg har brug for fem af deres hjertesten til kommandantens alkymist. De er godt gemt, men jeg ved at du kan nå dem.',
+  'entities.quests.custom_into_the_blight.completion':
+    'Redet er ryddet. Hjertestenene er mere værd end du tror.',
+  'entities.quests.custom_into_the_blight.objectives.0.label': 'Brændvinge-wyvernere dræbt',
+  'entities.quests.custom_into_the_blight.objectives.1.label': 'Wyvern-hjertesten',
+  'entities.quests.custom_eye_of_the_storm.title': 'Stormens Øje',
+  'entities.quests.custom_eye_of_the_storm.text':
+    'De forbandede vagter er Ignaraxis ydre vogtere, {playerName}. Gamle dragevæsener fordrejet af årtusinders nærhed til det uhyre. Fæld tre og bring mig forbandelsesasken fra deres kerne. Hvis du kan klare dem, er du klar til Gabet.',
+  'entities.quests.custom_eye_of_the_storm.completion':
+    'Tre vagter fældet og aske i hånden. Du er klar, {playerName}. Tal med Aeldste Draxis ved fortet. Han har ventet længe på dette.',
+  'entities.quests.custom_eye_of_the_storm.objectives.0.label': 'Forbandede Vagter dræbt',
+  'entities.quests.custom_eye_of_the_storm.objectives.1.label': 'Forbandelses-aske',
+  'entities.quests.custom_eternal_flame.title': 'Den Evige Flamme',
+  'entities.quests.custom_eternal_flame.text':
+    'Ignaraxis den Evige har sovet i Dragens Gab i et tidsalder, {playerName}. Blight over os er hans ånde i fast form. Gå ind i Gabet, konfronter ham i sin rede og gør en ende på det. Du vil have brug for allierede -- dette er ikke en jagt for en enkelt.',
+  'entities.quests.custom_eternal_flame.completion':
+    'Den Evige Flamme er slukket, {playerName}. Jeg har ventet tredive år på at sige de ord. Blight vil nu svinde. Tag dette -- du har mere end fortjent det.',
+  'entities.quests.custom_eternal_flame.objectives.0.label': 'Ignaraxis den Evige dræbt',
+  'entities.quests.custom_blight_patrol.title': 'Blight Patrulje',
+  'entities.quests.custom_blight_patrol.text':
+    'Vi kan ikke lade dragerne og wyvernerne overvælde adgangsvejene, {playerName}. Patruljer Blight, dræb femten drager og otte wyvernere, og vend tilbage. Det holder vores flanker fri mens kommandokæden styrer det store billede.',
+  'entities.quests.custom_blight_patrol.completion':
+    'Flankerne er frie. Mændene trækker vejret lettere når nogen derinde gør en forskel. Godt arbejde, {playerName}.',
+  'entities.quests.custom_blight_patrol.objectives.0.label': 'Askvandrer-drager dræbt',
+  'entities.quests.custom_blight_patrol.objectives.1.label': 'Brændvinge-wyvernere dræbt',
+  'entities.zones.custom_dragons_blight.name': 'Drakens Forbandelse',
+  'entities.zones.custom_dragons_blight.welcome':
+    'Drakens Forbandelse strækker sig foran dig, kvalt i aske og den fjerne klang af urfornyt ild.',
+  'entities.zones.custom_dragons_blight.pois.0.label': 'Blight Vagt-fort',
+  'entities.zones.custom_dragons_blight.pois.1.label': 'Fenris Forpost',
+  'entities.zones.custom_dragons_blight.pois.2.label': 'Dragens Gab',
+  'entities.dungeons.custom_dragons_maw.name': 'Dragens Gab',
+  'entities.dungeons.custom_dragons_maw.enterText':
+    'Varmen er kvælende. Noget massivt rører sig i mørket foran dig.',
+  'entities.dungeons.custom_dragons_maw.leaveText':
+    'Du stiger ud af Dragens Gab, udeluften kølig mod din hud.',
+  'entities.items.custom_drake_scale.name': 'Askvandrer Drageskæl',
+  'entities.items.custom_wyvern_heartstone.name': 'Brændvinge Hjertesten',
+  'entities.items.custom_blight_ember.name': 'Forbandelsesgløde',
+  'entities.items.custom_drakebone_shoulders.name': 'Drakeknogle-skulderstykker',
+  'entities.items.custom_scorchwing_cowl.name': 'Brændvinge-hætte',
+  'entities.items.custom_blight_stalkers_hood.name': 'Forbandelsesjægers hætte',
+  'entities.items.custom_ignaraxis_greatblade.name': 'Ignaraxis Storklinge',
+  'entities.items.custom_cinderstave_eternal.name': 'Den Evige Askestav',
+  'entities.items.custom_fang_of_ignaraxis.name': 'Ignaraxis Hugtak',
 };

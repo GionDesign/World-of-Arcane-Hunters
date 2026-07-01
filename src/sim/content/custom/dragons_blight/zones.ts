@@ -12,7 +12,7 @@ export const DRAGONS_BLIGHT_ZONES: ZoneDef[] = [
     levelRange: [18, 20],
     biome: 'peaks',
     hub: { x: 0, z: 960, radius: 32, name: 'Blightwatch Post' },
-    graveyard: { x: -14, z: 972 },
+    graveyard: { x: -19, z: 972 },
     lakes: [],
     pois: [
       { x: 0,   z: 960,  label: 'Blightwatch Post' },

@@ -9,7 +9,7 @@ before making any changes.
 
 ## This is a personal fork
 
-The branch `claude/friendly-albattani-23ybq8` is the live deployment branch.
+The branch `master` is the live deployment branch; feature work lands on `feature/<slug>` branches and is merged to master via pull request.
 This fork is maintained by one operator (not open to community contributions).
 The upstream community project continues to evolve; this fork pulls those updates
 and adds custom deployment configuration and game content on top.
@@ -18,7 +18,7 @@ and adds custom deployment configuration and game content on top.
 
 ## Rule 1: Prefer new files over modifying upstream files
 
-New files (`docs/SETUP-*.md`, `src/sim/content/custom/index.ts`, `FORK.md`, etc.)
+New files (`docs/SETUP-*.md`, `src/sim/content/custom/`, `FORK.md`, etc.)
 are completely safe from upstream merge conflicts. A modification to an existing
 upstream file (e.g. `server/main.ts`) is a conflict risk on every future pull.
 
@@ -49,8 +49,17 @@ merge without losing their customizations.
 ## Rule 3: Custom game content goes in `src/sim/content/custom/`
 
 The directory `src/sim/content/custom/` is owned entirely by this fork. Upstream
-never touches it. All custom zones, mobs, items, quests, NPCs, and dungeons go in
-`src/sim/content/custom/index.ts`.
+never touches it. Custom content is split into per-zone subdirectories:
+
+```
+custom/
+├── index.ts                   -- assembly barrel: re-exports CUSTOM_* groups for data.ts
+├── i18n_ids.ts                -- fork-owned i18n extension point (IDs + English names)
+├── CLAUDE.md                  -- authoring guide
+└── dragons_blight/            -- Zone 4, levels 18-20
+    ├── items.ts   mobs.ts   npcs.ts   quests.ts
+    ├── zones.ts   camps.ts  props.ts  dungeons.ts
+```
 
 **Never add custom content directly to upstream content files** (`classes.ts`,
 `zone1.ts`, `dungeons.ts`, etc.). Only `src/sim/data.ts` was modified (to import
@@ -61,7 +70,7 @@ See `src/sim/content/custom/CLAUDE.md` for:
 - How to add each content type (mobs, items, zones, quests, dungeons)
 - ID naming conventions (use `custom_` prefix)
 - Determinism rules (CUSTOM_CAMPS must stay appended last)
-- Dungeon index rules (use 10+ to avoid upstream collisions)
+- Dungeon index rules (index 6 is the only remaining slot)
 - What requires touching an upstream file (new player CLASSES cannot be isolated)
 
 ---
@@ -99,7 +108,7 @@ grep -c "docs/SETUP-DIGITALOCEAN.md" README.md
 # If upstream adds a new Zone 4 that also starts at z=900 (or extends to z>900), there
 # will be a gap or overlap. The progression test requires ZONES[i].zMax === ZONES[i+1].zMin.
 grep -n "zMin\|zMax" src/sim/content/zone*.ts src/sim/content/temple.ts 2>/dev/null
-grep -n "zMin\|zMax" src/sim/content/custom/index.ts
+grep -n "zMin\|zMax" src/sim/content/custom/dragons_blight/zones.ts
 # Custom Dragon's Blight: zMin:900, zMax:1260. If any upstream zone's zMax > 900,
 # shift custom zone northward -- see docs/custom-content/zones.md for the fix procedure.
 ```
@@ -185,7 +194,7 @@ grep -n "VITE_SITE_URL\|VITE_DISCORD_URL\|VITE_DONATE_URL" .github/workflows/dep
 # Check for zone overlap: compare upstream zone z-boundaries against custom zone zMin values
 grep -n "zMin\|zMax" src/sim/content/zone*.ts src/sim/content/temple.ts 2>/dev/null
 # Then check your custom zones:
-grep -n "zMin\|zMax" src/sim/content/custom/index.ts
+grep -n "zMin\|zMax" src/sim/content/custom/dragons_blight/zones.ts
 # Dragon's Blight custom zone: zMin:900, zMax:1260.
 # The zone contiguity invariant (ZONES[i].zMax === ZONES[i+1].zMin) means custom zones
 # must start exactly where the last upstream zone ends. Currently that is z=900.
@@ -240,16 +249,17 @@ The rule is: `CUSTOM_*` spreads always come LAST. For CAMPS specifically, being
 last is required for determinism (each camp draws world-gen RNG in array order).
 
 Check the TypeScript types too: if upstream renamed a type in `src/sim/types.ts`
-that `src/sim/content/custom/index.ts` imports (e.g. `MobTemplate`, `ItemDef`,
-`ZoneDef`, `DungeonDef`), update the import in `index.ts` to match.
+that the per-zone files import (e.g. `MobTemplate`, `ItemDef`, `ZoneDef`, `DungeonDef`),
+update the import in the relevant file under `src/sim/content/custom/dragons_blight/` to match.
 
 **If upstream changed the `ZoneDef`, `MobTemplate`, `ItemDef`, `DungeonDef`, or
 `NpcDef` interface shape** (added a required field, changed a field type, removed
-a field), then `src/sim/content/custom/index.ts` may have type errors. Fix them
-by updating the custom content entries to satisfy the new shape. Also update the
-relevant guide in `docs/custom-content/` (e.g. `zones.md` for ZoneDef, `items.md`
-for ItemDef, `mobs.md` for MobTemplate, `dungeons.md` for DungeonDef) to show the
-new field requirements.
+a field), then the per-zone content files may have type errors. Fix them by updating
+the custom content entries in the relevant `dragons_blight/*.ts` file to satisfy
+the new shape. Also update the relevant guide in `docs/custom-content/` (e.g.
+`zones.md` for ZoneDef, `items.md` for ItemDef, `mobs.md` for MobTemplate, `dungeons.md`
+for DungeonDef) to show the new field requirements. Document the change in
+`docs/MAINTAINING-FORK.md` under the appropriate file heading.
 
 ### Step 4 -- fix TypeScript errors before running tests
 

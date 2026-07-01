@@ -2290,7 +2290,7 @@ export const ru_RU: EnTranslations = {
     "playMode": "Многопользовательская игра",
     "applicationCategory": "Игра",
     "operatingSystem": "Веб-браузер",
-    "officialLabel": "Официальный сайт World of Arcane Hunters",
+    "officialLabel": "Официальный сайт World of ClaudeCraft",
     "officialBody": "Официальная бесплатная браузерная MMO для мира Eastbrook. Играйте онлайн с постоянным персонажем, исследуйте мир в одиночку офлайн, читайте wiki и переходите по проверенным ссылкам сообщества с этого сайта."
   },
   "a11y": {

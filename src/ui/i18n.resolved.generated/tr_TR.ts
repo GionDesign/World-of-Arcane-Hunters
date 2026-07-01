@@ -4537,6 +4537,33 @@ export const tr_TR: EnTranslations = {
       "monarch_crown_helm": {
         "name": "Hükümdar'ın Tacı"
       },
+      "custom_drake_scale": {
+        "name": "Kul Yuruyucu Ejder Pulu"
+      },
+      "custom_wyvern_heartstone": {
+        "name": "Yakici Kanat Kalp Tasi"
+      },
+      "custom_blight_ember": {
+        "name": "Lanet Kozu"
+      },
+      "custom_drakebone_shoulders": {
+        "name": "Ejder Kemigi Omuzluklar"
+      },
+      "custom_scorchwing_cowl": {
+        "name": "Yakici Kanat Baslik"
+      },
+      "custom_blight_stalkers_hood": {
+        "name": "Lanet Avcisi Baslik"
+      },
+      "custom_ignaraxis_greatblade": {
+        "name": "Ignaraxis Buyuk Kilici"
+      },
+      "custom_cinderstave_eternal": {
+        "name": "Ebedi Kul Asasi"
+      },
+      "custom_fang_of_ignaraxis": {
+        "name": "Ignaraxis'in Disi"
+      },
       "bristleback_maul": {
         "name": "Dikensırt Balyozu"
       },
@@ -5211,6 +5238,30 @@ export const tr_TR: EnTranslations = {
       "acolyte_tessa": {
         "name": "Çömez Tessa"
       },
+      "custom_ashwalker_drake": {
+        "name": "Kul Yuruyucu Ejder"
+      },
+      "custom_scorchwing_wyvern": {
+        "name": "Yakici Kanat Wyvern"
+      },
+      "custom_blighted_sentinel": {
+        "name": "Lanetli Nobetci"
+      },
+      "custom_dragonclaw_warden": {
+        "name": "Ejder Pencesi Gardiyani"
+      },
+      "custom_ignaraxis": {
+        "name": "Ignaraxis Ebedi"
+      },
+      "custom_skullfire_brute": {
+        "name": "Kafatasi Atesi Kaba Guc"
+      },
+      "custom_blightshroud_stalker": {
+        "name": "Lanet Ortulu Avci"
+      },
+      "custom_ironpelt_monkroose": {
+        "name": "Demir Postlu Monkroose"
+      },
       "ironvein_foreman": {
         "name": "Demirdamar Ustabaşı"
       },
@@ -5425,6 +5476,21 @@ export const tr_TR: EnTranslations = {
         "name": "Birader Halven",
         "title": "Emanetlik Bekçisi",
         "greeting": "Aşağıdaki kutsal emanetlik yine yer değiştirdi."
+      },
+      "custom_commander_vael": {
+        "name": "Komutan Vael",
+        "title": "Blight Muhafizlari Subay",
+        "greeting": "Hazir ol, {playerName}. Bu Blight uyumuyor, biz de uyumuyoruz."
+      },
+      "custom_scout_fenris": {
+        "name": "Kesif Fenris",
+        "title": "Blight Muhafizlari Kesifci",
+        "greeting": "Wyvern bolgesinden gectin mi? Iyi. Burada yetenekli birine ihtiyacim vardi."
+      },
+      "custom_elder_draxis": {
+        "name": "Yasli Draxis",
+        "title": "Ejder Katili",
+        "greeting": "Otuz yildir ejder avliyorum, {playerName}. Ignaraxis digerlerinden farkli."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -6185,6 +6251,75 @@ export const tr_TR: EnTranslations = {
           }
         }
       },
+      "custom_proving_ground": {
+        "title": "Ispat Sahasi",
+        "text": "Kul yuruyucu ejderler kampimizin kenarina kadar ilerledi, {playerName}. Sayilarini azalt -- onlardan on tane -- ve Blight'a ait oldugunu kanitle.",
+        "completion": "On ejder yere serildi. Fena degil. Belki burada hayatta kalirsin, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Kul Yuruyucu Ejder Oldurulen"
+          }
+        }
+      },
+      "custom_marks_of_the_drake": {
+        "title": "Ejder Isaretleri",
+        "text": "Ejder pullar plaka zirh kadar sert, {playerName}. Bir sonraki devriye onbasi icin sekiz tane lazim. Ejderler kolayca vermez -- ne alabilirsen al.",
+        "completion": "Sekiz pul. Demireleyebilecegimiz herhangi bir seyle karsilastirildiginda atesi daha iyi dayanirlar. Guzel is.",
+        "objectives": {
+          "0": {
+            "label": "Kul Yuruyucu Ejder Pullar"
+          }
+        }
+      },
+      "custom_into_the_blight": {
+        "title": "Blight'a Dogru",
+        "text": "O yakici kanat wyvernler zindan ile bizim aramiza yerlesti, {playerName}. Sekizinin gitmesi gerekiyor ve komutanin simyacisi icin bes kalp tasi lazim. Derinde ama oraya ulasabilecegini biliyorum.",
+        "completion": "Yuva temizlendi. O kalp taslari dusundugunden daha degerli.",
+        "objectives": {
+          "0": {
+            "label": "Yakici Kanat Wyvern Oldurulen"
+          },
+          "1": {
+            "label": "Wyvern Kalp Taslari"
+          }
+        }
+      },
+      "custom_eye_of_the_storm": {
+        "title": "Firtinanin Gozu",
+        "text": "Lanetli nobetciler Ignaraxis'in dis koruyucularidir, {playerName}. Asirlar boyunca o varligin yaninda bulunarak bozulmus eski ejder yaratiklar. Uc tanesini yik ve ozeklerinden lanetli kozu getir. Onlarla basedebilirsen Cenelere hazirsin.",
+        "completion": "Uc nobetci yere serildi ve koz elde. Hazirsin, {playerName}. Karakoldaki Yasli Draxis ile konusmaya git. Cok uzun sure bekledi.",
+        "objectives": {
+          "0": {
+            "label": "Lanetli Nobetci Oldurulen"
+          },
+          "1": {
+            "label": "Lanetli Koz"
+          }
+        }
+      },
+      "custom_eternal_flame": {
+        "title": "Ebedi Alev",
+        "text": "Ignaraxis Ebedi bir cag boyunca Ejder Cenelerinde uyudu, {playerName}. Uzerimzdeki Blight onun bicim almis nefesidir. Cenelere gir, inine kos ve bunu bitir. Arkadaslarin gerekli olacak -- bu tek kisinin avi degil.",
+        "completion": "Ebedi Alev sonduruldu, {playerName}. O sozleri soylemeyi otuz yildir bekliyordum. Blight artik gerilecek. Bunu al -- layik olarak kazandin.",
+        "objectives": {
+          "0": {
+            "label": "Ignaraxis Ebedi Oldurulen"
+          }
+        }
+      },
+      "custom_blight_patrol": {
+        "title": "Blight Devriyesi",
+        "text": "Ejder ve wyvernlerin gecirleri istila etmesine izin veremeyiz, {playerName}. Blight'i devriyelе et, on bes ejder ve sekiz wyvern oldur ve geri don. Komuta zinciri buyuk resmi yonetirken kanatlarimizi temiz tutar.",
+        "completion": "Kanatlar temiz. Orada dis dunyada fark yaratan biri oldugunda erler daha rahat nefes aliyor. Guzel is, {playerName}.",
+        "objectives": {
+          "0": {
+            "label": "Kul Yuruyucu Ejder Oldurulen"
+          },
+          "1": {
+            "label": "Yakici Kanat Wyvern Oldurulen"
+          }
+        }
+      },
       "q_drowned_choir": {
         "title": "Boğulmuş Koro",
         "text": "Su yürüyücüleri tek başına hareket etmiyor. Aralarında Boğulmuş Müritler yürüyor — tapınakla birlikte batan tarikat, hâlâ çürümüş cüppeleri içinde, hâlâ kıyı kayalarından duayı söyleyerek. Sekizini sustur ve bana taşıdıkları adaklardan altısını getir. Tanrıçalarına ne sunmak istediklerini öğrenmek istiyorum.",
@@ -6351,6 +6486,21 @@ export const tr_TR: EnTranslations = {
             "label": "Mezarejderi Mabedi"
           }
         }
+      },
+      "custom_dragons_blight": {
+        "name": "Ejder Laneti",
+        "welcome": "Ejder Laneti onunde uzaniyor, kul ve kadim atesin uzak yankisiyla bogulmus.",
+        "pois": {
+          "0": {
+            "label": "Blight Muhafizlari Kalesi"
+          },
+          "1": {
+            "label": "Fenris Ileri Karakolu"
+          },
+          "2": {
+            "label": "Ejder Ceneleri"
+          }
+        }
       }
     },
     "dungeons": {
@@ -6378,6 +6528,11 @@ export const tr_TR: EnTranslations = {
         "name": "Nythraxis Akın Arenası",
         "enterText": "Mühürlü kraliyet kapısından geçersin.",
         "leaveText": "Dikenzirve'nin soğuk havasına geri dönersin."
+      },
+      "custom_dragons_maw": {
+        "name": "Ejder Ceneleri",
+        "enterText": "Sicaklik bogucudur. Ondeki karanlikta devasa bir sey kildiyor.",
+        "leaveText": "Ejder Ceneleri'nden cikiyorsun, dis hava teninde soguk hissettiriyor."
       },
       "drowned_temple": {
         "name": "Boğulmuş Tapınak",
