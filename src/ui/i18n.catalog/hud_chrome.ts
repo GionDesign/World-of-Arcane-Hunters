@@ -868,7 +868,7 @@ export const hudChromeStrings = {
   },
   discord: {
     title: 'Discord',
-    panelTitle: 'World of ClaudeCraft',
+    panelTitle: 'World of Arcane Hunters',
     open: 'Discord',
     close: 'Close',
     keybind: 'Discord Panel',
@@ -984,7 +984,7 @@ export const hudChromeStrings = {
       titleDiscordian: 'Title: Discordian',
       titleSquire: 'Title: Squire of the Realm',
       chromaBlurple: 'Blurple Mech Chroma',
-      titleChampion: 'Title: Champion of Claudemoon',
+      titleChampion: 'Title: Champion of Eastbrook',
       swagStickers: 'Sticker Pack (shipped)',
       swagTee: 'T-Shirt (shipped)',
     },

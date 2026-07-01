@@ -215,7 +215,8 @@ function isNativeRuntime(): boolean {
   return cap?.isNativePlatform?.() === true;
 }
 
-const SITE_URL = 'https://worldofclaudecraft.com/';
+declare const __SITE_URL__: string;
+const SITE_URL = __SITE_URL__.replace(/\/?$/, '/');
 
 const RESOURCE_KEYS = {
   mana: 'classDetails.resources.mana',

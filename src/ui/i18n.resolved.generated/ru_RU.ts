@@ -787,7 +787,7 @@ export const ru_RU: EnTranslations = {
     },
     "discord": {
       "title": "Discord",
-      "panelTitle": "World of ClaudeCraft",
+      "panelTitle": "World of Arcane Hunters",
       "open": "Discord",
       "close": "Закрыть",
       "keybind": "Панель Discord",
@@ -896,7 +896,7 @@ export const ru_RU: EnTranslations = {
         "titleDiscordian": "Титул: Discordian",
         "titleSquire": "Титул: Оруженосец Королевства",
         "chromaBlurple": "Расцветка меха Blurple",
-        "titleChampion": "Титул: Чемпион Claudemoon",
+        "titleChampion": "Титул: Чемпион Eastbrook",
         "swagStickers": "Набор стикеров (с доставкой)",
         "swagTee": "Футболка (с доставкой)"
       },
@@ -959,7 +959,7 @@ export const ru_RU: EnTranslations = {
   },
   "guide": {
     "brand": "World of Arcane Hunters",
-    "brandShort": "ClaudeCraft",
+    "brandShort": "WoAH",
     "tagline": "Классическая MMO, в которую можно играть бесплатно прямо в браузере.",
     "skipToContent": "Перейти к основному содержимому",
     "loading": "Загрузка...",
@@ -2081,8 +2081,8 @@ export const ru_RU: EnTranslations = {
     "levelClass": "Уровень {level} - {className}",
     "topPercent": "ТОП {percent}%",
     "realmSubtitle": "Мир {realm}",
-    "defaultRealm": "Мир ClaudeCraft",
-    "brandWordmark": "WORLD OF CLAUDECRAFT",
+    "defaultRealm": "Мир Arcane Hunters",
+    "brandWordmark": "WORLD OF ARCANE HUNTERS",
     "recruited": "приглашено: {count}",
     "footerHandle": "@{handle}",
     "footerHandleWithRecruits": "@{handle} - {recruited}",
@@ -2090,7 +2090,7 @@ export const ru_RU: EnTranslations = {
     "arenaStat": "Арена",
     "shareTierBit": ", держатель $WOC ранга {tier}",
     "shareText": "Я создаю свою легенду в World of Arcane Hunters: уровень {level}, {className}{tierBit}. Присоединяйтесь к моему миру:",
-    "nativeShareTitle": "Мир ClaudeCraft",
+    "nativeShareTitle": "Мир Arcane Hunters",
     "fileNameFallback": "игрок",
     "actionShareX": "Поделиться в X",
     "actionCopyReferral": "Копировать реферальную ссылку",
@@ -2586,7 +2586,7 @@ export const ru_RU: EnTranslations = {
     "playMode": "Многопользовательская игра",
     "applicationCategory": "Игра",
     "operatingSystem": "Веб-браузер",
-    "officialLabel": "Официальный сайт World of ClaudeCraft",
+    "officialLabel": "Официальный сайт World of Arcane Hunters",
     "officialBody": "Официальная бесплатная браузерная MMO для мира Eastbrook. Играйте онлайн с постоянным персонажем, исследуйте мир в одиночку офлайн, читайте wiki и переходите по проверенным ссылкам сообщества с этого сайта."
   },
   "a11y": {

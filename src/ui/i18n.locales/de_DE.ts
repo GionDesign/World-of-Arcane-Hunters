@@ -98,7 +98,7 @@ export const de_DE: Partial<Record<TranslationKey, string>> = {
   'hudChrome.unitFrame.playerLabel': 'Euer Charakter',
   'hudChrome.unitFrame.targetAnnounce': 'Ziel: {name}',
   'hudChrome.unitFrame.targetLabel': 'Euer Ziel',
-  'seo.officialLabel': 'Offizielle Website von World of ClaudeCraft',
+  'seo.officialLabel': 'Offizielle Website von World of Arcane Hunters',
   'seo.officialBody':
     'Das offizielle kostenlose Browser-MMO für das Reich Eastbrook. Spiele online mit einem dauerhaften Charakter, erkunde solo offline, lies das Wiki und folge den verifizierten Community-Links auf dieser Website.',
   'hudChrome.questShare.notShareable': 'Diese Quest kann nicht geteilt werden.',
@@ -635,8 +635,8 @@ export const de_DE: Partial<Record<TranslationKey, string>> = {
   'playerCard.levelClass': 'Stufe {level} - {className}',
   'playerCard.topPercent': 'TOP {percent} %',
   'playerCard.realmSubtitle': 'Realm {realm}',
-  'playerCard.defaultRealm': 'Welt von ClaudeCraft',
-  'playerCard.brandWordmark': 'WORLD OF CLAUDECRAFT',
+  'playerCard.defaultRealm': 'Welt von Arcane Hunters',
+  'playerCard.brandWordmark': 'WORLD OF ARCANE HUNTERS',
   'playerCard.recruited': '{count} rekrutiert',
   'playerCard.footerHandle': '@{handle}',
   'playerCard.footerHandleWithRecruits': '@{handle} - {recruited}',
@@ -645,7 +645,7 @@ export const de_DE: Partial<Record<TranslationKey, string>> = {
   'playerCard.shareTierBit': ', $WOC-Inhaber mit Rang {tier}',
   'playerCard.shareText':
     'Ich schmiede meine Legende in World of Arcane Hunters: Stufe {level} {className}{tierBit}. Tretet meinem Realm bei:',
-  'playerCard.nativeShareTitle': 'Welt von ClaudeCraft',
+  'playerCard.nativeShareTitle': 'Welt von Arcane Hunters',
   'playerCard.fileNameFallback': 'spieler',
   'playerCard.actionShareX': 'Auf X teilen',
   'playerCard.actionCopyReferral': 'Empfehlungslink kopieren',
@@ -3616,7 +3616,7 @@ export const de_DE: Partial<Record<TranslationKey, string>> = {
   'guide.bestiary.levelsSame': 'Stufe {min}',
   'guide.bestiary.rare': 'Selten',
   'guide.brand': 'World of Arcane Hunters',
-  'guide.brandShort': 'ClaudeCraft',
+  'guide.brandShort': 'WoAH',
   'guide.classHook.druid':
     'Ein Gestaltwandler, der als Bär tankt, Gegner als Katze zerfleischt oder mitten im Getümmel heilt.',
   'guide.classHook.hunter':
@@ -5070,7 +5070,7 @@ export const de_DE: Partial<Record<TranslationKey, string>> = {
   'hudChrome.leaderboard.guildXp': 'Gesamt-XP',
   'hudChrome.leaderboard.guildEmpty': 'Noch keine platzierten Gilden.',
   'hudChrome.discord.title': 'Discord',
-  'hudChrome.discord.panelTitle': 'World of ClaudeCraft',
+  'hudChrome.discord.panelTitle': 'World of Arcane Hunters',
   'hudChrome.discord.open': 'Discord',
   'hudChrome.discord.close': 'Schließen',
   'hudChrome.discord.keybind': 'Discord-Panel',
@@ -5172,7 +5172,7 @@ export const de_DE: Partial<Record<TranslationKey, string>> = {
   'hudChrome.discord.swag.titleDiscordian': 'Titel: Discordianer',
   'hudChrome.discord.swag.titleSquire': 'Titel: Knappe des Reichs',
   'hudChrome.discord.swag.chromaBlurple': 'Blurple-Mech-Chroma',
-  'hudChrome.discord.swag.titleChampion': 'Titel: Champion von Claudemoon',
+  'hudChrome.discord.swag.titleChampion': 'Titel: Champion von Eastbrook',
   'hudChrome.discord.swag.swagStickers': 'Stickerpaket (Versand)',
   'hudChrome.discord.swag.swagTee': 'T-Shirt (Versand)',
   'hudChrome.discord.relay.tooFast':

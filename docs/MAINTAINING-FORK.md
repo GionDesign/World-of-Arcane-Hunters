@@ -491,6 +491,151 @@ upstream adds NEW files containing `worldofclaudecraft.com`, those will NOT be p
 
 ---
 
+#### Brand rename scope audit (2026-07) -- extended coverage + two regressions found
+
+A post-merge maintenance pass found the original 2026-06 brand rename was narrower than the
+repo actually needed, plus two functional regressions in already-covered files. Re-run the
+full sweep below (not just the Step 4 file list in `docs/post-merge-prompt.md`) after any
+merge that touches `vite.config.ts`, `src/main.ts`, `play.html`, `guide.html`, or any
+`server/*.ts`/`src/ui/i18n.locales/*.ts`/`src/guide/*.ts` file:
+
+```bash
+grep -rliE "world[-_%20+]*of[-_%20+]*claudecraft|claudemoon|levy-street|GjhnUsBtw" \
+  --include="*.ts" --include="*.html" --include="*.css" --include="*.txt" . \
+  2>/dev/null | grep -v node_modules | grep -v "\.git/" | grep -v "^\./docs/"
+```
+Exclude known, deliberately-pending items from the results: `public/*-logo.png` and
+`public/World-of-ClaudeCraft-Whitepaper-v1.0.pdf` (asset filenames, pending a real-asset
+replacement), `public/links.html`'s `igHandle`/`tiktokHandle`/`ytHandle`/`redditHandle`
+copy-object values and its own JSON-LD `sameAs` array (pending real social accounts), and
+any `woc@levystreet.com`/`tony@levystreet.com` email address (contact info is intentionally
+NOT rebranded per the original 2026-06 decision).
+
+**Two regressions in already fork-modified files** (re-check these two on every merge, they
+are easy to silently break):
+1. `vite.config.ts` -- `brandTokenPlugin()` is defined but must also be REGISTERED in the
+   `plugins: [...]` array (`grep -n "brandTokenPlugin()," vite.config.ts` inside the array,
+   not just the function definition). A merge that rewrites the plugins array (e.g. to add a
+   new upstream plugin) can drop the fork's entry without touching the function itself, so
+   `grep -c "brandTokenPlugin"` staying at 1 (only the `function brandTokenPlugin()` line) is
+   the failure signal -- it must be 2+.
+2. `src/main.ts` -- `SITE_URL` must be `declare const __SITE_URL__: string; const SITE_URL =
+   __SITE_URL__.replace(/\/?$/, '/');`, never a hardcoded string literal. A merge can silently
+   revert this to upstream's own hardcoded `const SITE_URL = 'https://worldofclaudecraft.com/';`
+   (or the fork's own un-injected `'https://TODO-your-domain.com/'`), which breaks the
+   build-time brand URL injection for the JSON-LD builder entirely. Verify with
+   `grep -A1 "^declare const __SITE_URL__" src/main.ts`.
+
+**Files that needed the brand map applied but were missing from the original 2026-06 list**
+(now fixed; re-check on every merge since none of these are new files, so `-X theirs` can
+silently revert them again):
+- `play.html`, `guide.html` -- the hreflang `<link>` blocks (20+ languages each) and, in
+  `play.html`, the Discord/GitHub/donate community-tray fallback `title`/`aria-label` text.
+  These were reverted to fully upstream (`World of ClaudeCraft`, `worldofclaudecraft.com`,
+  the upstream Discord invite and GitHub org) even though `index.html`'s equivalent block
+  was correctly branded -- upstream apparently touches `play.html`/`guide.html` on lines the
+  fork's edits also touch, so `-X theirs` wins there but not on `index.html`.
+- `public/press.html`, `public/llms.txt` -- entirely unbranded (title, canonical, og:*,
+  JSON-LD, sameAs array, inline per-locale copy blocks). Never covered by the original pass.
+- `public/merch.html` -- JSON-LD `sameAs` array (should be GitHub-only, matching
+  `index.html`'s pattern) and German locale copy used a hyphenated `World-of-ClaudeCraft-*`
+  compound-word form that the space-separated `World of ClaudeCraft` grep never matches.
+- `public/data-deletion.html`, `public/support.html` -- the Discord contact link still used
+  the upstream invite ID.
+- `public/sitemap.xml` -- `scripts/build_sitemap.mjs` only regenerates the `/wiki` block and
+  preserves every other `<loc>` byte-for-byte from the existing file, so home/links/merch/
+  press/play/legal-page entries with the old domain never self-heal by re-running the build;
+  they must be hand-fixed in the committed file directly.
+- `src/ui/i18n.catalog/hud_chrome.ts` -- `discord.panelTitle` ('World of ClaudeCraft') and
+  `discord.swag.titleChampion` ('Title: Champion of Claudemoon') are live English source
+  values (this catalog module has no legacy per-locale blocks, unlike `shell.ts`), plus the
+  matching `hudChrome.discord.panelTitle`/`swag.titleChampion` keys in all 20
+  `src/ui/i18n.locales/<lang>.ts` overlays (the brand name/realm name are proper nouns kept
+  un-translated, so a straight substring swap is correct there, not a re-translation).
+  `guide.brandShort` and `playerCard.brandWordmark`/`defaultRealm`/`nativeShareTitle` in the
+  same overlays needed the same treatment (`ClaudeCraft` -> `WoAH` for the short-name key
+  specifically, matching `FORK_BRAND.gameNameShort`; -> `Arcane Hunters` for the others,
+  preserving each locale's own translated grammar around the noun, e.g. Spanish "Mundo de
+  ClaudeCraft" -> "Mundo de Arcane Hunters", not a re-translated "Mundo de Arcane Hunters"
+  from scratch).
+- `src/ui/i18n.catalog/shell.ts`, `src/ui/i18n.catalog/index.ts` (and any other catalog
+  domain) DO still carry old-brand text in their inline non-`en` blocks, but those blocks are
+  documented dead code the build never reads (see the file's own top-of-file comment) --
+  left alone, not a functional leak.
+- `src/guide/head.ts`, `src/guide/chrome.ts`, `src/guide/pages/home.ts`,
+  `src/guide/styles.css` -- the wiki's own `ORIGIN`/`GITHUB_URL`/`DISCORD_URL` constants,
+  footer links, and a file-header comment.
+- `server/oauth.ts`, `server/account.ts` (`TOTP_ISSUER`, shown in the player's authenticator
+  app), `server/github_contributors.ts` + `server/main.ts` (`GITHUB_REPO` default env
+  fallback), `server/character_sheet.ts` (a comment), `server/player_card.ts` +
+  `server/player_card.newlocales.ts` (see the case-sensitivity note below),
+  `server/email/catalog.ts` (`BRAND`), `server/email/index.ts` (fallback base URL),
+  `server/github.ts`/`server/discord.ts` (inline HTML `<title>`, `DEFAULT_INVITE`),
+  `server/profile_page.ts` (`GAME_NAME`), `server/game.ts` (the `"{name} has entered ..."`
+  log-event text) + its client-side regex matcher in `src/ui/server_i18n.ts` (`'world.entered'`
+  DICT entries AND the `re: /^(.+) has entered .../` pattern -- both must change together or
+  the S3 i18n guard breaks), `server/wallet_link.ts` (the message text the player SIGNS with
+  their wallet) -- none of these were in the original 2026-06 file list. All are simple
+  string-literal swaps (proper noun / URL only), no logic changes.
+- The alternate-case variant `World of Claudecraft` (lowercase "c") was never covered by the
+  original mixed-case `World of ClaudeCraft` replacement map and turned up separately in
+  `server/player_card.ts`, `server/player_card.newlocales.ts`, `src/game/perf.ts`,
+  `src/guide/head.ts` (`alternateName`), and `mediawiki/theme/Common.css`. Grep for it
+  case-sensitively on its own; the case-insensitive sweep above will catch it going forward.
+- `tests/who_filter.test.ts`, `tests/server_i18n.test.ts`, `tests/email_templates.test.ts`,
+  `tests/wallet_server.test.ts`, `tests/player_card_server.test.ts`, `tests/client_shell.test.ts`,
+  `tests/guide.test.ts`, `tests/localization_fixes.test.ts` all hardcode expected brand/realm
+  text or URLs as test fixtures and must be updated in the SAME change as any of the above.
+
+**`server/player_card.ts` case-sensitivity gotcha:** `trustedPublicOriginFromHost()`
+lowercases the incoming `Host` header before looking it up in `TRUSTED_PUBLIC_HOST_ORIGINS`,
+so the Map's keys MUST be lowercase (`'todo-your-domain.com'`, not `'TODO-your-domain.com'`)
+even though the placeholder is written mixed-case everywhere else in the codebase (URLs,
+`DEFAULT_PRODUCTION_PUBLIC_ORIGIN`'s value, etc.). A naive brand-map sed that preserves the
+mixed-case placeholder verbatim silently breaks host matching in production (falls through
+to `DEFAULT_PRODUCTION_PUBLIC_ORIGIN` for every request, including the real domain). Also
+note `server/realm.ts`'s own `TRUSTED_PUBLIC_HOST_ORIGINS` already carries the real chosen
+production domain (`world.arcanehunters.com`, lowercase, not a placeholder) rather than the
+`TODO-your-domain.com` token -- `player_card.ts` currently does NOT mirror that real domain
+(it still trusts the placeholder host). Whether to point `player_card.ts` at the same real
+domain as `realm.ts` is an open decision for the site owner, not something this pass changed.
+
+**New locales without Dragon's Blight / brand coverage (expected, not a bug):** this merge
+added seven new base locales upstream did not previously ship --
+`da_DK`/`id_ID`/`nl_NL`/`pl_PL`/`sv_SE`/`tr_TR`/`vi_VN`. None of them have the Dragon's
+Blight `custom_*` entity translations (`src/ui/world_entity_i18n.ts` IDs) or full item-catalog
+coverage yet; per the i18n contributor workflow (root `CLAUDE.md`) that is a normal `pending`
+state the build English-fills, not a regression to fix by hand-translating. Do NOT add
+translated content to these overlays yourself. Two adjacent things WERE fixed because they
+were structural, not translation-content gaps:
+- `tests/localization_coverage.test.ts`'s "should provide every item translation in every
+  locale without canonical fallbacks" test asserted zero copied-English item names for EVERY
+  locale unconditionally, contradicting its own two-tier-gate design comment two lines above
+  it (which says copied-English checks are release-tier only). The seven new locales have no
+  item translations at all yet, so this test was permanently red at the PR tier for any future
+  PR touching nothing related. Fixed by gating both the per-item assertion and the
+  `entityTranslationFallbackLog()` check behind `RELEASE_TIER`, matching the sibling checks
+  elsewhere in the same file.
+- `seo.officialBody` in the seven new locales carried the OLD domain
+  (`worldofclaudecraft.com`) inside already-translated prose, which a blind domain-only sed
+  turns into a literal "TODO-your-domain.com" string inside shipped translated copy -- caught
+  by `tests/localization_coverage.test.ts`'s placeholder-marker check
+  (`/\b(TODO|TBD|...)\b/i`) at the PR tier (this one IS PR-tier, correctly). Fix followed the
+  existing two-track precedent from the 2026-06 rename: Latin-script locales (all seven) had
+  the key REMOVED entirely so they fall back to the domain-free English catalog default;
+  `ko_KR` (non-Latin, already had a domain-prefixed sentence unlike its four non-Latin
+  siblings which never did) was reworded to drop the domain clause instead of deleting the
+  key, matching `ja_JP`/`ru_RU`/`zh_CN`/`zh_TW`'s existing phrasing.
+
+**`tests/parity/` golden traces:** the seven new locale files and any other upstream content
+change in this merge cycle shifted world-gen RNG draw order (new locale loader wiring touches
+module load order in some builds; more commonly, new upstream camps/mobs shift it directly).
+Regenerate with `UPDATE_PARITY=1 npx vitest run tests/parity`, confirm a normal `npx vitest run
+tests/parity` is green afterward, and check in the regenerated `tests/parity/golden/*.json`
+files alongside the brand fixes.
+
+---
+
 #### `src/ui/world_entity_i18n.ts` -- Dragon's Blight entity IDs
 
 Dragon's Blight entity IDs are imported from `src/sim/content/custom/i18n_ids.ts`

@@ -787,7 +787,7 @@ export const ja_JP: EnTranslations = {
     },
     "discord": {
       "title": "Discord",
-      "panelTitle": "World of ClaudeCraft",
+      "panelTitle": "World of Arcane Hunters",
       "open": "Discord",
       "close": "閉じる",
       "keybind": "Discordパネル",
@@ -896,7 +896,7 @@ export const ja_JP: EnTranslations = {
         "titleDiscordian": "称号：Discordian",
         "titleSquire": "称号：レルムの従者",
         "chromaBlurple": "Blurpleメックカラー",
-        "titleChampion": "称号：Claudemoonのチャンピオン",
+        "titleChampion": "称号：Eastbrookのチャンピオン",
         "swagStickers": "ステッカーパック（発送）",
         "swagTee": "Tシャツ（発送）"
       },
@@ -959,7 +959,7 @@ export const ja_JP: EnTranslations = {
   },
   "guide": {
     "brand": "World of Arcane Hunters",
-    "brandShort": "ClaudeCraft",
+    "brandShort": "WoAH",
     "tagline": "ブラウザで無料で遊べる、クラシックスタイルのMMO。",
     "skipToContent": "メインコンテンツへスキップ",
     "loading": "読み込み中...",
@@ -2081,8 +2081,8 @@ export const ja_JP: EnTranslations = {
     "levelClass": "レベル{level} - {className}",
     "topPercent": "上位 {percent}%",
     "realmSubtitle": "{realm} レルム",
-    "defaultRealm": "ClaudeCraftの世界",
-    "brandWordmark": "WORLD OF CLAUDECRAFT",
+    "defaultRealm": "Arcane Huntersの世界",
+    "brandWordmark": "WORLD OF ARCANE HUNTERS",
     "recruited": "招待 {count}人",
     "footerHandle": "@{handle}",
     "footerHandleWithRecruits": "@{handle} - {recruited}",
@@ -2090,7 +2090,7 @@ export const ja_JP: EnTranslations = {
     "arenaStat": "アリーナ",
     "shareTierBit": ", {tier}ランクの$WOCホルダー",
     "shareText": "World of Arcane Huntersで伝説を鍛えています: レベル{level} {className}{tierBit}。私のレルムに参加してください:",
-    "nativeShareTitle": "ClaudeCraftの世界",
+    "nativeShareTitle": "Arcane Huntersの世界",
     "fileNameFallback": "プレイヤー",
     "actionShareX": "Xで共有",
     "actionCopyReferral": "紹介リンクをコピー",
@@ -2586,7 +2586,7 @@ export const ja_JP: EnTranslations = {
     "playMode": "マルチプレイヤー",
     "applicationCategory": "ゲーム",
     "operatingSystem": "Webブラウザ",
-    "officialLabel": "World of ClaudeCraft 公式サイト",
+    "officialLabel": "World of Arcane Hunters 公式サイト",
     "officialBody": "Eastbrook レルムの公式無料ブラウザMMOです。永続キャラクターでオンラインプレイし、オフラインでソロ探索し、wikiを読み、このサイトから確認済みのコミュニティリンクをたどれます。"
   },
   "a11y": {

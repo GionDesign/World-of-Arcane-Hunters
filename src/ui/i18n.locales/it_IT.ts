@@ -95,7 +95,7 @@ export const it_IT: Partial<Record<TranslationKey, string>> = {
   'hudChrome.unitFrame.playerLabel': 'Il tuo personaggio',
   'hudChrome.unitFrame.targetAnnounce': 'Bersaglio: {name}',
   'hudChrome.unitFrame.targetLabel': 'Il tuo bersaglio',
-  'seo.officialLabel': 'Sito ufficiale di World of ClaudeCraft',
+  'seo.officialLabel': 'Sito ufficiale di World of Arcane Hunters',
   'seo.officialBody':
     "L'MMO gratuito ufficiale da browser del reame Eastbrook. Gioca online con un personaggio persistente, esplora offline in solitaria, leggi il wiki e segui i link della community verificati da questo sito.",
   'hudChrome.questShare.notShareable': 'Questa missione non può essere condivisa.',
@@ -631,8 +631,8 @@ export const it_IT: Partial<Record<TranslationKey, string>> = {
   'playerCard.levelClass': 'Livello {level} - {className}',
   'playerCard.topPercent': 'TOP {percent}%',
   'playerCard.realmSubtitle': 'Reame {realm}',
-  'playerCard.defaultRealm': 'Mondo di ClaudeCraft',
-  'playerCard.brandWordmark': 'WORLD OF CLAUDECRAFT',
+  'playerCard.defaultRealm': 'Mondo di Arcane Hunters',
+  'playerCard.brandWordmark': 'WORLD OF ARCANE HUNTERS',
   'playerCard.recruited': '{count} reclutati',
   'playerCard.footerHandle': '@{handle}',
   'playerCard.footerHandleWithRecruits': '@{handle} - {recruited}',
@@ -641,7 +641,7 @@ export const it_IT: Partial<Record<TranslationKey, string>> = {
   'playerCard.shareTierBit': ', titolare $WOC di rango {tier}',
   'playerCard.shareText':
     'Sto forgiando la mia leggenda in World of Arcane Hunters: livello {level} {className}{tierBit}. Unisciti al mio reame:',
-  'playerCard.nativeShareTitle': 'Mondo di ClaudeCraft',
+  'playerCard.nativeShareTitle': 'Mondo di Arcane Hunters',
   'playerCard.fileNameFallback': 'giocatore',
   'playerCard.actionShareX': 'Condividi su X',
   'playerCard.actionCopyReferral': 'Copia link di invito',
@@ -3590,7 +3590,7 @@ export const it_IT: Partial<Record<TranslationKey, string>> = {
   'guide.bestiary.levelsSame': 'Livello {min}',
   'guide.bestiary.rare': 'Raro',
   'guide.brand': 'World of Arcane Hunters',
-  'guide.brandShort': 'ClaudeCraft',
+  'guide.brandShort': 'WoAH',
   'guide.classHook.druid':
     'Un mutaforma che fa da tank come orso, dilania i nemici come felino o cura nel pieno della mischia.',
   'guide.classHook.hunter':
@@ -5041,7 +5041,7 @@ export const it_IT: Partial<Record<TranslationKey, string>> = {
   'hudChrome.leaderboard.guildXp': 'XP totali',
   'hudChrome.leaderboard.guildEmpty': 'Ancora nessuna gilda classificata.',
   'hudChrome.discord.title': 'Discord',
-  'hudChrome.discord.panelTitle': 'World of ClaudeCraft',
+  'hudChrome.discord.panelTitle': 'World of Arcane Hunters',
   'hudChrome.discord.open': 'Discord',
   'hudChrome.discord.close': 'Chiudi',
   'hudChrome.discord.keybind': 'Pannello Discord',
@@ -5141,7 +5141,7 @@ export const it_IT: Partial<Record<TranslationKey, string>> = {
   'hudChrome.discord.swag.titleDiscordian': 'Titolo: Discordiano',
   'hudChrome.discord.swag.titleSquire': 'Titolo: Scudiero del Reame',
   'hudChrome.discord.swag.chromaBlurple': 'Cromatura Mech Blurple',
-  'hudChrome.discord.swag.titleChampion': 'Titolo: Campione di Claudemoon',
+  'hudChrome.discord.swag.titleChampion': 'Titolo: Campione di Eastbrook',
   'hudChrome.discord.swag.swagStickers': 'Pacchetto adesivi (spedito)',
   'hudChrome.discord.swag.swagTee': 'Maglietta (spedita)',
   'hudChrome.discord.relay.tooFast':

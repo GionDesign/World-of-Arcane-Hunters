@@ -787,7 +787,7 @@ export const nl_NL: EnTranslations = {
     },
     "discord": {
       "title": "Discord",
-      "panelTitle": "World of ClaudeCraft",
+      "panelTitle": "World of Arcane Hunters",
       "open": "Discord",
       "close": "Sluiten",
       "keybind": "Discord-paneel",
@@ -896,7 +896,7 @@ export const nl_NL: EnTranslations = {
         "titleDiscordian": "Titel: Discordiaan",
         "titleSquire": "Titel: Schildknaap van het Rijk",
         "chromaBlurple": "Blurple Mech Chroma",
-        "titleChampion": "Titel: Kampioen van Claudemoon",
+        "titleChampion": "Titel: Kampioen van Eastbrook",
         "swagStickers": "Stickerpakket (verzonden)",
         "swagTee": "T-shirt (verzonden)"
       },
@@ -958,8 +958,8 @@ export const nl_NL: EnTranslations = {
     }
   },
   "guide": {
-    "brand": "World of ClaudeCraft",
-    "brandShort": "ClaudeCraft",
+    "brand": "World of Arcane Hunters",
+    "brandShort": "WoAH",
     "tagline": "Een MMO in klassieke stijl die je gratis in je browser speelt.",
     "skipToContent": "Ga naar hoofdinhoud",
     "loading": "Laden...",
@@ -1019,7 +1019,7 @@ export const nl_NL: EnTranslations = {
       "github": "Broncode op GitHub",
       "discord": "Word lid van de Discord",
       "communityWiki": "Community-wiki",
-      "rights": "World of ClaudeCraft"
+      "rights": "World of Arcane Hunters"
     },
     "language": {
       "label": "Taal",
@@ -1039,7 +1039,7 @@ export const nl_NL: EnTranslations = {
     },
     "home": {
       "eyebrow": "Klassieke MMO in je browser",
-      "title": "World of ClaudeCraft",
+      "title": "World of Arcane Hunters",
       "subtitle": "Quest, sluit je aaneen en verken een handgebouwde wereld, gratis in je browser.",
       "ctaPlay": "Speel nu",
       "ctaLearn": "Hoe te spelen",
@@ -1420,7 +1420,7 @@ export const nl_NL: EnTranslations = {
     },
     "worldPage": {
       "heading": "De wereld",
-      "intro": "World of ClaudeCraft is één aaneengesloten land dat je te voet doorkruist, drie zones van zuid naar noord. Er is geen snelreizen, dus de reis is onderdeel van het avontuur.",
+      "intro": "World of Arcane Hunters is één aaneengesloten land dat je te voet doorkruist, drie zones van zuid naar noord. Er is geen snelreizen, dus de reis is onderdeel van het avontuur.",
       "hub": "Thuisbasis",
       "mapHeading": "De weg naar het noorden",
       "mapSub": "Drie zones, van zuid naar noord, elk een stap hoger in niveau. Volg het questspoor en het land draagt je van het dal naar de toppen.",
@@ -1836,8 +1836,8 @@ export const nl_NL: EnTranslations = {
     "realmName": "Realmnaam"
   },
   "footer": {
-    "copyright": "2026 World of ClaudeCraft",
-    "githubLink": "https://github.com/levy-street/world-of-claudecraft",
+    "copyright": "2026 World of Arcane Hunters",
+    "githubLink": "https://github.com/giondesign/world-of-arcane-hunters",
     "githubLabel": "Opensourceproject",
     "whitepaper": "Whitepaper",
     "terms": "Servicevoorwaarden",
@@ -1887,7 +1887,7 @@ export const nl_NL: EnTranslations = {
     "serverOnline": "Online",
     "serverOffline": "Offline",
     "play": "Spelen",
-    "playAria": "Speel World of ClaudeCraft",
+    "playAria": "Speel World of Arcane Hunters",
     "serverLabel": "Kies je realm",
     "serverAria": "Kies realm: Online of Offline",
     "serverOfflineSub": "Directe lokale wereld",
@@ -2081,16 +2081,16 @@ export const nl_NL: EnTranslations = {
     "levelClass": "Niveau {level} - {className}",
     "topPercent": "TOP {percent}%",
     "realmSubtitle": "Realm {realm}",
-    "defaultRealm": "World of ClaudeCraft",
-    "brandWordmark": "WORLD OF CLAUDECRAFT",
+    "defaultRealm": "World of Arcane Hunters",
+    "brandWordmark": "WORLD OF ARCANE HUNTERS",
     "recruited": "{count} geworven",
     "footerHandle": "@{handle}",
     "footerHandleWithRecruits": "@{handle} - {recruited}",
     "footerCta": "Smeed je legende: {siteUrl}",
     "arenaStat": "Arena",
     "shareTierBit": ", {tier}-rang $WOC-houder",
-    "shareText": "Ik smeed mijn legende in World of ClaudeCraft: Niveau {level} {className}{tierBit}. Sluit je aan bij mijn realm:",
-    "nativeShareTitle": "World of ClaudeCraft",
+    "shareText": "Ik smeed mijn legende in World of Arcane Hunters: Niveau {level} {className}{tierBit}. Sluit je aan bij mijn realm:",
+    "nativeShareTitle": "World of Arcane Hunters",
     "fileNameFallback": "speler",
     "actionShareX": "Delen op X",
     "actionCopyReferral": "Verwijzingslink Kopiëren",
@@ -2580,14 +2580,14 @@ export const nl_NL: EnTranslations = {
     }
   },
   "seo": {
-    "title": "World of ClaudeCraft: Web-MMO in Klassieke Stijl",
-    "description": "Begin aan een episch avontuur in World of ClaudeCraft, een micro-MMO in klassieke stijl die je rechtstreeks in je browser kunt spelen. Sluit je aan bij een blijvende gedeelde realm, level je klassen op en versla vijanden!",
+    "title": "World of Arcane Hunters: Web-MMO in Klassieke Stijl",
+    "description": "Begin aan een episch avontuur in World of Arcane Hunters, een micro-MMO in klassieke stijl die je rechtstreeks in je browser kunt spelen. Sluit je aan bij een blijvende gedeelde realm, level je klassen op en versla vijanden!",
     "genre": "MMORPG",
     "playMode": "Multiplayer",
     "applicationCategory": "Spel",
     "operatingSystem": "Webbrowser",
-    "officialLabel": "Officiële website van World of ClaudeCraft",
-    "officialBody": "worldofclaudecraft.com is de officiële gratis browser-MMO voor de Claudemoon-realm. Speel online met een blijvend personage, verken solo offline, lees de wiki en volg geverifieerde communitylinks vanaf deze site."
+    "officialLabel": "Officiële website van World of Arcane Hunters",
+    "officialBody": "The official free browser MMO for the Eastbrook realm. Play online with a persistent character, explore solo offline, read the wiki, and follow verified community links from this site."
   },
   "a11y": {
     "goHome": "Ga naar de startpagina",
@@ -2595,9 +2595,9 @@ export const nl_NL: EnTranslations = {
     "mainNavigation": "Hoofdnavigatie",
     "languageSelection": "Taalkeuze",
     "characterActions": "Personageacties",
-    "githubProject": "Open het World of ClaudeCraft GitHub-project",
-    "discordCommunity": "Word lid van de World of ClaudeCraft Discord-community",
-    "donateProject": "Doneer om World of ClaudeCraft te steunen"
+    "githubProject": "Open het World of Arcane Hunters GitHub-project",
+    "discordCommunity": "Word lid van de World of Arcane Hunters Discord-community",
+    "donateProject": "Doneer om World of Arcane Hunters te steunen"
   },
   "loading": {
     "world": "Wereld laden...",
@@ -2769,20 +2769,20 @@ export const nl_NL: EnTranslations = {
     "iosStandaloneDetail": "Je bent in de volledig-scherm-modus vanaf het beginscherm. Houd het apparaat in liggende stand.",
     "iosInstallDetail": "Voor echt volledig scherm op iPhone of iPad moet je deze pagina eerst aan je beginscherm toevoegen.",
     "iosShareStep": "Tik in Safari op Deel en daarna op Zet op beginscherm.",
-    "iosOpenStep": "Open World of ClaudeCraft vanaf het nieuwe pictogram op het beginscherm.",
+    "iosOpenStep": "Open World of Arcane Hunters vanaf het nieuwe pictogram op het beginscherm.",
     "androidStandaloneDetail": "Je bent in de volledig-scherm-appmodus. Houd het apparaat in liggende stand.",
     "androidInstallDetail": "Voor volledig scherm op Android moet je deze pagina eerst installeren of aan je beginscherm toevoegen.",
     "androidInstallStep": "Tik in Chrome op het menu en daarna op App installeren of Toevoegen aan beginscherm.",
-    "androidOpenStep": "Open World of ClaudeCraft vanaf het nieuwe pictogram.",
+    "androidOpenStep": "Open World of Arcane Hunters vanaf het nieuwe pictogram.",
     "otherStandaloneDetail": "Houd je apparaat in liggend volledig scherm.",
     "otherInstallDetail": "Installeer of voeg deze pagina toe aan je beginscherm voor de beste mobiele ervaring met volledig scherm."
   },
   "serverUnavailable": {
-    "title": "World of ClaudeCraft - Realm niet beschikbaar",
-    "logoAlt": "World of ClaudeCraft",
+    "title": "World of Arcane Hunters - Realm niet beschikbaar",
+    "logoAlt": "World of Arcane Hunters",
     "eyebrow": "Realmonderhoud",
     "heading": "De realm is tijdelijk niet beschikbaar.",
-    "body": "We herstarten de gameservice en verwachten dat Claudemoon binnenkort weer terug is. Deze pagina blijft automatisch controleren.",
+    "body": "We herstarten de gameservice en verwachten dat Eastbrook binnenkort weer terug is. Deze pagina blijft automatisch controleren.",
     "status": "Snel terug"
   },
   "hud": {
@@ -4834,31 +4834,31 @@ export const nl_NL: EnTranslations = {
         "name": "Monarchenkroon"
       },
       "custom_drake_scale": {
-        "name": "Aslouper Draakschub"
+        "name": "Ashwalker Drake Scale"
       },
       "custom_wyvern_heartstone": {
-        "name": "Schroeiwieks Hartsteen"
+        "name": "Scorchwing Heartstone"
       },
       "custom_blight_ember": {
-        "name": "Vloekgloei"
+        "name": "Blight Ember"
       },
       "custom_drakebone_shoulders": {
-        "name": "Draakbeen Schouderstukken"
+        "name": "Drakebone Shoulderguards"
       },
       "custom_scorchwing_cowl": {
-        "name": "Schroeiwieks Kap"
+        "name": "Scorchwing Cowl"
       },
       "custom_blight_stalkers_hood": {
-        "name": "Vloeksluier Kap"
+        "name": "Blightstalker's Hood"
       },
       "custom_ignaraxis_greatblade": {
-        "name": "Ignaraxis Grootzwaard"
+        "name": "Ignaraxis Greatblade"
       },
       "custom_cinderstave_eternal": {
-        "name": "Eeuwige Askei"
+        "name": "Cinderstave of the Eternal"
       },
       "custom_fang_of_ignaraxis": {
-        "name": "Tand van Ignaraxis"
+        "name": "Fang of Ignaraxis"
       },
       "bristleback_maul": {
         "name": "Borstelrug-Strijdhamer"
@@ -5535,28 +5535,28 @@ export const nl_NL: EnTranslations = {
         "name": "Acoliet Tessa"
       },
       "custom_ashwalker_drake": {
-        "name": "Aslouper Draak"
+        "name": "Ashwalker Drake"
       },
       "custom_scorchwing_wyvern": {
-        "name": "Schroeiwieks Wyvern"
+        "name": "Scorchwing Wyvern"
       },
       "custom_blighted_sentinel": {
-        "name": "Vervloekte Schildwacht"
+        "name": "Blighted Sentinel"
       },
       "custom_dragonclaw_warden": {
-        "name": "Drakenklauw Bewaker"
+        "name": "Dragonclaw Warden"
       },
       "custom_ignaraxis": {
-        "name": "Ignaraxis de Eeuwige"
+        "name": "Ignaraxis the Eternal"
       },
       "custom_skullfire_brute": {
-        "name": "Schedelbrander"
+        "name": "Skullfire Brute"
       },
       "custom_blightshroud_stalker": {
-        "name": "Vloeksluier Sluipjager"
+        "name": "Blightshroud Stalker"
       },
       "custom_ironpelt_monkroose": {
-        "name": "IJzervacht Monkroose"
+        "name": "Ironpelt Monkroose"
       },
       "ironvein_foreman": {
         "name": "IJzerader-Voorman"
@@ -5779,19 +5779,19 @@ export const nl_NL: EnTranslations = {
         "greeting": "Het reliekschrijn beneden is opnieuw verschoven."
       },
       "custom_commander_vael": {
-        "name": "Commandant Vael",
-        "title": "Officier van de Blight Garde",
-        "greeting": "Wees voorbereid, {playerName}. Deze Blight slaapt niet, en wij ook niet."
+        "name": "Commander Vael",
+        "title": "Blightwatch Officer",
+        "greeting": "Stand ready, {playerName}. This blight does not sleep, and neither do we."
       },
       "custom_scout_fenris": {
-        "name": "Verkenner Fenris",
-        "title": "Verkenner van de Blight Garde",
-        "greeting": "Ben je door het wyvern-territorium gegaan? Goed. Ik had iemand bekwaam nodig hier."
+        "name": "Scout Fenris",
+        "title": "Blightwatch Scout",
+        "greeting": "You made it through the wyvern grounds? Good. I could use someone capable out here."
       },
       "custom_elder_draxis": {
-        "name": "Oudste Draxis",
-        "title": "Drakendoder",
-        "greeting": "Ik heb dertig jaar draken gejaagd, {playerName}. Ignaraxis is anders dan de anderen."
+        "name": "Elder Draxis",
+        "title": "Dragonslayer",
+        "greeting": "I have hunted dragons for thirty years, {playerName}. Ignaraxis is not like the others."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -6553,71 +6553,71 @@ export const nl_NL: EnTranslations = {
         }
       },
       "custom_proving_ground": {
-        "title": "Het Beproevingsveld",
-        "text": "De aslouper draken zijn opgerukt tot aan de rand van ons kamp, {playerName}. Verminder hun aantal -- tien van hen -- en bewijs dat je een plek in de Blight verdient.",
-        "completion": "Tien draken geveld. Niet slecht. Misschien overleef je dit toch, {playerName}.",
+        "title": "Proving Ground",
+        "text": "The ashwalker drakes have pushed to the edges of our camp, {playerName}. Thin their numbers -- ten of them -- and prove you belong in the Blight.",
+        "completion": "Ten drakes down. Not bad. You might just survive out here, {playerName}.",
         "objectives": {
           "0": {
-            "label": "Aslouper Draken gedood"
+            "label": "Ashwalker Drakes slain"
           }
         }
       },
       "custom_marks_of_the_drake": {
-        "title": "Merktekens van de Draak",
-        "text": "Draakschubben zijn zo hard als plaatpantser, {playerName}. Ik heb er acht nodig voor de volgende patrouilleaanvoerder. De draken geven ze niet zomaar -- pak wat je kunt.",
-        "completion": "Acht schubben. Ze weerstaan vuur beter dan alles wat we kunnen smeden. Goed werk.",
+        "title": "Marks of the Drake",
+        "text": "Drake scales are tough as plate, {playerName}. I need eight of them to outfit the next patrol. The drakes do not give them up easily -- take what you can.",
+        "completion": "Eight scales. These will hold up against fire better than anything we can forge. Well done.",
         "objectives": {
           "0": {
-            "label": "Aslouper Draakschubben"
+            "label": "Ashwalker Drake Scales"
           }
         }
       },
       "custom_into_the_blight": {
-        "title": "De Blight In",
-        "text": "Die schroeiwieks-wyvernen nestelen zich tussen ons en het kerker, {playerName}. Acht van hen moeten weg, en ik heb vijf van hun hartstenen nodig voor de alchemist van de commandant. Ze zitten diep verscholen, maar ik weet dat jij ze kunt bereiken.",
-        "completion": "Het nest is geruimd. Die hartstenen zijn meer waard dan je denkt.",
+        "title": "Into the Blight",
+        "text": "Those scorchwing wyverns are nesting between us and the dungeon, {playerName}. Eight of them need to go, and I need five of their heartstones for the commander's alchemist. They're deep, but I know you can reach them.",
+        "completion": "The nesting ground is clear. Those heartstones will be worth more to us than you know.",
         "objectives": {
           "0": {
-            "label": "Schroeiwieks Wyvernen gedood"
+            "label": "Scorchwing Wyverns slain"
           },
           "1": {
-            "label": "Wyvern Hartstenen"
+            "label": "Scorchwing Heartstones"
           }
         }
       },
       "custom_eye_of_the_storm": {
-        "title": "Oog van de Storm",
-        "text": "De vervloekte schildwachten zijn de buitenste bewakers van Ignaraxis, {playerName}. Oude drakenwezens verdraaid door eeuwen nabij dat schepsel. Sla er drie neer en breng me de vloekassen uit hun kern. Als jij hen aankan, ben je klaar voor de Kaken.",
-        "completion": "Drie schildwachten geveld en assen in de hand. Je bent klaar, {playerName}. Ga met Oudste Draxis bij het fort praten. Hij heeft hier lang op gewacht.",
+        "title": "Eye of the Storm",
+        "text": "The blighted sentinels are Ignaraxis's outer guard, {playerName}. Ancient dragonkin warped by centuries near that creature. Take down three of them and bring me the blight embers from their cores. If you can manage them, you're ready for the maw.",
+        "completion": "Three sentinels down and embers in hand. You're ready, {playerName}. Go speak with Elder Draxis back at the post. He has been waiting a long time for this.",
         "objectives": {
           "0": {
-            "label": "Vervloekte Schildwachten gedood"
+            "label": "Blighted Sentinels slain"
           },
           "1": {
-            "label": "Vloekassen"
+            "label": "Blight Embers"
           }
         }
       },
       "custom_eternal_flame": {
-        "title": "De Eeuwige Vlam",
-        "text": "Ignaraxis de Eeuwige heeft een tijdperk lang geslapen in de Drakenkaken, {playerName}. De Blight boven ons is zijn adem in vaste vorm. Ga de Kaken in, confronteer hem in zijn leger en maak er een einde aan. Je bondgenoten zullen nodig zijn -- dit is niet een jacht voor alleen.",
-        "completion": "De Eeuwige Vlam is gedoofd, {playerName}. Ik heb dertig jaar gewacht om die woorden te zeggen. De Blight zal nu wegebben. Neem dit -- je hebt het ruimschoots verdiend.",
+        "title": "The Eternal Flame",
+        "text": "Ignaraxis the Eternal has slumbered in the Dragon's Maw for an age, {playerName}. The Blight above us is his breath given form. Enter the maw, face him in his lair, and end it. Your companions will be necessary -- this is not a hunt for one alone.",
+        "completion": "The Eternal Flame is extinguished, {playerName}. I have waited thirty years to say those words. The Blight will fade now. Take this -- you've more than earned it.",
         "objectives": {
           "0": {
-            "label": "Ignaraxis de Eeuwige gedood"
+            "label": "Ignaraxis the Eternal slain"
           }
         }
       },
       "custom_blight_patrol": {
-        "title": "Blight Patrouille",
-        "text": "We kunnen de draken en wyvernen de toegangswegen niet laten overweldigen, {playerName}. Patrouilleer de Blight, dood vijftien draken en acht wyvernen, en keer terug. Het houdt onze flanken vrij terwijl de commandoketen het grote geheel beheert.",
-        "completion": "De flanken zijn vrij. De mannen ademen gemakkelijker als iemand daarbinnen het verschil maakt. Goed werk, {playerName}.",
+        "title": "Blight Patrol",
+        "text": "We cannot let the drakes and wyverns overrun the approaches, {playerName}. Patrol the Blight, cut down fifteen drakes and eight wyverns, and report back. Keeps our flanks clear while the chain of command handles the bigger picture.",
+        "completion": "Flanks are clear. The men breathe easier when someone is out there making a difference. Good work, {playerName}.",
         "objectives": {
           "0": {
-            "label": "Aslouper Draken gedood"
+            "label": "Ashwalker Drakes slain"
           },
           "1": {
-            "label": "Schroeiwieks Wyvernen gedood"
+            "label": "Scorchwing Wyverns slain"
           }
         }
       },
@@ -6789,17 +6789,17 @@ export const nl_NL: EnTranslations = {
         }
       },
       "custom_dragons_blight": {
-        "name": "De Drakenvloek",
-        "welcome": "De Drakenvloek strekt zich voor je uit, verstikt in as en de verre echo van eeuwoud vuur.",
+        "name": "Dragon's Blight",
+        "welcome": "The Dragon's Blight stretches before you, choked with ash and the distant echo of ancient fire.",
         "pois": {
           "0": {
-            "label": "Blight Garde Fort"
+            "label": "Blightwatch Post"
           },
           "1": {
-            "label": "Fenris Voorpost"
+            "label": "Fenris's Outpost"
           },
           "2": {
-            "label": "De Drakenkaken"
+            "label": "Dragon's Maw"
           }
         }
       }
@@ -6831,9 +6831,9 @@ export const nl_NL: EnTranslations = {
         "leaveText": "Je keert terug naar de koude lucht van Doorntop."
       },
       "custom_dragons_maw": {
-        "name": "De Drakenkaken",
-        "enterText": "De hitte is verstikkend. Iets massaals roert zich in de duisternis voor je.",
-        "leaveText": "Je komt uit de Drakenkaken, de buitenlucht koel op je huid."
+        "name": "Dragon's Maw",
+        "enterText": "The heat is suffocating. Something vast stirs in the darkness ahead.",
+        "leaveText": "You emerge from the Dragon's Maw, the air outside cold against your skin."
       },
       "drowned_temple": {
         "name": "De Verdronken Tempel",

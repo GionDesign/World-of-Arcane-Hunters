@@ -787,7 +787,7 @@ export const en_XA: EnTranslations = {
     },
     "discord": {
       "title": "[Ðíšçóŕð]",
-      "panelTitle": "[Ŵóŕļð óƒ ÇļáúðéÇŕáƒţ]",
+      "panelTitle": "[Ŵóŕļð óƒ Áŕçáñé Ĥúñţéŕš]",
       "open": "[Ðíšçóŕð]",
       "close": "[Çļóšé]",
       "keybind": "[Ðíšçóŕð Þáñéļ]",
@@ -896,7 +896,7 @@ export const en_XA: EnTranslations = {
         "titleDiscordian": "[Ţíţļé: Ðíšçóŕðíáñ]",
         "titleSquire": "[Ţíţļé: Šɋúíŕé óƒ ţĥé Ŕéáļɱ]",
         "chromaBlurple": "[Ɓļúŕþļé Ɱéçĥ Çĥŕóɱá]",
-        "titleChampion": "[Ţíţļé: Çĥáɱþíóñ óƒ Çļáúðéɱóóñ]",
+        "titleChampion": "[Ţíţļé: Çĥáɱþíóñ óƒ Éášţƀŕóóķ]",
         "swagStickers": "[Šţíçķéŕ Þáçķ (šĥíþþéð)]",
         "swagTee": "[Ţ-Šĥíŕţ (šĥíþþéð)]"
       },

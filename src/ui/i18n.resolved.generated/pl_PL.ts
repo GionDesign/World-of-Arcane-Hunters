@@ -787,7 +787,7 @@ export const pl_PL: EnTranslations = {
     },
     "discord": {
       "title": "Discord",
-      "panelTitle": "World of ClaudeCraft",
+      "panelTitle": "World of Arcane Hunters",
       "open": "Discord",
       "close": "Zamknij",
       "keybind": "Panel Discorda",
@@ -896,7 +896,7 @@ export const pl_PL: EnTranslations = {
         "titleDiscordian": "Tytuł: Discordianin",
         "titleSquire": "Tytuł: Giermek Królestwa",
         "chromaBlurple": "Chroma mecha Blurple",
-        "titleChampion": "Tytuł: Mistrz Claudemoon",
+        "titleChampion": "Tytuł: Mistrz Eastbrook",
         "swagStickers": "Zestaw naklejek (wysyłka)",
         "swagTee": "Koszulka (wysyłka)"
       },
@@ -958,8 +958,8 @@ export const pl_PL: EnTranslations = {
     }
   },
   "guide": {
-    "brand": "World of ClaudeCraft",
-    "brandShort": "ClaudeCraft",
+    "brand": "World of Arcane Hunters",
+    "brandShort": "WoAH",
     "tagline": "Klasyczne MMO, w które zagrasz za darmo w przeglądarce.",
     "skipToContent": "Przejdź do treści głównej",
     "loading": "Ładowanie...",
@@ -1019,7 +1019,7 @@ export const pl_PL: EnTranslations = {
       "github": "Źródło na GitHubie",
       "discord": "Dołącz do Discorda",
       "communityWiki": "Wiki społeczności",
-      "rights": "World of ClaudeCraft"
+      "rights": "World of Arcane Hunters"
     },
     "language": {
       "label": "Język",
@@ -1039,7 +1039,7 @@ export const pl_PL: EnTranslations = {
     },
     "home": {
       "eyebrow": "Klasyczne MMO w przeglądarce",
-      "title": "World of ClaudeCraft",
+      "title": "World of Arcane Hunters",
       "subtitle": "Wykonuj zadania, zbieraj drużynę i odkrywaj ręcznie tworzony świat, za darmo w przeglądarce.",
       "ctaPlay": "Zagraj teraz",
       "ctaLearn": "Jak grać",
@@ -1420,7 +1420,7 @@ export const pl_PL: EnTranslations = {
     },
     "worldPage": {
       "heading": "Świat",
-      "intro": "World of ClaudeCraft to jedna ciągła kraina, którą przemierzasz pieszo, trzy strefy ułożone z południa na północ. Nie ma szybkiej podróży, więc droga jest częścią przygody.",
+      "intro": "World of Arcane Hunters to jedna ciągła kraina, którą przemierzasz pieszo, trzy strefy ułożone z południa na północ. Nie ma szybkiej podróży, więc droga jest częścią przygody.",
       "hub": "Baza wypadowa",
       "mapHeading": "Droga na północ",
       "mapSub": "Trzy strefy, z południa na północ, każda o krok wyższa poziomem. Podążaj śladem zadań, a kraina poniesie cię od doliny aż po szczyty.",
@@ -1836,8 +1836,8 @@ export const pl_PL: EnTranslations = {
     "realmName": "Nazwa świata"
   },
   "footer": {
-    "copyright": "2026 World of ClaudeCraft",
-    "githubLink": "https://github.com/levy-street/world-of-claudecraft",
+    "copyright": "2026 World of Arcane Hunters",
+    "githubLink": "https://github.com/giondesign/world-of-arcane-hunters",
     "githubLabel": "Projekt open source",
     "whitepaper": "Biała księga",
     "terms": "Warunki korzystania z usługi",
@@ -1887,7 +1887,7 @@ export const pl_PL: EnTranslations = {
     "serverOnline": "Online",
     "serverOffline": "Offline",
     "play": "Graj",
-    "playAria": "Zagraj w World of ClaudeCraft",
+    "playAria": "Zagraj w World of Arcane Hunters",
     "serverLabel": "Wybierz swój świat",
     "serverAria": "Wybierz świat: online lub offline",
     "serverOfflineSub": "Natychmiastowy lokalny świat",
@@ -2081,16 +2081,16 @@ export const pl_PL: EnTranslations = {
     "levelClass": "Poziom {level} - {className}",
     "topPercent": "TOP {percent}%",
     "realmSubtitle": "Świat {realm}",
-    "defaultRealm": "World of ClaudeCraft",
-    "brandWordmark": "WORLD OF CLAUDECRAFT",
+    "defaultRealm": "World of Arcane Hunters",
+    "brandWordmark": "WORLD OF ARCANE HUNTERS",
     "recruited": "Zwerbowano: {count}",
     "footerHandle": "@{handle}",
     "footerHandleWithRecruits": "@{handle} - {recruited}",
     "footerCta": "Wykuj swą legendę: {siteUrl}",
     "arenaStat": "Arena",
     "shareTierBit": ", posiadacz $WOC rangi {tier}",
-    "shareText": "Wykuwam swą legendę w World of ClaudeCraft: {className} na poziomie {level}{tierBit}. Dołącz do mojego świata:",
-    "nativeShareTitle": "World of ClaudeCraft",
+    "shareText": "Wykuwam swą legendę w World of Arcane Hunters: {className} na poziomie {level}{tierBit}. Dołącz do mojego świata:",
+    "nativeShareTitle": "World of Arcane Hunters",
     "fileNameFallback": "gracz",
     "actionShareX": "Udostępnij na X",
     "actionCopyReferral": "Kopiuj link polecający",
@@ -2580,14 +2580,14 @@ export const pl_PL: EnTranslations = {
     }
   },
   "seo": {
-    "title": "World of ClaudeCraft: klasyczne przeglądarkowe MMO",
-    "description": "Wyrusz na epicką przygodę w World of ClaudeCraft, klasycznym mikro-MMO grywalnym bezpośrednio w przeglądarce. Dołącz do trwałego wspólnego świata, rozwijaj klasy postaci i pokonuj wrogów!",
+    "title": "World of Arcane Hunters: klasyczne przeglądarkowe MMO",
+    "description": "Wyrusz na epicką przygodę w World of Arcane Hunters, klasycznym mikro-MMO grywalnym bezpośrednio w przeglądarce. Dołącz do trwałego wspólnego świata, rozwijaj klasy postaci i pokonuj wrogów!",
     "genre": "MMORPG",
     "playMode": "Wieloosobowy",
     "applicationCategory": "Gra",
     "operatingSystem": "Przeglądarka internetowa",
-    "officialLabel": "Oficjalna strona World of ClaudeCraft",
-    "officialBody": "worldofclaudecraft.com to oficjalne, darmowe przeglądarkowe MMO dla świata Claudemoon. Graj online z trwałą postacią, eksploruj solo w trybie offline, czytaj wiki i śledź zweryfikowane linki społeczności z tej strony."
+    "officialLabel": "Oficjalna strona World of Arcane Hunters",
+    "officialBody": "The official free browser MMO for the Eastbrook realm. Play online with a persistent character, explore solo offline, read the wiki, and follow verified community links from this site."
   },
   "a11y": {
     "goHome": "Przejdź do strony głównej",
@@ -2595,9 +2595,9 @@ export const pl_PL: EnTranslations = {
     "mainNavigation": "Nawigacja główna",
     "languageSelection": "Wybór języka",
     "characterActions": "Akcje postaci",
-    "githubProject": "Otwórz projekt World of ClaudeCraft na GitHubie",
-    "discordCommunity": "Dołącz do społeczności Discord World of ClaudeCraft",
-    "donateProject": "Wesprzyj World of ClaudeCraft datkiem"
+    "githubProject": "Otwórz projekt World of Arcane Hunters na GitHubie",
+    "discordCommunity": "Dołącz do społeczności Discord World of Arcane Hunters",
+    "donateProject": "Wesprzyj World of Arcane Hunters datkiem"
   },
   "loading": {
     "world": "Wczytywanie świata...",
@@ -2769,20 +2769,20 @@ export const pl_PL: EnTranslations = {
     "iosStandaloneDetail": "Jesteś w trybie pełnoekranowym ekranu głównego. Trzymaj urządzenie w orientacji poziomej.",
     "iosInstallDetail": "Aby uzyskać prawdziwy tryb pełnoekranowy na iPhonie lub iPadzie, najpierw zainstaluj tę stronę na ekranie głównym.",
     "iosShareStep": "W Safari dotknij Udostępnij, a następnie Dodaj do ekranu głównego.",
-    "iosOpenStep": "Otwórz World of ClaudeCraft z nowej ikony na ekranie głównym.",
+    "iosOpenStep": "Otwórz World of Arcane Hunters z nowej ikony na ekranie głównym.",
     "androidStandaloneDetail": "Jesteś w trybie pełnoekranowej aplikacji. Trzymaj urządzenie w orientacji poziomej.",
     "androidInstallDetail": "Aby uzyskać tryb pełnoekranowy na Androidzie, najpierw zainstaluj tę stronę lub dodaj ją do ekranu głównego.",
     "androidInstallStep": "W Chrome dotknij menu, a następnie Zainstaluj aplikację lub Dodaj do ekranu głównego.",
-    "androidOpenStep": "Otwórz World of ClaudeCraft z nowej ikony.",
+    "androidOpenStep": "Otwórz World of Arcane Hunters z nowej ikony.",
     "otherStandaloneDetail": "Trzymaj urządzenie w poziomym trybie pełnoekranowym.",
     "otherInstallDetail": "Zainstaluj lub dodaj tę stronę do ekranu głównego, aby uzyskać najlepsze pełnoekranowe wrażenia na urządzeniu mobilnym."
   },
   "serverUnavailable": {
-    "title": "World of ClaudeCraft - Świat niedostępny",
-    "logoAlt": "World of ClaudeCraft",
+    "title": "World of Arcane Hunters - Świat niedostępny",
+    "logoAlt": "World of Arcane Hunters",
     "eyebrow": "Konserwacja świata",
     "heading": "Świat jest tymczasowo niedostępny.",
-    "body": "Ponownie uruchamiamy usługę gry i spodziewamy się, że Claudemoon wkrótce wróci. Ta strona będzie automatycznie sprawdzać stan.",
+    "body": "Ponownie uruchamiamy usługę gry i spodziewamy się, że Eastbrook wkrótce wróci. Ta strona będzie automatycznie sprawdzać stan.",
     "status": "Niedługo wracamy"
   },
   "hud": {
@@ -4834,31 +4834,31 @@ export const pl_PL: EnTranslations = {
         "name": "Korona monarchy"
       },
       "custom_drake_scale": {
-        "name": "Luska Smoka Wulkanicznego"
+        "name": "Ashwalker Drake Scale"
       },
       "custom_wyvern_heartstone": {
-        "name": "Sercokamien Plomiennych Skrzydel"
+        "name": "Scorchwing Heartstone"
       },
       "custom_blight_ember": {
-        "name": "Zaraza Zarowa"
+        "name": "Blight Ember"
       },
       "custom_drakebone_shoulders": {
-        "name": "Naramienniki z Koci Smoka"
+        "name": "Drakebone Shoulderguards"
       },
       "custom_scorchwing_cowl": {
-        "name": "Kaptur Plomiennych Skrzydel"
+        "name": "Scorchwing Cowl"
       },
       "custom_blight_stalkers_hood": {
-        "name": "Kaptur Lapacza Zarazy"
+        "name": "Blightstalker's Hood"
       },
       "custom_ignaraxis_greatblade": {
-        "name": "Wielki Miecz Ignaraxisa"
+        "name": "Ignaraxis Greatblade"
       },
       "custom_cinderstave_eternal": {
-        "name": "Wieczny Kij Popiolowy"
+        "name": "Cinderstave of the Eternal"
       },
       "custom_fang_of_ignaraxis": {
-        "name": "Kiel Ignaraxisa"
+        "name": "Fang of Ignaraxis"
       },
       "bristleback_maul": {
         "name": "Tłuk szczeciniastych"
@@ -5535,28 +5535,28 @@ export const pl_PL: EnTranslations = {
         "name": "Akolitka Tessa"
       },
       "custom_ashwalker_drake": {
-        "name": "Smok Wulkaniczny"
+        "name": "Ashwalker Drake"
       },
       "custom_scorchwing_wyvern": {
-        "name": "Wiwerna Plomiennych Skrzydel"
+        "name": "Scorchwing Wyvern"
       },
       "custom_blighted_sentinel": {
-        "name": "Skalany Stroz"
+        "name": "Blighted Sentinel"
       },
       "custom_dragonclaw_warden": {
-        "name": "Straz Smoczego Szponu"
+        "name": "Dragonclaw Warden"
       },
       "custom_ignaraxis": {
-        "name": "Ignaraxis Wieczny"
+        "name": "Ignaraxis the Eternal"
       },
       "custom_skullfire_brute": {
-        "name": "Plomiennoczelny Brutal"
+        "name": "Skullfire Brute"
       },
       "custom_blightshroud_stalker": {
-        "name": "Skaz Przelwatki Lapacz"
+        "name": "Blightshroud Stalker"
       },
       "custom_ironpelt_monkroose": {
-        "name": "Zelaznoskorny Mongroze"
+        "name": "Ironpelt Monkroose"
       },
       "ironvein_foreman": {
         "name": "Sztygar z Żelaznej Żyły"
@@ -5779,19 +5779,19 @@ export const pl_PL: EnTranslations = {
         "greeting": "Relikwiarz poniżej znów się przesunął."
       },
       "custom_commander_vael": {
-        "name": "Komendant Vael",
-        "title": "Oficer Strazy Blightu",
-        "greeting": "Badz gotowy, {playerName}. Ten Blight nie spi, my tez nie."
+        "name": "Commander Vael",
+        "title": "Blightwatch Officer",
+        "greeting": "Stand ready, {playerName}. This blight does not sleep, and neither do we."
       },
       "custom_scout_fenris": {
-        "name": "Zwiadowca Fenris",
-        "title": "Zwiadowca Strazy Blightu",
-        "greeting": "Przeszedl przez tereny wiwern? Dobrze. Potrzebowalam tu kogos zdolnego."
+        "name": "Scout Fenris",
+        "title": "Blightwatch Scout",
+        "greeting": "You made it through the wyvern grounds? Good. I could use someone capable out here."
       },
       "custom_elder_draxis": {
-        "name": "Starszyzna Draxis",
-        "title": "Zabojca Smokow",
-        "greeting": "Przez trzydziesci lat polowalem na smoki, {playerName}. Ignaraxis jest inny od pozostalych."
+        "name": "Elder Draxis",
+        "title": "Dragonslayer",
+        "greeting": "I have hunted dragons for thirty years, {playerName}. Ignaraxis is not like the others."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -6553,71 +6553,71 @@ export const pl_PL: EnTranslations = {
         }
       },
       "custom_proving_ground": {
-        "title": "Pole Proby",
-        "text": "Smoki wulkaniczne podeszly az pod obrzeza naszego obozu, {playerName}. Zmniejsz ich liczebnosc -- dziesiec z nich -- i udowodnij, ze nalezysz do Blightu.",
-        "completion": "Dziesiec smokow poleglych. Niezle. Moze tu przezyjesz, {playerName}.",
+        "title": "Proving Ground",
+        "text": "The ashwalker drakes have pushed to the edges of our camp, {playerName}. Thin their numbers -- ten of them -- and prove you belong in the Blight.",
+        "completion": "Ten drakes down. Not bad. You might just survive out here, {playerName}.",
         "objectives": {
           "0": {
-            "label": "Polegly Smoki Wulkaniczne"
+            "label": "Ashwalker Drakes slain"
           }
         }
       },
       "custom_marks_of_the_drake": {
-        "title": "Znaki Smoka",
-        "text": "Luski smocze sa twarde jak pancerz plytkowy, {playerName}. Potrzebuje osmiu na nastepnego dowodce patrolu. Smoki nie oddadza ich latwo -- wezmij co mozesz.",
-        "completion": "Osiem lusek. Wytrzymaja ogien lepiej niz wszystko, co mozemy ukuc. Dobra robota.",
+        "title": "Marks of the Drake",
+        "text": "Drake scales are tough as plate, {playerName}. I need eight of them to outfit the next patrol. The drakes do not give them up easily -- take what you can.",
+        "completion": "Eight scales. These will hold up against fire better than anything we can forge. Well done.",
         "objectives": {
           "0": {
-            "label": "Luski Smoka Wulkanicznego"
+            "label": "Ashwalker Drake Scales"
           }
         }
       },
       "custom_into_the_blight": {
-        "title": "W Glab Blightu",
-        "text": "Te wiwerni plomiennych skrzydel gniezdzil sie miedzy nami a lochami, {playerName}. Osiem z nich musi zniknac, a potrzebuje pieciu ich sercokamieni dla alchemika komendanta. Sa glboko w srodku, ale wiem, ze mozesz je zdobyc.",
-        "completion": "Gniazdo zostalo oczyszczone. Te sercokamienie sa warte wiecej niz myslisz.",
+        "title": "Into the Blight",
+        "text": "Those scorchwing wyverns are nesting between us and the dungeon, {playerName}. Eight of them need to go, and I need five of their heartstones for the commander's alchemist. They're deep, but I know you can reach them.",
+        "completion": "The nesting ground is clear. Those heartstones will be worth more to us than you know.",
         "objectives": {
           "0": {
-            "label": "Wiwerni Plomiennych Skrzydel zabite"
+            "label": "Scorchwing Wyverns slain"
           },
           "1": {
-            "label": "Sercokamienie Wiwerni"
+            "label": "Scorchwing Heartstones"
           }
         }
       },
       "custom_eye_of_the_storm": {
-        "title": "Oko Burzy",
-        "text": "Skalani straze to zewnetrzna ochrona Ignaraxisa, {playerName}. Pradawne stwory smocze wypaczone przez wieki bliskosci tej istoty. Pokonaj trzech z nich i przyniesc mi skalane popiolki z ich rdzeni. Jesli sobie z nimi poradzisz, jestes gotowy na Szczeki.",
-        "completion": "Trzech strazy pokonanych i popiolki w reku. Jestes gotowy, {playerName}. Pojdz porozmawiac ze Starszyzna Draxis na posterunku. Czekala na to dlugo.",
+        "title": "Eye of the Storm",
+        "text": "The blighted sentinels are Ignaraxis's outer guard, {playerName}. Ancient dragonkin warped by centuries near that creature. Take down three of them and bring me the blight embers from their cores. If you can manage them, you're ready for the maw.",
+        "completion": "Three sentinels down and embers in hand. You're ready, {playerName}. Go speak with Elder Draxis back at the post. He has been waiting a long time for this.",
         "objectives": {
           "0": {
-            "label": "Skalani Straze zabici"
+            "label": "Blighted Sentinels slain"
           },
           "1": {
-            "label": "Skalane Popiolki"
+            "label": "Blight Embers"
           }
         }
       },
       "custom_eternal_flame": {
-        "title": "Wieczny Plomien",
-        "text": "Ignaraxis Wieczny spik w Smoczych Szczekach przez epoke, {playerName}. Blight nad nami to jego oddech przybrany w ksztalt. Wejdz do Szczek, skonfrontuj go w jego siedzibie i poloz temu kres. Potrzebni beda twoi towarzysze -- to nie jest polowanie dla jednej osoby.",
-        "completion": "Wieczny Plomien zostal ugaszony, {playerName}. Czekalem trzydziesci lat, zeby wypowiedziec te slowa. Blight teraz zaniknie. Wezmij to -- zasluzylas w pelni.",
+        "title": "The Eternal Flame",
+        "text": "Ignaraxis the Eternal has slumbered in the Dragon's Maw for an age, {playerName}. The Blight above us is his breath given form. Enter the maw, face him in his lair, and end it. Your companions will be necessary -- this is not a hunt for one alone.",
+        "completion": "The Eternal Flame is extinguished, {playerName}. I have waited thirty years to say those words. The Blight will fade now. Take this -- you've more than earned it.",
         "objectives": {
           "0": {
-            "label": "Ignaraxis Wieczny zabity"
+            "label": "Ignaraxis the Eternal slain"
           }
         }
       },
       "custom_blight_patrol": {
-        "title": "Patrol Blightu",
-        "text": "Nie mozemy pozwolic smokom i wiwerni zalewac dojsc, {playerName}. Patroluj Blight, zabij pietnastu smokow i osiem wiwerni, i wróc. Utrzymuje nasze flanki wolne, gdy lancuch dowodzenia zarzadza obrazem ogolnym.",
-        "completion": "Flanki sa wolne. Ludzie oddychaja latwiej, gdy ktos jest tam na zewnatrz i robi roznice. Dobra robota, {playerName}.",
+        "title": "Blight Patrol",
+        "text": "We cannot let the drakes and wyverns overrun the approaches, {playerName}. Patrol the Blight, cut down fifteen drakes and eight wyverns, and report back. Keeps our flanks clear while the chain of command handles the bigger picture.",
+        "completion": "Flanks are clear. The men breathe easier when someone is out there making a difference. Good work, {playerName}.",
         "objectives": {
           "0": {
-            "label": "Smoki Wulkaniczne zabite"
+            "label": "Ashwalker Drakes slain"
           },
           "1": {
-            "label": "Wiwerni Plomiennych Skrzydel zabite"
+            "label": "Scorchwing Wyverns slain"
           }
         }
       },
@@ -6789,17 +6789,17 @@ export const pl_PL: EnTranslations = {
         }
       },
       "custom_dragons_blight": {
-        "name": "Smocza Zaraza",
-        "welcome": "Smocza Zaraza rozciaga sie przed toba, duszona popiolem i dalekim echem pradawnego ognia.",
+        "name": "Dragon's Blight",
+        "welcome": "The Dragon's Blight stretches before you, choked with ash and the distant echo of ancient fire.",
         "pois": {
           "0": {
-            "label": "Fort Strazy Blightu"
+            "label": "Blightwatch Post"
           },
           "1": {
-            "label": "Punkt Zwiadowcy Fenris"
+            "label": "Fenris's Outpost"
           },
           "2": {
-            "label": "Smocze Szczeki"
+            "label": "Dragon's Maw"
           }
         }
       }
@@ -6831,9 +6831,9 @@ export const pl_PL: EnTranslations = {
         "leaveText": "Wracasz w zimne powietrze Ciernistego Szczytu."
       },
       "custom_dragons_maw": {
-        "name": "Smocze Szczeki",
-        "enterText": "Upal jest duszacy. Cos ogromnego porusza sie w ciemnosci przed toba.",
-        "leaveText": "Wychodziesc ze Smoczych Szczek, zewnetrzne powietrze chlodne na skórze."
+        "name": "Dragon's Maw",
+        "enterText": "The heat is suffocating. Something vast stirs in the darkness ahead.",
+        "leaveText": "You emerge from the Dragon's Maw, the air outside cold against your skin."
       },
       "drowned_temple": {
         "name": "Zatopiona Świątynia",

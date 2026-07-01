@@ -115,6 +115,18 @@ grep -c "FORK_BRAND" src/ui/i18n.catalog/index.ts
 
 # Brand injection in vite.config.ts (expect: siteUrl + define entries + brandTokenPlugin)
 grep -n "brandTokenPlugin\|__SITE_URL__\|VITE_SITE_URL" vite.config.ts
+# brandTokenPlugin() must also be REGISTERED in the plugins array, not just defined
+# (expect 2+; a merge that rewrites the plugins array can drop the fork's entry while
+# leaving the function intact -- see "Brand rename scope audit (2026-07)" in
+# docs/MAINTAINING-FORK.md)
+grep -c "brandTokenPlugin" vite.config.ts
+
+# src/main.ts SITE_URL must read the build-injected constant, never a hardcoded literal
+grep -A1 "^declare const __SITE_URL__" src/main.ts
+
+# play.html / guide.html hreflang + community-link blocks (missed by the original
+# 2026-06 brand rename; expect 20+ hits each, one per hreflang alternate)
+grep -c "https://TODO-your-domain.com" play.html guide.html
 
 # Brand args in Dockerfile (expect: VITE_SITE_URL + VITE_DISCORD_URL + VITE_DONATE_URL)
 grep -n "VITE_SITE_URL\|VITE_DISCORD_URL\|VITE_DONATE_URL" Dockerfile
@@ -185,21 +197,39 @@ See `docs/custom-content/zones.md` for the fix procedure.
 
 ### Step 4 -- upstream naming and brand drift
 
-Upstream uses `worldofclaudecraft.com`, `World of ClaudeCraft`, `Claudemoon`. This
-fork replaces those with `TODO-your-domain.com` placeholders and the `World of Arcane
-Hunters` / `Eastbrook` brand. After any merge that touches public HTML, source files,
-or locale files, search for upstream brand leakage:
+Upstream uses `worldofclaudecraft.com`, `World of ClaudeCraft` (and the un-capitalized
+`World of Claudecraft` alternate-case variant), `Claudemoon`. This fork replaces those
+with `TODO-your-domain.com` placeholders and the `World of Arcane Hunters` / `Eastbrook`
+brand. After any merge, run the FULL case-insensitive, whole-tree sweep, not just the
+narrow curated file list below -- a 2026-07 audit found ~30 additional files (mostly
+`server/*.ts`, `src/ui/i18n.locales/*.ts`, `src/guide/*.ts`, and `play.html`/`guide.html`)
+that the original 2026-06 pass never covered:
 
 ```bash
-grep -r "worldofclaudecraft\|ClaudeCraft\|Claudemoon" \
-  index.html play.html admin.html guide.html \
-  src/main.ts src/ui/hud.ts \
-  public/server-unavailable.html public/links.html public/sitemap.xml \
-  server/realm.ts 2>/dev/null | grep -v "node_modules" | grep -v ".git"
+grep -rliE "world[-_%20+]*of[-_%20+]*claudecraft|claudemoon|levy-street|GjhnUsBtw" \
+  --include="*.ts" --include="*.html" --include="*.css" --include="*.txt" . \
+  2>/dev/null | grep -v node_modules | grep -v "\.git/" | grep -v "^\./docs/"
 ```
 
-If any hits appear in files this fork controls, re-apply the brand replacement from the
-"Brand rename (2026-06)" section in `docs/MAINTAINING-FORK.md`.
+Exclude the known, deliberately-pending results before treating anything as a regression:
+`public/*-logo.png` / `public/World-of-ClaudeCraft-Whitepaper-v1.0.pdf` (pending asset
+replacement), `public/links.html`'s social-handle copy object + its own JSON-LD `sameAs`
+array (pending real social accounts), and any `@levystreet.com` email address (contact info
+is intentionally not rebranded). Everything else is a real leak -- re-apply from the
+"Brand rename (2026-06)" AND "Brand rename scope audit (2026-07)" sections in
+`docs/MAINTAINING-FORK.md`; the 2026-07 section has the full file list and the exact
+case-sensitivity gotcha in `server/player_card.ts`'s trusted-host map.
+
+Also run the two narrower, faster health checks for the two files that regress most often
+(a merge can revert these even when nothing else does, since they're small isolated diffs):
+
+```bash
+# vite.config.ts: brandTokenPlugin() must be in the plugins array, not just defined (expect 2+)
+grep -c "brandTokenPlugin" vite.config.ts
+
+# src/main.ts: SITE_URL must read the injected constant, never a hardcoded literal
+grep -A1 "^declare const __SITE_URL__" src/main.ts
+```
 
 Also check for new upstream files that contain the upstream domain but were not in our
 replacement map:
@@ -291,6 +321,16 @@ Key tests to pay attention to:
 - `tests/item_level.test.ts` -- epic weapon stat budgets correct
 - `tests/delves.test.ts` -- DELVE_X_MIN=5300 and rollFor(42)
 - `tests/dungeons.test.ts` -- Dragon's Maw loot, Dragon's Blight NPCs
+- `tests/localization_coverage.test.ts` -- the "no canonical fallbacks" and placeholder-marker
+  checks; a new upstream locale with no translations yet is expected/fine (PR tier), but a
+  brand-map sed that leaves a literal "TODO" inside already-translated prose (e.g.
+  `seo.officialBody`) is a real PR-tier failure -- see "Brand rename scope audit (2026-07)"
+  in `docs/MAINTAINING-FORK.md` for the exact fix pattern (remove the key for Latin locales,
+  reword to drop the domain clause for non-Latin locales that had one).
+- `tests/who_filter.test.ts`, `tests/server_i18n.test.ts`, `tests/email_templates.test.ts`,
+  `tests/wallet_server.test.ts`, `tests/player_card_server.test.ts`,
+  `tests/client_shell.test.ts`, `tests/guide.test.ts` -- hardcode expected brand/realm text
+  or URLs as fixtures; update in the same change as any brand-map fix.
 
 If parity tests fail after upstream content changes:
 ```bash
@@ -419,6 +459,10 @@ git push -u origin <branch>
 | Dungeon test fixes | `tests/dungeons.test.ts` | rollLoot unknown-cast + warden.loot! non-null |
 | Realm name | `server/realm.ts` | DEFAULT_REALM_NAME = 'Eastbrook' |
 | Snapshots test | `tests/snapshots.test.ts` | Claudemoon -> Eastbrook |
+| Brand rename (extended, 2026-07) | ~15 `server/*.ts`, `src/ui/i18n.catalog/hud_chrome.ts`, all `src/ui/i18n.locales/*.ts`, `src/guide/*.ts`, `play.html`, `guide.html`, `public/press.html`, `public/llms.txt`, `public/merch.html` | brand/realm proper-noun swap; see "Brand rename scope audit (2026-07)" in MAINTAINING-FORK.md for the full list |
+| Trusted-host case fix | `server/player_card.ts` | `TRUSTED_PUBLIC_HOST_ORIGINS` keys lowercased (matched against a lowercased Host header) |
+| i18n coverage gate fix | `tests/localization_coverage.test.ts` | item-translation "no canonical fallback" check gated behind `RELEASE_TIER`, matching its own two-tier design comment |
+| New locale seo copy | `src/ui/i18n.locales/{da_DK,id_ID,nl_NL,pl_PL,sv_SE,tr_TR,vi_VN,ko_KR}.ts` | `seo.officialBody` domain-prefix removed/reworded so it doesn't ship a literal "TODO" string |
 
 ## Quick-reference: fork-owned new files (never conflict with upstream)
 

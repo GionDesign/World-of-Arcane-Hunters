@@ -852,14 +852,19 @@ describe('i18n Localization Key Coverage', () => {
         const rendered = tEntity(itemRequest(entry));
         expect(rendered.trim().length, `${lang}.${entry.key}`).toBeGreaterThan(0);
         expect(rendered, `${lang}.${entry.key}`).not.toBe(entry.key);
-        if (lang !== 'en' && lang !== 'en_CA') {
+        // Copied-English-text detection is RELEASE-tier only (see the two-tier gate
+        // comment above supportedLanguages): a sparse/pending locale legitimately
+        // renders the English fill for an untranslated item at the PR tier.
+        if (RELEASE_TIER && lang !== 'en' && lang !== 'en_CA') {
           expect(
             rendered,
             `${lang}.${entry.key} should not copy canonical English item text`,
           ).not.toBe(entry.source);
         }
       }
-      expect(entityTranslationFallbackLog(), `${lang} fallback log`).toHaveLength(0);
+      if (RELEASE_TIER) {
+        expect(entityTranslationFallbackLog(), `${lang} fallback log`).toHaveLength(0);
+      }
     }
 
     setLanguage('de_DE');

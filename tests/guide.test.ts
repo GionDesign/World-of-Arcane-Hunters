@@ -131,7 +131,7 @@ describe('Guide entry wiring', () => {
   });
 
   it('lists every route and class-detail page in the sitemap', () => {
-    const origin = 'https://worldofclaudecraft.com';
+    const origin = 'https://TODO-your-domain.com';
     for (const r of GUIDE_ROUTES) {
       const loc = `${origin}${hrefFor(r.sub)}`;
       expect(sitemapXml, `sitemap missing route "${r.id}" (${loc})`).toContain(`<loc>${loc}</loc>`);
@@ -154,10 +154,10 @@ describe('guide.html shell', () => {
 
   it('ships crawlable canonical + social metadata for /wiki', () => {
     expect(guideHtml).toContain(
-      '<link rel="canonical" href="https://worldofclaudecraft.com/wiki" />',
+      '<link rel="canonical" href="https://TODO-your-domain.com/wiki" />',
     );
     expect(guideHtml).toContain(
-      '<meta property="og:url" content="https://worldofclaudecraft.com/wiki" />',
+      '<meta property="og:url" content="https://TODO-your-domain.com/wiki" />',
     );
     expect(guideHtml).toContain('content="index, follow, max-image-preview:large"');
   });

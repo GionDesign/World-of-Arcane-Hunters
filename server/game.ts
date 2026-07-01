@@ -1524,7 +1524,7 @@ export class GameServer {
     // broadcast it to everyone (and likewise don't broadcast departures below).
     this.send(session, {
       t: 'events',
-      list: [{ type: 'log', text: `${name} has entered World of ClaudeCraft.`, color: '#ffd100' }],
+      list: [{ type: 'log', text: `${name} has entered World of Arcane Hunters.`, color: '#ffd100' }],
     });
     void this.initSocial(session);
     // Stamp the $WOC holder-tier flair (best-effort: a balance read must never

@@ -787,7 +787,7 @@ export const da_DK: EnTranslations = {
     },
     "discord": {
       "title": "Discord",
-      "panelTitle": "World of ClaudeCraft",
+      "panelTitle": "World of Arcane Hunters",
       "open": "Discord",
       "close": "Luk",
       "keybind": "Discord-panel",
@@ -896,7 +896,7 @@ export const da_DK: EnTranslations = {
         "titleDiscordian": "Titel: Discordianer",
         "titleSquire": "Titel: Væbner af Riget",
         "chromaBlurple": "Blurple Mech-kromfarve",
-        "titleChampion": "Titel: Champion af Claudemoon",
+        "titleChampion": "Titel: Champion af Eastbrook",
         "swagStickers": "Klistermærkepakke (sendes)",
         "swagTee": "T-shirt (sendes)"
       },
@@ -958,8 +958,8 @@ export const da_DK: EnTranslations = {
     }
   },
   "guide": {
-    "brand": "World of ClaudeCraft",
-    "brandShort": "ClaudeCraft",
+    "brand": "World of Arcane Hunters",
+    "brandShort": "WoAH",
     "tagline": "En klassisk MMO, du spiller gratis i din browser.",
     "skipToContent": "Spring til hovedindhold",
     "loading": "Indlæser...",
@@ -1019,7 +1019,7 @@ export const da_DK: EnTranslations = {
       "github": "Kildekode på GitHub",
       "discord": "Bliv en del af Discord",
       "communityWiki": "Fællesskabswiki",
-      "rights": "World of ClaudeCraft"
+      "rights": "World of Arcane Hunters"
     },
     "language": {
       "label": "Sprog",
@@ -1039,7 +1039,7 @@ export const da_DK: EnTranslations = {
     },
     "home": {
       "eyebrow": "Klassisk browser-MMO",
-      "title": "World of ClaudeCraft",
+      "title": "World of Arcane Hunters",
       "subtitle": "Tag på quest, slå jer sammen, og udforsk en håndbygget verden, gratis i din browser.",
       "ctaPlay": "Spil nu",
       "ctaLearn": "Sådan spiller du",
@@ -1420,7 +1420,7 @@ export const da_DK: EnTranslations = {
     },
     "worldPage": {
       "heading": "Verdenen",
-      "intro": "World of ClaudeCraft er ét sammenhængende land, du krydser til fods, tre zoner lagt fra syd til nord. Der er ingen hurtigrejse, så rejsen er en del af eventyret.",
+      "intro": "World of Arcane Hunters er ét sammenhængende land, du krydser til fods, tre zoner lagt fra syd til nord. Der er ingen hurtigrejse, så rejsen er en del af eventyret.",
       "hub": "Hjemmebase",
       "mapHeading": "Vejen mod nord",
       "mapSub": "Tre zoner, fra syd til nord, hver et trin højere i niveau. Følg questsporet, og landet bærer dig fra dalen til tinderne.",
@@ -1836,8 +1836,8 @@ export const da_DK: EnTranslations = {
     "realmName": "Realm-navn"
   },
   "footer": {
-    "copyright": "2026 World of ClaudeCraft",
-    "githubLink": "https://github.com/levy-street/world-of-claudecraft",
+    "copyright": "2026 World of Arcane Hunters",
+    "githubLink": "https://github.com/giondesign/world-of-arcane-hunters",
     "githubLabel": "Open Source-projekt",
     "whitepaper": "Whitepaper",
     "terms": "Servicevilkår",
@@ -1887,7 +1887,7 @@ export const da_DK: EnTranslations = {
     "serverOnline": "Online",
     "serverOffline": "Offline",
     "play": "Spil",
-    "playAria": "Spil World of ClaudeCraft",
+    "playAria": "Spil World of Arcane Hunters",
     "serverLabel": "Vælg dit realm",
     "serverAria": "Vælg realm: Online eller Offline",
     "serverOfflineSub": "Øjeblikkelig lokal verden",
@@ -2081,16 +2081,16 @@ export const da_DK: EnTranslations = {
     "levelClass": "Niveau {level} - {className}",
     "topPercent": "TOP {percent}%",
     "realmSubtitle": "Riget {realm}",
-    "defaultRealm": "World of ClaudeCraft",
-    "brandWordmark": "WORLD OF CLAUDECRAFT",
+    "defaultRealm": "World of Arcane Hunters",
+    "brandWordmark": "WORLD OF ARCANE HUNTERS",
     "recruited": "{count} rekrutteret",
     "footerHandle": "@{handle}",
     "footerHandleWithRecruits": "@{handle} - {recruited}",
     "footerCta": "Smed din legende: {siteUrl}",
     "arenaStat": "Arena",
     "shareTierBit": ", {tier}-rangeret $WOC-ejer",
-    "shareText": "Jeg smeder min legende i World of ClaudeCraft: Niveau {level} {className}{tierBit}. Slut dig til mit rige:",
-    "nativeShareTitle": "World of ClaudeCraft",
+    "shareText": "Jeg smeder min legende i World of Arcane Hunters: Niveau {level} {className}{tierBit}. Slut dig til mit rige:",
+    "nativeShareTitle": "World of Arcane Hunters",
     "fileNameFallback": "spiller",
     "actionShareX": "Del på X",
     "actionCopyReferral": "Kopiér henvisningslink",
@@ -2580,14 +2580,14 @@ export const da_DK: EnTranslations = {
     }
   },
   "seo": {
-    "title": "World of ClaudeCraft: Klassisk-inspireret web-MMO",
-    "description": "Begiv dig ud på et episk eventyr i World of ClaudeCraft, en klassisk-inspireret micro-MMO, der kan spilles direkte i din browser. Slut dig til et vedvarende delt rige, lev op dine klasser, og besejr fjender!",
+    "title": "World of Arcane Hunters: Klassisk-inspireret web-MMO",
+    "description": "Begiv dig ud på et episk eventyr i World of Arcane Hunters, en klassisk-inspireret micro-MMO, der kan spilles direkte i din browser. Slut dig til et vedvarende delt rige, lev op dine klasser, og besejr fjender!",
     "genre": "MMORPG",
     "playMode": "Flerspiller",
     "applicationCategory": "Spil",
     "operatingSystem": "Webbrowser",
-    "officialLabel": "Officiel World of ClaudeCraft-hjemmeside",
-    "officialBody": "worldofclaudecraft.com er den officielle gratis browser-MMO for Claudemoon-riget. Spil online med en vedvarende karakter, udforsk solo offline, læs wikien, og følg verificerede fællesskabslinks fra denne side."
+    "officialLabel": "Officiel World of Arcane Hunters-hjemmeside",
+    "officialBody": "The official free browser MMO for the Eastbrook realm. Play online with a persistent character, explore solo offline, read the wiki, and follow verified community links from this site."
   },
   "a11y": {
     "goHome": "Gå til forsiden",
@@ -2595,9 +2595,9 @@ export const da_DK: EnTranslations = {
     "mainNavigation": "Hovednavigation",
     "languageSelection": "Sprogvalg",
     "characterActions": "Karakterhandlinger",
-    "githubProject": "Åbn World of ClaudeCraft GitHub-projektet",
-    "discordCommunity": "Deltag i World of ClaudeCraft Discord-fællesskabet",
-    "donateProject": "Donér for at støtte World of ClaudeCraft"
+    "githubProject": "Åbn World of Arcane Hunters GitHub-projektet",
+    "discordCommunity": "Deltag i World of Arcane Hunters Discord-fællesskabet",
+    "donateProject": "Donér for at støtte World of Arcane Hunters"
   },
   "loading": {
     "world": "Indlæser verden...",
@@ -2769,20 +2769,20 @@ export const da_DK: EnTranslations = {
     "iosStandaloneDetail": "Du er i fuldskærmstilstand fra startskærmen. Hold enheden i liggende format.",
     "iosInstallDetail": "For ægte fuldskærm på iPhone eller iPad skal du først installere denne side på din startskærm.",
     "iosShareStep": "I Safari skal du trykke på Del og derefter Føj til hjemmeskærm.",
-    "iosOpenStep": "Åbn World of ClaudeCraft fra det nye ikon på startskærmen.",
+    "iosOpenStep": "Åbn World of Arcane Hunters fra det nye ikon på startskærmen.",
     "androidStandaloneDetail": "Du er i fuldskærms-apptilstand. Hold enheden i liggende format.",
     "androidInstallDetail": "For fuldskærm på Android skal du først installere denne side eller føje den til din startskærm.",
     "androidInstallStep": "I Chrome skal du trykke på menuen og derefter Installér app eller Føj til startskærm.",
-    "androidOpenStep": "Åbn World of ClaudeCraft fra det nye ikon.",
+    "androidOpenStep": "Åbn World of Arcane Hunters fra det nye ikon.",
     "otherStandaloneDetail": "Hold din enhed i liggende fuldskærm.",
     "otherInstallDetail": "Installér eller føj denne side til din startskærm for den bedste mobile fuldskærmsoplevelse."
   },
   "serverUnavailable": {
-    "title": "World of ClaudeCraft - Realm utilgængeligt",
-    "logoAlt": "World of ClaudeCraft",
+    "title": "World of Arcane Hunters - Realm utilgængeligt",
+    "logoAlt": "World of Arcane Hunters",
     "eyebrow": "Realm-vedligeholdelse",
     "heading": "Realmet er midlertidigt utilgængeligt.",
-    "body": "Vi genstarter spiltjenesten og forventer, at Claudemoon vender tilbage om kort tid. Denne side bliver ved med at tjekke automatisk.",
+    "body": "Vi genstarter spiltjenesten og forventer, at Eastbrook vender tilbage om kort tid. Denne side bliver ved med at tjekke automatisk.",
     "status": "Tilbage snart"
   },
   "hud": {
@@ -4834,31 +4834,31 @@ export const da_DK: EnTranslations = {
         "name": "Monarkens Krone"
       },
       "custom_drake_scale": {
-        "name": "Askvandrer Drageskæl"
+        "name": "Ashwalker Drake Scale"
       },
       "custom_wyvern_heartstone": {
-        "name": "Brændvinge Hjertesten"
+        "name": "Scorchwing Heartstone"
       },
       "custom_blight_ember": {
-        "name": "Forbandelsesgløde"
+        "name": "Blight Ember"
       },
       "custom_drakebone_shoulders": {
-        "name": "Drakeknogle-skulderstykker"
+        "name": "Drakebone Shoulderguards"
       },
       "custom_scorchwing_cowl": {
-        "name": "Brændvinge-hætte"
+        "name": "Scorchwing Cowl"
       },
       "custom_blight_stalkers_hood": {
-        "name": "Forbandelsesjægers hætte"
+        "name": "Blightstalker's Hood"
       },
       "custom_ignaraxis_greatblade": {
-        "name": "Ignaraxis Storklinge"
+        "name": "Ignaraxis Greatblade"
       },
       "custom_cinderstave_eternal": {
-        "name": "Den Evige Askestav"
+        "name": "Cinderstave of the Eternal"
       },
       "custom_fang_of_ignaraxis": {
-        "name": "Ignaraxis Hugtak"
+        "name": "Fang of Ignaraxis"
       },
       "bristleback_maul": {
         "name": "Børsterygs-Lemlæster"
@@ -5535,28 +5535,28 @@ export const da_DK: EnTranslations = {
         "name": "Akolyt Tessa"
       },
       "custom_ashwalker_drake": {
-        "name": "Askvandrer-drage"
+        "name": "Ashwalker Drake"
       },
       "custom_scorchwing_wyvern": {
-        "name": "Brændvinge-wyvern"
+        "name": "Scorchwing Wyvern"
       },
       "custom_blighted_sentinel": {
-        "name": "Forbandet Vagt"
+        "name": "Blighted Sentinel"
       },
       "custom_dragonclaw_warden": {
-        "name": "Drakeklo-vogter"
+        "name": "Dragonclaw Warden"
       },
       "custom_ignaraxis": {
-        "name": "Ignaraxis den Evige"
+        "name": "Ignaraxis the Eternal"
       },
       "custom_skullfire_brute": {
-        "name": "Kranieild-brut"
+        "name": "Skullfire Brute"
       },
       "custom_blightshroud_stalker": {
-        "name": "Forbandelsesskygge-krybskytte"
+        "name": "Blightshroud Stalker"
       },
       "custom_ironpelt_monkroose": {
-        "name": "Jernpels-monkros"
+        "name": "Ironpelt Monkroose"
       },
       "ironvein_foreman": {
         "name": "Jernåre-Formand"
@@ -5779,19 +5779,19 @@ export const da_DK: EnTranslations = {
         "greeting": "Relikvariet nedenunder har flyttet sig igen."
       },
       "custom_commander_vael": {
-        "name": "Kommandant Vael",
-        "title": "Officer i Blight Vagten",
-        "greeting": "Vær parat, {playerName}. Denne Blight sover ikke, og det gør vi heller ikke."
+        "name": "Commander Vael",
+        "title": "Blightwatch Officer",
+        "greeting": "Stand ready, {playerName}. This blight does not sleep, and neither do we."
       },
       "custom_scout_fenris": {
-        "name": "Speider Fenris",
-        "title": "Speider i Blight Vagten",
-        "greeting": "Er du gået igennem wyvern-territoriet? Godt. Jeg havde brug for en dygtig her."
+        "name": "Scout Fenris",
+        "title": "Blightwatch Scout",
+        "greeting": "You made it through the wyvern grounds? Good. I could use someone capable out here."
       },
       "custom_elder_draxis": {
-        "name": "Aeldste Draxis",
-        "title": "Dræber af Drager",
-        "greeting": "Jeg har jaget drager i tredive år, {playerName}. Ignaraxis er anderledes end de andre."
+        "name": "Elder Draxis",
+        "title": "Dragonslayer",
+        "greeting": "I have hunted dragons for thirty years, {playerName}. Ignaraxis is not like the others."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -6553,71 +6553,71 @@ export const da_DK: EnTranslations = {
         }
       },
       "custom_proving_ground": {
-        "title": "Prøvelsernes Mark",
-        "text": "Askvandrer-dragerne er rykket frem til kanten af vores lejr, {playerName}. Reducér deres antal -- ti af dem -- og bevis at du fortjener en plads i Blight.",
-        "completion": "Ti drager fældet. Ikke dårligt. Måske overlever du det alligevel, {playerName}.",
+        "title": "Proving Ground",
+        "text": "The ashwalker drakes have pushed to the edges of our camp, {playerName}. Thin their numbers -- ten of them -- and prove you belong in the Blight.",
+        "completion": "Ten drakes down. Not bad. You might just survive out here, {playerName}.",
         "objectives": {
           "0": {
-            "label": "Askvandrer-drager dræbt"
+            "label": "Ashwalker Drakes slain"
           }
         }
       },
       "custom_marks_of_the_drake": {
-        "title": "Dragens Mærker",
-        "text": "Drageskæl er så hårde som pladepanser, {playerName}. Jeg har brug for otte af dem til den næste patruljefører. Dragerne giver dem ikke frivilligt -- tag hvad du kan.",
-        "completion": "Otte skæl. De modstår ild bedre end alt hvad vi kan smedde. Godt arbejde.",
+        "title": "Marks of the Drake",
+        "text": "Drake scales are tough as plate, {playerName}. I need eight of them to outfit the next patrol. The drakes do not give them up easily -- take what you can.",
+        "completion": "Eight scales. These will hold up against fire better than anything we can forge. Well done.",
         "objectives": {
           "0": {
-            "label": "Askvandrer-drageskæl"
+            "label": "Ashwalker Drake Scales"
           }
         }
       },
       "custom_into_the_blight": {
-        "title": "Ind i Blight",
-        "text": "De brændvinge-wyvernerne slår sig ned mellem os og fængslet, {playerName}. Otte af dem skal væk, og jeg har brug for fem af deres hjertesten til kommandantens alkymist. De er godt gemt, men jeg ved at du kan nå dem.",
-        "completion": "Redet er ryddet. Hjertestenene er mere værd end du tror.",
+        "title": "Into the Blight",
+        "text": "Those scorchwing wyverns are nesting between us and the dungeon, {playerName}. Eight of them need to go, and I need five of their heartstones for the commander's alchemist. They're deep, but I know you can reach them.",
+        "completion": "The nesting ground is clear. Those heartstones will be worth more to us than you know.",
         "objectives": {
           "0": {
-            "label": "Brændvinge-wyvernere dræbt"
+            "label": "Scorchwing Wyverns slain"
           },
           "1": {
-            "label": "Wyvern-hjertesten"
+            "label": "Scorchwing Heartstones"
           }
         }
       },
       "custom_eye_of_the_storm": {
-        "title": "Stormens Øje",
-        "text": "De forbandede vagter er Ignaraxis ydre vogtere, {playerName}. Gamle dragevæsener fordrejet af årtusinders nærhed til det uhyre. Fæld tre og bring mig forbandelsesasken fra deres kerne. Hvis du kan klare dem, er du klar til Gabet.",
-        "completion": "Tre vagter fældet og aske i hånden. Du er klar, {playerName}. Tal med Aeldste Draxis ved fortet. Han har ventet længe på dette.",
+        "title": "Eye of the Storm",
+        "text": "The blighted sentinels are Ignaraxis's outer guard, {playerName}. Ancient dragonkin warped by centuries near that creature. Take down three of them and bring me the blight embers from their cores. If you can manage them, you're ready for the maw.",
+        "completion": "Three sentinels down and embers in hand. You're ready, {playerName}. Go speak with Elder Draxis back at the post. He has been waiting a long time for this.",
         "objectives": {
           "0": {
-            "label": "Forbandede Vagter dræbt"
+            "label": "Blighted Sentinels slain"
           },
           "1": {
-            "label": "Forbandelses-aske"
+            "label": "Blight Embers"
           }
         }
       },
       "custom_eternal_flame": {
-        "title": "Den Evige Flamme",
-        "text": "Ignaraxis den Evige har sovet i Dragens Gab i et tidsalder, {playerName}. Blight over os er hans ånde i fast form. Gå ind i Gabet, konfronter ham i sin rede og gør en ende på det. Du vil have brug for allierede -- dette er ikke en jagt for en enkelt.",
-        "completion": "Den Evige Flamme er slukket, {playerName}. Jeg har ventet tredive år på at sige de ord. Blight vil nu svinde. Tag dette -- du har mere end fortjent det.",
+        "title": "The Eternal Flame",
+        "text": "Ignaraxis the Eternal has slumbered in the Dragon's Maw for an age, {playerName}. The Blight above us is his breath given form. Enter the maw, face him in his lair, and end it. Your companions will be necessary -- this is not a hunt for one alone.",
+        "completion": "The Eternal Flame is extinguished, {playerName}. I have waited thirty years to say those words. The Blight will fade now. Take this -- you've more than earned it.",
         "objectives": {
           "0": {
-            "label": "Ignaraxis den Evige dræbt"
+            "label": "Ignaraxis the Eternal slain"
           }
         }
       },
       "custom_blight_patrol": {
-        "title": "Blight Patrulje",
-        "text": "Vi kan ikke lade dragerne og wyvernerne overvælde adgangsvejene, {playerName}. Patruljer Blight, dræb femten drager og otte wyvernere, og vend tilbage. Det holder vores flanker fri mens kommandokæden styrer det store billede.",
-        "completion": "Flankerne er frie. Mændene trækker vejret lettere når nogen derinde gør en forskel. Godt arbejde, {playerName}.",
+        "title": "Blight Patrol",
+        "text": "We cannot let the drakes and wyverns overrun the approaches, {playerName}. Patrol the Blight, cut down fifteen drakes and eight wyverns, and report back. Keeps our flanks clear while the chain of command handles the bigger picture.",
+        "completion": "Flanks are clear. The men breathe easier when someone is out there making a difference. Good work, {playerName}.",
         "objectives": {
           "0": {
-            "label": "Askvandrer-drager dræbt"
+            "label": "Ashwalker Drakes slain"
           },
           "1": {
-            "label": "Brændvinge-wyvernere dræbt"
+            "label": "Scorchwing Wyverns slain"
           }
         }
       },
@@ -6789,17 +6789,17 @@ export const da_DK: EnTranslations = {
         }
       },
       "custom_dragons_blight": {
-        "name": "Drakens Forbandelse",
-        "welcome": "Drakens Forbandelse strækker sig foran dig, kvalt i aske og den fjerne klang af urfornyt ild.",
+        "name": "Dragon's Blight",
+        "welcome": "The Dragon's Blight stretches before you, choked with ash and the distant echo of ancient fire.",
         "pois": {
           "0": {
-            "label": "Blight Vagt-fort"
+            "label": "Blightwatch Post"
           },
           "1": {
-            "label": "Fenris Forpost"
+            "label": "Fenris's Outpost"
           },
           "2": {
-            "label": "Dragens Gab"
+            "label": "Dragon's Maw"
           }
         }
       }
@@ -6831,9 +6831,9 @@ export const da_DK: EnTranslations = {
         "leaveText": "Du vender tilbage til Tornetops kolde luft."
       },
       "custom_dragons_maw": {
-        "name": "Dragens Gab",
-        "enterText": "Varmen er kvælende. Noget massivt rører sig i mørket foran dig.",
-        "leaveText": "Du stiger ud af Dragens Gab, udeluften kølig mod din hud."
+        "name": "Dragon's Maw",
+        "enterText": "The heat is suffocating. Something vast stirs in the darkness ahead.",
+        "leaveText": "You emerge from the Dragon's Maw, the air outside cold against your skin."
       },
       "drowned_temple": {
         "name": "Det Druknede Tempel",

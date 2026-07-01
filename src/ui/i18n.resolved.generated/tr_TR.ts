@@ -787,7 +787,7 @@ export const tr_TR: EnTranslations = {
     },
     "discord": {
       "title": "Discord",
-      "panelTitle": "World of ClaudeCraft",
+      "panelTitle": "World of Arcane Hunters",
       "open": "Discord",
       "close": "Kapat",
       "keybind": "Discord Paneli",
@@ -896,7 +896,7 @@ export const tr_TR: EnTranslations = {
         "titleDiscordian": "Unvan: Discordlu",
         "titleSquire": "Unvan: Diyarın Silahtarı",
         "chromaBlurple": "Blurple Mech Renk Kaplaması",
-        "titleChampion": "Unvan: Claudemoon Şampiyonu",
+        "titleChampion": "Unvan: Eastbrook Şampiyonu",
         "swagStickers": "Çıkartma Paketi (kargoyla)",
         "swagTee": "Tişört (kargoyla)"
       },
@@ -958,8 +958,8 @@ export const tr_TR: EnTranslations = {
     }
   },
   "guide": {
-    "brand": "World of ClaudeCraft",
-    "brandShort": "ClaudeCraft",
+    "brand": "World of Arcane Hunters",
+    "brandShort": "WoAH",
     "tagline": "Tarayıcınızda ücretsiz oynayabileceğiniz klasik tarzda bir MMO.",
     "skipToContent": "Ana içeriğe geç",
     "loading": "Yükleniyor...",
@@ -1019,7 +1019,7 @@ export const tr_TR: EnTranslations = {
       "github": "GitHub'daki Kaynak",
       "discord": "Discord'a Katıl",
       "communityWiki": "Topluluk Wiki'si",
-      "rights": "World of ClaudeCraft"
+      "rights": "World of Arcane Hunters"
     },
     "language": {
       "label": "Dil",
@@ -1039,7 +1039,7 @@ export const tr_TR: EnTranslations = {
     },
     "home": {
       "eyebrow": "Klasik tarz tarayıcı MMO'su",
-      "title": "World of ClaudeCraft",
+      "title": "World of Arcane Hunters",
       "subtitle": "Görev yap, grup kur ve elle kurulmuş bir dünyayı keşfet; tarayıcında ücretsiz.",
       "ctaPlay": "Şimdi Oyna",
       "ctaLearn": "Nasıl Oynanır",
@@ -1420,7 +1420,7 @@ export const tr_TR: EnTranslations = {
     },
     "worldPage": {
       "heading": "Dünya",
-      "intro": "World of ClaudeCraft, yürüyerek aştığınız tek ve kesintisiz bir diyardır; güneyden kuzeye dizilmiş üç bölge. Hızlı seyahat yoktur, bu yüzden yolculuğun kendisi maceranın bir parçasıdır.",
+      "intro": "World of Arcane Hunters, yürüyerek aştığınız tek ve kesintisiz bir diyardır; güneyden kuzeye dizilmiş üç bölge. Hızlı seyahat yoktur, bu yüzden yolculuğun kendisi maceranın bir parçasıdır.",
       "hub": "Ana üs",
       "mapHeading": "Kuzeye giden yol",
       "mapSub": "Güneyden kuzeye üç bölge, her biri seviye olarak bir basamak daha yüksek. Görev izini takip edin, diyar sizi vadiden zirvelere taşır.",
@@ -1836,8 +1836,8 @@ export const tr_TR: EnTranslations = {
     "realmName": "Diyar Adı"
   },
   "footer": {
-    "copyright": "2026 World of ClaudeCraft",
-    "githubLink": "https://github.com/levy-street/world-of-claudecraft",
+    "copyright": "2026 World of Arcane Hunters",
+    "githubLink": "https://github.com/giondesign/world-of-arcane-hunters",
     "githubLabel": "Açık Kaynak Proje",
     "whitepaper": "Teknik Doküman",
     "terms": "Hizmet Koşulları",
@@ -1887,7 +1887,7 @@ export const tr_TR: EnTranslations = {
     "serverOnline": "Çevrimiçi",
     "serverOffline": "Çevrimdışı",
     "play": "Oyna",
-    "playAria": "World of ClaudeCraft oyna",
+    "playAria": "World of Arcane Hunters oyna",
     "serverLabel": "Diyarını seç",
     "serverAria": "Diyar seç: Çevrimiçi veya Çevrimdışı",
     "serverOfflineSub": "Anında yerel dünya",
@@ -2081,16 +2081,16 @@ export const tr_TR: EnTranslations = {
     "levelClass": "Seviye {level} - {className}",
     "topPercent": "İLK %{percent}",
     "realmSubtitle": "{realm} Diyarı",
-    "defaultRealm": "World of ClaudeCraft",
-    "brandWordmark": "WORLD OF CLAUDECRAFT",
+    "defaultRealm": "World of Arcane Hunters",
+    "brandWordmark": "WORLD OF ARCANE HUNTERS",
     "recruited": "{count} davet edildi",
     "footerHandle": "@{handle}",
     "footerHandleWithRecruits": "@{handle} - {recruited}",
     "footerCta": "Efsaneni yarat: {siteUrl}",
     "arenaStat": "Arena",
     "shareTierBit": ", {tier}-derece $WOC sahibi",
-    "shareText": "World of ClaudeCraft'ta efsanemi yaratıyorum: Seviye {level} {className}{tierBit}. Diyarıma katıl:",
-    "nativeShareTitle": "World of ClaudeCraft",
+    "shareText": "World of Arcane Hunters'ta efsanemi yaratıyorum: Seviye {level} {className}{tierBit}. Diyarıma katıl:",
+    "nativeShareTitle": "World of Arcane Hunters",
     "fileNameFallback": "oyuncu",
     "actionShareX": "X'te Paylaş",
     "actionCopyReferral": "Davet Bağlantısını Kopyala",
@@ -2580,14 +2580,14 @@ export const tr_TR: EnTranslations = {
     }
   },
   "seo": {
-    "title": "World of ClaudeCraft: Klasik Tarzı Web MMO'su",
-    "description": "Doğrudan tarayıcında oynanabilen klasik tarzı bir mikro MMO olan World of ClaudeCraft'ta destansı bir maceraya atıl. Kalıcı bir ortak diyara katıl, sınıfları geliştir ve düşmanları alt et!",
+    "title": "World of Arcane Hunters: Klasik Tarzı Web MMO'su",
+    "description": "Doğrudan tarayıcında oynanabilen klasik tarzı bir mikro MMO olan World of Arcane Hunters'ta destansı bir maceraya atıl. Kalıcı bir ortak diyara katıl, sınıfları geliştir ve düşmanları alt et!",
     "genre": "MMORPG",
     "playMode": "Çok Oyunculu",
     "applicationCategory": "Oyun",
     "operatingSystem": "Web tarayıcısı",
-    "officialLabel": "Resmi World of ClaudeCraft web sitesi",
-    "officialBody": "worldofclaudecraft.com, Claudemoon diyarının resmi ücretsiz tarayıcı MMO'sudur. Kalıcı bir karakterle çevrimiçi oyna, çevrimdışı tek başına keşfet, wiki'yi oku ve bu siteden doğrulanmış topluluk bağlantılarını takip et."
+    "officialLabel": "Resmi World of Arcane Hunters web sitesi",
+    "officialBody": "The official free browser MMO for the Eastbrook realm. Play online with a persistent character, explore solo offline, read the wiki, and follow verified community links from this site."
   },
   "a11y": {
     "goHome": "Ana sayfaya git",
@@ -2595,9 +2595,9 @@ export const tr_TR: EnTranslations = {
     "mainNavigation": "Ana gezinme",
     "languageSelection": "Dil seçimi",
     "characterActions": "Karakter eylemleri",
-    "githubProject": "World of ClaudeCraft GitHub projesini aç",
-    "discordCommunity": "World of ClaudeCraft Discord topluluğuna katıl",
-    "donateProject": "World of ClaudeCraft'a destek olmak için bağış yap"
+    "githubProject": "World of Arcane Hunters GitHub projesini aç",
+    "discordCommunity": "World of Arcane Hunters Discord topluluğuna katıl",
+    "donateProject": "World of Arcane Hunters'a destek olmak için bağış yap"
   },
   "loading": {
     "world": "Dünya yükleniyor...",
@@ -2769,20 +2769,20 @@ export const tr_TR: EnTranslations = {
     "iosStandaloneDetail": "Ana ekran tam ekran modundasınız. Cihazı yatay konumda tutun.",
     "iosInstallDetail": "iPhone veya iPad'de gerçek tam ekran için önce bu sayfayı Ana Ekranınıza yükleyin.",
     "iosShareStep": "Safari'de Paylaş'a, ardından Ana Ekrana Ekle'ye dokunun.",
-    "iosOpenStep": "World of ClaudeCraft'ı yeni Ana Ekran simgesinden açın.",
+    "iosOpenStep": "World of Arcane Hunters'ı yeni Ana Ekran simgesinden açın.",
     "androidStandaloneDetail": "Tam ekran uygulama modundasınız. Cihazı yatay konumda tutun.",
     "androidInstallDetail": "Android'de tam ekran için önce bu sayfayı yükleyin veya Ana ekranınıza ekleyin.",
     "androidInstallStep": "Chrome'da menüye dokunun, ardından Uygulamayı yükle veya Ana ekrana ekle seçeneğini seçin.",
-    "androidOpenStep": "World of ClaudeCraft'ı yeni simgeden açın.",
+    "androidOpenStep": "World of Arcane Hunters'ı yeni simgeden açın.",
     "otherStandaloneDetail": "Cihazınızı yatay tam ekran konumunda tutun.",
     "otherInstallDetail": "En iyi tam ekran mobil deneyim için bu sayfayı yükleyin veya Ana ekranınıza ekleyin."
   },
   "serverUnavailable": {
-    "title": "World of ClaudeCraft - Diyar Kullanılamıyor",
-    "logoAlt": "World of ClaudeCraft",
+    "title": "World of Arcane Hunters - Diyar Kullanılamıyor",
+    "logoAlt": "World of Arcane Hunters",
     "eyebrow": "Diyar bakımı",
     "heading": "Diyar geçici olarak kullanılamıyor.",
-    "body": "Oyun hizmetini yeniden başlatıyoruz ve Claudemoon'un kısa süre içinde geri döneceğini umuyoruz. Bu sayfa otomatik olarak denetlemeye devam edecek.",
+    "body": "Oyun hizmetini yeniden başlatıyoruz ve Eastbrook'un kısa süre içinde geri döneceğini umuyoruz. Bu sayfa otomatik olarak denetlemeye devam edecek.",
     "status": "Birazdan döneriz"
   },
   "hud": {
@@ -4834,31 +4834,31 @@ export const tr_TR: EnTranslations = {
         "name": "Hükümdar'ın Tacı"
       },
       "custom_drake_scale": {
-        "name": "Kul Yuruyucu Ejder Pulu"
+        "name": "Ashwalker Drake Scale"
       },
       "custom_wyvern_heartstone": {
-        "name": "Yakici Kanat Kalp Tasi"
+        "name": "Scorchwing Heartstone"
       },
       "custom_blight_ember": {
-        "name": "Lanet Kozu"
+        "name": "Blight Ember"
       },
       "custom_drakebone_shoulders": {
-        "name": "Ejder Kemigi Omuzluklar"
+        "name": "Drakebone Shoulderguards"
       },
       "custom_scorchwing_cowl": {
-        "name": "Yakici Kanat Baslik"
+        "name": "Scorchwing Cowl"
       },
       "custom_blight_stalkers_hood": {
-        "name": "Lanet Avcisi Baslik"
+        "name": "Blightstalker's Hood"
       },
       "custom_ignaraxis_greatblade": {
-        "name": "Ignaraxis Buyuk Kilici"
+        "name": "Ignaraxis Greatblade"
       },
       "custom_cinderstave_eternal": {
-        "name": "Ebedi Kul Asasi"
+        "name": "Cinderstave of the Eternal"
       },
       "custom_fang_of_ignaraxis": {
-        "name": "Ignaraxis'in Disi"
+        "name": "Fang of Ignaraxis"
       },
       "bristleback_maul": {
         "name": "Dikensırt Balyozu"
@@ -5535,28 +5535,28 @@ export const tr_TR: EnTranslations = {
         "name": "Çömez Tessa"
       },
       "custom_ashwalker_drake": {
-        "name": "Kul Yuruyucu Ejder"
+        "name": "Ashwalker Drake"
       },
       "custom_scorchwing_wyvern": {
-        "name": "Yakici Kanat Wyvern"
+        "name": "Scorchwing Wyvern"
       },
       "custom_blighted_sentinel": {
-        "name": "Lanetli Nobetci"
+        "name": "Blighted Sentinel"
       },
       "custom_dragonclaw_warden": {
-        "name": "Ejder Pencesi Gardiyani"
+        "name": "Dragonclaw Warden"
       },
       "custom_ignaraxis": {
-        "name": "Ignaraxis Ebedi"
+        "name": "Ignaraxis the Eternal"
       },
       "custom_skullfire_brute": {
-        "name": "Kafatasi Atesi Kaba Guc"
+        "name": "Skullfire Brute"
       },
       "custom_blightshroud_stalker": {
-        "name": "Lanet Ortulu Avci"
+        "name": "Blightshroud Stalker"
       },
       "custom_ironpelt_monkroose": {
-        "name": "Demir Postlu Monkroose"
+        "name": "Ironpelt Monkroose"
       },
       "ironvein_foreman": {
         "name": "Demirdamar Ustabaşı"
@@ -5779,19 +5779,19 @@ export const tr_TR: EnTranslations = {
         "greeting": "Aşağıdaki kutsal emanetlik yine yer değiştirdi."
       },
       "custom_commander_vael": {
-        "name": "Komutan Vael",
-        "title": "Blight Muhafizlari Subay",
-        "greeting": "Hazir ol, {playerName}. Bu Blight uyumuyor, biz de uyumuyoruz."
+        "name": "Commander Vael",
+        "title": "Blightwatch Officer",
+        "greeting": "Stand ready, {playerName}. This blight does not sleep, and neither do we."
       },
       "custom_scout_fenris": {
-        "name": "Kesif Fenris",
-        "title": "Blight Muhafizlari Kesifci",
-        "greeting": "Wyvern bolgesinden gectin mi? Iyi. Burada yetenekli birine ihtiyacim vardi."
+        "name": "Scout Fenris",
+        "title": "Blightwatch Scout",
+        "greeting": "You made it through the wyvern grounds? Good. I could use someone capable out here."
       },
       "custom_elder_draxis": {
-        "name": "Yasli Draxis",
-        "title": "Ejder Katili",
-        "greeting": "Otuz yildir ejder avliyorum, {playerName}. Ignaraxis digerlerinden farkli."
+        "name": "Elder Draxis",
+        "title": "Dragonslayer",
+        "greeting": "I have hunted dragons for thirty years, {playerName}. Ignaraxis is not like the others."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -6553,71 +6553,71 @@ export const tr_TR: EnTranslations = {
         }
       },
       "custom_proving_ground": {
-        "title": "Ispat Sahasi",
-        "text": "Kul yuruyucu ejderler kampimizin kenarina kadar ilerledi, {playerName}. Sayilarini azalt -- onlardan on tane -- ve Blight'a ait oldugunu kanitle.",
-        "completion": "On ejder yere serildi. Fena degil. Belki burada hayatta kalirsin, {playerName}.",
+        "title": "Proving Ground",
+        "text": "The ashwalker drakes have pushed to the edges of our camp, {playerName}. Thin their numbers -- ten of them -- and prove you belong in the Blight.",
+        "completion": "Ten drakes down. Not bad. You might just survive out here, {playerName}.",
         "objectives": {
           "0": {
-            "label": "Kul Yuruyucu Ejder Oldurulen"
+            "label": "Ashwalker Drakes slain"
           }
         }
       },
       "custom_marks_of_the_drake": {
-        "title": "Ejder Isaretleri",
-        "text": "Ejder pullar plaka zirh kadar sert, {playerName}. Bir sonraki devriye onbasi icin sekiz tane lazim. Ejderler kolayca vermez -- ne alabilirsen al.",
-        "completion": "Sekiz pul. Demireleyebilecegimiz herhangi bir seyle karsilastirildiginda atesi daha iyi dayanirlar. Guzel is.",
+        "title": "Marks of the Drake",
+        "text": "Drake scales are tough as plate, {playerName}. I need eight of them to outfit the next patrol. The drakes do not give them up easily -- take what you can.",
+        "completion": "Eight scales. These will hold up against fire better than anything we can forge. Well done.",
         "objectives": {
           "0": {
-            "label": "Kul Yuruyucu Ejder Pullar"
+            "label": "Ashwalker Drake Scales"
           }
         }
       },
       "custom_into_the_blight": {
-        "title": "Blight'a Dogru",
-        "text": "O yakici kanat wyvernler zindan ile bizim aramiza yerlesti, {playerName}. Sekizinin gitmesi gerekiyor ve komutanin simyacisi icin bes kalp tasi lazim. Derinde ama oraya ulasabilecegini biliyorum.",
-        "completion": "Yuva temizlendi. O kalp taslari dusundugunden daha degerli.",
+        "title": "Into the Blight",
+        "text": "Those scorchwing wyverns are nesting between us and the dungeon, {playerName}. Eight of them need to go, and I need five of their heartstones for the commander's alchemist. They're deep, but I know you can reach them.",
+        "completion": "The nesting ground is clear. Those heartstones will be worth more to us than you know.",
         "objectives": {
           "0": {
-            "label": "Yakici Kanat Wyvern Oldurulen"
+            "label": "Scorchwing Wyverns slain"
           },
           "1": {
-            "label": "Wyvern Kalp Taslari"
+            "label": "Scorchwing Heartstones"
           }
         }
       },
       "custom_eye_of_the_storm": {
-        "title": "Firtinanin Gozu",
-        "text": "Lanetli nobetciler Ignaraxis'in dis koruyucularidir, {playerName}. Asirlar boyunca o varligin yaninda bulunarak bozulmus eski ejder yaratiklar. Uc tanesini yik ve ozeklerinden lanetli kozu getir. Onlarla basedebilirsen Cenelere hazirsin.",
-        "completion": "Uc nobetci yere serildi ve koz elde. Hazirsin, {playerName}. Karakoldaki Yasli Draxis ile konusmaya git. Cok uzun sure bekledi.",
+        "title": "Eye of the Storm",
+        "text": "The blighted sentinels are Ignaraxis's outer guard, {playerName}. Ancient dragonkin warped by centuries near that creature. Take down three of them and bring me the blight embers from their cores. If you can manage them, you're ready for the maw.",
+        "completion": "Three sentinels down and embers in hand. You're ready, {playerName}. Go speak with Elder Draxis back at the post. He has been waiting a long time for this.",
         "objectives": {
           "0": {
-            "label": "Lanetli Nobetci Oldurulen"
+            "label": "Blighted Sentinels slain"
           },
           "1": {
-            "label": "Lanetli Koz"
+            "label": "Blight Embers"
           }
         }
       },
       "custom_eternal_flame": {
-        "title": "Ebedi Alev",
-        "text": "Ignaraxis Ebedi bir cag boyunca Ejder Cenelerinde uyudu, {playerName}. Uzerimzdeki Blight onun bicim almis nefesidir. Cenelere gir, inine kos ve bunu bitir. Arkadaslarin gerekli olacak -- bu tek kisinin avi degil.",
-        "completion": "Ebedi Alev sonduruldu, {playerName}. O sozleri soylemeyi otuz yildir bekliyordum. Blight artik gerilecek. Bunu al -- layik olarak kazandin.",
+        "title": "The Eternal Flame",
+        "text": "Ignaraxis the Eternal has slumbered in the Dragon's Maw for an age, {playerName}. The Blight above us is his breath given form. Enter the maw, face him in his lair, and end it. Your companions will be necessary -- this is not a hunt for one alone.",
+        "completion": "The Eternal Flame is extinguished, {playerName}. I have waited thirty years to say those words. The Blight will fade now. Take this -- you've more than earned it.",
         "objectives": {
           "0": {
-            "label": "Ignaraxis Ebedi Oldurulen"
+            "label": "Ignaraxis the Eternal slain"
           }
         }
       },
       "custom_blight_patrol": {
-        "title": "Blight Devriyesi",
-        "text": "Ejder ve wyvernlerin gecirleri istila etmesine izin veremeyiz, {playerName}. Blight'i devriyelе et, on bes ejder ve sekiz wyvern oldur ve geri don. Komuta zinciri buyuk resmi yonetirken kanatlarimizi temiz tutar.",
-        "completion": "Kanatlar temiz. Orada dis dunyada fark yaratan biri oldugunda erler daha rahat nefes aliyor. Guzel is, {playerName}.",
+        "title": "Blight Patrol",
+        "text": "We cannot let the drakes and wyverns overrun the approaches, {playerName}. Patrol the Blight, cut down fifteen drakes and eight wyverns, and report back. Keeps our flanks clear while the chain of command handles the bigger picture.",
+        "completion": "Flanks are clear. The men breathe easier when someone is out there making a difference. Good work, {playerName}.",
         "objectives": {
           "0": {
-            "label": "Kul Yuruyucu Ejder Oldurulen"
+            "label": "Ashwalker Drakes slain"
           },
           "1": {
-            "label": "Yakici Kanat Wyvern Oldurulen"
+            "label": "Scorchwing Wyverns slain"
           }
         }
       },
@@ -6789,17 +6789,17 @@ export const tr_TR: EnTranslations = {
         }
       },
       "custom_dragons_blight": {
-        "name": "Ejder Laneti",
-        "welcome": "Ejder Laneti onunde uzaniyor, kul ve kadim atesin uzak yankisiyla bogulmus.",
+        "name": "Dragon's Blight",
+        "welcome": "The Dragon's Blight stretches before you, choked with ash and the distant echo of ancient fire.",
         "pois": {
           "0": {
-            "label": "Blight Muhafizlari Kalesi"
+            "label": "Blightwatch Post"
           },
           "1": {
-            "label": "Fenris Ileri Karakolu"
+            "label": "Fenris's Outpost"
           },
           "2": {
-            "label": "Ejder Ceneleri"
+            "label": "Dragon's Maw"
           }
         }
       }
@@ -6831,9 +6831,9 @@ export const tr_TR: EnTranslations = {
         "leaveText": "Dikenzirve'nin soğuk havasına geri dönersin."
       },
       "custom_dragons_maw": {
-        "name": "Ejder Ceneleri",
-        "enterText": "Sicaklik bogucudur. Ondeki karanlikta devasa bir sey kildiyor.",
-        "leaveText": "Ejder Ceneleri'nden cikiyorsun, dis hava teninde soguk hissettiriyor."
+        "name": "Dragon's Maw",
+        "enterText": "The heat is suffocating. Something vast stirs in the darkness ahead.",
+        "leaveText": "You emerge from the Dragon's Maw, the air outside cold against your skin."
       },
       "drowned_temple": {
         "name": "Boğulmuş Tapınak",

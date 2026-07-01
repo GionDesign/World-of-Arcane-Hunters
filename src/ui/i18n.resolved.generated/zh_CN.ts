@@ -787,7 +787,7 @@ export const zh_CN: EnTranslations = {
     },
     "discord": {
       "title": "Discord",
-      "panelTitle": "World of ClaudeCraft",
+      "panelTitle": "World of Arcane Hunters",
       "open": "Discord",
       "close": "关闭",
       "keybind": "Discord 面板",
@@ -896,7 +896,7 @@ export const zh_CN: EnTranslations = {
         "titleDiscordian": "称号：Discordian",
         "titleSquire": "称号：国度扈从",
         "chromaBlurple": "Blurple 机甲涂装",
-        "titleChampion": "称号：Claudemoon 勇士",
+        "titleChampion": "称号：Eastbrook 勇士",
         "swagStickers": "贴纸包（包邮寄送）",
         "swagTee": "T 恤（包邮寄送）"
       },
@@ -959,7 +959,7 @@ export const zh_CN: EnTranslations = {
   },
   "guide": {
     "brand": "World of Arcane Hunters",
-    "brandShort": "ClaudeCraft",
+    "brandShort": "WoAH",
     "tagline": "一款可在浏览器中免费畅玩的经典风格 MMO。",
     "skipToContent": "跳至正文",
     "loading": "加载中……",
@@ -2081,8 +2081,8 @@ export const zh_CN: EnTranslations = {
     "levelClass": "{level}级 - {className}",
     "topPercent": "前 {percent}%",
     "realmSubtitle": "{realm} 服务器",
-    "defaultRealm": "ClaudeCraft 世界",
-    "brandWordmark": "WORLD OF CLAUDECRAFT",
+    "defaultRealm": "Arcane Hunters 世界",
+    "brandWordmark": "WORLD OF ARCANE HUNTERS",
     "recruited": "已招募 {count} 人",
     "footerHandle": "@{handle}",
     "footerHandleWithRecruits": "@{handle} - {recruited}",
@@ -2090,7 +2090,7 @@ export const zh_CN: EnTranslations = {
     "arenaStat": "竞技场",
     "shareTierBit": "，{tier}级 $WOC 持有者",
     "shareText": "我正在 World of Arcane Hunters 中铸就传说：{level}级 {className}{tierBit}。加入我的服务器：",
-    "nativeShareTitle": "ClaudeCraft 世界",
+    "nativeShareTitle": "Arcane Hunters 世界",
     "fileNameFallback": "玩家",
     "actionShareX": "分享到 X",
     "actionCopyReferral": "复制推荐链接",
@@ -2586,7 +2586,7 @@ export const zh_CN: EnTranslations = {
     "playMode": "多人游戏",
     "applicationCategory": "游戏",
     "operatingSystem": "网页浏览器",
-    "officialLabel": "World of ClaudeCraft 官方网站",
+    "officialLabel": "World of Arcane Hunters 官方网站",
     "officialBody": "Eastbrook 服务器的官方免费浏览器 MMO。你可以用持久角色在线游玩，也可以离线单人探索，阅读 wiki，并从本站访问已验证的社区链接。"
   },
   "a11y": {

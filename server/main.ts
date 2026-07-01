@@ -318,7 +318,7 @@ async function getGuildLeaderboard(scope: 'realm' | 'global'): Promise<GuildLead
 // secret to the client; (3) we return only the small, sanitised subset the UI
 // needs. Same compute-once/serve-from-memory pattern as the leaderboard cache.
 // ---------------------------------------------------------------------------
-const GITHUB_REPO = process.env.GITHUB_REPO ?? 'levy-street/world-of-claudecraft';
+const GITHUB_REPO = process.env.GITHUB_REPO ?? 'giondesign/world-of-arcane-hunters';
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN ?? '';
 const RELEASES_TTL_MS = 15 * 60_000; // 15 min — releases change rarely
 const RELEASES_SIZE = 20;
@@ -1741,7 +1741,7 @@ async function main(): Promise<void> {
 
   game.start();
   server.listen(PORT, () => {
-    console.log(`World of ClaudeCraft server listening on http://localhost:${PORT}`);
+    console.log(`World of Arcane Hunters server listening on http://localhost:${PORT}`);
     console.log(`  REST: /api/register /api/login /api/characters /api/status`);
     console.log(`  WS:   /ws, then first message {t:"auth",token,character}`);
   });

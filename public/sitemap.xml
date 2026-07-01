@@ -16,12 +16,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://worldofclaudecraft.com/press</loc>
+    <loc>https://TODO-your-domain.com/press</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://worldofclaudecraft.com/play</loc>
+    <loc>https://TODO-your-domain.com/play</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -136,12 +136,12 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://worldofclaudecraft.com/wiki/delves</loc>
+    <loc>https://TODO-your-domain.com/wiki/delves</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://worldofclaudecraft.com/wiki/arena</loc>
+    <loc>https://TODO-your-domain.com/wiki/arena</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

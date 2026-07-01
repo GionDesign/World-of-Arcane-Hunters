@@ -787,7 +787,7 @@ export const it_IT: EnTranslations = {
     },
     "discord": {
       "title": "Discord",
-      "panelTitle": "World of ClaudeCraft",
+      "panelTitle": "World of Arcane Hunters",
       "open": "Discord",
       "close": "Chiudi",
       "keybind": "Pannello Discord",
@@ -896,7 +896,7 @@ export const it_IT: EnTranslations = {
         "titleDiscordian": "Titolo: Discordiano",
         "titleSquire": "Titolo: Scudiero del Reame",
         "chromaBlurple": "Cromatura Mech Blurple",
-        "titleChampion": "Titolo: Campione di Claudemoon",
+        "titleChampion": "Titolo: Campione di Eastbrook",
         "swagStickers": "Pacchetto adesivi (spedito)",
         "swagTee": "Maglietta (spedita)"
       },
@@ -959,7 +959,7 @@ export const it_IT: EnTranslations = {
   },
   "guide": {
     "brand": "World of Arcane Hunters",
-    "brandShort": "ClaudeCraft",
+    "brandShort": "WoAH",
     "tagline": "Un MMO in stile classico che giochi gratis nel tuo browser.",
     "skipToContent": "Vai al contenuto principale",
     "loading": "Caricamento in corso...",
@@ -2081,8 +2081,8 @@ export const it_IT: EnTranslations = {
     "levelClass": "Livello {level} - {className}",
     "topPercent": "TOP {percent}%",
     "realmSubtitle": "Reame {realm}",
-    "defaultRealm": "Mondo di ClaudeCraft",
-    "brandWordmark": "WORLD OF CLAUDECRAFT",
+    "defaultRealm": "Mondo di Arcane Hunters",
+    "brandWordmark": "WORLD OF ARCANE HUNTERS",
     "recruited": "{count} reclutati",
     "footerHandle": "@{handle}",
     "footerHandleWithRecruits": "@{handle} - {recruited}",
@@ -2090,7 +2090,7 @@ export const it_IT: EnTranslations = {
     "arenaStat": "Arena",
     "shareTierBit": ", titolare $WOC di rango {tier}",
     "shareText": "Sto forgiando la mia leggenda in World of Arcane Hunters: livello {level} {className}{tierBit}. Unisciti al mio reame:",
-    "nativeShareTitle": "Mondo di ClaudeCraft",
+    "nativeShareTitle": "Mondo di Arcane Hunters",
     "fileNameFallback": "giocatore",
     "actionShareX": "Condividi su X",
     "actionCopyReferral": "Copia link di invito",
@@ -2586,7 +2586,7 @@ export const it_IT: EnTranslations = {
     "playMode": "Multigiocatore",
     "applicationCategory": "Gioco",
     "operatingSystem": "Browser web",
-    "officialLabel": "Sito ufficiale di World of ClaudeCraft",
+    "officialLabel": "Sito ufficiale di World of Arcane Hunters",
     "officialBody": "L'MMO gratuito ufficiale da browser del reame Eastbrook. Gioca online con un personaggio persistente, esplora offline in solitaria, leggi il wiki e segui i link della community verificati da questo sito."
   },
   "a11y": {

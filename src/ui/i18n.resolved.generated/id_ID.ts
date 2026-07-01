@@ -787,7 +787,7 @@ export const id_ID: EnTranslations = {
     },
     "discord": {
       "title": "Discord",
-      "panelTitle": "World of ClaudeCraft",
+      "panelTitle": "World of Arcane Hunters",
       "open": "Discord",
       "close": "Tutup",
       "keybind": "Panel Discord",
@@ -896,7 +896,7 @@ export const id_ID: EnTranslations = {
         "titleDiscordian": "Gelar: Discordian",
         "titleSquire": "Gelar: Pengiring Kerajaan",
         "chromaBlurple": "Kroma Mech Blurple",
-        "titleChampion": "Gelar: Jawara Claudemoon",
+        "titleChampion": "Gelar: Jawara Eastbrook",
         "swagStickers": "Paket Stiker (dikirim)",
         "swagTee": "Kaus (dikirim)"
       },
@@ -958,8 +958,8 @@ export const id_ID: EnTranslations = {
     }
   },
   "guide": {
-    "brand": "World of ClaudeCraft",
-    "brandShort": "ClaudeCraft",
+    "brand": "World of Arcane Hunters",
+    "brandShort": "WoAH",
     "tagline": "MMO bergaya klasik yang bisa kamu mainkan gratis di peramban.",
     "skipToContent": "Lewati ke konten utama",
     "loading": "Memuat...",
@@ -1019,7 +1019,7 @@ export const id_ID: EnTranslations = {
       "github": "Sumber di GitHub",
       "discord": "Gabung Discord",
       "communityWiki": "Wiki Komunitas",
-      "rights": "World of ClaudeCraft"
+      "rights": "World of Arcane Hunters"
     },
     "language": {
       "label": "Bahasa",
@@ -1039,7 +1039,7 @@ export const id_ID: EnTranslations = {
     },
     "home": {
       "eyebrow": "MMO browser bergaya klasik",
-      "title": "World of ClaudeCraft",
+      "title": "World of Arcane Hunters",
       "subtitle": "Berpetualang, bersatu, dan jelajahi dunia rakitan tangan, gratis di browser-mu.",
       "ctaPlay": "Main Sekarang",
       "ctaLearn": "Cara Bermain",
@@ -1420,7 +1420,7 @@ export const id_ID: EnTranslations = {
     },
     "worldPage": {
       "heading": "Dunia",
-      "intro": "World of ClaudeCraft adalah satu daratan menyambung yang kamu lintasi dengan berjalan kaki, tiga zona terbentang dari selatan ke utara. Tidak ada perjalanan kilat, jadi pengembaraan itu sendiri bagian dari petualangan.",
+      "intro": "World of Arcane Hunters adalah satu daratan menyambung yang kamu lintasi dengan berjalan kaki, tiga zona terbentang dari selatan ke utara. Tidak ada perjalanan kilat, jadi pengembaraan itu sendiri bagian dari petualangan.",
       "hub": "Markas utama",
       "mapHeading": "Jalan ke utara",
       "mapSub": "Tiga zona, dari selatan ke utara, masing-masing setingkat lebih tinggi dalam level. Ikuti jejak misi dan daratan akan membawamu dari lembah ke puncak.",
@@ -1836,8 +1836,8 @@ export const id_ID: EnTranslations = {
     "realmName": "Nama Realm"
   },
   "footer": {
-    "copyright": "2026 World of ClaudeCraft",
-    "githubLink": "https://github.com/levy-street/world-of-claudecraft",
+    "copyright": "2026 World of Arcane Hunters",
+    "githubLink": "https://github.com/giondesign/world-of-arcane-hunters",
     "githubLabel": "Proyek Sumber Terbuka",
     "whitepaper": "Whitepaper",
     "terms": "Ketentuan Layanan",
@@ -1887,7 +1887,7 @@ export const id_ID: EnTranslations = {
     "serverOnline": "Online",
     "serverOffline": "Offline",
     "play": "Main",
-    "playAria": "Mainkan World of ClaudeCraft",
+    "playAria": "Mainkan World of Arcane Hunters",
     "serverLabel": "Pilih realm Anda",
     "serverAria": "Pilih realm: Online atau Offline",
     "serverOfflineSub": "Dunia lokal seketika",
@@ -2081,16 +2081,16 @@ export const id_ID: EnTranslations = {
     "levelClass": "Level {level} - {className}",
     "topPercent": "TERATAS {percent}%",
     "realmSubtitle": "Realm {realm}",
-    "defaultRealm": "World of ClaudeCraft",
-    "brandWordmark": "WORLD OF CLAUDECRAFT",
+    "defaultRealm": "World of Arcane Hunters",
+    "brandWordmark": "WORLD OF ARCANE HUNTERS",
     "recruited": "{count} direkrut",
     "footerHandle": "@{handle}",
     "footerHandleWithRecruits": "@{handle} - {recruited}",
     "footerCta": "Tempa legendamu: {siteUrl}",
     "arenaStat": "Arena",
     "shareTierBit": ", pemegang $WOC peringkat {tier}",
-    "shareText": "Aku sedang menempa legendaku di World of ClaudeCraft: Level {level} {className}{tierBit}. Bergabunglah dengan realmku:",
-    "nativeShareTitle": "World of ClaudeCraft",
+    "shareText": "Aku sedang menempa legendaku di World of Arcane Hunters: Level {level} {className}{tierBit}. Bergabunglah dengan realmku:",
+    "nativeShareTitle": "World of Arcane Hunters",
     "fileNameFallback": "pemain",
     "actionShareX": "Bagikan ke X",
     "actionCopyReferral": "Salin Tautan Rujukan",
@@ -2580,14 +2580,14 @@ export const id_ID: EnTranslations = {
     }
   },
   "seo": {
-    "title": "World of ClaudeCraft: MMO Web Bergaya Klasik",
-    "description": "Mulailah petualangan epik di World of ClaudeCraft, micro-MMO bergaya klasik yang dapat dimainkan langsung di peramban. Bergabunglah dengan realm bersama yang persisten, naikkan level kelas, dan kalahkan musuh!",
+    "title": "World of Arcane Hunters: MMO Web Bergaya Klasik",
+    "description": "Mulailah petualangan epik di World of Arcane Hunters, micro-MMO bergaya klasik yang dapat dimainkan langsung di peramban. Bergabunglah dengan realm bersama yang persisten, naikkan level kelas, dan kalahkan musuh!",
     "genre": "MMORPG",
     "playMode": "Multipemain",
     "applicationCategory": "Permainan",
     "operatingSystem": "Peramban web",
-    "officialLabel": "Situs resmi World of ClaudeCraft",
-    "officialBody": "worldofclaudecraft.com adalah MMO peramban gratis resmi untuk realm Claudemoon. Bermain daring dengan karakter yang persisten, jelajahi solo secara luring, baca wiki, dan ikuti tautan komunitas terverifikasi dari situs ini."
+    "officialLabel": "Situs resmi World of Arcane Hunters",
+    "officialBody": "The official free browser MMO for the Eastbrook realm. Play online with a persistent character, explore solo offline, read the wiki, and follow verified community links from this site."
   },
   "a11y": {
     "goHome": "Ke halaman utama",
@@ -2595,9 +2595,9 @@ export const id_ID: EnTranslations = {
     "mainNavigation": "Navigasi utama",
     "languageSelection": "Pemilihan bahasa",
     "characterActions": "Aksi karakter",
-    "githubProject": "Buka proyek GitHub World of ClaudeCraft",
-    "discordCommunity": "Gabung komunitas Discord World of ClaudeCraft",
-    "donateProject": "Berdonasi untuk mendukung World of ClaudeCraft"
+    "githubProject": "Buka proyek GitHub World of Arcane Hunters",
+    "discordCommunity": "Gabung komunitas Discord World of Arcane Hunters",
+    "donateProject": "Berdonasi untuk mendukung World of Arcane Hunters"
   },
   "loading": {
     "world": "Memuat dunia...",
@@ -2769,20 +2769,20 @@ export const id_ID: EnTranslations = {
     "iosStandaloneDetail": "Kamu berada dalam mode layar penuh layar-beranda. Pertahankan perangkat dalam posisi lanskap.",
     "iosInstallDetail": "Untuk layar penuh sejati di iPhone atau iPad, pasang halaman ini ke Layar Beranda terlebih dahulu.",
     "iosShareStep": "Di Safari, ketuk Bagikan, lalu Tambahkan ke Layar Beranda.",
-    "iosOpenStep": "Buka World of ClaudeCraft dari ikon Layar Beranda yang baru.",
+    "iosOpenStep": "Buka World of Arcane Hunters dari ikon Layar Beranda yang baru.",
     "androidStandaloneDetail": "Kamu berada dalam mode aplikasi layar penuh. Pertahankan perangkat dalam posisi lanskap.",
     "androidInstallDetail": "Untuk layar penuh di Android, pasang halaman ini atau tambahkan ke layar Beranda terlebih dahulu.",
     "androidInstallStep": "Di Chrome, ketuk menu, lalu Pasang aplikasi atau Tambahkan ke layar Beranda.",
-    "androidOpenStep": "Buka World of ClaudeCraft dari ikon baru.",
+    "androidOpenStep": "Buka World of Arcane Hunters dari ikon baru.",
     "otherStandaloneDetail": "Pertahankan perangkatmu dalam layar penuh posisi lanskap.",
     "otherInstallDetail": "Pasang atau tambahkan halaman ini ke layar Beranda untuk pengalaman seluler layar penuh terbaik."
   },
   "serverUnavailable": {
-    "title": "World of ClaudeCraft - Realm Tidak Tersedia",
-    "logoAlt": "World of ClaudeCraft",
+    "title": "World of Arcane Hunters - Realm Tidak Tersedia",
+    "logoAlt": "World of Arcane Hunters",
     "eyebrow": "Pemeliharaan realm",
     "heading": "Realm sementara tidak tersedia.",
-    "body": "Kami sedang memulai ulang layanan game dan memperkirakan Claudemoon akan kembali sebentar lagi. Halaman ini akan terus memeriksa secara otomatis.",
+    "body": "Kami sedang memulai ulang layanan game dan memperkirakan Eastbrook akan kembali sebentar lagi. Halaman ini akan terus memeriksa secara otomatis.",
     "status": "Segera kembali"
   },
   "hud": {
@@ -4834,31 +4834,31 @@ export const id_ID: EnTranslations = {
         "name": "Mahkota Sang Raja"
       },
       "custom_drake_scale": {
-        "name": "Sisik Naga Penjelajah Abu"
+        "name": "Ashwalker Drake Scale"
       },
       "custom_wyvern_heartstone": {
-        "name": "Batu Hati Sayap Bakar"
+        "name": "Scorchwing Heartstone"
       },
       "custom_blight_ember": {
-        "name": "Bara Kutukan"
+        "name": "Blight Ember"
       },
       "custom_drakebone_shoulders": {
-        "name": "Bahu Tulang Naga"
+        "name": "Drakebone Shoulderguards"
       },
       "custom_scorchwing_cowl": {
-        "name": "Tudung Sayap Bakar"
+        "name": "Scorchwing Cowl"
       },
       "custom_blight_stalkers_hood": {
-        "name": "Tudung Pemburu Kutukan"
+        "name": "Blightstalker's Hood"
       },
       "custom_ignaraxis_greatblade": {
-        "name": "Pedang Besar Ignaraxis"
+        "name": "Ignaraxis Greatblade"
       },
       "custom_cinderstave_eternal": {
-        "name": "Tongkat Abu Abadi"
+        "name": "Cinderstave of the Eternal"
       },
       "custom_fang_of_ignaraxis": {
-        "name": "Taring Ignaraxis"
+        "name": "Fang of Ignaraxis"
       },
       "bristleback_maul": {
         "name": "Cabikan Punggung Berbulu"
@@ -5535,28 +5535,28 @@ export const id_ID: EnTranslations = {
         "name": "Akolit Tessa"
       },
       "custom_ashwalker_drake": {
-        "name": "Naga Penjelajah Abu"
+        "name": "Ashwalker Drake"
       },
       "custom_scorchwing_wyvern": {
-        "name": "Wyvern Sayap Bakar"
+        "name": "Scorchwing Wyvern"
       },
       "custom_blighted_sentinel": {
-        "name": "Penjaga Terkutuk"
+        "name": "Blighted Sentinel"
       },
       "custom_dragonclaw_warden": {
-        "name": "Penjaga Cakar Naga"
+        "name": "Dragonclaw Warden"
       },
       "custom_ignaraxis": {
-        "name": "Ignaraxis Abadi"
+        "name": "Ignaraxis the Eternal"
       },
       "custom_skullfire_brute": {
-        "name": "Kepala Tengkorak Berapi"
+        "name": "Skullfire Brute"
       },
       "custom_blightshroud_stalker": {
-        "name": "Pemburu Jubah Kutukan"
+        "name": "Blightshroud Stalker"
       },
       "custom_ironpelt_monkroose": {
-        "name": "Monkroose Kulit Besi"
+        "name": "Ironpelt Monkroose"
       },
       "ironvein_foreman": {
         "name": "Mandor Ironvein"
@@ -5779,19 +5779,19 @@ export const id_ID: EnTranslations = {
         "greeting": "Relikuari di bawah bergeser lagi."
       },
       "custom_commander_vael": {
-        "name": "Komandan Vael",
-        "title": "Perwira Pengawal Wabah",
-        "greeting": "Bersiaplah, {playerName}. Wabah ini tidak tidur, dan kami pun tidak."
+        "name": "Commander Vael",
+        "title": "Blightwatch Officer",
+        "greeting": "Stand ready, {playerName}. This blight does not sleep, and neither do we."
       },
       "custom_scout_fenris": {
-        "name": "Pengintai Fenris",
-        "title": "Pengintai Pengawal Wabah",
-        "greeting": "Kau sudah melintasi wilayah wyvern? Bagus. Aku butuh seseorang yang mampu di sini."
+        "name": "Scout Fenris",
+        "title": "Blightwatch Scout",
+        "greeting": "You made it through the wyvern grounds? Good. I could use someone capable out here."
       },
       "custom_elder_draxis": {
-        "name": "Tetua Draxis",
-        "title": "Pembunuh Naga",
-        "greeting": "Aku telah berburu naga tiga puluh tahun, {playerName}. Ignaraxis berbeda dari yang lain."
+        "name": "Elder Draxis",
+        "title": "Dragonslayer",
+        "greeting": "I have hunted dragons for thirty years, {playerName}. Ignaraxis is not like the others."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -6553,71 +6553,71 @@ export const id_ID: EnTranslations = {
         }
       },
       "custom_proving_ground": {
-        "title": "Medan Pembuktian",
-        "text": "Naga penjelajah abu telah maju hingga ke tepi kamp kami, {playerName}. Kurangi jumlah mereka -- sepuluh dari mereka -- dan buktikan kau layak berada di Wabah ini.",
-        "completion": "Sepuluh naga jatuh. Lumayan. Mungkin kau bisa bertahan di sini, {playerName}.",
+        "title": "Proving Ground",
+        "text": "The ashwalker drakes have pushed to the edges of our camp, {playerName}. Thin their numbers -- ten of them -- and prove you belong in the Blight.",
+        "completion": "Ten drakes down. Not bad. You might just survive out here, {playerName}.",
         "objectives": {
           "0": {
-            "label": "Naga Penjelajah Abu Terbunuh"
+            "label": "Ashwalker Drakes slain"
           }
         }
       },
       "custom_marks_of_the_drake": {
-        "title": "Tanda Naga",
-        "text": "Sisik naga sekeras baju zirah pelat, {playerName}. Aku butuh delapan untuk membekali pemimpin patroli berikutnya. Naga tidak akan menyerahkannya dengan mudah -- ambil apa yang bisa kau dapatkan.",
-        "completion": "Delapan sisik. Mereka akan menahan api lebih baik dari apa pun yang bisa kita tempa. Kerja bagus.",
+        "title": "Marks of the Drake",
+        "text": "Drake scales are tough as plate, {playerName}. I need eight of them to outfit the next patrol. The drakes do not give them up easily -- take what you can.",
+        "completion": "Eight scales. These will hold up against fire better than anything we can forge. Well done.",
         "objectives": {
           "0": {
-            "label": "Sisik Naga Penjelajah Abu"
+            "label": "Ashwalker Drake Scales"
           }
         }
       },
       "custom_into_the_blight": {
-        "title": "Masuk ke Wabah",
-        "text": "Wyvern sayap bakar itu bersarang di antara kami dan penjara bawah tanah, {playerName}. Delapan dari mereka harus pergi, dan aku butuh lima batu hatinya untuk alkimiawan komandan. Mereka jauh di dalam, tapi aku tahu kau bisa mencapainya.",
-        "completion": "Sarangnya sudah dibersihkan. Batu hati itu lebih berharga dari yang kau kira.",
+        "title": "Into the Blight",
+        "text": "Those scorchwing wyverns are nesting between us and the dungeon, {playerName}. Eight of them need to go, and I need five of their heartstones for the commander's alchemist. They're deep, but I know you can reach them.",
+        "completion": "The nesting ground is clear. Those heartstones will be worth more to us than you know.",
         "objectives": {
           "0": {
-            "label": "Wyvern Sayap Bakar Terbunuh"
+            "label": "Scorchwing Wyverns slain"
           },
           "1": {
-            "label": "Batu Hati Wyvern"
+            "label": "Scorchwing Heartstones"
           }
         }
       },
       "custom_eye_of_the_storm": {
-        "title": "Mata Badai",
-        "text": "Para penjaga terkutuk adalah pelindung luar Ignaraxis, {playerName}. Makhluk naga kuno yang terpuntir oleh berabad-abad berdekatan dengan sosok itu. Tumbangkan tiga dari mereka dan bawa bara kutukan dari inti mereka. Jika kau bisa mengalahkan mereka, kau siap untuk Rahang.",
-        "completion": "Tiga penjaga jatuh dan bara di tangan. Kau sudah siap, {playerName}. Pergi bicara dengan Tetua Draxis di pos. Dia sudah lama menunggu ini.",
+        "title": "Eye of the Storm",
+        "text": "The blighted sentinels are Ignaraxis's outer guard, {playerName}. Ancient dragonkin warped by centuries near that creature. Take down three of them and bring me the blight embers from their cores. If you can manage them, you're ready for the maw.",
+        "completion": "Three sentinels down and embers in hand. You're ready, {playerName}. Go speak with Elder Draxis back at the post. He has been waiting a long time for this.",
         "objectives": {
           "0": {
-            "label": "Penjaga Terkutuk Terbunuh"
+            "label": "Blighted Sentinels slain"
           },
           "1": {
-            "label": "Bara Kutukan"
+            "label": "Blight Embers"
           }
         }
       },
       "custom_eternal_flame": {
-        "title": "Api Abadi",
-        "text": "Ignaraxis Abadi telah tidur di Rahang Naga selama satu era, {playerName}. Wabah di atas kita adalah nafasnya yang berbentuk. Masuki Rahang, hadapi dia di sarangnya, dan akhiri semua ini. Rekan-rekanmu akan diperlukan -- ini bukan perburuan untuk satu orang saja.",
-        "completion": "Api Abadi telah padam, {playerName}. Aku sudah menunggu tiga puluh tahun untuk mengucapkan kata-kata itu. Wabah akan menghilang sekarang. Ambil ini -- kau sudah memperolehnya dengan sepenuh hati.",
+        "title": "The Eternal Flame",
+        "text": "Ignaraxis the Eternal has slumbered in the Dragon's Maw for an age, {playerName}. The Blight above us is his breath given form. Enter the maw, face him in his lair, and end it. Your companions will be necessary -- this is not a hunt for one alone.",
+        "completion": "The Eternal Flame is extinguished, {playerName}. I have waited thirty years to say those words. The Blight will fade now. Take this -- you've more than earned it.",
         "objectives": {
           "0": {
-            "label": "Ignaraxis Abadi Terbunuh"
+            "label": "Ignaraxis the Eternal slain"
           }
         }
       },
       "custom_blight_patrol": {
-        "title": "Patroli Wabah",
-        "text": "Kita tidak bisa membiarkan naga dan wyvern membanjiri jalur masuk, {playerName}. Patroli Wabah, bunuh lima belas naga dan delapan wyvern, dan kembali. Itu menjaga sayap kita bersih sementara rantai komando mengelola gambaran besarnya.",
-        "completion": "Sayap sudah bersih. Para prajurit bernapas lebih lega ketika ada seseorang di luar sana yang membuat perbedaan. Kerja bagus, {playerName}.",
+        "title": "Blight Patrol",
+        "text": "We cannot let the drakes and wyverns overrun the approaches, {playerName}. Patrol the Blight, cut down fifteen drakes and eight wyverns, and report back. Keeps our flanks clear while the chain of command handles the bigger picture.",
+        "completion": "Flanks are clear. The men breathe easier when someone is out there making a difference. Good work, {playerName}.",
         "objectives": {
           "0": {
-            "label": "Naga Penjelajah Abu Terbunuh"
+            "label": "Ashwalker Drakes slain"
           },
           "1": {
-            "label": "Wyvern Sayap Bakar Terbunuh"
+            "label": "Scorchwing Wyverns slain"
           }
         }
       },
@@ -6789,17 +6789,17 @@ export const id_ID: EnTranslations = {
         }
       },
       "custom_dragons_blight": {
-        "name": "Kutukan Naga",
-        "welcome": "Kutukan Naga membentang di hadapanmu, tercekik oleh abu dan gaung jauh dari api purba.",
+        "name": "Dragon's Blight",
+        "welcome": "The Dragon's Blight stretches before you, choked with ash and the distant echo of ancient fire.",
         "pois": {
           "0": {
-            "label": "Pos Pengawal Wabah"
+            "label": "Blightwatch Post"
           },
           "1": {
-            "label": "Pos Terdepan Fenris"
+            "label": "Fenris's Outpost"
           },
           "2": {
-            "label": "Rahang Naga"
+            "label": "Dragon's Maw"
           }
         }
       }
@@ -6831,9 +6831,9 @@ export const id_ID: EnTranslations = {
         "leaveText": "Kau kembali ke udara dingin Thornpeak."
       },
       "custom_dragons_maw": {
-        "name": "Rahang Naga",
-        "enterText": "Panasnya mencekik. Sesuatu yang besar bergerak dalam kegelapan di depan.",
-        "leaveText": "Kau keluar dari Rahang Naga, udara luar terasa dingin di kulitmu."
+        "name": "Dragon's Maw",
+        "enterText": "The heat is suffocating. Something vast stirs in the darkness ahead.",
+        "leaveText": "You emerge from the Dragon's Maw, the air outside cold against your skin."
       },
       "drowned_temple": {
         "name": "Kuil Tenggelam",

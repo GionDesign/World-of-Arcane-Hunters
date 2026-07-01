@@ -65,7 +65,7 @@ describe('/who name filter', () => {
   it('filters to names containing the query (case-insensitive)', () => {
     const { server, viewer } = makeServer(ROSTER);
     const out = who(server, viewer, 'mr');
-    expect(out[0]).toBe('Who: 2 players matching "mr" on Claudemoon.');
+    expect(out[0]).toBe('Who: 2 players matching "mr" on Eastbrook.');
     expect(out.some((t) => t.startsWith('Mristan'))).toBe(true);
     expect(out.some((t) => t.startsWith('Mrglglgl'))).toBe(true);
     expect(out.some((t) => t.startsWith('Bobbins'))).toBe(false);
@@ -74,7 +74,7 @@ describe('/who name filter', () => {
   it('matches a substring anywhere in the name and singularizes one result', () => {
     const { server, viewer } = makeServer(ROSTER);
     const out = who(server, viewer, 'bin');
-    expect(out[0]).toBe('Who: 1 player matching "bin" on Claudemoon.');
+    expect(out[0]).toBe('Who: 1 player matching "bin" on Eastbrook.');
     expect(out.some((t) => t.startsWith('Bobbins'))).toBe(true);
     expect(out.some((t) => t.startsWith('Mr'))).toBe(false);
   });
@@ -82,7 +82,7 @@ describe('/who name filter', () => {
   it('reports zero matches for an unknown filter', () => {
     const { server, viewer } = makeServer(ROSTER);
     const out = who(server, viewer, 'zzz');
-    expect(out).toEqual(['Who: 0 players matching "zzz" on Claudemoon.']);
+    expect(out).toEqual(['Who: 0 players matching "zzz" on Eastbrook.']);
   });
 });
 
@@ -92,7 +92,7 @@ describe('/who zone filter', () => {
   it('matches on zone name, not just player name', () => {
     const { server, viewer } = makeServer(ROSTER);
     const out = who(server, viewer, 'eastbrook');
-    expect(out[0]).toBe('Who: 3 players matching "eastbrook" on Claudemoon.');
+    expect(out[0]).toBe('Who: 3 players matching "eastbrook" on Eastbrook.');
     expect(out.some((t) => t.startsWith('Mristan'))).toBe(true);
     expect(out.some((t) => t.startsWith('Mrglglgl'))).toBe(true);
     expect(out.some((t) => t.startsWith('Bobbins'))).toBe(true);
@@ -101,13 +101,13 @@ describe('/who zone filter', () => {
   it('matches a multi-word zone substring (spaces preserved)', () => {
     const { server, viewer } = makeServer(ROSTER);
     const out = who(server, viewer, 'eastbrook vale');
-    expect(out[0]).toBe('Who: 3 players matching "eastbrook vale" on Claudemoon.');
+    expect(out[0]).toBe('Who: 3 players matching "eastbrook vale" on Eastbrook.');
     expect(out.filter((t) => t.includes(' - level ')).length).toBe(3);
   });
 
   it('returns zero for a zone nobody is in', () => {
     const { server, viewer } = makeServer(ROSTER);
     const out = who(server, viewer, 'thornpeak heights');
-    expect(out).toEqual(['Who: 0 players matching "thornpeak heights" on Claudemoon.']);
+    expect(out).toEqual(['Who: 0 players matching "thornpeak heights" on Eastbrook.']);
   });
 });

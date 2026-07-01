@@ -787,7 +787,7 @@ export const sv_SE: EnTranslations = {
     },
     "discord": {
       "title": "Discord",
-      "panelTitle": "World of ClaudeCraft",
+      "panelTitle": "World of Arcane Hunters",
       "open": "Discord",
       "close": "Stäng",
       "keybind": "Discord-panel",
@@ -896,7 +896,7 @@ export const sv_SE: EnTranslations = {
         "titleDiscordian": "Titel: Discordian",
         "titleSquire": "Titel: Väpnare av riket",
         "chromaBlurple": "Blurple Mech-färg",
-        "titleChampion": "Titel: Champion of Claudemoon",
+        "titleChampion": "Titel: Champion of Eastbrook",
         "swagStickers": "Klistermärkespaket (skickas)",
         "swagTee": "T-shirt (skickas)"
       },
@@ -958,8 +958,8 @@ export const sv_SE: EnTranslations = {
     }
   },
   "guide": {
-    "brand": "World of ClaudeCraft",
-    "brandShort": "ClaudeCraft",
+    "brand": "World of Arcane Hunters",
+    "brandShort": "WoAH",
     "tagline": "En klassisk MMO du spelar gratis i din webbläsare.",
     "skipToContent": "Hoppa till huvudinnehållet",
     "loading": "Laddar...",
@@ -1019,7 +1019,7 @@ export const sv_SE: EnTranslations = {
       "github": "Källkod på GitHub",
       "discord": "Gå med i Discord",
       "communityWiki": "Community-wiki",
-      "rights": "World of ClaudeCraft"
+      "rights": "World of Arcane Hunters"
     },
     "language": {
       "label": "Språk",
@@ -1039,7 +1039,7 @@ export const sv_SE: EnTranslations = {
     },
     "home": {
       "eyebrow": "Klassiskt MMO i webbläsaren",
-      "title": "World of ClaudeCraft",
+      "title": "World of Arcane Hunters",
       "subtitle": "Lös uppdrag, slå er samman och utforska en handbyggd värld, gratis i din webbläsare.",
       "ctaPlay": "Spela nu",
       "ctaLearn": "Så spelar du",
@@ -1420,7 +1420,7 @@ export const sv_SE: EnTranslations = {
     },
     "worldPage": {
       "heading": "Världen",
-      "intro": "World of ClaudeCraft är ett enda sammanhängande land som du korsar till fots, tre zoner lagda från söder till norr. Det finns ingen snabbresa, så resan är en del av äventyret.",
+      "intro": "World of Arcane Hunters är ett enda sammanhängande land som du korsar till fots, tre zoner lagda från söder till norr. Det finns ingen snabbresa, så resan är en del av äventyret.",
       "hub": "Hembas",
       "mapHeading": "Vägen norrut",
       "mapSub": "Tre zoner, från söder till norr, var och en ett steg högre i nivå. Följ uppdragsspåret så bär landet dig från dalen till topparna.",
@@ -1836,8 +1836,8 @@ export const sv_SE: EnTranslations = {
     "realmName": "Rikets namn"
   },
   "footer": {
-    "copyright": "2026 World of ClaudeCraft",
-    "githubLink": "https://github.com/levy-street/world-of-claudecraft",
+    "copyright": "2026 World of Arcane Hunters",
+    "githubLink": "https://github.com/giondesign/world-of-arcane-hunters",
     "githubLabel": "Projekt med öppen källkod",
     "whitepaper": "Whitepaper",
     "terms": "Användarvillkor",
@@ -1887,7 +1887,7 @@ export const sv_SE: EnTranslations = {
     "serverOnline": "Online",
     "serverOffline": "Offline",
     "play": "Spela",
-    "playAria": "Spela World of ClaudeCraft",
+    "playAria": "Spela World of Arcane Hunters",
     "serverLabel": "Välj ditt rike",
     "serverAria": "Välj rike: Online eller Offline",
     "serverOfflineSub": "Direkt lokal värld",
@@ -2081,16 +2081,16 @@ export const sv_SE: EnTranslations = {
     "levelClass": "Nivå {level} - {className}",
     "topPercent": "TOPP {percent}%",
     "realmSubtitle": "Världen {realm}",
-    "defaultRealm": "World of ClaudeCraft",
-    "brandWordmark": "WORLD OF CLAUDECRAFT",
+    "defaultRealm": "World of Arcane Hunters",
+    "brandWordmark": "WORLD OF ARCANE HUNTERS",
     "recruited": "{count} värvade",
     "footerHandle": "@{handle}",
     "footerHandleWithRecruits": "@{handle} - {recruited}",
     "footerCta": "Skapa din legend: {siteUrl}",
     "arenaStat": "Arena",
     "shareTierBit": ", {tier}-rankad $WOC-innehavare",
-    "shareText": "Jag skapar min legend i World of ClaudeCraft: Nivå {level} {className}{tierBit}. Gå med i min värld:",
-    "nativeShareTitle": "World of ClaudeCraft",
+    "shareText": "Jag skapar min legend i World of Arcane Hunters: Nivå {level} {className}{tierBit}. Gå med i min värld:",
+    "nativeShareTitle": "World of Arcane Hunters",
     "fileNameFallback": "spelare",
     "actionShareX": "Dela på X",
     "actionCopyReferral": "Kopiera värvningslänk",
@@ -2580,14 +2580,14 @@ export const sv_SE: EnTranslations = {
     }
   },
   "seo": {
-    "title": "World of ClaudeCraft: Klassiskt inspirerad webb-MMO",
-    "description": "Ge dig ut på ett episkt äventyr i World of ClaudeCraft, en klassiskt inspirerad mikro-MMO som du spelar direkt i din webbläsare. Anslut till en beständig delad värld, höj nivå på klasser och besegra fiender!",
+    "title": "World of Arcane Hunters: Klassiskt inspirerad webb-MMO",
+    "description": "Ge dig ut på ett episkt äventyr i World of Arcane Hunters, en klassiskt inspirerad mikro-MMO som du spelar direkt i din webbläsare. Anslut till en beständig delad värld, höj nivå på klasser och besegra fiender!",
     "genre": "MMORPG",
     "playMode": "Flerspelarläge",
     "applicationCategory": "Spel",
     "operatingSystem": "Webbläsare",
-    "officialLabel": "Officiell webbplats för World of ClaudeCraft",
-    "officialBody": "worldofclaudecraft.com är den officiella gratis webbläsar-MMO:n för Claudemoon-världen. Spela online med en beständig karaktär, utforska solo offline, läs wikin och följ verifierade gemenskapslänkar från den här webbplatsen."
+    "officialLabel": "Officiell webbplats för World of Arcane Hunters",
+    "officialBody": "The official free browser MMO for the Eastbrook realm. Play online with a persistent character, explore solo offline, read the wiki, and follow verified community links from this site."
   },
   "a11y": {
     "goHome": "Gå till startsidan",
@@ -2595,9 +2595,9 @@ export const sv_SE: EnTranslations = {
     "mainNavigation": "Huvudnavigering",
     "languageSelection": "Språkval",
     "characterActions": "Karaktärshandlingar",
-    "githubProject": "Öppna GitHub-projektet World of ClaudeCraft",
-    "discordCommunity": "Gå med i World of ClaudeCraft-gemenskapen på Discord",
-    "donateProject": "Donera för att stödja World of ClaudeCraft"
+    "githubProject": "Öppna GitHub-projektet World of Arcane Hunters",
+    "discordCommunity": "Gå med i World of Arcane Hunters-gemenskapen på Discord",
+    "donateProject": "Donera för att stödja World of Arcane Hunters"
   },
   "loading": {
     "world": "Läser in världen...",
@@ -2769,20 +2769,20 @@ export const sv_SE: EnTranslations = {
     "iosStandaloneDetail": "Du är i helskärmsläge från hemskärmen. Håll enheten i liggande läge.",
     "iosInstallDetail": "För äkta helskärm på iPhone eller iPad, installera först den här sidan på din Hemskärm.",
     "iosShareStep": "I Safari, tryck på Dela och sedan Lägg till på Hemskärmen.",
-    "iosOpenStep": "Öppna World of ClaudeCraft från den nya Hemskärmsikonen.",
+    "iosOpenStep": "Öppna World of Arcane Hunters från den nya Hemskärmsikonen.",
     "androidStandaloneDetail": "Du är i helskärmsläge för appen. Håll enheten i liggande läge.",
     "androidInstallDetail": "För helskärm på Android, installera den här sidan eller lägg först till den på din Hemskärm.",
     "androidInstallStep": "I Chrome, tryck på menyn och sedan Installera app eller Lägg till på Hemskärmen.",
-    "androidOpenStep": "Öppna World of ClaudeCraft från den nya ikonen.",
+    "androidOpenStep": "Öppna World of Arcane Hunters från den nya ikonen.",
     "otherStandaloneDetail": "Håll din enhet i liggande helskärm.",
     "otherInstallDetail": "Installera eller lägg till den här sidan på din Hemskärm för bästa mobila helskärmsupplevelse."
   },
   "serverUnavailable": {
-    "title": "World of ClaudeCraft - Riket otillgängligt",
-    "logoAlt": "World of ClaudeCraft",
+    "title": "World of Arcane Hunters - Riket otillgängligt",
+    "logoAlt": "World of Arcane Hunters",
     "eyebrow": "Rikesunderhåll",
     "heading": "Riket är tillfälligt otillgängligt.",
-    "body": "Vi startar om speltjänsten och förväntar oss att Claudemoon är tillbaka inom kort. Den här sidan fortsätter att kontrollera automatiskt.",
+    "body": "Vi startar om speltjänsten och förväntar oss att Eastbrook är tillbaka inom kort. Den här sidan fortsätter att kontrollera automatiskt.",
     "status": "Tillbaka snart"
   },
   "hud": {
@@ -4834,31 +4834,31 @@ export const sv_SE: EnTranslations = {
         "name": "Monarkens krona"
       },
       "custom_drake_scale": {
-        "name": "Askrypare Drakfjäll"
+        "name": "Ashwalker Drake Scale"
       },
       "custom_wyvern_heartstone": {
-        "name": "Brivinge Hjartsten"
+        "name": "Scorchwing Heartstone"
       },
       "custom_blight_ember": {
-        "name": "Fordärvat Glod"
+        "name": "Blight Ember"
       },
       "custom_drakebone_shoulders": {
-        "name": "Drakknogle Axelstycken"
+        "name": "Drakebone Shoulderguards"
       },
       "custom_scorchwing_cowl": {
-        "name": "Brivinge Kapa"
+        "name": "Scorchwing Cowl"
       },
       "custom_blight_stalkers_hood": {
-        "name": "Blightjagare Huva"
+        "name": "Blightstalker's Hood"
       },
       "custom_ignaraxis_greatblade": {
-        "name": "Ignaraxis Svardsblad"
+        "name": "Ignaraxis Greatblade"
       },
       "custom_cinderstave_eternal": {
-        "name": "Evig Askstav"
+        "name": "Cinderstave of the Eternal"
       },
       "custom_fang_of_ignaraxis": {
-        "name": "Ignaraxis Huggtand"
+        "name": "Fang of Ignaraxis"
       },
       "bristleback_maul": {
         "name": "Borstryggens klubba"
@@ -5535,28 +5535,28 @@ export const sv_SE: EnTranslations = {
         "name": "Akolyten Tessa"
       },
       "custom_ashwalker_drake": {
-        "name": "Askrypare Draken"
+        "name": "Ashwalker Drake"
       },
       "custom_scorchwing_wyvern": {
-        "name": "Brivingevivern"
+        "name": "Scorchwing Wyvern"
       },
       "custom_blighted_sentinel": {
-        "name": "Forvitrad Vaktpost"
+        "name": "Blighted Sentinel"
       },
       "custom_dragonclaw_warden": {
-        "name": "Drakklovan Vardare"
+        "name": "Dragonclaw Warden"
       },
       "custom_ignaraxis": {
-        "name": "Ignaraxis den Evige"
+        "name": "Ignaraxis the Eternal"
       },
       "custom_skullfire_brute": {
-        "name": "Skalleldsbuse"
+        "name": "Skullfire Brute"
       },
       "custom_blightshroud_stalker": {
-        "name": "Blightsloja Jagare"
+        "name": "Blightshroud Stalker"
       },
       "custom_ironpelt_monkroose": {
-        "name": "Jarnskinn Monkroose"
+        "name": "Ironpelt Monkroose"
       },
       "ironvein_foreman": {
         "name": "Järnådersförman"
@@ -5766,7 +5766,7 @@ export const sv_SE: EnTranslations = {
       "auctioneer_voss": {
         "name": "Auktionsförrättare Voss",
         "title": "Väktare av världsmarknaden",
-        "greeting": "World of ClaudeCraft-marknaden är öppen även här, {className}. Köp från varje äventyrare i riket, eller lägg ut dina egna varor."
+        "greeting": "World of Arcane Hunters-marknaden är öppen även här, {className}. Köp från varje äventyrare i riket, eller lägg ut dina egna varor."
       },
       "brother_aldric_raid": {
         "name": "Broder Aldric",
@@ -5779,19 +5779,19 @@ export const sv_SE: EnTranslations = {
         "greeting": "Relikvariet där nere har förskjutits igen."
       },
       "custom_commander_vael": {
-        "name": "Befalhavare Vael",
-        "title": "Officer i Blight-vakten",
-        "greeting": "Var beredd, {playerName}. Denna Blight sover inte, och inte vi heller."
+        "name": "Commander Vael",
+        "title": "Blightwatch Officer",
+        "greeting": "Stand ready, {playerName}. This blight does not sleep, and neither do we."
       },
       "custom_scout_fenris": {
-        "name": "Spanare Fenris",
-        "title": "Spanare i Blight-vakten",
-        "greeting": "Gick du igenom wyvernterritoriet? Bra. Jag behövde nagon kapabel har."
+        "name": "Scout Fenris",
+        "title": "Blightwatch Scout",
+        "greeting": "You made it through the wyvern grounds? Good. I could use someone capable out here."
       },
       "custom_elder_draxis": {
-        "name": "Aldste Draxis",
-        "title": "Drakdodare",
-        "greeting": "Jag har jagat drakar i trettio ar, {playerName}. Ignaraxis ar annorlunda an de andra."
+        "name": "Elder Draxis",
+        "title": "Dragonslayer",
+        "greeting": "I have hunted dragons for thirty years, {playerName}. Ignaraxis is not like the others."
       },
       "tidewatcher_ondrel": {
         "name": "Ondrel Vane",
@@ -6553,71 +6553,71 @@ export const sv_SE: EnTranslations = {
         }
       },
       "custom_proving_ground": {
-        "title": "Provningsfalt",
-        "text": "Askrypardrakarna har avancerat till kanten av vart lager, {playerName}. Minska deras antal -- tio av dem -- och bevisa att du hor hemma i Blight.",
-        "completion": "Tio drakar fallda. Inte illa. Kanske overlever du har, {playerName}.",
+        "title": "Proving Ground",
+        "text": "The ashwalker drakes have pushed to the edges of our camp, {playerName}. Thin their numbers -- ten of them -- and prove you belong in the Blight.",
+        "completion": "Ten drakes down. Not bad. You might just survive out here, {playerName}.",
         "objectives": {
           "0": {
-            "label": "Askrypare Drakar Doda"
+            "label": "Ashwalker Drakes slain"
           }
         }
       },
       "custom_marks_of_the_drake": {
-        "title": "Drakmärken",
-        "text": "Drakfjäll ar lika harda som plattrustning, {playerName}. Jag behover atta stycken for nasta patrullbefal. Drakarna ger inte upp dem latt -- ta vad du kan.",
-        "completion": "Atta fjäll. De klarar eld battre an nagot vi kan smida. Bra jobbat.",
+        "title": "Marks of the Drake",
+        "text": "Drake scales are tough as plate, {playerName}. I need eight of them to outfit the next patrol. The drakes do not give them up easily -- take what you can.",
+        "completion": "Eight scales. These will hold up against fire better than anything we can forge. Well done.",
         "objectives": {
           "0": {
-            "label": "Askrypare Drakfjäll"
+            "label": "Ashwalker Drake Scales"
           }
         }
       },
       "custom_into_the_blight": {
-        "title": "In i Blight",
-        "text": "De dar brivingevivernerna hakar sig fast mellan oss och fangelset, {playerName}. Atta av dem maste bort, och jag behover fem av deras hjartstenar till befalets alkemist. De sitter djupt inne, men jag vet att du kan na dem.",
-        "completion": "Boet har rensats. De har hjartstenarnas ar mer varda an du tror.",
+        "title": "Into the Blight",
+        "text": "Those scorchwing wyverns are nesting between us and the dungeon, {playerName}. Eight of them need to go, and I need five of their heartstones for the commander's alchemist. They're deep, but I know you can reach them.",
+        "completion": "The nesting ground is clear. Those heartstones will be worth more to us than you know.",
         "objectives": {
           "0": {
-            "label": "Brivinge Vivernar Doda"
+            "label": "Scorchwing Wyverns slain"
           },
           "1": {
-            "label": "Vivern Hjartstenar"
+            "label": "Scorchwing Heartstones"
           }
         }
       },
       "custom_eye_of_the_storm": {
-        "title": "Stormens Oga",
-        "text": "De forvitrader vakterna ar Ignaraxis yttre skydd, {playerName}. Uraldriga drakvarelser vridna av arhundraden nara det vasendet. Sla ned tre av dem och ta med mig de fordarvade gloden fran deras karnor. Om du klarar av dem ar du redo for Kakorna.",
-        "completion": "Tre vakter falla och glod i hand. Du ar redo, {playerName}. Ga och prata med Aldste Draxis vid fortet. Han har vantat lange pa det har.",
+        "title": "Eye of the Storm",
+        "text": "The blighted sentinels are Ignaraxis's outer guard, {playerName}. Ancient dragonkin warped by centuries near that creature. Take down three of them and bring me the blight embers from their cores. If you can manage them, you're ready for the maw.",
+        "completion": "Three sentinels down and embers in hand. You're ready, {playerName}. Go speak with Elder Draxis back at the post. He has been waiting a long time for this.",
         "objectives": {
           "0": {
-            "label": "Forvitrader Vakter Doda"
+            "label": "Blighted Sentinels slain"
           },
           "1": {
-            "label": "Fordärvade Glod"
+            "label": "Blight Embers"
           }
         }
       },
       "custom_eternal_flame": {
-        "title": "Den Eviga Lagan",
-        "text": "Ignaraxis den Evige har sovit i Drakgapet en era, {playerName}. Blighten over oss ar hans anda given form. Ga in i Gapet, mott honom i hans lya och avsluta det. Dina kamrater kommer att behovas -- detta ar ingen jakt for en ensam person.",
-        "completion": "Den Eviga Lagan har slackts, {playerName}. Jag har vantat trettio ar pa att saga de orden. Blighten kommer nu att ebba ut. Ta det har -- du har forjanat det med besked.",
+        "title": "The Eternal Flame",
+        "text": "Ignaraxis the Eternal has slumbered in the Dragon's Maw for an age, {playerName}. The Blight above us is his breath given form. Enter the maw, face him in his lair, and end it. Your companions will be necessary -- this is not a hunt for one alone.",
+        "completion": "The Eternal Flame is extinguished, {playerName}. I have waited thirty years to say those words. The Blight will fade now. Take this -- you've more than earned it.",
         "objectives": {
           "0": {
-            "label": "Ignaraxis den Evige Dod"
+            "label": "Ignaraxis the Eternal slain"
           }
         }
       },
       "custom_blight_patrol": {
-        "title": "Blight-patrull",
-        "text": "Vi kan inte lata drakarna och vivernarna oversvamma tillfarterna, {playerName}. Patrullera Blighten, doda femton drakar och atta vivernar, och atervänd. Det haller vara flanker fria medan befalskedjan hanterar den storre bilden.",
-        "completion": "Flankerna ar fria. Männen andas lattare nar nagon ar dar ute och gor skillnad. Bra jobbat, {playerName}.",
+        "title": "Blight Patrol",
+        "text": "We cannot let the drakes and wyverns overrun the approaches, {playerName}. Patrol the Blight, cut down fifteen drakes and eight wyverns, and report back. Keeps our flanks clear while the chain of command handles the bigger picture.",
+        "completion": "Flanks are clear. The men breathe easier when someone is out there making a difference. Good work, {playerName}.",
         "objectives": {
           "0": {
-            "label": "Askrypare Drakar Doda"
+            "label": "Ashwalker Drakes slain"
           },
           "1": {
-            "label": "Brivinge Vivernar Doda"
+            "label": "Scorchwing Wyverns slain"
           }
         }
       },
@@ -6789,17 +6789,17 @@ export const sv_SE: EnTranslations = {
         }
       },
       "custom_dragons_blight": {
-        "name": "Drakforbannelsen",
-        "welcome": "Drakforbannelsen stracker sig framfor dig, kvavd av aska och det langa ekoet av urforntidig eld.",
+        "name": "Dragon's Blight",
+        "welcome": "The Dragon's Blight stretches before you, choked with ash and the distant echo of ancient fire.",
         "pois": {
           "0": {
-            "label": "Blight-vaktens Fort"
+            "label": "Blightwatch Post"
           },
           "1": {
-            "label": "Fenris Forvakt"
+            "label": "Fenris's Outpost"
           },
           "2": {
-            "label": "Drakgapet"
+            "label": "Dragon's Maw"
           }
         }
       }
@@ -6831,9 +6831,9 @@ export const sv_SE: EnTranslations = {
         "leaveText": "Du återvänder till Törntopps kalla luft."
       },
       "custom_dragons_maw": {
-        "name": "Drakgapet",
-        "enterText": "Varmen ar kvavande. Nagot massivt ror sig i morkret framfor dig.",
-        "leaveText": "Du kommer ut ur Drakgapet, utomhusluften kylig mot din hud."
+        "name": "Dragon's Maw",
+        "enterText": "The heat is suffocating. Something vast stirs in the darkness ahead.",
+        "leaveText": "You emerge from the Dragon's Maw, the air outside cold against your skin."
       },
       "drowned_temple": {
         "name": "Det dränkta templet",

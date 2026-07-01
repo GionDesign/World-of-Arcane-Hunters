@@ -228,6 +228,7 @@ export default defineConfig({
     svelte(),
     ...(process.env.VITEST ? [svelteTesting()] : []),
     staticPageAliasPlugin(),
+    brandTokenPlugin(),
     i18nModulepreloadPlugin(),
   ],
   resolve: { alias: { '#bot-detector': botDetectorImpl } },

@@ -787,7 +787,7 @@ export const ko_KR: EnTranslations = {
     },
     "discord": {
       "title": "Discord",
-      "panelTitle": "World of ClaudeCraft",
+      "panelTitle": "World of Arcane Hunters",
       "open": "Discord",
       "close": "닫기",
       "keybind": "Discord 패널",
@@ -896,7 +896,7 @@ export const ko_KR: EnTranslations = {
         "titleDiscordian": "칭호: Discordian",
         "titleSquire": "칭호: 렐름의 종자",
         "chromaBlurple": "Blurple 메크 크로마",
-        "titleChampion": "칭호: Claudemoon의 챔피언",
+        "titleChampion": "칭호: Eastbrook의 챔피언",
         "swagStickers": "스티커 팩 (배송)",
         "swagTee": "티셔츠 (배송)"
       },
@@ -959,7 +959,7 @@ export const ko_KR: EnTranslations = {
   },
   "guide": {
     "brand": "World of Arcane Hunters",
-    "brandShort": "ClaudeCraft",
+    "brandShort": "WoAH",
     "tagline": "브라우저에서 무료로 즐기는 클래식 스타일 MMO입니다.",
     "skipToContent": "본문으로 건너뛰기",
     "loading": "불러오는 중...",
@@ -2081,8 +2081,8 @@ export const ko_KR: EnTranslations = {
     "levelClass": "{level}레벨 - {className}",
     "topPercent": "상위 {percent}%",
     "realmSubtitle": "{realm} 렐름",
-    "defaultRealm": "ClaudeCraft의 세계",
-    "brandWordmark": "WORLD OF CLAUDECRAFT",
+    "defaultRealm": "Arcane Hunters의 세계",
+    "brandWordmark": "WORLD OF ARCANE HUNTERS",
     "recruited": "{count}명 모집",
     "footerHandle": "@{handle}",
     "footerHandleWithRecruits": "@{handle} - {recruited}",
@@ -2090,7 +2090,7 @@ export const ko_KR: EnTranslations = {
     "arenaStat": "투기장",
     "shareTierBit": ", {tier} 등급 $WOC 보유자",
     "shareText": "World of Arcane Hunters에서 제 전설을 벼리고 있습니다: {level}레벨 {className}{tierBit}. 제 렐름에 합류하세요:",
-    "nativeShareTitle": "ClaudeCraft의 세계",
+    "nativeShareTitle": "Arcane Hunters의 세계",
     "fileNameFallback": "플레이어",
     "actionShareX": "X에 공유",
     "actionCopyReferral": "추천 링크 복사",
@@ -2586,8 +2586,8 @@ export const ko_KR: EnTranslations = {
     "playMode": "멀티플레이어",
     "applicationCategory": "게임",
     "operatingSystem": "웹 브라우저",
-    "officialLabel": "World of ClaudeCraft 공식 웹사이트",
-    "officialBody": "worldofclaudecraft.com은 Claudemoon 렐름의 공식 무료 브라우저 MMO입니다. 지속 캐릭터로 온라인 플레이를 하거나, 오프라인에서 혼자 탐험하고, 위키를 읽고, 이 사이트에서 검증된 커뮤니티 링크를 확인하세요."
+    "officialLabel": "World of Arcane Hunters 공식 웹사이트",
+    "officialBody": "Eastbrook 렐름의 공식 무료 브라우저 MMO입니다. 지속 캐릭터로 온라인 플레이를 하거나, 오프라인에서 혼자 탐험하고, 위키를 읽고, 이 사이트에서 검증된 커뮤니티 링크를 확인하세요."
   },
   "a11y": {
     "goHome": "홈으로 이동",

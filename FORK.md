@@ -110,6 +110,20 @@ ls docs/SETUP-DIGITALOCEAN.md docs/SETUP-LOCAL-MAC.md docs/SETUP-CLOUDFLARE.md \
 # Verify README pointer survived (not the full upstream section)
 grep -c "docs/SETUP-DIGITALOCEAN.md" README.md
 
+# Verify brandTokenPlugin() is REGISTERED, not just defined (a merge that rewrites the
+# plugins array can drop the fork's entry while leaving the function itself intact --
+# expect 2+ hits, not 1)
+grep -c "brandTokenPlugin" vite.config.ts
+
+# Verify src/main.ts SITE_URL still reads the build-injected constant, not a hardcoded
+# upstream or un-injected string literal
+grep -A1 "^declare const __SITE_URL__" src/main.ts
+
+# Verify play.html/guide.html hreflang blocks and Discord/GitHub links survived (these
+# were missing from the original 2026-06 brand rename file list and are easy to lose
+# again on the next merge; see "Brand rename scope audit (2026-07)" in MAINTAINING-FORK.md)
+grep -c "https://TODO-your-domain.com" play.html guide.html
+
 # Check for zone contiguity: upstream Zone 3 ends at z=900; Dragon's Blight starts at z=900.
 # If upstream adds a new Zone 4 that also starts at z=900 (or extends to z>900), there
 # will be a gap or overlap. The progression test requires ZONES[i].zMax === ZONES[i+1].zMin.
@@ -398,6 +412,15 @@ A full list of all upstream file modifications with exact code snippets is in
 - `tests/delves.test.ts` -- pin test updated from `DELVE_X_MIN = 4800` to 5300 and from `ARENA_X = 4200` comment to 4700
 - **Brand rename (2026-06):** ~30 upstream files updated -- game name, realm name, domain, GitHub URL.
   See the "Brand rename" section in `docs/MAINTAINING-FORK.md` for the full replacement map.
+- **Brand rename scope audit (2026-07):** the 2026-06 pass missed `play.html`/`guide.html`'s
+  hreflang blocks, `public/press.html`, `public/llms.txt`, ~15 `server/*.ts` files (TOTP
+  issuer, wallet-sign message, email/OAuth/GitHub-repo-default text), `src/ui/i18n.catalog/
+  hud_chrome.ts` + all 20 locale overlays' brand/realm proper nouns, and the `src/guide/*`
+  wiki shell; also found two live regressions (`vite.config.ts`'s `brandTokenPlugin()` not
+  registered in the plugins array, `src/main.ts` `SITE_URL` reverted to a hardcoded string)
+  and one case-sensitivity bug in `server/player_card.ts`'s trusted-host map. Full detail
+  and the extended health-check list: "Brand rename scope audit (2026-07)" in
+  `docs/MAINTAINING-FORK.md`.
 
 **Fork-owned new files (never conflict with upstream):**
 - `src/ui/i18n.catalog/fork_brand.ts` -- central brand constants (`FORK_BRAND`); imported by `index.ts`

@@ -24,7 +24,7 @@ import { LEADERBOARD_MAX } from '../src/sim/leaderboard_page';
 import type { DevLeaderboardEntry } from '../src/world_api';
 import { recordUsageCacheEvent, recordUsageMetric, setUsageCacheSize } from './provider_usage';
 
-const GITHUB_REPO = process.env.GITHUB_REPO ?? 'levy-street/world-of-claudecraft';
+const GITHUB_REPO = process.env.GITHUB_REPO ?? 'giondesign/world-of-arcane-hunters';
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN ?? '';
 const GITHUB_API_HOST = 'api.github.com';
 const PULLS_URL = `https://${GITHUB_API_HOST}/repos/${GITHUB_REPO}/pulls`;
