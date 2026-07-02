@@ -1339,6 +1339,67 @@ npx vitest run tests/item_level.test.ts
 
 ---
 
+#### Brand rename scope audit, part 2 (2026-07) -- the real production domain, and two open items
+
+The fork's real production domain is confirmed: **`world.arcanehunters.com`**. It is
+already hardcoded (not the `TODO-your-domain.com` placeholder) in `server/realm.ts`'s
+`TRUSTED_PUBLIC_HOST_ORIGINS` and `src/ui/i18n.catalog/fork_brand.ts`'s `siteUrl`. A
+second sweep (same day as the "Brand rename scope audit (2026-07)" section above) found
+the OLD upstream domain `worldofclaudecraft.com` still literally hardcoded (not the
+`TODO-your-domain.com` placeholder, a genuine leftover) in files the first sweep's grep
+scope didn't cover, and replaced it with the real domain directly (these are not part of
+the build-time injection system, so there is no placeholder to keep):
+
+- `bot/discord_api.ts` (User-Agent header), `bot/config.ts` (`gameUrl` default)
+- `scripts/localization_e2e.mjs`, `scripts/seo_audit.mjs`, `scripts/links_verify.mjs`,
+  `scripts/links_playwright.mjs` (own-site URL only; the still-pending Instagram/TikTok
+  handle URLs in the latter two were left alone, matching `public/links.html`'s own
+  pending state)
+- `tests/github_server.test.ts`, `tests/native_attestation.test.ts`,
+  `tests/discord_server.test.ts`, `tests/character_sheet.test.ts`,
+  `tests/web_login_guard.test.ts`, `tests/discord_oauth.test.ts`, `tests/security.test.ts`
+  (test fixture hostnames)
+- `package.json` (`build:native` script's `VITE_API_ORIGIN` default), `DEPLOY.md`,
+  `docs/mobile-store-release.md` (backend origin references only, NOT the bundle ID, see
+  below)
+- `README.md` and all 20 `docs/i18n/README.<lang>.md` mirrors -- domain URLs ONLY
+  (`**Official website:**`, the inline `[worldofclaudecraft.com](...)` links, the $WOC
+  token paragraph's link). The project title ("World of ClaudeCraft"), the CI badge and
+  `good first issue`/contributing links pointing at `levy-street/world-of-claudecraft`,
+  the `$WOC` token name, and the upstream Discord invite were deliberately left alone --
+  README.md documents the open-source project itself (not the deployed site), was never
+  in the original brand-rename scope, and rewriting the project's own identity/token name
+  is a bigger decision than a domain swap.
+
+**Left alone, deliberately, pending the site owner's decision (do not "fix" these
+without asking):**
+- `TERMS_AND_CONDITIONS.md`, `PRIVACY_POLICY.md`, `public/terms.html`,
+  `public/privacy.html` still name the upstream project's real legal entity ("Dream Home
+  AI Limited, trading as Levy Street, New Zealand company number 8703066") and its
+  Wellington, NZ postal address, in addition to the stale `worldofclaudecraft.com`
+  domain. This is legal content, not a brand string -- swapping only the domain while
+  leaving a real company's name and address in a Terms/Privacy document would make the
+  document look reviewed when the entity claim is still wrong. Get the site owner's
+  actual operating entity (or confirmation they operate as an individual) before editing
+  any of these four files.
+- The mobile app's bundle/application ID is still literally `com.worldofclaudecraft` in
+  `capacitor.config.ts` (`appId`), `android/app/build.gradle` (`namespace` +
+  `applicationId`), and `ios/App/App.xcodeproj/project.pbxproj`
+  (`PRODUCT_BUNDLE_IDENTIFIER`, two occurrences). Bundle IDs are effectively permanent
+  once an app is published to the App Store / Play Store (renaming orphans the existing
+  listing and forces a new one). Do not change these without first confirming the app's
+  publish status with the site owner.
+
+Doc-only references to `worldofclaudecraft.com` in `docs/MAINTAINING-FORK.md` and
+`docs/post-merge-prompt.md` itself (describing what upstream's domain looks like, for
+grep-pattern purposes) are intentional and correct -- they are not stale content to fix.
+`docs/hud-ux-and-accessibility/phase-*.md` also still reference the old domain inside
+upstream-authored historical dev-session notes (test credentials, internal push-target
+reminders from the original author's own workflow); those are a historical record of a
+past development phase, not current operational guidance, and were left untouched.
+
+---
+
 ### Post-merge i18n and parity regeneration (custom content)
 
 Whenever a merge changes upstream content (new zones, mobs, camps, quests) or

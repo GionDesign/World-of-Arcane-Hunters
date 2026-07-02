@@ -421,6 +421,18 @@ A full list of all upstream file modifications with exact code snippets is in
   and one case-sensitivity bug in `server/player_card.ts`'s trusted-host map. Full detail
   and the extended health-check list: "Brand rename scope audit (2026-07)" in
   `docs/MAINTAINING-FORK.md`.
+- **Brand rename scope audit, part 2 (2026-07):** the real production domain is
+  `world.arcanehunters.com` (already live in `server/realm.ts` and `fork_brand.ts`). A
+  second sweep replaced the stale `worldofclaudecraft.com` literal (not the
+  `TODO-your-domain.com` placeholder) with it directly across `bot/*.ts`, `scripts/*.mjs`,
+  test fixtures, `package.json`, `DEPLOY.md`, `docs/mobile-store-release.md`, and
+  `README.md` + all 20 `docs/i18n/README.<lang>.md` mirrors (domain URLs only, not the
+  project title/CI badge/`$WOC` token, which are the open-source project's own identity,
+  not the deployed site's brand). Two things were deliberately left for the site owner to
+  decide: the real legal entity name in `TERMS_AND_CONDITIONS.md`/`PRIVACY_POLICY.md`/
+  `public/terms.html`/`public/privacy.html`, and the mobile app's `com.worldofclaudecraft`
+  bundle ID (permanent once published to a store). See "Brand rename scope audit, part 2
+  (2026-07)" in `docs/MAINTAINING-FORK.md`.
 
 **Fork-owned new files (never conflict with upstream):**
 - `src/ui/i18n.catalog/fork_brand.ts` -- central brand constants (`FORK_BRAND`); imported by `index.ts`

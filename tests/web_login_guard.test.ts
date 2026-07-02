@@ -32,18 +32,18 @@ describe('web login guard (anti-bot)', () => {
   });
 
   it('accepts Capacitor native app origins', () => {
-    expect(isWebClientRequest(req({ origin: 'capacitor://localhost', host: 'worldofclaudecraft.com' }))).toBe(true);
-    expect(isWebClientRequest(req({ origin: 'http://localhost', host: 'worldofclaudecraft.com' }))).toBe(true);
-    expect(isWebClientRequest(req({ origin: 'https://localhost', host: 'worldofclaudecraft.com' }))).toBe(true);
+    expect(isWebClientRequest(req({ origin: 'capacitor://localhost', host: 'world.arcanehunters.com' }))).toBe(true);
+    expect(isWebClientRequest(req({ origin: 'http://localhost', host: 'world.arcanehunters.com' }))).toBe(true);
+    expect(isWebClientRequest(req({ origin: 'https://localhost', host: 'world.arcanehunters.com' }))).toBe(true);
   });
 
   it('identifies native app origins for Turnstile bypass', () => {
-    expect(isNativeAppRequest(req({ origin: 'capacitor://localhost', host: 'worldofclaudecraft.com' }))).toBe(true);
-    expect(isNativeAppRequest(req({ origin: 'http://localhost', host: 'worldofclaudecraft.com' }))).toBe(true);
-    expect(isNativeAppRequest(req({ origin: 'https://localhost', host: 'worldofclaudecraft.com' }))).toBe(true);
-    expect(isNativeAppRequest(req({ origin: 'https://worldofclaudecraft.com', host: 'worldofclaudecraft.com' }))).toBe(false);
-    expect(isNativeAppRequest(req({ origin: 'https://evil.example.com', host: 'worldofclaudecraft.com' }))).toBe(false);
-    expect(isNativeAppRequest(req({ host: 'worldofclaudecraft.com' }))).toBe(false);
+    expect(isNativeAppRequest(req({ origin: 'capacitor://localhost', host: 'world.arcanehunters.com' }))).toBe(true);
+    expect(isNativeAppRequest(req({ origin: 'http://localhost', host: 'world.arcanehunters.com' }))).toBe(true);
+    expect(isNativeAppRequest(req({ origin: 'https://localhost', host: 'world.arcanehunters.com' }))).toBe(true);
+    expect(isNativeAppRequest(req({ origin: 'https://world.arcanehunters.com', host: 'world.arcanehunters.com' }))).toBe(false);
+    expect(isNativeAppRequest(req({ origin: 'https://evil.example.com', host: 'world.arcanehunters.com' }))).toBe(false);
+    expect(isNativeAppRequest(req({ host: 'world.arcanehunters.com' }))).toBe(false);
   });
 
   it('rejects a foreign origin', () => {

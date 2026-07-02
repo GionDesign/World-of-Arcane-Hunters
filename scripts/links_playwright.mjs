@@ -35,7 +35,7 @@ const server = http.createServer((req, res) => {
 });
 
 const EXPECTED_LINKS = [
-  'https://worldofclaudecraft.com/',
+  'https://world.arcanehunters.com/',
   'https://x.com/WoClaudecraft',
   'https://www.instagram.com/worldofclaudecraft/',
   'https://www.tiktok.com/@worldofclaudecraft',

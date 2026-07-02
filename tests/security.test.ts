@@ -53,9 +53,9 @@ function withUsernameBanlist(env: { inline?: string; file?: string }, test: () =
 
 describe('websocket authentication', () => {
   it('keeps bearer tokens out of the websocket URL', () => {
-    const url = buildWebSocketUrl('https:', 'worldofclaudecraft.com');
+    const url = buildWebSocketUrl('https:', 'world.arcanehunters.com');
 
-    expect(url).toBe('wss://worldofclaudecraft.com/ws');
+    expect(url).toBe('wss://world.arcanehunters.com/ws');
     expect(url).not.toContain('token');
   });
 

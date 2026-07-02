@@ -94,8 +94,8 @@ function languageTag(locale) {
 
 function siteUrlForLocale(locale) {
   return locale === 'en'
-    ? 'https://worldofclaudecraft.com/'
-    : `https://worldofclaudecraft.com/?lang=${locale}`;
+    ? 'https://world.arcanehunters.com/'
+    : `https://world.arcanehunters.com/?lang=${locale}`;
 }
 
 function localUrlForLocale(locale) {

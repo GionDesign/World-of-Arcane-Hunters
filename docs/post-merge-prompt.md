@@ -198,27 +198,44 @@ See `docs/custom-content/zones.md` for the fix procedure.
 ### Step 4 -- upstream naming and brand drift
 
 Upstream uses `worldofclaudecraft.com`, `World of ClaudeCraft` (and the un-capitalized
-`World of Claudecraft` alternate-case variant), `Claudemoon`. This fork replaces those
-with `TODO-your-domain.com` placeholders and the `World of Arcane Hunters` / `Eastbrook`
-brand. After any merge, run the FULL case-insensitive, whole-tree sweep, not just the
-narrow curated file list below -- a 2026-07 audit found ~30 additional files (mostly
-`server/*.ts`, `src/ui/i18n.locales/*.ts`, `src/guide/*.ts`, and `play.html`/`guide.html`)
-that the original 2026-06 pass never covered:
+`World of Claudecraft` alternate-case variant), `Claudemoon`. The fork's REAL production
+domain is `world.arcanehunters.com` (already live in `server/realm.ts` and
+`src/ui/i18n.catalog/fork_brand.ts`), used directly (not the `TODO-your-domain.com`
+placeholder) in files outside the build-time injection system (bot/, scripts/, tests/,
+package.json, docs). Source files INSIDE the injection system (index.html, play.html,
+guide.html, admin.html, public/ static pages, `src/main.ts`'s `SITE_URL`) correctly keep
+the `TODO-your-domain.com` placeholder and get the real domain injected at build time --
+do not hardcode `world.arcanehunters.com` into those. Brand name: `World of Arcane
+Hunters` / `Eastbrook`. After any merge, run the FULL case-insensitive, whole-tree sweep,
+not just the narrow curated file list below -- a 2026-07 audit found ~50 additional files
+(mostly `server/*.ts`, `src/ui/i18n.locales/*.ts`, `src/guide/*.ts`, `play.html`/
+`guide.html`, `bot/*.ts`, `scripts/*.mjs`, `README.md` + its 20 `docs/i18n/` mirrors) that
+the original 2026-06 pass never covered:
 
 ```bash
 grep -rliE "world[-_%20+]*of[-_%20+]*claudecraft|claudemoon|levy-street|GjhnUsBtw" \
-  --include="*.ts" --include="*.html" --include="*.css" --include="*.txt" . \
-  2>/dev/null | grep -v node_modules | grep -v "\.git/" | grep -v "^\./docs/"
+  --include="*.ts" --include="*.html" --include="*.css" --include="*.txt" \
+  --include="*.md" --include="*.json" --include="*.mjs" --include="*.yml" . \
+  2>/dev/null | grep -v node_modules | grep -v "\.git/"
 ```
 
 Exclude the known, deliberately-pending results before treating anything as a regression:
 `public/*-logo.png` / `public/World-of-ClaudeCraft-Whitepaper-v1.0.pdf` (pending asset
 replacement), `public/links.html`'s social-handle copy object + its own JSON-LD `sameAs`
-array (pending real social accounts), and any `@levystreet.com` email address (contact info
-is intentionally not rebranded). Everything else is a real leak -- re-apply from the
-"Brand rename (2026-06)" AND "Brand rename scope audit (2026-07)" sections in
-`docs/MAINTAINING-FORK.md`; the 2026-07 section has the full file list and the exact
-case-sensitivity gotcha in `server/player_card.ts`'s trusted-host map.
+array (pending real social accounts), any `@levystreet.com` email address (contact info is
+intentionally not rebranded), `docs/hud-ux-and-accessibility/phase-*.md` (upstream-authored
+historical dev-session notes, not current guidance), `TERMS_AND_CONDITIONS.md` /
+`PRIVACY_POLICY.md` / `public/terms.html` / `public/privacy.html` (name a real NZ company
+as the operating entity -- ask the site owner before touching, do not fix silently), the
+mobile app's `com.worldofclaudecraft` bundle ID in `capacitor.config.ts` /
+`android/app/build.gradle` / `ios/App/App.xcodeproj/project.pbxproj` (permanent once
+published to a store -- ask before renaming), and this file's / `MAINTAINING-FORK.md`'s
+own doc-prose references to `worldofclaudecraft.com` (describing upstream's domain for
+grep-pattern purposes, not stale content). Everything else is a real leak -- re-apply from
+the "Brand rename (2026-06)", "Brand rename scope audit (2026-07)", and "Brand rename scope
+audit, part 2 (2026-07)" sections in `docs/MAINTAINING-FORK.md`; the latter two have the
+full file lists and the exact case-sensitivity gotcha in `server/player_card.ts`'s
+trusted-host map.
 
 Also run the two narrower, faster health checks for the two files that regress most often
 (a merge can revert these even when nothing else does, since they're small isolated diffs):
